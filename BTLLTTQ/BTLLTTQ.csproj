@@ -46,6 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login\Account.cs" />
+    <Compile Include="BackGR.cs" />
+    <Compile Include="Login\CDataBase.cs" />
+    <Compile Include="Login\Connection.cs" />
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="md_test.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -53,8 +63,63 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Items\FormCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Items\FormCustomer.Designer.cs">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Items\FormOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Items\FormOrder.Designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Items\FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Items\FormProduct.Designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Items\FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Items\FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Modify.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Login\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Items\FormCustomer.resx">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Items\FormOrder.resx">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Items\FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Items\FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,7 +128,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Login\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,6 +145,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Mp4\Smaller Network Connection Background.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-10-19 102540.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Shopping Cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Purchase Order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Graph Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Open Pane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
