@@ -1,4 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-/BTLLTTQ/bin/
+BTLLTTQ/bin/
 .vs/
+BTLLTTQ/.vs/
+BTLLTTQ/.obj/
+*.cs
