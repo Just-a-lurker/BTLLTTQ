@@ -3,5 +3,5 @@
 BTLLTTQ/bin/
 .vs/
 BTLLTTQ/.vs/
-BTLLTTQ/.obj/
+BTLLTTQ/obj/
 *.cs
