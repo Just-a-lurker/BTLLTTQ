@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BTLLTTQ.NhapVaBan
 {
@@ -19,17 +20,36 @@ namespace BTLLTTQ.NhapVaBan
             InitializeComponent();
             DataTable dt = db.DocBang("Select * from hoadonnhap");
             dataGridView1.DataSource = dt;
-            dataGridView1.Columns[0].HeaderText = "Mã chất liệu";
-            dataGridView1.Columns[1].HeaderText = "Tên chất liệu";
-            dataGridView1.Columns[0].Width = 150;
-            dataGridView1.Columns[1].Width = 250;
-            dataGridView1.BackgroundColor = Color.LightBlue;
             dt.Dispose();//Giải phóng bộ nhớ cho DataTable
+            db.ThemVaoComboBox("select manv from nhanvien", cbbMaNV);
+            db.ThemVaoComboBox("select mancc from nhacungcap", cBBmaNCC);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void FormNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (txtHDN.Text == "" || cbbMaNV.Text =="" || cBBmaNCC.Text == "")
+            {
+
+            }
+            else
+            {
+                db.CapNhatDuLieu("insert into hoadonnhap values ("+txtHDN.Text+","+cbbMaNV.Text+",'"+cBBmaNCC.Text+"','"+ dateNgayNhap.Value.Date.ToString("yyyyMMdd")+"',"+int.Parse(txtTongTien.Text) + ")");
+                txtHDN.Text = txtTongTien.Text = "";
+                cbbMaNV.SelectedIndex = -1;
+                cBBmaNCC.SelectedIndex = -1;
+                DataTable dt = db.DocBang("Select * from hoadonnhap");
+                dataGridView1.DataSource = dt;
+            }
         }
     }
 }
