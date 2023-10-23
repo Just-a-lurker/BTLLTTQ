@@ -171,6 +171,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Items\FormTongtiennhaphangcuanv.resx">
       <DependentUpon>FormTongtiennhaphangcuanv.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="NhapVaBan\FormNhap.resx">
       <DependentUpon>FormNhap.cs</DependentUpon>
     </EmbeddedResource>
