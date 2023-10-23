@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTLLTTQ.NhapVaBan;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace BTLLTTQ.Menu
         public FormOrder()
         {
             InitializeComponent();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormNhap f1 = new FormNhap();
+            f1.ShowDialog();
         }
     }
 }
