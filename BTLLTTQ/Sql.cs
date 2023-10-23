@@ -11,7 +11,7 @@ namespace BTLLTTQ.Menu
 {
     internal class Sql
     {
-        string strConnect = @"Data Source=HOANG-NITRO-5\SQLEXPRESS;Initial Catalog=lttqnhom6;Integrated Security=True";
+        string strConnect = @"Data Source=DLINH\SQLEXPRESS;Initial Catalog=lttqnhom6;Integrated Security=True";
         SqlConnection sqlConnect = null;
         //Hàm mở kết nối CSDL
         private void KetNoiCSDL()
@@ -33,7 +33,7 @@ namespace BTLLTTQ.Menu
             DataTable dtBang = new DataTable();
             KetNoiCSDL();
             SqlDataAdapter sqldataAdapte = new SqlDataAdapter(sql,
-           sqlConnect);
+            sqlConnect);
             sqldataAdapte.Fill(dtBang);
             DongKetNoiCSDL();
             return dtBang;
