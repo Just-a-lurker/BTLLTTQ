@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.Remoting.Contexts;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BTLLTTQ.Menu
 {
@@ -47,6 +49,21 @@ namespace BTLLTTQ.Menu
             sqlcommand.CommandText = sql;
             sqlcommand.ExecuteNonQuery();
             DongKetNoiCSDL();
+        }
+        //Hàm thêm vào 1 combobox
+        public void ThemVaoComboBox(string sql, System.Windows.Forms.ComboBox cb)
+        {
+            KetNoiCSDL();
+            SqlCommand sqlcommand = new SqlCommand();
+            sqlcommand.Connection = sqlConnect;
+            sqlcommand.CommandText = sql;
+            sqlcommand.ExecuteNonQuery();
+            SqlDataReader DR = sqlcommand.ExecuteReader();
+            while (DR.Read())
+            {
+                cb.Items.Add(DR[0]);
+
+            }
         }
     }
 }
