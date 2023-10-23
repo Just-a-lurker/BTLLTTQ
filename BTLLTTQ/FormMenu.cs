@@ -101,7 +101,7 @@ namespace BTLLTTQ
         }
         private void btn_st_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Menu_Items.FormStaff(), sender);
         }
         private void btn_lo_Click(object sender, EventArgs e)
         {

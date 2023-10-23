@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.pMenu = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel_bar = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel_main = new System.Windows.Forms.Panel();
-            this.btn_backpr = new System.Windows.Forms.Button();
-            this.btn_close = new System.Windows.Forms.Button();
             this.btn_lo = new System.Windows.Forms.Button();
             this.btn_st = new System.Windows.Forms.Button();
             this.btn_rp = new System.Windows.Forms.Button();
             this.btn_ct = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_pd = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_bar = new System.Windows.Forms.Panel();
+            this.btn_backpr = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel_main = new System.Windows.Forms.Panel();
             this.pMenu.SuspendLayout();
             this.panel_bar.SuspendLayout();
             this.SuspendLayout();
@@ -61,75 +61,6 @@
             this.pMenu.Name = "pMenu";
             this.pMenu.Size = new System.Drawing.Size(254, 639);
             this.pMenu.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(175)))), ((int)(((byte)(55)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(254, 97);
-            this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            // 
-            // panel_bar
-            // 
-            this.panel_bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
-            this.panel_bar.Controls.Add(this.btn_backpr);
-            this.panel_bar.Controls.Add(this.btn_close);
-            this.panel_bar.Controls.Add(this.label1);
-            this.panel_bar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_bar.Location = new System.Drawing.Point(254, 0);
-            this.panel_bar.Name = "panel_bar";
-            this.panel_bar.Size = new System.Drawing.Size(846, 100);
-            this.panel_bar.TabIndex = 1;
-            this.panel_bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_bar_MouseDown);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(322, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 41);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HOME";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // panel_main
-            // 
-            this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_main.Location = new System.Drawing.Point(254, 100);
-            this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(846, 539);
-            this.panel_main.TabIndex = 2;
-            // 
-            // btn_backpr
-            // 
-            this.btn_backpr.FlatAppearance.BorderSize = 0;
-            this.btn_backpr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_backpr.Image = global::BTLLTTQ.Properties.Resources.Home;
-            this.btn_backpr.Location = new System.Drawing.Point(0, 0);
-            this.btn_backpr.Name = "btn_backpr";
-            this.btn_backpr.Size = new System.Drawing.Size(50, 50);
-            this.btn_backpr.TabIndex = 1;
-            this.btn_backpr.UseVisualStyleBackColor = true;
-            this.btn_backpr.Click += new System.EventHandler(this.btn_backpr_Click);
-            // 
-            // btn_close
-            // 
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Image = global::BTLLTTQ.Properties.Resources.Close;
-            this.btn_close.Location = new System.Drawing.Point(796, 0);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(50, 50);
-            this.btn_close.TabIndex = 1;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_lo
             // 
@@ -165,7 +96,7 @@
             this.btn_st.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
             this.btn_st.Size = new System.Drawing.Size(254, 70);
             this.btn_st.TabIndex = 5;
-            this.btn_st.Text = "    Setting";
+            this.btn_st.Text = "    Staff";
             this.btn_st.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_st.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_st.UseVisualStyleBackColor = true;
@@ -250,6 +181,75 @@
             this.btn_pd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_pd.UseVisualStyleBackColor = true;
             this.btn_pd.Click += new System.EventHandler(this.btn_pd_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(175)))), ((int)(((byte)(55)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(254, 97);
+            this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // panel_bar
+            // 
+            this.panel_bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
+            this.panel_bar.Controls.Add(this.btn_backpr);
+            this.panel_bar.Controls.Add(this.btn_close);
+            this.panel_bar.Controls.Add(this.label1);
+            this.panel_bar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_bar.Location = new System.Drawing.Point(254, 0);
+            this.panel_bar.Name = "panel_bar";
+            this.panel_bar.Size = new System.Drawing.Size(846, 100);
+            this.panel_bar.TabIndex = 1;
+            this.panel_bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_bar_MouseDown);
+            // 
+            // btn_backpr
+            // 
+            this.btn_backpr.FlatAppearance.BorderSize = 0;
+            this.btn_backpr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_backpr.Image = global::BTLLTTQ.Properties.Resources.Home;
+            this.btn_backpr.Location = new System.Drawing.Point(0, 0);
+            this.btn_backpr.Name = "btn_backpr";
+            this.btn_backpr.Size = new System.Drawing.Size(50, 50);
+            this.btn_backpr.TabIndex = 1;
+            this.btn_backpr.UseVisualStyleBackColor = true;
+            this.btn_backpr.Click += new System.EventHandler(this.btn_backpr_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = global::BTLLTTQ.Properties.Resources.Close;
+            this.btn_close.Location = new System.Drawing.Point(796, 0);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(50, 50);
+            this.btn_close.TabIndex = 1;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(322, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 41);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "HOME";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panel_main
+            // 
+            this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_main.Location = new System.Drawing.Point(254, 100);
+            this.panel_main.Name = "panel_main";
+            this.panel_main.Size = new System.Drawing.Size(846, 539);
+            this.panel_main.TabIndex = 2;
             // 
             // FormMenu
             // 
