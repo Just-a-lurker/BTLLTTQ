@@ -13,7 +13,7 @@ namespace BTLLTTQ
     public partial class Login : Form
     {
         Modify modify = new Modify();
-        //CDataBase dbase=new CDataBase();
+        CDataBase dbase = new CDataBase();
         private const int BTW = 0xA1;
         private const int HTC = 0x2;
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -89,34 +89,34 @@ namespace BTLLTTQ
                 else if(tb_password.Text =="") tb_password.Focus();
             }else
             {
-                //string username=tb_username.Text;
-                //string password=tb_password.Text;
-                //string querry = "Select Count(*) from TaiKhoan where TenTK=@username and MatKhau=@password";
-                //int cnt = dbase.Check_Account(querry, "@username", "@password", username, password);
-                //if(cnt!=0)
-                //{
-                //    this.Hide();
-                //    Menu a= new Menu();
-                //    a.Show();
-                //}else
-                //{
-                //    MessageBox.Show("Loi");
-                //}
                 string username = tb_username.Text;
-                string password=tb_password.Text;
-                string querry = "Select * from TaiKhoan where TenTK='"+username+"' and MatKhau ='"+password+"'";
-                if(modify.Accounts(querry).Count!=0)
+                string password = tb_password.Text;
+                string querry = "Select Count(*) from TaiKhoan where TenTK=@username and MatKhau=@password";
+                int cnt = dbase.Check_Account(querry, "@username", "@password", username, password);
+                if (cnt != 0)
                 {
                     this.Hide();
-                    (new FormMenu()).Show();
-                    
+                    new FormMenu().Show();
                 }
                 else
                 {
                     MessageBox.Show("Authentication Failed");
+                }
+                //string username = tb_username.Text;
+                //string password=tb_password.Text;
+                //string querry = "Select * from TaiKhoan where TenTK='"+username+"' and MatKhau ='"+password+"'";
+                //if(modify.Accounts(querry).Count!=0)
+                //{
+                //    this.Hide();
+                //    (new FormMenu()).Show();
+                    
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Authentication Failed");
                   
                    
-                }
+                //}
             }
         }
 

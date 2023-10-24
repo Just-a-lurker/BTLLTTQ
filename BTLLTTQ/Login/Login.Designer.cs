@@ -144,6 +144,7 @@
             this.linkLabel2.TabIndex = 6;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Sign Up";
+            this.linkLabel2.Visible = false;
             // 
             // linkLabel1
             // 
@@ -157,13 +158,14 @@
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password?";
+            this.linkLabel1.Visible = false;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btn_login
             // 
             this.btn_login.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
-            this.btn_login.Location = new System.Drawing.Point(102, 349);
+            this.btn_login.Location = new System.Drawing.Point(102, 347);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(234, 60);
             this.btn_login.TabIndex = 4;
@@ -218,7 +220,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(135, 11);
+            this.label1.Location = new System.Drawing.Point(155, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 45);
             this.label1.TabIndex = 0;
