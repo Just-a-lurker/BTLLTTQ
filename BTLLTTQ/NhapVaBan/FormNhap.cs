@@ -123,8 +123,12 @@ namespace BTLLTTQ.NhapVaBan
             if (txtHDN.Text == "") MessageBox.Show("Nhap hoac chon ma HDN");
             else
             {
-                FormChiTIetHDN chiTIetHDN = new FormChiTIetHDN(txtHDN.Text);
-                chiTIetHDN.ShowDialog();
+                if (checkMa(txtHDN.Text))
+                {
+                    FormChiTIetHDN chiTIetHDN = new FormChiTIetHDN(txtHDN.Text);
+                    chiTIetHDN.ShowDialog();
+                }
+                else MessageBox.Show("Khong co HDN voi maHDN nay");
             }
             
         }

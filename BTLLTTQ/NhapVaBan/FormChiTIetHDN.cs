@@ -126,7 +126,7 @@ namespace BTLLTTQ.NhapVaBan
         {
             if (checkMa(cbbMaNT.Text))
             {
-                DataTable dt = db.DocBang("Select * from chitiethdn where manoithat =N'" + cbbMaNT.Text + "'");
+                DataTable dt = db.DocBang("Select * from chitiethdn where manoithat =N'" + cbbMaNT.Text + "', and sohdn = N'" + maHDN + "'");
                 dataGridView1.DataSource = dt;
             }
             else
