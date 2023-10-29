@@ -44,6 +44,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.cbbMaNT = new System.Windows.Forms.ComboBox();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.btnXemAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,11 +197,33 @@
             this.cbbMaNT.Size = new System.Drawing.Size(121, 21);
             this.cbbMaNT.TabIndex = 37;
             // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(822, 8);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(149, 44);
+            this.btnTim.TabIndex = 38;
+            this.btnTim.Text = "Tìm theo mã nội thất";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // btnXemAll
+            // 
+            this.btnXemAll.Location = new System.Drawing.Point(822, 61);
+            this.btnXemAll.Name = "btnXemAll";
+            this.btnXemAll.Size = new System.Drawing.Size(149, 44);
+            this.btnXemAll.TabIndex = 39;
+            this.btnXemAll.Text = "Xem tất cả chi tiết HĐN";
+            this.btnXemAll.UseVisualStyleBackColor = true;
+            this.btnXemAll.Click += new System.EventHandler(this.btnXemAll_Click);
+            // 
             // FormChiTIetHDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1124, 585);
+            this.Controls.Add(this.btnXemAll);
+            this.Controls.Add(this.btnTim);
             this.Controls.Add(this.cbbMaNT);
             this.Controls.Add(this.txtThanhTien);
             this.Controls.Add(this.label6);
@@ -242,5 +266,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.ComboBox cbbMaNT;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.Button btnXemAll;
     }
 }

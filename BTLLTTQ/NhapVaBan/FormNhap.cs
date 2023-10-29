@@ -37,18 +37,25 @@ namespace BTLLTTQ.NhapVaBan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtHDN.Text == "" || checkMa(txtHDN.Text) || cbbMaNV.Text =="" || cBBmaNCC.Text == "")
+            if (txtHDN.Text == "" || cbbMaNV.Text =="" || cBBmaNCC.Text == "")
             {
                 MessageBox.Show("Check lai DL");
             }
             else
             {
-                db.CapNhatDuLieu("insert into hoadonnhap values ("+txtHDN.Text+",N'"+cbbMaNV.Text+"',N'"+cBBmaNCC.Text+"','"+ dateNgayNhap.Value.Date.ToString("yyyyMMdd")+"',"+int.Parse(txtTongTien.Text) + ")");
-                txtHDN.Text = txtTongTien.Text = "";
-                cbbMaNV.SelectedIndex = -1;
-                cBBmaNCC.SelectedIndex = -1;
-                DataTable dt = db.DocBang("Select * from hoadonnhap");
-                dataGridView1.DataSource = dt;
+                if (!checkMa(txtHDN.Text))
+                {
+                     db.CapNhatDuLieu("insert into hoadonnhap values ("+txtHDN.Text+",N'"+cbbMaNV.Text+"',N'"+cBBmaNCC.Text+"','"+ dateNgayNhap.Value.Date.ToString("yyyyMMdd")+"',"+int.Parse(txtTongTien.Text) + ")");
+                    txtHDN.Text = txtTongTien.Text = "";
+                    cbbMaNV.SelectedIndex = -1;
+                    cBBmaNCC.SelectedIndex = -1;
+                    DataTable dt = db.DocBang("Select * from hoadonnhap");
+                    dataGridView1.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Da co HDN voi soHDN nay, hay SD sua thay vi them");
+                }
             }
         }
 
@@ -70,12 +77,16 @@ namespace BTLLTTQ.NhapVaBan
             }
             else
             {
-                db.CapNhatDuLieu("update hoadonnhap set maNV=N'" + cbbMaNV.Text + "', mancc = N'" + cBBmaNCC.Text + "',ngaynhap ='" + dateNgayNhap.Value.Date.ToString("yyyyMMdd") + "',tongtien =" + int.Parse(txtTongTien.Text) + " where sohdn =N'" + txtHDN.Text + "'");
-                txtHDN.Text = txtTongTien.Text = "";
-                cbbMaNV.SelectedIndex = -1;
-                cBBmaNCC.SelectedIndex = -1;
-                DataTable dt = db.DocBang("Select * from hoadonnhap");
-                dataGridView1.DataSource = dt;
+                if (checkMa(txtHDN.Text))
+                {
+                    db.CapNhatDuLieu("update hoadonnhap set maNV=N'" + cbbMaNV.Text + "', mancc = N'" + cBBmaNCC.Text + "',ngaynhap ='" + dateNgayNhap.Value.Date.ToString("yyyyMMdd") + "',tongtien =" + int.Parse(txtTongTien.Text) + " where sohdn =N'" + txtHDN.Text + "'");
+                    txtHDN.Text = txtTongTien.Text = "";
+                    cbbMaNV.SelectedIndex = -1;
+                    cBBmaNCC.SelectedIndex = -1;
+                    DataTable dt = db.DocBang("Select * from hoadonnhap");
+                    dataGridView1.DataSource = dt;
+                }
+                else MessageBox.Show("Chua co HDN voi soHDN nay, hay SD them thay vi sua");
             }
         }
 
@@ -116,6 +127,25 @@ namespace BTLLTTQ.NhapVaBan
                 chiTIetHDN.ShowDialog();
             }
             
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            if(checkMa(txtHDN.Text))
+            {
+                DataTable dt = db.DocBang("Select * from hoadonnhap where sohdn =N'" + txtHDN.Text + "'");
+                dataGridView1.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Khong tim thay HDN nay");
+            }
+        }
+
+        private void btnXemAll_Click(object sender, EventArgs e)
+        {
+            DataTable dt = db.DocBang("Select * from hoadonnhap");
+            dataGridView1.DataSource = dt;
         }
     }
 }

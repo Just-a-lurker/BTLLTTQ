@@ -115,5 +115,24 @@ namespace BTLLTTQ.NhapVaBan
 
             }
         }
+
+        private void btnXemAll_Click(object sender, EventArgs e)
+        {
+            DataTable dt = db.DocBang("Select * from chitiethdn where sohdn = N'" + maHDN + "'");
+            dataGridView1.DataSource = dt;
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            if (checkMa(cbbMaNT.Text))
+            {
+                DataTable dt = db.DocBang("Select * from chitiethdn where manoithat =N'" + cbbMaNT.Text + "'");
+                dataGridView1.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Khong tim thay chi tiet HDN nay");
+            }
+        }
     }
 }
