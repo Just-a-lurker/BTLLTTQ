@@ -124,6 +124,12 @@
     <Compile Include="Menu_Items\FormTongtiennhaphangcuanv.Designer.cs">
       <DependentUpon>FormTongtiennhaphangcuanv.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhapVaBan\FormChiTIetHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhapVaBan\FormChiTIetHDN.Designer.cs">
+      <DependentUpon>FormChiTIetHDN.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhapVaBan\FormNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,7 +177,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Items\FormTongtiennhaphangcuanv.resx">
       <DependentUpon>FormTongtiennhaphangcuanv.cs</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhapVaBan\FormChiTIetHDN.resx">
+      <DependentUpon>FormChiTIetHDN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhapVaBan\FormNhap.resx">
       <DependentUpon>FormNhap.cs</DependentUpon>
     </EmbeddedResource>
