@@ -11,8 +11,8 @@ namespace BTLLTTQ
 {
     public class Merdul
     {
-       string strcon = @"Data Source=LAPTOP-PP0U79P7\SQLEXPRESS;Initial Catalog=lttqnhom6;Integrated Security=True";
-         SqlConnection con;
+       string strcon = @"Data Source=HOANG-NITRO-5\SQLEXPRESS;Initial Catalog=lttqnhom6;Integrated Security=True";
+        SqlConnection con;
         //Lấy dữ liệu vào bảng
         public  void Connect()
         {

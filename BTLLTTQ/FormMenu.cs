@@ -191,5 +191,10 @@ namespace BTLLTTQ
             currentButton = null;
             btn_backpr.Visible = false;
         }
+
+        private void panel_main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

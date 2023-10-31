@@ -17,7 +17,7 @@ namespace BTLLTTQ
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDonDatHang());
+            Application.Run(new FormMenu());
         }
     }
 }

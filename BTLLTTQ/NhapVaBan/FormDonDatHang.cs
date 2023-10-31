@@ -131,8 +131,7 @@ namespace BTLLTTQ.NhapVaBan
         {
             if(DialogResult.Yes==MessageBox.Show("Do y want to exit","Question",MessageBoxButtons.YesNo,MessageBoxIcon.Question))
             {
-                System.Diagnostics.Process.GetCurrentProcess().Kill();
-                Application.ExitThread();
+                this.Close();
             }
         }
 
@@ -408,6 +407,11 @@ namespace BTLLTTQ.NhapVaBan
         }
 
         private void cmb_mnt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
