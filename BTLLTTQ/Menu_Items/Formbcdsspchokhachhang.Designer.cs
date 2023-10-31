@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cmbokh = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bangdondathang = new System.Windows.Forms.DataGridView();
+            this.btntim = new System.Windows.Forms.Button();
+            this.cmbothang = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bangdondathang)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -46,63 +46,67 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Khách hàng";
             // 
-            // comboBox1
+            // cmbokh
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(153, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 24);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(153, 90);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 2;
+            this.cmbokh.FormattingEnabled = true;
+            this.cmbokh.Location = new System.Drawing.Point(153, 37);
+            this.cmbokh.Name = "cmbokh";
+            this.cmbokh.Size = new System.Drawing.Size(258, 24);
+            this.cmbokh.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(58, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 16);
+            this.label2.Size = new System.Drawing.Size(46, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Ngày tháng";
+            this.label2.Text = "Tháng";
             // 
-            // dataGridView1
+            // bangdondathang
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(55, 157);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(682, 281);
-            this.dataGridView1.TabIndex = 3;
+            this.bangdondathang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bangdondathang.Location = new System.Drawing.Point(55, 157);
+            this.bangdondathang.Name = "bangdondathang";
+            this.bangdondathang.RowHeadersWidth = 51;
+            this.bangdondathang.RowTemplate.Height = 24;
+            this.bangdondathang.Size = new System.Drawing.Size(682, 281);
+            this.bangdondathang.TabIndex = 3;
+            this.bangdondathang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bangdondathang_CellContentClick);
             // 
-            // button1
+            // btntim
             // 
-            this.button1.Location = new System.Drawing.Point(662, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Tìm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btntim.Location = new System.Drawing.Point(662, 38);
+            this.btntim.Name = "btntim";
+            this.btntim.Size = new System.Drawing.Size(75, 23);
+            this.btntim.TabIndex = 4;
+            this.btntim.Text = "Tìm";
+            this.btntim.UseVisualStyleBackColor = true;
+            this.btntim.Click += new System.EventHandler(this.btntim_Click);
+            // 
+            // cmbothang
+            // 
+            this.cmbothang.FormattingEnabled = true;
+            this.cmbothang.Location = new System.Drawing.Point(153, 92);
+            this.cmbothang.Name = "cmbothang";
+            this.cmbothang.Size = new System.Drawing.Size(258, 24);
+            this.cmbothang.TabIndex = 5;
             // 
             // Formbcdsspchokhachhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbothang);
+            this.Controls.Add(this.btntim);
+            this.Controls.Add(this.bangdondathang);
+            this.Controls.Add(this.cmbokh);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Formbcdsspchokhachhang";
             this.Text = "Formbcdsspchokhachhang";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Formbcdsspchokhachhang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bangdondathang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,10 +115,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cmbokh;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView bangdondathang;
+        private System.Windows.Forms.Button btntim;
+        private System.Windows.Forms.ComboBox cmbothang;
     }
 }
