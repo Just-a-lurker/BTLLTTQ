@@ -135,6 +135,7 @@
     </Compile>
     <Compile Include="NhapVaBan\FormDonDatHang.Designer.cs">
       <DependentUpon>FormDonDatHang.cs</DependentUpon>
+      </Compile>
     <Compile Include="NhapVaBan\FormChiTIetHDN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +192,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhapVaBan\FormDonDatHang.resx">
       <DependentUpon>FormDonDatHang.cs</DependentUpon>
+       </EmbeddedResource>
     <EmbeddedResource Include="NhapVaBan\FormChiTIetHDN.resx">
       <DependentUpon>FormChiTIetHDN.cs</DependentUpon>
     </EmbeddedResource>
