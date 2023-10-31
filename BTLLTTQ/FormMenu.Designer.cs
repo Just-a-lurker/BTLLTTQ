@@ -59,7 +59,7 @@
             this.pMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenu.Location = new System.Drawing.Point(0, 0);
             this.pMenu.Name = "pMenu";
-            this.pMenu.Size = new System.Drawing.Size(254, 639);
+            this.pMenu.Size = new System.Drawing.Size(254, 700);
             this.pMenu.TabIndex = 0;
             // 
             // btn_lo
@@ -202,7 +202,7 @@
             this.panel_bar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_bar.Location = new System.Drawing.Point(254, 0);
             this.panel_bar.Name = "panel_bar";
-            this.panel_bar.Size = new System.Drawing.Size(846, 100);
+            this.panel_bar.Size = new System.Drawing.Size(946, 100);
             this.panel_bar.TabIndex = 1;
             this.panel_bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_bar_MouseDown);
             // 
@@ -216,14 +216,16 @@
             this.btn_backpr.Size = new System.Drawing.Size(50, 50);
             this.btn_backpr.TabIndex = 1;
             this.btn_backpr.UseVisualStyleBackColor = true;
+            this.btn_backpr.Visible = false;
             this.btn_backpr.Click += new System.EventHandler(this.btn_backpr_Click);
             // 
             // btn_close
             // 
+            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_close.FlatAppearance.BorderSize = 0;
             this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_close.Image = global::BTLLTTQ.Properties.Resources.Close;
-            this.btn_close.Location = new System.Drawing.Point(796, 0);
+            this.btn_close.Location = new System.Drawing.Point(896, 0);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(50, 50);
             this.btn_close.TabIndex = 1;
@@ -236,7 +238,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(322, 26);
+            this.label1.Location = new System.Drawing.Point(398, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 41);
             this.label1.TabIndex = 0;
@@ -248,7 +250,7 @@
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_main.Location = new System.Drawing.Point(254, 100);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(846, 539);
+            this.panel_main.Size = new System.Drawing.Size(946, 600);
             this.panel_main.TabIndex = 2;
             // 
             // FormMenu
@@ -256,7 +258,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1100, 639);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel_bar);
             this.Controls.Add(this.pMenu);

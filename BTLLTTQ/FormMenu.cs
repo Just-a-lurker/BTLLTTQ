@@ -85,31 +85,37 @@ namespace BTLLTTQ
         }
         private void btn_pd_Click(object sender, EventArgs e)
         {
+            btn_backpr.Visible = true;
             OpenChildForm(new Menu.FormProduct(), sender);
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            btn_backpr.Visible = true;
             OpenChildForm(new Menu.FormOrder(), sender);
         }
         private void btn_ct_Click(object sender, EventArgs e)
         {
+            btn_backpr.Visible = true;
             OpenChildForm(new Menu.FormCustomer(), sender);
         }
         private void btn_rp_Click(object sender, EventArgs e)
         {
+            btn_backpr.Visible = true;
             OpenChildForm(new Menu.FormReport(), sender);
         }
         private void btn_st_Click(object sender, EventArgs e)
         {
+            btn_backpr.Visible = true;
             OpenChildForm(new Menu_Items.FormStaff(), sender);
         }
         private void btn_lo_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            btn_backpr.Visible = true;
+            new Login().Show();
         }
         private void label1_Click(object sender, EventArgs e)
         {
-
+            btn_backpr.Visible = false;
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {
