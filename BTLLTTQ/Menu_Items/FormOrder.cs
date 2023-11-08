@@ -24,5 +24,11 @@ namespace BTLLTTQ.Menu
             FormNhap f1 = new FormNhap();
             f1.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormDonDatHang f1 = new FormDonDatHang();
+            f1.ShowDialog();
+        }
     }
 }

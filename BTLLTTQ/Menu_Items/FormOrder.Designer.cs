@@ -50,6 +50,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "HĐ Bán";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormOrder
             // 
@@ -58,7 +59,7 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormOrder";
             this.Text = "FormOrder";
             this.ResumeLayout(false);

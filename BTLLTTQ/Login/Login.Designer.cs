@@ -44,6 +44,7 @@
             this.tb_username = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.cmb_username = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -80,6 +81,7 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.cmb_username);
             this.panel2.Controls.Add(this.check_sp);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -144,6 +146,7 @@
             this.linkLabel2.TabIndex = 6;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Sign Up";
+            this.linkLabel2.Visible = false;
             // 
             // linkLabel1
             // 
@@ -157,6 +160,7 @@
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password?";
+            this.linkLabel1.Visible = false;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btn_login
@@ -207,11 +211,12 @@
             // 
             this.tb_username.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_username.ForeColor = System.Drawing.Color.DimGray;
-            this.tb_username.Location = new System.Drawing.Point(102, 111);
+            this.tb_username.Location = new System.Drawing.Point(284, 16);
             this.tb_username.Multiline = true;
             this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(266, 40);
+            this.tb_username.Size = new System.Drawing.Size(124, 40);
             this.tb_username.TabIndex = 1;
+            this.tb_username.Visible = false;
             // 
             // label1
             // 
@@ -235,6 +240,19 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            // 
+            // cmb_username
+            // 
+            this.cmb_username.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_username.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmb_username.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmb_username.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_username.ForeColor = System.Drawing.Color.DimGray;
+            this.cmb_username.FormattingEnabled = true;
+            this.cmb_username.Location = new System.Drawing.Point(102, 102);
+            this.cmb_username.Name = "cmb_username";
+            this.cmb_username.Size = new System.Drawing.Size(266, 45);
+            this.cmb_username.TabIndex = 9;
             // 
             // Login
             // 
@@ -283,5 +301,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.CheckBox check_sp;
+        private System.Windows.Forms.ComboBox cmb_username;
     }
 }

@@ -13,7 +13,7 @@ namespace BTLLTTQ
     public partial class Login : Form
     {
         Modify modify = new Modify();
-        //CDataBase dbase=new CDataBase();
+        CDataBase dbase = new CDataBase();
         private const int BTW = 0xA1;
         private const int HTC = 0x2;
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -22,8 +22,10 @@ namespace BTLLTTQ
         private static extern bool ReleaseCapture();
         public Login()
         {
+            
             InitializeComponent();
             RoundCorners();
+            dbase.ThemVaoComboBox("select TenTK from TaiKhoan",cmb_username);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -82,41 +84,43 @@ namespace BTLLTTQ
         
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (tb_username.Text == ""||tb_password.Text== "")
+            if (cmb_username.Text == ""||tb_password.Text== "")
             {
                 MessageBox.Show("Điền đầy đủ thông tin đi fen", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if(tb_username.Text =="") tb_username.Focus();
+                if(cmb_username.Text =="") cmb_username.Focus();
                 else if(tb_password.Text =="") tb_password.Focus();
             }else
             {
-                //string username=tb_username.Text;
-                //string password=tb_password.Text;
-                //string querry = "Select Count(*) from TaiKhoan where TenTK=@username and MatKhau=@password";
-                //int cnt = dbase.Check_Account(querry, "@username", "@password", username, password);
-                //if(cnt!=0)
-                //{
-                //    this.Hide();
-                //    Menu a= new Menu();
-                //    a.Show();
-                //}else
-                //{
-                //    MessageBox.Show("Loi");
-                //}
-                string username = tb_username.Text;
-                string password=tb_password.Text;
-                string querry = "Select * from TaiKhoan where TenTK='"+username+"' and MatKhau ='"+password+"'";
-                if(modify.Accounts(querry).Count!=0)
+                //string username = tb_username.Text;
+                string username1 =cmb_username.Text;
+                string password = tb_password.Text;
+                string querry = "Select Count(*) from TaiKhoan where TenTK=@username1 and MatKhau=@password";
+                int cnt = dbase.Check_Account(querry, "@username1", "@password", username1, password);
+                if (cnt != 0)
                 {
+                    MessageBox.Show("Authentication Succeeded");
                     this.Hide();
-                    (new FormMenu()).Show();
-                    
+                    new FormMenu().Show();
                 }
                 else
                 {
                     MessageBox.Show("Authentication Failed");
-                  
-                   
                 }
+                //string username = tb_username.Text;
+                //string password=tb_password.Text;
+                //string querry = "Select * from TaiKhoan where TenTK='"+username+"' and MatKhau ='"+password+"'";
+                //if(modify.Accounts(querry).Count!=0)
+                //{
+                //    this.Hide();
+                //    (new FormMenu()).Show();
+
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Authentication Failed");
+
+
+                //}
             }
         }
 
