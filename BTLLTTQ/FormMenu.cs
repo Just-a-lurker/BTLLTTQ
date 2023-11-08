@@ -93,7 +93,7 @@ namespace BTLLTTQ
         }
         private void btn_ct_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Menu.FormCustomer(), sender);
+            OpenChildForm(new Menu.FormPartner(), sender);
         }
         private void btn_rp_Click(object sender, EventArgs e)
         {

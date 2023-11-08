@@ -33,7 +33,7 @@
             this.btn_lo = new System.Windows.Forms.Button();
             this.btn_st = new System.Windows.Forms.Button();
             this.btn_rp = new System.Windows.Forms.Button();
-            this.btn_ct = new System.Windows.Forms.Button();
+            this.btn_partner = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_pd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,7 +52,7 @@
             this.pMenu.Controls.Add(this.btn_lo);
             this.pMenu.Controls.Add(this.btn_st);
             this.pMenu.Controls.Add(this.btn_rp);
-            this.pMenu.Controls.Add(this.btn_ct);
+            this.pMenu.Controls.Add(this.btn_partner);
             this.pMenu.Controls.Add(this.button2);
             this.pMenu.Controls.Add(this.btn_pd);
             this.pMenu.Controls.Add(this.panel2);
@@ -122,25 +122,25 @@
             this.btn_rp.UseVisualStyleBackColor = true;
             this.btn_rp.Click += new System.EventHandler(this.btn_rp_Click);
             // 
-            // btn_ct
+            // btn_partner
             // 
-            this.btn_ct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_ct.FlatAppearance.BorderSize = 0;
-            this.btn_ct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ct.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ct.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_ct.Image = global::BTLLTTQ.Properties.Resources.Customer;
-            this.btn_ct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ct.Location = new System.Drawing.Point(0, 237);
-            this.btn_ct.Name = "btn_ct";
-            this.btn_ct.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btn_ct.Size = new System.Drawing.Size(254, 70);
-            this.btn_ct.TabIndex = 3;
-            this.btn_ct.Text = "    Customer";
-            this.btn_ct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_ct.UseVisualStyleBackColor = true;
-            this.btn_ct.Click += new System.EventHandler(this.btn_ct_Click);
+            this.btn_partner.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_partner.FlatAppearance.BorderSize = 0;
+            this.btn_partner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_partner.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_partner.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_partner.Image = global::BTLLTTQ.Properties.Resources.Customer;
+            this.btn_partner.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_partner.Location = new System.Drawing.Point(0, 237);
+            this.btn_partner.Name = "btn_partner";
+            this.btn_partner.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btn_partner.Size = new System.Drawing.Size(254, 70);
+            this.btn_partner.TabIndex = 3;
+            this.btn_partner.Text = "    Partner";
+            this.btn_partner.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_partner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_partner.UseVisualStyleBackColor = true;
+            this.btn_partner.Click += new System.EventHandler(this.btn_ct_Click);
             // 
             // button2
             // 
@@ -281,7 +281,7 @@
         private System.Windows.Forms.Button btn_lo;
         private System.Windows.Forms.Button btn_st;
         private System.Windows.Forms.Button btn_rp;
-        private System.Windows.Forms.Button btn_ct;
+        private System.Windows.Forms.Button btn_partner;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel_bar;
         private System.Windows.Forms.Label label1;
