@@ -128,7 +128,6 @@
             // 
             // btn_partner
             // 
-<<<<<<< HEAD
             this.btn_partner.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_partner.FlatAppearance.BorderSize = 0;
             this.btn_partner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -145,27 +144,26 @@
             this.btn_partner.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_partner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_partner.UseVisualStyleBackColor = true;
-            this.btn_partner.Click += new System.EventHandler(this.btn_ct_Click);
-=======
-            this.btn_ct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_ct.FlatAppearance.BorderSize = 0;
-            this.btn_ct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ct.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ct.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_ct.Image = global::BTLLTTQ.Properties.Resources.Customer;
-            this.btn_ct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ct.Location = new System.Drawing.Point(0, 193);
-            this.btn_ct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_ct.Name = "btn_ct";
-            this.btn_ct.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_ct.Size = new System.Drawing.Size(190, 57);
-            this.btn_ct.TabIndex = 3;
-            this.btn_ct.Text = "    Customer";
-            this.btn_ct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_ct.UseVisualStyleBackColor = true;
-            this.btn_ct.Click += new System.EventHandler(this.btn_ct_Click);
->>>>>>> origin
+            this.btn_partner.Click += new System.EventHandler(this.btn_lo_Click);
+
+            this.btn_lo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_lo.FlatAppearance.BorderSize = 0;
+            this.btn_lo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_lo.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lo.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_lo.Image = global::BTLLTTQ.Properties.Resources.Customer;
+            this.btn_lo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_lo.Location = new System.Drawing.Point(0, 193);
+            this.btn_lo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_lo.Name = "btn_lo";
+            this.btn_lo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_lo.Size = new System.Drawing.Size(190, 57);
+            this.btn_lo.TabIndex = 3;
+            this.btn_lo.Text = "    Customer";
+            this.btn_lo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_lo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_lo.UseVisualStyleBackColor = true;
+            this.btn_lo.Click += new System.EventHandler(this.btn_lo_Click);
             // 
             // button2
             // 

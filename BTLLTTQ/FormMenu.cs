@@ -95,12 +95,10 @@ namespace BTLLTTQ
         }
         private void btn_ct_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             OpenChildForm(new Menu.FormPartner(), sender);
-=======
+
             btn_backpr.Visible = true;
-            OpenChildForm(new Menu.FormCustomer(), sender);
->>>>>>> origin
+            OpenChildForm(new Menu.FormPartner(), sender);
         }
         private void btn_rp_Click(object sender, EventArgs e)
         {
