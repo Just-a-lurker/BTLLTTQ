@@ -1,4 +1,5 @@
-﻿using BTLLTTQ.NhapVaBan;
+﻿using BTLLTTQ.Menu;
+using BTLLTTQ.NhapVaBan;
 using System;
 using System.Collections.Generic;
 using System.Linq;

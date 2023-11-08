@@ -11,8 +11,9 @@ using System.Windows.Forms;
 
 namespace BTLLTTQ.Menu
 {
-    public partial class FormOrder : Form
+    public partial class FormOrder :Form
     {
+        FormMenu a=new FormMenu();
         public FormOrder()
         {
             InitializeComponent();
@@ -23,6 +24,11 @@ namespace BTLLTTQ.Menu
         {
             FormNhap f1 = new FormNhap();
             f1.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            a.OpenChildForm(new NhapVaBan.FormDonDatHang(), sender);
         }
     }
 }

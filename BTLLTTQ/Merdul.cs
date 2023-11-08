@@ -98,7 +98,7 @@ namespace BTLLTTQ
             DR.Close();
             ConnectClose();
         }
-        public static string ChuyenSoSangChu(string sNumber)
+        public string ChuyenSoSangChu(string sNumber)
         {
             int mLen, mDigit;
             string mTemp = "";

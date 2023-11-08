@@ -61,13 +61,6 @@
     <Compile Include="Login_Items\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="md_test.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,12 +123,6 @@
       <DependentUpon>FormTongtiennhaphangcuanv.cs</DependentUpon>
     </Compile>
     <Compile Include="Merdul.cs" />
-    <Compile Include="NhapVaBan\FormBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhapVaBan\FormBan.Designer.cs">
-      <DependentUpon>FormBan.cs</DependentUpon>
-    </Compile>
     <Compile Include="NhapVaBan\FormDonDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Items\FormTongtiennhaphangcuanv.resx">
       <DependentUpon>FormTongtiennhaphangcuanv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NhapVaBan\FormBan.resx">
-      <DependentUpon>FormBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhapVaBan\FormDonDatHang.resx">
       <DependentUpon>FormDonDatHang.cs</DependentUpon>
