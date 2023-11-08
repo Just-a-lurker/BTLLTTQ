@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="FormDoiTac\FormNhapKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,9 +62,7 @@
     <Compile Include="FormDoiTac\FormNhapNCC.Designer.cs">
       <DependentUpon>FormNhapNCC.cs</DependentUpon>
     </Compile>
-=======
     <Compile Include="Functions.cs" />
->>>>>>> origin
     <Compile Include="Login\Account.cs" />
     <Compile Include="BackGR.cs" />
     <Compile Include="Login\CDataBase.cs" />
@@ -229,15 +226,12 @@
     <EmbeddedResource Include="Menu_Items\FormTongtiennhaphangcuanv.resx">
       <DependentUpon>FormTongtiennhaphangcuanv.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="NhapVaBan\FormDonDatHang.resx">
       <DependentUpon>FormDonDatHang.cs</DependentUpon>
        </EmbeddedResource>
     <EmbeddedResource Include="NhapVaBan\FormChiTIetHDN.resx">
       <DependentUpon>FormChiTIetHDN.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> origin
     <EmbeddedResource Include="NhapVaBan\FormNhap.resx">
       <DependentUpon>FormNhap.cs</DependentUpon>
     </EmbeddedResource>
