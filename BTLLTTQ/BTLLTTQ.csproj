@@ -50,18 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDoiTac\FormNhapKH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDoiTac\FormNhapKH.Designer.cs">
-      <DependentUpon>FormNhapKH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDoiTac\FormNhapNCC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDoiTac\FormNhapNCC.Designer.cs">
-      <DependentUpon>FormNhapNCC.cs</DependentUpon>
-    </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="Login\Account.cs" />
     <Compile Include="BackGR.cs" />
@@ -98,11 +86,11 @@
     <Compile Include="Menu_Items\Formbcdsspchokhachhang.Designer.cs">
       <DependentUpon>Formbcdsspchokhachhang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDoiTac\FormCustomer.cs">
+    <Compile Include="FormDoiTac\FormKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDoiTac\FormCustomer.Designer.cs">
-      <DependentUpon>FormCustomer.cs</DependentUpon>
+    <Compile Include="FormDoiTac\FormKhachHang.Designer.cs">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu_Items\FormPartner.cs">
       <SubType>Form</SubType>
@@ -135,11 +123,11 @@
     <Compile Include="Menu_Items\FormStaff.Designer.cs">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDoiTac\FormSupplier.cs">
+    <Compile Include="FormDoiTac\FormNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDoiTac\FormSupplier.Designer.cs">
-      <DependentUpon>FormSupplier.cs</DependentUpon>
+    <Compile Include="FormDoiTac\FormNhaCungCap.Designer.cs">
+      <DependentUpon>FormNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu_Items\FormTongTienbanhang.cs">
       <SubType>Form</SubType>
@@ -159,7 +147,7 @@
     </Compile>
     <Compile Include="NhapVaBan\FormDonDatHang.Designer.cs">
       <DependentUpon>FormDonDatHang.cs</DependentUpon>
-      </Compile>
+    </Compile>
     <Compile Include="NhapVaBan\FormChiTIetHDN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,12 +169,6 @@
     <Compile Include="Login\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormDoiTac\FormNhapKH.resx">
-      <DependentUpon>FormNhapKH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDoiTac\FormNhapNCC.resx">
-      <DependentUpon>FormNhapNCC.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,8 +181,8 @@
     <EmbeddedResource Include="Menu_Items\Formbcdsspchokhachhang.resx">
       <DependentUpon>Formbcdsspchokhachhang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDoiTac\FormCustomer.resx">
-      <DependentUpon>FormCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="FormDoiTac\FormKhachHang.resx">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Items\FormPartner.resx">
       <DependentUpon>FormPartner.cs</DependentUpon>
@@ -217,8 +199,8 @@
     <EmbeddedResource Include="Menu_Items\FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDoiTac\FormSupplier.resx">
-      <DependentUpon>FormSupplier.cs</DependentUpon>
+    <EmbeddedResource Include="FormDoiTac\FormNhaCungCap.resx">
+      <DependentUpon>FormNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Items\FormTongTienbanhang.resx">
       <DependentUpon>FormTongTienbanhang.cs</DependentUpon>
@@ -228,7 +210,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhapVaBan\FormDonDatHang.resx">
       <DependentUpon>FormDonDatHang.cs</DependentUpon>
-       </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhapVaBan\FormChiTIetHDN.resx">
       <DependentUpon>FormChiTIetHDN.cs</DependentUpon>
     </EmbeddedResource>

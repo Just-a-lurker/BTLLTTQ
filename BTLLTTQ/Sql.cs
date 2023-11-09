@@ -13,7 +13,7 @@ namespace BTLLTTQ.Menu
 {
     internal class Sql
     {
-        string strConnect = @"Data Source=HOANG-NITRO-5\SQLEXPRESS;Initial Catalog=lttqnhom6;Integrated Security=True";
+        string strConnect = @"Data Source=MSI\SQLEXPRESS;Initial Catalog=lttqnhom6;Integrated Security=True";
         SqlConnection sqlConnect = null;
         //Hàm mở kết nối CSDL
         private void KetNoiCSDL()
