@@ -1,4 +1,5 @@
-﻿using BTLLTTQ.NhapVaBan;
+﻿using BTLLTTQ.Menu;
+using BTLLTTQ.NhapVaBan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace BTLLTTQ
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenu());
+            Application.Run(new ChonDB());
         }
     }
 }

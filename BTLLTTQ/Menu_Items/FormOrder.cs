@@ -11,8 +11,9 @@ using System.Windows.Forms;
 
 namespace BTLLTTQ.Menu
 {
-    public partial class FormOrder : Form
+    public partial class FormOrder :Form
     {
+        FormMenu a=new FormMenu();
         public FormOrder()
         {
             InitializeComponent();

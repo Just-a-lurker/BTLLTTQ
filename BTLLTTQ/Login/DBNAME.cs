@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BTLLTTQ
 {
-    internal class md_test
-    {
-        
-    }
+	public static class DBNAME
+	{
+		public static string NAME = null;
+	}
 }

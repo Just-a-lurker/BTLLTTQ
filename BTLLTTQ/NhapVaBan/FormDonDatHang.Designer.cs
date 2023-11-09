@@ -69,6 +69,10 @@
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_xuat = new System.Windows.Forms.Button();
             this.btn_dong = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDBanHang)).BeginInit();
@@ -96,7 +100,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn đặt hàng";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txt_madonhang
             // 
@@ -344,12 +347,17 @@
             this.dgvHDBanHang.Name = "dgvHDBanHang";
             this.dgvHDBanHang.RowHeadersWidth = 51;
             this.dgvHDBanHang.RowTemplate.Height = 24;
+            this.dgvHDBanHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHDBanHang.Size = new System.Drawing.Size(1158, 247);
             this.dgvHDBanHang.TabIndex = 0;
+            this.dgvHDBanHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHDBanHang_CellClick);
             this.dgvHDBanHang.DoubleClick += new System.EventHandler(this.dgvHDBanHang_DoubleClick);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBox3);
+            this.panel1.Controls.Add(this.checkBox2);
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.cmb_dondh);
             this.panel1.Controls.Add(this.btn_timkiem);
@@ -480,6 +488,7 @@
             this.btn_xoa.TabIndex = 12;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_xuat
             // 
@@ -489,10 +498,11 @@
             this.btn_xuat.TabIndex = 13;
             this.btn_xuat.Text = "Xuất ra Excel";
             this.btn_xuat.UseVisualStyleBackColor = true;
+            this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
             // 
             // btn_dong
             // 
-            this.btn_dong.Location = new System.Drawing.Point(740, 645);
+            this.btn_dong.Location = new System.Drawing.Point(901, 645);
             this.btn_dong.Name = "btn_dong";
             this.btn_dong.Size = new System.Drawing.Size(147, 50);
             this.btn_dong.TabIndex = 14;
@@ -500,11 +510,52 @@
             this.btn_dong.UseVisualStyleBackColor = true;
             this.btn_dong.Click += new System.EventHandler(this.btn_dong_Click);
             // 
+            // btn_Sua
+            // 
+            this.btn_Sua.Location = new System.Drawing.Point(729, 645);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(149, 50);
+            this.btn_Sua.TabIndex = 15;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(28, 15);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(108, 26);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Mã hàng";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(164, 16);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(154, 26);
+            this.checkBox2.TabIndex = 6;
+            this.checkBox2.Text = "Mã Nhân viên";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(324, 18);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(173, 26);
+            this.checkBox3.TabIndex = 7;
+            this.checkBox3.Text = "Mã Khách Hàng";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
             // FormDonDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 769);
+            this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.btn_dong);
             this.Controls.Add(this.btn_xuat);
             this.Controls.Add(this.btn_xoa);
@@ -583,5 +634,9 @@
         private System.Windows.Forms.Button btn_dong;
         private System.Windows.Forms.ComboBox cmb_dondh;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btn_Sua;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

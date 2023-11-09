@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,13 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using COMExcel = Microsoft.Office.Interop.Excel;
 namespace BTLLTTQ.NhapVaBan
 {
     public partial class FormDonDatHang : Form
     {
-        DataTable tblCTHDB;
+        System.Data.DataTable tblCTHDB;
         Merdul functions=new Merdul();
+        int SLCT;
+        string CODE;
+        private void Reset_M()
+        {
+            SLCT = 0;
+            CODE = "";
+        }
         public FormDonDatHang()
         {
             InitializeComponent();
@@ -41,12 +49,13 @@ namespace BTLLTTQ.NhapVaBan
             cmb_mnv.SelectedIndex = -1;
             functions.FillComboBox("Select SoDDH from DonDatHang", cmb_dondh);
             cmb_dondh.SelectedIndex = -1;
-            if (txt_madonhang.Text!=null)
+            if (txt_madonhang.Text!="")
             {
                 LoadInfoHoaDon();
                 btn_xoa.Enabled=true;
                 btn_xuat.Enabled=true;
             }
+       
         }
         //Nạp dữ liệu lên data gridview
         private void LoadDataGridView()
@@ -55,7 +64,7 @@ namespace BTLLTTQ.NhapVaBan
             sql = "SELECT a.MaNoiThat, b.TenNoiThat, a.SoLuong, b.DonGiaBan, a.GiamGia,a.ThanhTien FROM ChiTietHDDH AS a, DMNoiThat AS b WHERE a.SoDDH = N'" + txt_madonhang.Text + "' AND a.MaNoiThat=b.MaNoiThat";
             tblCTHDB = functions.GetDataToTable(sql);
             dgvHDBanHang.DataSource = tblCTHDB;
-            dgvHDBanHang.Columns[0].HeaderText = "Mã hàng";
+            dgvHDBanHang.Columns[0].HeaderText = "Mã nội thất";
             dgvHDBanHang.Columns[1].HeaderText = "Tên hàng";
             dgvHDBanHang.Columns[2].HeaderText = "Số lượng";
             dgvHDBanHang.Columns[3].HeaderText = "Đơn giá";
@@ -69,6 +78,7 @@ namespace BTLLTTQ.NhapVaBan
             dgvHDBanHang.Columns[5].Width = 230;
             dgvHDBanHang.AllowUserToAddRows = false;
             dgvHDBanHang.EditMode = DataGridViewEditMode.EditProgrammatically;
+           
         }
         private void LoadInfoHoaDon()
         {
@@ -99,8 +109,9 @@ namespace BTLLTTQ.NhapVaBan
             btn_luu.Enabled = true;
             btn_xuat.Enabled = false;
             btn_them.Enabled = false;
+            btn_Sua.Enabled = false;
             ResetValues();
-            txt_madonhang.Text = Merdul.CreateKey("HDB");
+            txt_madonhang.Text = Merdul.CreateKey("DDH");
             LoadDataGridView();
         }
 
@@ -158,7 +169,7 @@ namespace BTLLTTQ.NhapVaBan
         private void btn_luu_Click(object sender, EventArgs e)
         {
             string sql;
-            double sl, SLcon, tong, Tongmoi;
+            int sl, SLcon, tong, Tongmoi;
             sql = "SELECT SoDDH FROM DonDatHang WHERE SoDDH=N'" + txt_madonhang.Text + "'";
             if (!functions.CheckKey(sql))
             {
@@ -256,6 +267,7 @@ namespace BTLLTTQ.NhapVaBan
                 txt_soluong.Focus();
                 return;
             }
+
             sql = "INSERT INTO ChiTietHDDH(MaNoiThat,SoDDH,SoLuong,GiamGia,ThanhTien) VALUES('" 
                 +cmb_mnt.Text + "','" 
                
@@ -325,8 +337,15 @@ namespace BTLLTTQ.NhapVaBan
                 
                 functions.UpdateData(sql);
                 txt_tongtien.Text = tongmoi.ToString();
+                //
+                if(dgvHDBanHang.Rows.Count==0)
+                {
+                    sql = "Delete from DonDatHang Where SoDDH ='" + txt_madonhang.Text + "'";
+                    functions.UpdateData(sql);
+                }
                 //txt_tongtienbc.Text = /*Functions.ChuyenSoSangChu(tongmoi.ToString());*/
                 LoadDataGridView();
+                ResetValuesHang();
             }
         }
 
@@ -358,15 +377,15 @@ namespace BTLLTTQ.NhapVaBan
             if (txt_soluong.Text == "")
                 sl = 0;
             else
-                sl = Convert.ToDouble(txt_soluong.Text);
+                sl = Convert.ToInt32(txt_soluong.Text);
             if (txt_giamgia.Text == "")
                 gg = 0;
             else
-                gg = Convert.ToDouble(txt_giamgia.Text);
+                gg = Convert.ToInt32(txt_giamgia.Text);
             if (txt_gia.Text == "")
                 dg = 0;
             else
-                dg = Convert.ToDouble(txt_gia.Text);
+                dg = Convert.ToInt32(txt_gia.Text);
             tt = sl * dg - sl * dg * gg / 100;
             txt_thanhtien.Text = tt.ToString();
         }
@@ -380,7 +399,7 @@ namespace BTLLTTQ.NhapVaBan
                 return;
             }
             txt_madonhang.Text = cmb_dondh.Text;
-            LoadInfoHoaDon();
+            LoadInfoHoaDon(); 
             LoadDataGridView();
             btn_xoa.Enabled = true;
             btn_luu.Enabled = true;
@@ -397,8 +416,13 @@ namespace BTLLTTQ.NhapVaBan
 
         private void cmb_dondh_DropDown(object sender, EventArgs e)
         {
+            if (cmb_dondh.Items.Count == 0)
+            {
+     
             functions.FillComboBox("SELECT SoDDH FROM DonDatHang", cmb_dondh);
             cmb_dondh.SelectedIndex = -1;
+            }
+           
         }
 
         private void FormDonDatHang_FormClosing(object sender, FormClosingEventArgs e)
@@ -411,7 +435,203 @@ namespace BTLLTTQ.NhapVaBan
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btn_xuat_Click(object sender, EventArgs e)
+        {
+            COMExcel.Application exApp = new COMExcel.Application();
+            COMExcel.Workbook exBook; //Trong 1 chương trình Excel có nhiều Workbook
+            COMExcel.Worksheet exSheet; //Trong 1 Workbook có nhiều Worksheet
+            COMExcel.Range exRange;
+            string sql;
+            int hang = 0, cot = 0;
+            System.Data.DataTable tblThongtinHD, tblThongtinHang;
+            exBook = exApp.Workbooks.Add(COMExcel.XlWBATemplate.xlWBATWorksheet);
+            exSheet = exBook.Worksheets[1];
+            // Định dạng chung
+            exRange = exSheet.Cells[1, 1];
+            exRange.Range["A1:Z300"].Font.Name = "Times new roman"; //Font chữ
+            exRange.Range["A1:B3"].Font.Size = 10;
+            exRange.Range["A1:B3"].Font.Bold = true;
+            exRange.Range["A1:B3"].Font.ColorIndex = 5; //Màu xanh da trời
+            exRange.Range["A1:A1"].ColumnWidth = 7;
+            exRange.Range["B1:B1"].ColumnWidth = 15;
+            exRange.Range["A1:B1"].MergeCells = true;
+            exRange.Range["A1:B1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["A1:B1"].Value = "Khoa CNTT.";
+            exRange.Range["A2:B2"].MergeCells = true;
+            exRange.Range["A2:B2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["A2:B2"].Value = "GTVT - Hà Nội";
+            exRange.Range["A3:B3"].MergeCells = true;
+            exRange.Range["A3:B3"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["A3:B3"].Value = "Điện thoại: 0325122044";
+            exRange.Range["C2:E2"].Font.Size = 16;
+            exRange.Range["C2:E2"].Font.Bold = true;
+            exRange.Range["C2:E2"].Font.ColorIndex = 3; //Màu đỏ
+            exRange.Range["C2:E2"].MergeCells = true;
+            exRange.Range["C2:E2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["C2:E2"].Value = "Đơn Đặt Hàng";
+            // Biểu diễn thông tin chung của hóa đơn bán
+            sql = "SELECT a.SoDDH, a.NgayDat,a.NgayGiao, a.TongTien, b.TenKhach, b.DiaChi, b.DienThoai, c.TenNV FROM DonDatHang AS a, KhachHang AS b, NhanVien AS c WHERE a.SoDDH = N'" +txt_madonhang.Text + "' AND a.MaKhach = b.MaKhach AND a.MaNV = c.MaNV";
+            tblThongtinHD = functions.GetDataToTable(sql);
+            exRange.Range["B6:C9"].Font.Size = 12;
+            exRange.Range["B6:B6"].Value = "Mã hóa đơn:";
+            exRange.Range["C6:E6"].MergeCells = true;
+            exRange.Range["C6:E6"].Value = tblThongtinHD.Rows[0][0].ToString();
+            exRange.Range["B7:B7"].Value = "Khách hàng:";
+            exRange.Range["C7:E7"].MergeCells = true;
+            exRange.Range["C7:E7"].Value = tblThongtinHD.Rows[0][4].ToString();
+            exRange.Range["B8:B8"].Value = "Địa chỉ:";
+            exRange.Range["C8:E8"].MergeCells = true;
+            exRange.Range["C8:E8"].Value = tblThongtinHD.Rows[0][5].ToString();
+            exRange.Range["B9:B9"].Value = "Điện thoại:";
+            exRange.Range["C9:E9"].MergeCells = true;
+            exRange.Range["C9:E9"].Value = tblThongtinHD.Rows[0][6].ToString();
+            //Lấy thông tin các mặt hàng
+            sql = "SELECT b.TenNoiThat, a.SoLuong, b.DonGiaBan, a.GiamGia, a.ThanhTien " +
+                  "FROM ChiTietHDDH AS a , DMNoiThat AS b WHERE a.SoDDH = N'" +
+                  txt_madonhang.Text + "' AND a.MaNoiThat = b.MaNoiThat";
+            tblThongtinHang = functions.GetDataToTable(sql);
+            //Tạo dòng tiêu đề bảng
+            exRange.Range["A11:F11"].Font.Bold = true;
+            exRange.Range["A11:F11"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["C11:F11"].ColumnWidth = 12;
+            exRange.Range["A11:A11"].Value = "STT";
+            exRange.Range["B11:B11"].Value = "Tên Nội Thất";
+            exRange.Range["C11:C11"].Value = "Số lượng";
+            exRange.Range["D11:D11"].Value = "Đơn giá";
+            exRange.Range["E11:E11"].Value = "Giảm giá";
+            exRange.Range["F11:F11"].Value = "Thành tiền";
+            for (hang = 0; hang < tblThongtinHang.Rows.Count; hang++)
+            {
+                //Điền số thứ tự vào cột 1 từ dòng 12
+                exSheet.Cells[1][hang + 12] = hang + 1;
+                for (cot = 0; cot < tblThongtinHang.Columns.Count; cot++)
+                //Điền thông tin hàng từ cột thứ 2, dòng 12
+                {
+                    exSheet.Cells[cot + 2][hang + 12] = tblThongtinHang.Rows[hang][cot].ToString();
+                    if (cot == 3) exSheet.Cells[cot + 2][hang + 12] = tblThongtinHang.Rows[hang][cot].ToString() + "%";
+                }
+            }
+            exRange = exSheet.Cells[cot][hang + 14];
+            exRange.Font.Bold = true;
+            exRange.Value2 = "Tổng tiền:";
+            exRange = exSheet.Cells[cot + 1][hang + 14];
+            exRange.Font.Bold = true;
+            exRange.Value2 = tblThongtinHD.Rows[0][3].ToString();
+            exRange = exSheet.Cells[1][hang + 15]; //Ô A1 
+            exRange.Range["A1:F1"].MergeCells = true;
+            exRange.Range["A1:F1"].Font.Bold = true;
+            exRange.Range["A1:F1"].Font.Italic = true;
+            exRange.Range["A1:F1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignRight;
+            //exRange.Range["A1:F1"].Value = "Bằng chữ: " + Functions.ChuyenSoSangChu(tblThongtinHD.Rows[0][2].ToString());
+            exRange = exSheet.Cells[4][hang + 17]; //Ô A1 
+            exRange.Range["A1:C1"].MergeCells = true;
+            exRange.Range["A1:C1"].Font.Italic = true;
+            exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            DateTime d = Convert.ToDateTime(tblThongtinHD.Rows[0][1]);
+            exRange.Range["A1:C1"].Value = "Hà Nội, ngày " + d.Day + " tháng " + d.Month + " năm " + d.Year;
+            exRange.Range["A2:C2"].MergeCells = true;
+            exRange.Range["A2:C2"].Font.Italic = true;
+            exRange.Range["A2:C2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["A2:C2"].Value = "Nhân viên bán hàng";
+            exRange.Range["A6:C6"].MergeCells = true;
+            exRange.Range["A6:C6"].Font.Italic = true;
+            exRange.Range["A6:C6"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["A6:C6"].Value = tblThongtinHD.Rows[0][7];
+            exSheet.Name = "Đơn đặt hàng";
+            exApp.Visible = true;
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            
+            if(dgvHDBanHang.Rows.Count==0)
+            {
+                MessageBox.Show("Bạn phải chọn một mã hóa đơn để sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmb_dondh.Focus();
+                return;
+            }else
+            {
+                string sql = "";
+                try
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Bạn muốn sửa thật à?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        int sltk,a;
+                        sltk = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
+                        if (Convert.ToInt32(txt_soluong.Text) > sltk)
+                        {
+                            MessageBox.Show("Số lượng mặt hàng này chỉ còn " + sltk, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txt_soluong.Text = "";
+                            txt_soluong.Focus();
+                            return;
+                        } 
+                        //Reup SL
+                        if (CODE != cmb_mnt.Text)
+                        {
+                            sql = "UPDATE DMNoiThat SET SoLuong = '" + sltk + SLCT + " WHERE MaNoiThat = N'" + CODE + "'";
+                            functions.UpdateData(sql);
+                        }else
+                        {
+                            sql = "UPDATE DMNoiThat SET SoLuong = '" + sltk + SLCT + " WHERE MaNoiThat = N'" + cmb_mnt.Text + "'";
+                            functions.UpdateData(sql);
+                        }
+
+
+                        sltk = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
+
+                        sql = "UPDATE ChiTietHDDH SET SoLuong = '" + Convert.ToInt32(txt_soluong.Text)
+                   + "', GiamGia = '" + Convert.ToInt32(txt_giamgia.Text)
+                   + "', ThanhTien = '" + Convert.ToInt32(txt_thanhtien.Text)
+                    + "', MaNoiThat = '" + cmb_mnt.Text
+                   + "' WHERE SoDDH = '" + txt_madonhang.Text + "'";
+                        functions.UpdateData(sql);
+                        int c = sltk - Convert.ToInt32(txt_soluong);
+                        sql="Update DMNoiThat Set SoLuong='"
+                            +c.ToString()
+                            + " WHERE MaNoiThat = N'" + cmb_mnt.Text + "'";
+                        functions.UpdateData(sql);
+                        //int SLc, sl;
+                        //sql = "UPDATE DMNoiThat SET SoLuong =" + SLc + " WHERE MaNoiThat= N'" + cmb_mnt.Text + "'";
+                        //   sql = "UPDATE DonDatHang SET MaNV = '" + cmb_mnv.Text
+                        //+ "', MaKhach = '" + cmb_mkh.Text
+                        //+ "', NgayDat = '" + txt_ngaydat.Value.ToString("yyyy-MM-dd")
+                        //+ "', NgayGiao = '" + txt_ngaygiao.Value.ToString("yyyy-MM-dd")
+                        //+ "', DatCoc = '" + Convert.ToInt32(txt_datcoc.Text)
+                        //+ "', Thue = '" + Convert.ToInt32(txt_thue.Text)
+                        //+ "', TongTien = '" + Convert.ToInt32(txt_tongtien.Text)
+                        //+ "' WHERE SoDDH = '" + txt_madonhang.Text + "'";
+                        sql = "UPDATE DonDatHang SET TongTien = '" + Convert.ToInt32(txt_tongtien.Text)+ "' WHERE SoDDH = '" + txt_madonhang.Text + "'";
+                        functions.UpdateData(sql);
+                        LoadInfoHoaDon();
+                        LoadDataGridView();
+                        MessageBox.Show("OK Luon");
+                        Reset_M();
+                    }
+                        
+
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Error:" + ex.Message);
+                }
+               
+               
+            }
+            
+        }
+
+        private void dgvHDBanHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cmb_mnt.SelectedItem = dgvHDBanHang.SelectedRows[0].Cells[0].Value.ToString();
+            txt_tennt.Text = dgvHDBanHang.SelectedRows[0].Cells[1].Value.ToString();
+            txt_soluong.Text= dgvHDBanHang.SelectedRows[0].Cells[2].Value.ToString();
+            txt_gia.Text = dgvHDBanHang.SelectedRows[0].Cells[3].Value.ToString();
+            txt_giamgia.Text= dgvHDBanHang.Rows[0].Cells[4].Value.ToString();
+            txt_thanhtien.Text = dgvHDBanHang.SelectedRows[0].Cells[5].Value.ToString();
+            SLCT = Convert.ToInt32(txt_soluong.Text);
+            CODE = cmb_mnt.SelectedItem.ToString();
+        }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
         {
 
         }

@@ -10,8 +10,8 @@ namespace BTLLTTQ
 {
     public class CDataBase
     {
-        string strConnect = @"Data Source=LAPTOP-PP0U79P7\SQLEXPRESS;Initial Catalog=lttqnhom6;Integrated Security=True";
-        public static SqlConnection sqlConnect = null;
+		string strConnect = @"Data Source=" + DBNAME.NAME + @"\SQLEXPRESS;Initial Catalog=lttqnhom6;Integrated Security=True";
+		public static SqlConnection sqlConnect = null;
 
         private void KetNoiCSDL()
         {
