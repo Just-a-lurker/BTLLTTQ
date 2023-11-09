@@ -40,9 +40,7 @@ namespace BTLLTTQ.Menu_Items
             txtmanv.Enabled = enabled;
             txtnv.Enabled = enabled;
             cmbomacv.Enabled = enabled;
-            txtcv.Enabled = enabled;
             cmbomacl.Enabled = enabled;
-            txtcl.Enabled = enabled;
             cmbogioitinh.Enabled = enabled;
             txtdiachi.Enabled = enabled;
             txtdienthoai.Enabled = enabled;
@@ -54,9 +52,7 @@ namespace BTLLTTQ.Menu_Items
             txtmanv.Text = "";
             txtnv.Text = "";
             cmbomacv.Text = "";
-            txtcv.Text = "";
             cmbomacl.Text = "";
-            txtcl.Text = "";
             cmbogioitinh.Text = "";
             txtngaysinh.Text = "";
             txtdiachi.Text = "";
@@ -72,9 +68,7 @@ namespace BTLLTTQ.Menu_Items
                     txtmanv.Enabled = true;
                     txtnv.Enabled = true;
                     cmbomacv.Enabled = true;
-                    txtcv.Enabled = true;
                     cmbomacl.Enabled = true;
-                    txtcl.Enabled = true;
                     cmbogioitinh.Enabled = true;
                     txtdiachi.Enabled = true;
                     txtdienthoai.Enabled = true;
@@ -83,9 +77,7 @@ namespace BTLLTTQ.Menu_Items
                     txtmanv.Text = dgvnhanvien.SelectedRows[0].Cells["MaNV"].Value.ToString();
                     txtnv.Text = dgvnhanvien.SelectedRows[0].Cells["tenNV"].Value.ToString();
                     cmbomacv.Text = dgvnhanvien.SelectedRows[0].Cells["MaCV"].Value.ToString();
-                    txtcv.Text = dgvnhanvien.SelectedRows[0].Cells["tenCV"].Value.ToString();
                     cmbomacl.Text = dgvnhanvien.SelectedRows[0].Cells["Maca"].Value.ToString();
-                    txtcl.Text = dgvnhanvien.SelectedRows[0].Cells["tenca"].Value.ToString();
                     cmbogioitinh.Text = dgvnhanvien.SelectedRows[0].Cells["GioiTinh"].Value.ToString();
                     txtngaysinh.Text = dgvnhanvien.SelectedRows[0].Cells["NgaySinh"].Value.ToString();
                     txtdienthoai.Text = dgvnhanvien.SelectedRows[0].Cells["DienThoai"].Value.ToString();
@@ -110,9 +102,7 @@ namespace BTLLTTQ.Menu_Items
 
         private void btnluu_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtmanv.Text) && !string.IsNullOrWhiteSpace(txtnv.Text) &&
-                !string.IsNullOrWhiteSpace(cmbomacv.Text) && !string.IsNullOrWhiteSpace(txtcv.Text) &&
-                !string.IsNullOrWhiteSpace(cmbomacl.Text) && !string.IsNullOrWhiteSpace(txtcl.Text))
+            if (!string.IsNullOrWhiteSpace(txtmanv.Text) && !string.IsNullOrWhiteSpace(txtnv.Text))
             {
                 if (!string.IsNullOrWhiteSpace(txtdienthoai.Text) && txtdienthoai.Text.Length == 10 &&
                     txtdienthoai.Text.All(char.IsDigit)) { }
@@ -199,23 +189,11 @@ namespace BTLLTTQ.Menu_Items
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cmbomacv.Focus();
             }
-            else if (string.IsNullOrWhiteSpace(txtcv.Text))
-            {
-                MessageBox.Show("Bạn phải nhập tên công việc.", "Thông báo",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtcv.Focus();
-            }
             else if (string.IsNullOrWhiteSpace(cmbomacl.Text))
             {
                 MessageBox.Show("Bạn phải nhập mã ca làm.", "Thông báo",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cmbomacl.Focus();
-            }
-            else if (string.IsNullOrWhiteSpace(txtcl.Text))
-            {
-                MessageBox.Show("Bạn phải nhập tên ca làm.", "Thông báo",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtcl.Focus();
             }
             else
             {
@@ -262,5 +240,10 @@ namespace BTLLTTQ.Menu_Items
               MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
               DialogResult.Yes) this.Close();
         }
-    }
+
+		private void txtcl_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
