@@ -61,5 +61,10 @@ namespace BTLLTTQ.Menu_Items
         {
 
         }
+
+        private void FormTongtiennhaphangcuanv_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

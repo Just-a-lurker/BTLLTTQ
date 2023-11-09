@@ -17,16 +17,41 @@ namespace BTLLTTQ.Menu_Items
         public Formbaocaonhacungcap()
         {
             InitializeComponent();
-            DataTable dt = db.DocBang("Select * from nhacungcap");
-            dataGridView1.DataSource = dt;
-            dt.Dispose();//Giải phóng bộ nhớ cho DataTable
-            db.ThemVaoComboBox("select mancc from nhacungcap", cmboncc);
-            //db.ThemVaoComboBox("select mh from nhacungcap", cmbomh);
+            db.ThemVaoComboBox("select MaNoiThat from DMNoiThat", cmbomh);
+            db.ThemVaoComboBox("SELECT DISTINCT FORMAT(NgayNhap, 'MM/yyyy') AS ThangNam FROM HoaDonNhap", cmbothang);
         }
 
         private void Formbaocaonhacungcap_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btntim_Click(object sender, EventArgs e)
+        {
+            string selectedItem = cmbomh.SelectedItem?.ToString();
+            string selectedMonth = cmbothang.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(selectedItem) || string.IsNullOrEmpty(selectedMonth))
+            {
+                MessageBox.Show("Vui lòng chọn cả mục và tháng.", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            string query = $@"SELECT DISTINCT NCC.tenNCC FROM NhaCungCap NCC
+                INNER JOIN HoaDonNhap HDN ON NCC.MaNCC = HDN.MaNCC
+                INNER JOIN ChiTietHDN CTHDN ON HDN.SoHDN = CTHDN.SoHDN
+                INNER JOIN DMNoiThat NT ON CTHDN.MaNoithat = NT.MaNoiThat
+                WHERE NT.MaNoiThat = '{selectedItem}' AND FORMAT(HDN.NgayNhap, 'MM/yyyy') = '{selectedMonth}'";
+            dataGridView1.DataSource = null;
+            DataTable dt = db.DocBang(query);
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy thông tin cho mục và tháng đã chọn.", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            dataGridView1.DataSource = dt;
+            dt.Dispose();
         }
     }
 }

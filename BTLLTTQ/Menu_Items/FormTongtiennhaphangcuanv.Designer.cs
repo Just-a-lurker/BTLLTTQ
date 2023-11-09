@@ -110,6 +110,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormTongtiennhaphangcuanv";
             this.Text = "FormTongtiennhaphangcuanv";
+            this.Load += new System.EventHandler(this.FormTongtiennhaphangcuanv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvds)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
