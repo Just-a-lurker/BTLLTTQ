@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,36 +14,25 @@ namespace BTLLTTQ.Menu_Items
 {
     public partial class FormStaff : Form
     {
-        Sql db = new Sql();
+        private Sql db = new Sql();
+        private bool isUpdating = false;
         public FormStaff()
         {
             InitializeComponent();
             db.ThemVaoComboBox("select MaCV from CongViec", cmbomacv);
             db.ThemVaoComboBox("select Maca from CaLam", cmbomacl);
         }
-        string strConnect = @"Data Source=DLINH\SQLEXPRESS;Initial Catalog=lttqnhom6;Integrated Security=True";
-        private SqlConnection connection;
-        private SqlDataAdapter adapter;
-        private DataTable dataTable;
-        private bool isUpdating = false;
-
 
         private void FormStaff_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(strConnect);
-            adapter = new SqlDataAdapter("SELECT * FROM NhanVien", connection);
-            dataTable = new DataTable();
-
             LoadData();
-
             EnableInputFields(false);
             btnThemMoi.Enabled = true;
         }
+
         private void LoadData()
         {
-            dataTable.Clear();
-            adapter.Fill(dataTable);
-            dgvnhanvien.DataSource = dataTable;
+            dgvnhanvien.DataSource = db.DocBang("SELECT * FROM NhanVien");
         }
 
         private void EnableInputFields(bool enabled)
@@ -72,7 +61,6 @@ namespace BTLLTTQ.Menu_Items
             txtngaysinh.Text = "";
             txtdiachi.Text = "";
             txtdienthoai.Text = "";
-
         }
 
         private void dgvnhanvien_Click(object sender, EventArgs e)
@@ -104,7 +92,6 @@ namespace BTLLTTQ.Menu_Items
                     txtdiachi.Text = dgvnhanvien.SelectedRows[0].Cells["DiaChi"].Value.ToString();
                     btnThemMoi.Enabled = true;
                     isUpdating = true;
-
                 }
                 catch (Exception ex)
                 {
@@ -128,13 +115,13 @@ namespace BTLLTTQ.Menu_Items
                 !string.IsNullOrWhiteSpace(cmbomacl.Text) && !string.IsNullOrWhiteSpace(txtcl.Text))
             {
                 if (!string.IsNullOrWhiteSpace(txtdienthoai.Text) && txtdienthoai.Text.Length == 10 &&
-                    txtdienthoai.Text.All(char.IsDigit)){}
+                    txtdienthoai.Text.All(char.IsDigit)) { }
                 else
                 {
                     MessageBox.Show("Vui lòng nhập số điện thoại hợp lệ gồm 10 chữ số.", "Số điện thoại không hợp lệ",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtdienthoai.Focus();
-                    return; 
+                    return;
                 }
 
                 if (DateTime.TryParse(txtngaysinh.Text, out DateTime dob))
@@ -144,7 +131,7 @@ namespace BTLLTTQ.Menu_Items
                         MessageBox.Show("Vui lòng nhập ngày sinh hợp lệ (trước hôm nay và sau năm 1950).", "Ngày sinh không hợp lệ",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtngaysinh.Focus();
-                        return; 
+                        return;
                     }
                 }
                 else
@@ -152,39 +139,33 @@ namespace BTLLTTQ.Menu_Items
                     MessageBox.Show("Vui lòng nhập ngày sinh hợp lệ.", "Ngày sinh không hợp lệ",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtngaysinh.Focus();
-                    return; 
+                    return;
                 }
                 if (isUpdating)
                 {
                     string updateQuery = "UPDATE NhanVien SET tenNV = @tenNV, MaCV = @MaCV, Maca = @Maca , GioiTinh=@GioiTinh ,NgaySinh=@NgaySinh,DienThoai=@DienThoai,DiaChi=@DiaChi , WHERE MaNV = @MaNV";
-                    SqlCommand cmd = new SqlCommand(updateQuery, connection);
-                    cmd.Parameters.AddWithValue("@tenNV", txtnv.Text);
-                    cmd.Parameters.AddWithValue("@MaCV", cmbomacv.Text);
-                    cmd.Parameters.AddWithValue("@Maca", cmbomacl.Text);
-                    cmd.Parameters.AddWithValue("@MaNV", txtmanv.Text);
-                    cmd.Parameters.AddWithValue("@GioiTinh", cmbogioitinh.Text);
-                    cmd.Parameters.AddWithValue("@NgaySinh", txtngaysinh.Text);
-                    cmd.Parameters.AddWithValue("@DienThoai", txtdienthoai.Text);
-                    cmd.Parameters.AddWithValue("@DiaChi", txtdiachi.Text);
-                    connection.Open();
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
+                    db.ExecuteQuery(updateQuery,
+                        ("@tenNV", txtnv.Text),
+                        ("@MaCV", cmbomacv.Text),
+                        ("@Maca", cmbomacl.Text),
+                        ("@MaNV", txtmanv.Text),
+                        ("@GioiTinh", cmbogioitinh.Text),
+                        ("@NgaySinh", txtngaysinh.Text),
+                        ("@DienThoai", txtdienthoai.Text),
+                        ("@DiaChi", txtdiachi.Text));
                 }
                 else
                 {
                     string insertQuery = "INSERT INTO NhanVien (MaNV, tenNV, MaCV, Maca,GioiTinh,NgaySinh,DienThoai,DiaChi) VALUES (@MaNV, @tenNV, @MaCV, @Maca,@GioiTinh,@NgaySinh,@DienThoai,@DiaChi )";
-                    SqlCommand cmd = new SqlCommand(insertQuery, connection);
-                    cmd.Parameters.AddWithValue("@MaNV", txtmanv.Text);
-                    cmd.Parameters.AddWithValue("@tenNV", txtnv.Text);
-                    cmd.Parameters.AddWithValue("@MaCV", cmbomacv.Text);
-                    cmd.Parameters.AddWithValue("@Maca", cmbomacl.Text);
-                    cmd.Parameters.AddWithValue("@GioiTinh", cmbogioitinh.Text);
-                    cmd.Parameters.AddWithValue("@NgaySinh", txtngaysinh.Text);
-                    cmd.Parameters.AddWithValue("@DienThoai", txtdienthoai.Text);
-                    cmd.Parameters.AddWithValue("@DiaChi", txtdiachi.Text);
-                    connection.Open();
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
+                    db.ExecuteQuery(insertQuery,
+                        ("@MaNV", txtmanv.Text),
+                        ("@tenNV", txtnv.Text),
+                        ("@MaCV", cmbomacv.Text),
+                        ("@Maca", cmbomacl.Text),
+                        ("@GioiTinh", cmbogioitinh.Text),
+                        ("@NgaySinh", txtngaysinh.Text),
+                        ("@DienThoai", txtdienthoai.Text),
+                        ("@DiaChi", txtdiachi.Text));
                 }
 
                 LoadData();
@@ -206,8 +187,7 @@ namespace BTLLTTQ.Menu_Items
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtmanv.Focus();
             }
-
-            else if(string.IsNullOrWhiteSpace(txtnv.Text))
+            else if (string.IsNullOrWhiteSpace(txtnv.Text))
             {
                 MessageBox.Show("Bạn phải nhập tên nhân viên.", "Thông báo",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -241,42 +221,18 @@ namespace BTLLTTQ.Menu_Items
             {
                 string updateQuery = "UPDATE NhanVien SET tenNV = @tenNV, MaCV = @MaCV, Maca = @Maca , GioiTinh=@GioiTinh ,NgaySinh=@NgaySinh,DienThoai=@DienThoai,DiaChi=@DiaChi WHERE MaNV = @MaNV";
 
-                using (SqlConnection conn = new SqlConnection(strConnect))
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@tenNV", txtnv.Text);
-                        cmd.Parameters.AddWithValue("@MaCV", cmbomacv.Text);
-                        cmd.Parameters.AddWithValue("@Maca", cmbomacl.Text);
-                        cmd.Parameters.AddWithValue("@MaNV", txtmanv.Text);
-                        cmd.Parameters.AddWithValue("@GioiTinh", cmbogioitinh.Text);
-                        cmd.Parameters.AddWithValue("@NgaySinh", txtngaysinh.Text);
-                        cmd.Parameters.AddWithValue("@DienThoai", txtdienthoai.Text);
-                        cmd.Parameters.AddWithValue("@DiaChi", txtdiachi.Text);
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Cập nhật thành công");
-
-                            LoadData();
-                            ClearInputFields();
-                            EnableInputFields(false);
-                            btnThemMoi.Enabled = true;
-                            btnSua.Enabled = true;
-                            btnXoa.Enabled = true;
-                            btnBoQua.Enabled = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể cập nhật. Hãy kiểm tra dữ liệu và thử lại.");
-                        }
-                    }
-                }
+                db.ExecuteQuery(updateQuery,
+                    ("@tenNV", txtnv.Text),
+                    ("@MaCV", cmbomacv.Text),
+                    ("@Maca", cmbomacl.Text),
+                    ("@MaNV", txtmanv.Text),
+                    ("@GioiTinh", cmbogioitinh.Text),
+                    ("@NgaySinh", txtngaysinh.Text),
+                    ("@DienThoai", txtdienthoai.Text),
+                    ("@DiaChi", txtdiachi.Text));
+                LoadData();
             }
         }
-
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -286,16 +242,13 @@ namespace BTLLTTQ.Menu_Items
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string deleteQuery = "DELETE FROM NhanVien WHERE MaNV = @MaNV";
-                    SqlCommand cmd = new SqlCommand(deleteQuery, connection);
-                    cmd.Parameters.AddWithValue("@MaNV", txtmanv.Text);
-                    connection.Open();
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
+                    db.ExecuteQuery(deleteQuery, ("@MaNV", txtmanv.Text));
                     LoadData();
                     ClearInputFields();
                 }
             }
         }
+
 
         private void btnBoQua_Click(object sender, EventArgs e)
         {

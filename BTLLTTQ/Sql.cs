@@ -65,5 +65,23 @@ namespace BTLLTTQ.Menu
 
             }
         }
+
+        public void ExecuteQuery(string query, params (string, object)[] parameters)
+        {
+            KetNoiCSDL();
+            using (SqlCommand sqlCommand = new SqlCommand())
+            {
+                sqlCommand.Connection = sqlConnect;
+                sqlCommand.CommandText = query;
+
+                foreach (var (parameterName, parameterValue) in parameters)
+                {
+                    sqlCommand.Parameters.AddWithValue(parameterName, parameterValue);
+                }
+
+                sqlCommand.ExecuteNonQuery();
+            }
+            DongKetNoiCSDL();
+        }
     }
 }
