@@ -66,7 +66,13 @@
     <Compile Include="Login\Account.cs" />
     <Compile Include="BackGR.cs" />
     <Compile Include="Login\CDataBase.cs" />
-    <Compile Include="Login\Connection.cs" />
+    <Compile Include="Login\ChonDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\ChonDB.Designer.cs">
+      <DependentUpon>ChonDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\DBNAME.cs" />
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,7 +127,6 @@
     <Compile Include="Menu_Items\FormReport.Designer.cs">
       <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\Modify.cs" />
     <Compile Include="Menu_Items\FormStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,7 +157,7 @@
     </Compile>
     <Compile Include="NhapVaBan\FormDonDatHang.Designer.cs">
       <DependentUpon>FormDonDatHang.cs</DependentUpon>
-      </Compile>
+    </Compile>
     <Compile Include="NhapVaBan\FormChiTIetHDN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDoiTac\FormNhapNCC.resx">
       <DependentUpon>FormNhapNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\ChonDB.resx">
+      <DependentUpon>ChonDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -221,7 +229,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhapVaBan\FormDonDatHang.resx">
       <DependentUpon>FormDonDatHang.cs</DependentUpon>
-       </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhapVaBan\FormChiTIetHDN.resx">
       <DependentUpon>FormChiTIetHDN.cs</DependentUpon>
     </EmbeddedResource>

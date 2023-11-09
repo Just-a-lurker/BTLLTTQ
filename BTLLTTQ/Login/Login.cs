@@ -12,7 +12,6 @@ namespace BTLLTTQ
 {
     public partial class Login : Form
     {
-        Modify modify = new Modify();
         CDataBase dbase = new CDataBase();
         private const int BTW = 0xA1;
         private const int HTC = 0x2;
