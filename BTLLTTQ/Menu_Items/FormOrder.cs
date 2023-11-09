@@ -28,7 +28,8 @@ namespace BTLLTTQ.Menu
 
         private void button2_Click(object sender, EventArgs e)
         {
-            a.OpenChildForm(new NhapVaBan.FormDonDatHang(), sender);
+            FormDonDatHang f1 = new FormDonDatHang();
+            f1.ShowDialog();
         }
     }
 }

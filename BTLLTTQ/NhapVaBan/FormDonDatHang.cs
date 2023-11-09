@@ -142,9 +142,7 @@ namespace BTLLTTQ.NhapVaBan
         {
             if(DialogResult.Yes==MessageBox.Show("Do y want to exit","Question",MessageBoxButtons.YesNo,MessageBoxIcon.Question))
             {
-                System.Diagnostics.Process.GetCurrentProcess().Kill();
-                System.Windows.Forms.Application.ExitThread();
-
+                this.Close();
             }
         }
 

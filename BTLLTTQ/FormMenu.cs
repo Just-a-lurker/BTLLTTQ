@@ -95,8 +95,10 @@ namespace BTLLTTQ
         }
         private void btn_ct_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new Menu.FormPartner(), sender);
+
             btn_backpr.Visible = true;
-            OpenChildForm(new Menu.FormCustomer(), sender);
+            OpenChildForm(new Menu.FormPartner(), sender);
         }
         private void btn_rp_Click(object sender, EventArgs e)
         {
@@ -190,6 +192,11 @@ namespace BTLLTTQ
             panel2.BackColor = Color.FromArgb(212, 175, 55);
             currentButton = null;
             btn_backpr.Visible = false;
+        }
+
+        private void panel_main_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
