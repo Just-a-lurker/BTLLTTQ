@@ -103,6 +103,12 @@
     <Compile Include="FormDoiTac\FormCustomer.Designer.cs">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu_Items\FormCaLamCongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Items\FormCaLamCongViec.Designer.cs">
+      <DependentUpon>FormCaLamCongViec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu_Items\FormPartner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDoiTac\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Items\FormCaLamCongViec.resx">
+      <DependentUpon>FormCaLamCongViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Items\FormPartner.resx">
       <DependentUpon>FormPartner.cs</DependentUpon>
