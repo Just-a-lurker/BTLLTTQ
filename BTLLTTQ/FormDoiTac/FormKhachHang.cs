@@ -87,7 +87,6 @@ namespace BTLLTTQ.Menu_Items
 		{
 			txtMaKH.Enabled = true;
 			txtMaKH.Text = txtTenKH.Text = txtDC.Text = txtSDT.Text = "";
-			this.showThongTinKH();
 		}
 
 		protected bool checkTextEmpty()

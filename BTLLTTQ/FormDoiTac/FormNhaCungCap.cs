@@ -107,7 +107,6 @@ namespace BTLLTTQ.Menu_Items
 		{
 			txtMaNCC.Enabled = true;
 			txtMaNCC.Text = txtTenNCC.Text = txtDC.Text = txtSDT.Text = "";
-			this.showThongTinNCC();
 		}
 	}
 }

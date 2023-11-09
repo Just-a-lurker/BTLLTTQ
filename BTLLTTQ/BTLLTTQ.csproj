@@ -173,12 +173,6 @@
     <Compile Include="Login\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormDoiTac\FormNhapKH.resx">
-      <DependentUpon>FormNhapKH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDoiTac\FormNhapNCC.resx">
-      <DependentUpon>FormNhapNCC.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\ChonDB.resx">
       <DependentUpon>ChonDB.cs</DependentUpon>
     </EmbeddedResource>
