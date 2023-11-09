@@ -51,6 +51,7 @@
 			this.cmbomacv = new System.Windows.Forms.ComboBox();
 			this.cmbomacl = new System.Windows.Forms.ComboBox();
 			this.txtmanv = new System.Windows.Forms.TextBox();
+			this.btnCLCV = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvnhanvien)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -77,7 +78,7 @@
 			// txtnv
 			// 
 			this.txtnv.Location = new System.Drawing.Point(168, 58);
-			this.txtnv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.txtnv.Margin = new System.Windows.Forms.Padding(2);
 			this.txtnv.Name = "txtnv";
 			this.txtnv.Size = new System.Drawing.Size(216, 20);
 			this.txtnv.TabIndex = 1;
@@ -85,7 +86,7 @@
 			// btnThemMoi
 			// 
 			this.btnThemMoi.Location = new System.Drawing.Point(484, 33);
-			this.btnThemMoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.btnThemMoi.Margin = new System.Windows.Forms.Padding(2);
 			this.btnThemMoi.Name = "btnThemMoi";
 			this.btnThemMoi.Size = new System.Drawing.Size(56, 19);
 			this.btnThemMoi.TabIndex = 2;
@@ -96,7 +97,7 @@
 			// btnluu
 			// 
 			this.btnluu.Location = new System.Drawing.Point(484, 58);
-			this.btnluu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.btnluu.Margin = new System.Windows.Forms.Padding(2);
 			this.btnluu.Name = "btnluu";
 			this.btnluu.Size = new System.Drawing.Size(56, 19);
 			this.btnluu.TabIndex = 2;
@@ -107,7 +108,7 @@
 			// btnSua
 			// 
 			this.btnSua.Location = new System.Drawing.Point(484, 81);
-			this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.btnSua.Margin = new System.Windows.Forms.Padding(2);
 			this.btnSua.Name = "btnSua";
 			this.btnSua.Size = new System.Drawing.Size(56, 19);
 			this.btnSua.TabIndex = 2;
@@ -118,7 +119,7 @@
 			// btnXoa
 			// 
 			this.btnXoa.Location = new System.Drawing.Point(484, 105);
-			this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.Size = new System.Drawing.Size(56, 19);
 			this.btnXoa.TabIndex = 2;
@@ -129,7 +130,7 @@
 			// btnBoQua
 			// 
 			this.btnBoQua.Location = new System.Drawing.Point(484, 129);
-			this.btnBoQua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.btnBoQua.Margin = new System.Windows.Forms.Padding(2);
 			this.btnBoQua.Name = "btnBoQua";
 			this.btnBoQua.Size = new System.Drawing.Size(56, 19);
 			this.btnBoQua.TabIndex = 2;
@@ -140,7 +141,7 @@
 			// btnThoat
 			// 
 			this.btnThoat.Location = new System.Drawing.Point(484, 153);
-			this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
 			this.btnThoat.Name = "btnThoat";
 			this.btnThoat.Size = new System.Drawing.Size(56, 19);
 			this.btnThoat.TabIndex = 2;
@@ -151,12 +152,12 @@
 			// dgvnhanvien
 			// 
 			this.dgvnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvnhanvien.Location = new System.Drawing.Point(57, 281);
-			this.dgvnhanvien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.dgvnhanvien.Location = new System.Drawing.Point(57, 253);
+			this.dgvnhanvien.Margin = new System.Windows.Forms.Padding(2);
 			this.dgvnhanvien.Name = "dgvnhanvien";
 			this.dgvnhanvien.RowHeadersWidth = 51;
 			this.dgvnhanvien.RowTemplate.Height = 24;
-			this.dgvnhanvien.Size = new System.Drawing.Size(484, 128);
+			this.dgvnhanvien.Size = new System.Drawing.Size(484, 156);
 			this.dgvnhanvien.TabIndex = 3;
 			this.dgvnhanvien.Click += new System.EventHandler(this.dgvnhanvien_Click);
 			// 
@@ -223,7 +224,7 @@
 			// txtngaysinh
 			// 
 			this.txtngaysinh.Location = new System.Drawing.Point(168, 156);
-			this.txtngaysinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.txtngaysinh.Margin = new System.Windows.Forms.Padding(2);
 			this.txtngaysinh.Name = "txtngaysinh";
 			this.txtngaysinh.Size = new System.Drawing.Size(216, 20);
 			this.txtngaysinh.TabIndex = 1;
@@ -231,7 +232,7 @@
 			// txtdienthoai
 			// 
 			this.txtdienthoai.Location = new System.Drawing.Point(168, 180);
-			this.txtdienthoai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.txtdienthoai.Margin = new System.Windows.Forms.Padding(2);
 			this.txtdienthoai.Name = "txtdienthoai";
 			this.txtdienthoai.Size = new System.Drawing.Size(216, 20);
 			this.txtdienthoai.TabIndex = 1;
@@ -239,7 +240,7 @@
 			// txtdiachi
 			// 
 			this.txtdiachi.Location = new System.Drawing.Point(168, 204);
-			this.txtdiachi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.txtdiachi.Margin = new System.Windows.Forms.Padding(2);
 			this.txtdiachi.Name = "txtdiachi";
 			this.txtdiachi.Size = new System.Drawing.Size(216, 20);
 			this.txtdiachi.TabIndex = 1;
@@ -251,7 +252,7 @@
             "Nam",
             "Nu"});
 			this.cmbogioitinh.Location = new System.Drawing.Point(168, 131);
-			this.cmbogioitinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.cmbogioitinh.Margin = new System.Windows.Forms.Padding(2);
 			this.cmbogioitinh.Name = "cmbogioitinh";
 			this.cmbogioitinh.Size = new System.Drawing.Size(216, 21);
 			this.cmbogioitinh.TabIndex = 4;
@@ -260,7 +261,7 @@
 			// 
 			this.cmbomacv.FormattingEnabled = true;
 			this.cmbomacv.Location = new System.Drawing.Point(168, 81);
-			this.cmbomacv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.cmbomacv.Margin = new System.Windows.Forms.Padding(2);
 			this.cmbomacv.Name = "cmbomacv";
 			this.cmbomacv.Size = new System.Drawing.Size(216, 21);
 			this.cmbomacv.TabIndex = 5;
@@ -269,7 +270,7 @@
 			// 
 			this.cmbomacl.FormattingEnabled = true;
 			this.cmbomacl.Location = new System.Drawing.Point(169, 106);
-			this.cmbomacl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.cmbomacl.Margin = new System.Windows.Forms.Padding(2);
 			this.cmbomacl.Name = "cmbomacl";
 			this.cmbomacl.Size = new System.Drawing.Size(215, 21);
 			this.cmbomacl.TabIndex = 5;
@@ -277,16 +278,28 @@
 			// txtmanv
 			// 
 			this.txtmanv.Location = new System.Drawing.Point(169, 31);
-			this.txtmanv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.txtmanv.Margin = new System.Windows.Forms.Padding(2);
 			this.txtmanv.Name = "txtmanv";
 			this.txtmanv.Size = new System.Drawing.Size(215, 20);
 			this.txtmanv.TabIndex = 6;
+			// 
+			// btnCLCV
+			// 
+			this.btnCLCV.Location = new System.Drawing.Point(484, 185);
+			this.btnCLCV.Margin = new System.Windows.Forms.Padding(2);
+			this.btnCLCV.Name = "btnCLCV";
+			this.btnCLCV.Size = new System.Drawing.Size(105, 45);
+			this.btnCLCV.TabIndex = 7;
+			this.btnCLCV.Text = "QL ca làm và công việc";
+			this.btnCLCV.UseVisualStyleBackColor = true;
+			this.btnCLCV.Click += new System.EventHandler(this.btnCLCV_Click);
 			// 
 			// FormStaff
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(600, 418);
+			this.Controls.Add(this.btnCLCV);
 			this.Controls.Add(this.txtmanv);
 			this.Controls.Add(this.cmbomacl);
 			this.Controls.Add(this.cmbomacv);
@@ -310,7 +323,7 @@
 			this.Controls.Add(this.macv);
 			this.Controls.Add(this.nv);
 			this.Controls.Add(this.manv);
-			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "FormStaff";
 			this.Text = "FormStaff";
 			this.Load += new System.EventHandler(this.FormStaff_Load);
@@ -345,5 +358,6 @@
         private System.Windows.Forms.ComboBox cmbomacv;
         private System.Windows.Forms.ComboBox cmbomacl;
         private System.Windows.Forms.TextBox txtmanv;
-    }
+		private System.Windows.Forms.Button btnCLCV;
+	}
 }

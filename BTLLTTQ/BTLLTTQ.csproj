@@ -91,6 +91,12 @@
     <Compile Include="FormDoiTac\FormKhachHang.Designer.cs">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu_Items\FormCaLamCongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Items\FormCaLamCongViec.Designer.cs">
+      <DependentUpon>FormCaLamCongViec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu_Items\FormPartner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDoiTac\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Items\FormCaLamCongViec.resx">
+      <DependentUpon>FormCaLamCongViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Items\FormPartner.resx">
       <DependentUpon>FormPartner.cs</DependentUpon>
