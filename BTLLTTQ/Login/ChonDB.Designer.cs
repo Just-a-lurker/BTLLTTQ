@@ -75,6 +75,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.comboBox1);
 			this.Name = "ChonDB";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "ChonDB";
 			this.Load += new System.EventHandler(this.ChonDB_Load);
 			this.ResumeLayout(false);
