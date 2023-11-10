@@ -18,6 +18,8 @@ namespace BTLLTTQ.Menu_Items
 		public FormKhachHang()
         {
             InitializeComponent();
+			DataTable dataTable = db.DocBang("Select * from KhachHang");
+			dataGridViewKH.DataSource = dataTable;
 		}
 
 		private void FormCustomer_Load(object sender, EventArgs e)

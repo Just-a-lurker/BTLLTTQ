@@ -18,7 +18,9 @@ namespace BTLLTTQ.Menu_Items
         public FormNhaCungCap()
         {
             InitializeComponent();
-        }
+			DataTable dataTable = db.DocBang("Select * from NhaCungCap");
+			dataGridViewNCC.DataSource = dataTable;
+		}
 
 		private void FormSupplier_Load(object sender, EventArgs e)
 		{
