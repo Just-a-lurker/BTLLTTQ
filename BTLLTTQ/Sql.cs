@@ -35,7 +35,7 @@ namespace BTLLTTQ.Menu
             DataTable dtBang = new DataTable();
             KetNoiCSDL();
             SqlDataAdapter sqldataAdapte = new SqlDataAdapter(sql,
-           sqlConnect);
+            sqlConnect);
             sqldataAdapte.Fill(dtBang);
             DongKetNoiCSDL();
             return dtBang;
@@ -64,6 +64,24 @@ namespace BTLLTTQ.Menu
                 cb.Items.Add(DR[0]);
 
             }
+        }
+
+        public void ExecuteQuery(string query, params (string, object)[] parameters)
+        {
+            KetNoiCSDL();
+            using (SqlCommand sqlCommand = new SqlCommand())
+            {
+                sqlCommand.Connection = sqlConnect;
+                sqlCommand.CommandText = query;
+
+                foreach (var (parameterName, parameterValue) in parameters)
+                {
+                    sqlCommand.Parameters.AddWithValue(parameterName, parameterValue);
+                }
+
+                sqlCommand.ExecuteNonQuery();
+            }
+            DongKetNoiCSDL();
         }
     }
 }

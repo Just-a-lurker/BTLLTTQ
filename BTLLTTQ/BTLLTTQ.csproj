@@ -50,18 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDoiTac\FormNhapKH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDoiTac\FormNhapKH.Designer.cs">
-      <DependentUpon>FormNhapKH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDoiTac\FormNhapNCC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDoiTac\FormNhapNCC.Designer.cs">
-      <DependentUpon>FormNhapNCC.cs</DependentUpon>
-    </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="Login\Account.cs" />
     <Compile Include="BackGR.cs" />
@@ -97,11 +85,17 @@
     <Compile Include="Menu_Items\Formbcdsspchokhachhang.Designer.cs">
       <DependentUpon>Formbcdsspchokhachhang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDoiTac\FormCustomer.cs">
+    <Compile Include="FormDoiTac\FormKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDoiTac\FormCustomer.Designer.cs">
-      <DependentUpon>FormCustomer.cs</DependentUpon>
+    <Compile Include="FormDoiTac\FormKhachHang.Designer.cs">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Items\FormCaLamCongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Items\FormCaLamCongViec.Designer.cs">
+      <DependentUpon>FormCaLamCongViec.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu_Items\FormPartner.cs">
       <SubType>Form</SubType>
@@ -133,11 +127,11 @@
     <Compile Include="Menu_Items\FormStaff.Designer.cs">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDoiTac\FormSupplier.cs">
+    <Compile Include="FormDoiTac\FormNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDoiTac\FormSupplier.Designer.cs">
-      <DependentUpon>FormSupplier.cs</DependentUpon>
+    <Compile Include="FormDoiTac\FormNhaCungCap.Designer.cs">
+      <DependentUpon>FormNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu_Items\FormTongTienbanhang.cs">
       <SubType>Form</SubType>
@@ -179,12 +173,6 @@
     <Compile Include="Login\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormDoiTac\FormNhapKH.resx">
-      <DependentUpon>FormNhapKH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDoiTac\FormNhapNCC.resx">
-      <DependentUpon>FormNhapNCC.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\ChonDB.resx">
       <DependentUpon>ChonDB.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,8 +188,11 @@
     <EmbeddedResource Include="Menu_Items\Formbcdsspchokhachhang.resx">
       <DependentUpon>Formbcdsspchokhachhang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDoiTac\FormCustomer.resx">
-      <DependentUpon>FormCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="FormDoiTac\FormKhachHang.resx">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Items\FormCaLamCongViec.resx">
+      <DependentUpon>FormCaLamCongViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Items\FormPartner.resx">
       <DependentUpon>FormPartner.cs</DependentUpon>
@@ -218,8 +209,8 @@
     <EmbeddedResource Include="Menu_Items\FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDoiTac\FormSupplier.resx">
-      <DependentUpon>FormSupplier.cs</DependentUpon>
+    <EmbeddedResource Include="FormDoiTac\FormNhaCungCap.resx">
+      <DependentUpon>FormNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Items\FormTongTienbanhang.resx">
       <DependentUpon>FormTongTienbanhang.cs</DependentUpon>
@@ -301,6 +292,35 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\IconImages\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel1">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

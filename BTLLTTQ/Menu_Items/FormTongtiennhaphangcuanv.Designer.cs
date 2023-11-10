@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbonv = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cmboquy = new System.Windows.Forms.ComboBox();
+            this.btntim = new System.Windows.Forms.Button();
+            this.dgvds = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvds)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -46,13 +46,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhân viên";
             // 
-            // comboBox1
+            // cmbonv
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(187, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 24);
-            this.comboBox1.TabIndex = 1;
+            this.cmbonv.FormattingEnabled = true;
+            this.cmbonv.Location = new System.Drawing.Point(187, 46);
+            this.cmbonv.Name = "cmbonv";
+            this.cmbonv.Size = new System.Drawing.Size(178, 24);
+            this.cmbonv.TabIndex = 1;
             // 
             // label2
             // 
@@ -63,52 +63,55 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Qúy";
             // 
-            // comboBox2
+            // cmboquy
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmboquy.FormattingEnabled = true;
+            this.cmboquy.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
             "4"});
-            this.comboBox2.Location = new System.Drawing.Point(187, 99);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(178, 24);
-            this.comboBox2.TabIndex = 1;
+            this.cmboquy.Location = new System.Drawing.Point(187, 99);
+            this.cmboquy.Name = "cmboquy";
+            this.cmboquy.Size = new System.Drawing.Size(178, 24);
+            this.cmboquy.TabIndex = 1;
             // 
-            // button1
+            // btntim
             // 
-            this.button1.Location = new System.Drawing.Point(674, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Tìm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btntim.Location = new System.Drawing.Point(674, 47);
+            this.btntim.Name = "btntim";
+            this.btntim.Size = new System.Drawing.Size(75, 23);
+            this.btntim.TabIndex = 2;
+            this.btntim.Text = "Tìm";
+            this.btntim.UseVisualStyleBackColor = true;
+            this.btntim.Click += new System.EventHandler(this.btntim_Click);
             // 
-            // dataGridView1
+            // dgvds
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(86, 171);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(663, 235);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvds.Location = new System.Drawing.Point(86, 171);
+            this.dgvds.Name = "dgvds";
+            this.dgvds.RowHeadersWidth = 51;
+            this.dgvds.RowTemplate.Height = 24;
+            this.dgvds.Size = new System.Drawing.Size(663, 235);
+            this.dgvds.TabIndex = 3;
+            this.dgvds.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvds_CellContentClick);
             // 
             // FormTongtiennhaphangcuanv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dgvds);
+            this.Controls.Add(this.btntim);
+            this.Controls.Add(this.cmboquy);
+            this.Controls.Add(this.cmbonv);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormTongtiennhaphangcuanv";
             this.Text = "FormTongtiennhaphangcuanv";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormTongtiennhaphangcuanv_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvds)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,10 +120,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbonv;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cmboquy;
+        private System.Windows.Forms.Button btntim;
+        private System.Windows.Forms.DataGridView dgvds;
     }
 }

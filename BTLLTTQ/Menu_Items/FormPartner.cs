@@ -26,14 +26,14 @@ namespace BTLLTTQ.Menu
 
         private void btn_KH_Click(object sender, EventArgs e)
         {
-            FormCustomer  fCus = new FormCustomer();
-            fCus.ShowDialog();
+            FormKhachHang  formCus = new FormKhachHang();
+            formCus.ShowDialog();
         }
 
         private void btn_NCC_Click(object sender, EventArgs e)
         {
-            FormSupplier fSup = new FormSupplier();
-            fSup.ShowDialog();
+            FormNhaCungCap formSup = new FormNhaCungCap();
+            formSup.ShowDialog();
         }
     }
 }
