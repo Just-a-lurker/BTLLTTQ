@@ -29,6 +29,15 @@ namespace BTLLTTQ.Menu_Items
 		{
 			DataTable dataTable = db.DocBang("Select * from NhaCungCap");
 			dataGridViewNCC.DataSource = dataTable;
+			dataGridViewNCC.Columns[0].HeaderText = "Mã nhà cung cấp";
+			dataGridViewNCC.Columns[1].HeaderText = "Tên nhà cung cấp";
+			dataGridViewNCC.Columns[2].HeaderText = "Địa chỉ";
+			dataGridViewNCC.Columns[3].HeaderText = "Điện thoại";
+
+			dataGridViewNCC.Columns[0].Width = 200;
+			dataGridViewNCC.Columns[1].Width = 200;
+			dataGridViewNCC.Columns[2].Width = 200;
+			dataGridViewNCC.Columns[3].Width = 200;
 		}
 
 		protected bool checkTextEmpty()
@@ -45,12 +54,16 @@ namespace BTLLTTQ.Menu_Items
 			return false;
 		}
 
+		protected bool checkSDT()
+		{
+			if (txtSDT.Text.Length > 11) return true;
+			return false;
+		}
+
 		private void btnTao_Click(object sender, EventArgs e)
 		{
-			if (this.checkTextEmpty())
-			{
-				MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
-			}
+			if (this.checkTextEmpty()) MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
+			else if (this.checkSDT()) MessageBox.Show("Số điện thoại chỉ tối đa 11 số!", "Thông báo");
 			else if (!this.checkMa(txtMaNCC.Text))
 			{
 				string sql = "Insert into NhaCungCap values ('" + txtMaNCC.Text + "', N'" + txtTenNCC.Text
@@ -63,10 +76,8 @@ namespace BTLLTTQ.Menu_Items
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			if (this.checkTextEmpty())
-			{
-				MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
-			}
+			if (this.checkTextEmpty()) MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
+			else if (this.checkSDT()) MessageBox.Show("Số điện thoại chỉ tối đa 11 số!", "Thông báo");
 			string sql = "Update NhaCungCap set TenNCC = N'" + txtTenNCC.Text + "', DiaChi = N'"
 				+ txtDC.Text + "', DienThoai = '" + txtSDT.Text + "' where MaNCC = '" + txtMaNCC.Text + "'";
 			db.CapNhatDuLieu(sql);

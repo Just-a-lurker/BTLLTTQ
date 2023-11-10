@@ -29,14 +29,21 @@ namespace BTLLTTQ.Menu_Items
 		{
 			DataTable dataTable = db.DocBang("Select * from KhachHang");
 			dataGridViewKH.DataSource = dataTable;
+			dataGridViewKH.Columns[0].HeaderText = "Mã khách hàng";
+			dataGridViewKH.Columns[1].HeaderText = "Tên khách hàng";
+			dataGridViewKH.Columns[2].HeaderText = "Địa chỉ";
+			dataGridViewKH.Columns[3].HeaderText = "Điện thoại";
+
+			dataGridViewKH.Columns[0].Width = 200;
+			dataGridViewKH.Columns[1].Width = 200;
+			dataGridViewKH.Columns[2].Width = 200;
+			dataGridViewKH.Columns[3].Width = 200;
 		}
 
 		private void btnTao_Click(object sender, EventArgs e)
         {
-			if (this.checkTextEmpty())
-			{
-				MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
-			}
+			if (this.checkTextEmpty()) MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
+			else if (this.checkSDT()) MessageBox.Show("Số điện thoại chỉ tối 11 số!", "Thông báo");
 			else if (!this.checkMa(txtMaKH.Text))
 			{
 				string sql = "Insert into KhachHang values ('" + txtMaKH.Text + "', N'" + txtTenKH.Text
@@ -58,10 +65,8 @@ namespace BTLLTTQ.Menu_Items
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			if(this.checkTextEmpty())
-			{
-				MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
-			}
+			if (this.checkTextEmpty()) MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
+			else if (this.checkSDT()) MessageBox.Show("Số điện thoại chỉ tối 11 số!", "Thông báo");
 			string sql = "Update KhachHang set TenKhach = N'" + txtTenKH.Text + "', DiaChi = N'" 
 				+ txtDC.Text + "', DienThoai = '" + txtSDT.Text + "' where MaKhach = '" + txtMaKH.Text + "'";
 			db.CapNhatDuLieu(sql);
@@ -100,6 +105,12 @@ namespace BTLLTTQ.Menu_Items
 			string sql = "Select * from KhachHang where MaKhach = '" + str + "'";
 			DataTable dataTable = db.DocBang(sql);
 			if (dataTable.Rows.Count > 0) return true;
+			return false;
+		}
+
+		protected bool checkSDT()
+		{
+			if(txtSDT.Text.Length > 11) return true;
 			return false;
 		}
 
