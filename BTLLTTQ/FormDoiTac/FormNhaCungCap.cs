@@ -18,7 +18,7 @@ namespace BTLLTTQ.Menu_Items
         public FormNhaCungCap()
         {
             InitializeComponent();
-        }
+		}
 
 		private void FormSupplier_Load(object sender, EventArgs e)
 		{
@@ -62,8 +62,17 @@ namespace BTLLTTQ.Menu_Items
 
 		private void btnTao_Click(object sender, EventArgs e)
 		{
-			if (this.checkTextEmpty()) MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
-			else if (this.checkSDT()) MessageBox.Show("Số điện thoại chỉ tối đa 11 số!", "Thông báo");
+			if (this.checkTextEmpty()) 
+			{
+				MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
+				return;
+			}
+			if (this.checkSDT())
+			{
+				MessageBox.Show("Số điện thoại chỉ tối 11 số!", "Thông báo");
+				txtSDT.Text = "";
+				return;
+			}
 			else if (!this.checkMa(txtMaNCC.Text))
 			{
 				string sql = "Insert into NhaCungCap values ('" + txtMaNCC.Text + "', N'" + txtTenNCC.Text
@@ -71,13 +80,27 @@ namespace BTLLTTQ.Menu_Items
 				db.CapNhatDuLieu(sql);
 				this.showThongTinNCC();
 			}
-			else MessageBox.Show("Tồn tại mã nhà cung cấp!", "Thông báo");
+			else
+			{
+				MessageBox.Show("Tồn tại mã nhà cung cấp!", "Thông báo");
+				txtMaNCC.Text = "";
+			}
 		}
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			if (this.checkTextEmpty()) MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
-			else if (this.checkSDT()) MessageBox.Show("Số điện thoại chỉ tối đa 11 số!", "Thông báo");
+			if (this.checkTextEmpty())
+			{
+				MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
+				return;
+			}
+
+			if (this.checkSDT())
+			{
+				MessageBox.Show("Số điện thoại chỉ tối 11 số!", "Thông báo");
+				txtSDT.Text = "";
+				return;
+			}
 			string sql = "Update NhaCungCap set TenNCC = N'" + txtTenNCC.Text + "', DiaChi = N'"
 				+ txtDC.Text + "', DienThoai = '" + txtSDT.Text + "' where MaNCC = '" + txtMaNCC.Text + "'";
 			db.CapNhatDuLieu(sql);
@@ -93,31 +116,35 @@ namespace BTLLTTQ.Menu_Items
 
 		private void btnTK_Click(object sender, EventArgs e)
 		{
+			if (txtMaNCC.Text == "") return;
 			string sql = "Select * from NhaCungCap where MaNCC = '" + txtMaNCC.Text + "'";
 			DataTable dataTable = db.DocBang(sql);
 			if (dataTable.Rows.Count > 0) dataGridViewNCC.DataSource = dataTable;
-			else MessageBox.Show("Không tồn tại thông tin nhà cung cấp!", "Thông báo");
+			else
+			{
+				MessageBox.Show("Không tồn tại thông tin nhà cung cấp!", "Thông báo");
+				txtMaNCC.Text = "";
+			}
 		}
 
 		private void btnHienThi_Click(object sender, EventArgs e)
 		{
 			this.showThongTinNCC();
+		}
+
+		private void btnLamMoi_Click(object sender, EventArgs e)
+		{
+			txtMaNCC.Enabled = txtTenNCC.Enabled = txtDC.Enabled = txtSDT.Enabled = true;
 			txtMaNCC.Text = txtTenNCC.Text = txtDC.Text = txtSDT.Text = "";
 		}
 
-		private void dataGridViewNCC_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		private void dataGridViewNCC_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			txtMaNCC.Text = dataGridViewNCC.CurrentRow.Cells[0].Value.ToString();
 			txtTenNCC.Text = dataGridViewNCC.CurrentRow.Cells[1].Value.ToString();
 			txtDC.Text = dataGridViewNCC.CurrentRow.Cells[2].Value.ToString();
 			txtSDT.Text = dataGridViewNCC.CurrentRow.Cells[3].Value.ToString();
 			txtMaNCC.Enabled = false;
-		}
-
-		private void FormNhaCungCap_Click(object sender, EventArgs e)
-		{
-			txtMaNCC.Enabled = true;
-			txtMaNCC.Text = txtTenNCC.Text = txtDC.Text = txtSDT.Text = "";
 		}
 	}
 }

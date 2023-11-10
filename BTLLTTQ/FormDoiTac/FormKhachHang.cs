@@ -41,9 +41,19 @@ namespace BTLLTTQ.Menu_Items
 		}
 
 		private void btnTao_Click(object sender, EventArgs e)
-        {
-			if (this.checkTextEmpty()) MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
-			else if (this.checkSDT()) MessageBox.Show("Số điện thoại chỉ tối 11 số!", "Thông báo");
+		{
+			if (this.checkTextEmpty())
+			{
+				MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo"); 
+				return;
+			}
+
+			if (this.checkSDT())
+			{
+				MessageBox.Show("Số điện thoại chỉ tối 11 số!", "Thông báo");
+				txtSDT.Text = "";
+				return;
+			}
 			else if (!this.checkMa(txtMaKH.Text))
 			{
 				string sql = "Insert into KhachHang values ('" + txtMaKH.Text + "', N'" + txtTenKH.Text
@@ -51,22 +61,27 @@ namespace BTLLTTQ.Menu_Items
 				db.CapNhatDuLieu(sql);
 				this.showThongTinKH();
 			}
-			else MessageBox.Show("Tồn tại mã khách hàng này!", "Thông báo");
-        }
-
-		private void dataGridViewKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			txtMaKH.Text = dataGridViewKH.CurrentRow.Cells[0].Value.ToString();
-			txtTenKH.Text = dataGridViewKH.CurrentRow.Cells[1].Value.ToString();
-			txtDC.Text = dataGridViewKH.CurrentRow.Cells[2].Value.ToString();
-			txtSDT.Text = dataGridViewKH.CurrentRow.Cells[3].Value.ToString();
-			txtMaKH.Enabled = false;
+			else
+			{
+				MessageBox.Show("Tồn tại mã khách hàng này!", "Thông báo");
+				txtMaKH.Text = "";
+			}
 		}
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			if (this.checkTextEmpty()) MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
-			else if (this.checkSDT()) MessageBox.Show("Số điện thoại chỉ tối 11 số!", "Thông báo");
+			if (this.checkTextEmpty())
+			{
+				MessageBox.Show("Kiểm tra lại dữ liệu!", "Thông báo");
+				return;
+			}
+
+			if (this.checkSDT())
+			{
+				MessageBox.Show("Số điện thoại chỉ tối 11 số!", "Thông báo");
+				txtSDT.Text = "";
+				return;
+			}
 			string sql = "Update KhachHang set TenKhach = N'" + txtTenKH.Text + "', DiaChi = N'" 
 				+ txtDC.Text + "', DienThoai = '" + txtSDT.Text + "' where MaKhach = '" + txtMaKH.Text + "'";
 			db.CapNhatDuLieu(sql);
@@ -82,16 +97,15 @@ namespace BTLLTTQ.Menu_Items
 
 		private void btnTK_Click(object sender, EventArgs e)
 		{
-			string sql = "Select * from KhachHang where MaKhach = '" + txtMaKH.Text + "'";
+			if (txtMaKH.Text == "") return;
+				string sql = "Select * from KhachHang where MaKhach = '" + txtMaKH.Text + "'";
 			DataTable dataTable = db.DocBang(sql);
 			if (dataTable.Rows.Count > 0) dataGridViewKH.DataSource = dataTable;
-			else MessageBox.Show("Không tồn tại thông tin khách hàng!", "Thông báo");
-		}
-
-		private void FormCustomer_Click(object sender, EventArgs e)
-		{
-			txtMaKH.Enabled = true;
-			txtMaKH.Text = txtTenKH.Text = txtDC.Text = txtSDT.Text = "";
+			else
+			{
+				MessageBox.Show("Không tồn tại thông tin khách hàng!", "Thông báo");
+				txtMaKH.Text = "";
+			}
 		}
 
 		protected bool checkTextEmpty()
@@ -117,7 +131,21 @@ namespace BTLLTTQ.Menu_Items
 		private void btnHienThi_Click(object sender, EventArgs e)
 		{
 			this.showThongTinKH();
+		}
+
+		private void btnLamMoi_Click(object sender, EventArgs e)
+		{
+			txtMaKH.Enabled = txtTenKH.Enabled = txtDC.Enabled = txtSDT.Enabled = true;
 			txtMaKH.Text = txtTenKH.Text = txtDC.Text = txtSDT.Text = "";
+		}
+
+		private void dataGridViewKH_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			txtMaKH.Text = dataGridViewKH.CurrentRow.Cells[0].Value.ToString();
+			txtTenKH.Text = dataGridViewKH.CurrentRow.Cells[1].Value.ToString();
+			txtDC.Text = dataGridViewKH.CurrentRow.Cells[2].Value.ToString();
+			txtSDT.Text = dataGridViewKH.CurrentRow.Cells[3].Value.ToString();
+			txtMaKH.Enabled = false;
 		}
 	}
 }
