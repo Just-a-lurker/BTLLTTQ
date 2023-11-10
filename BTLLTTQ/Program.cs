@@ -18,7 +18,7 @@ namespace BTLLTTQ
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChonDB());
+            Application.Run(new FormDonDatHang());
         }
     }
 }
