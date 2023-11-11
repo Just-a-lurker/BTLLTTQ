@@ -34,6 +34,7 @@
             this.bangdondathang = new System.Windows.Forms.DataGridView();
             this.btntim = new System.Windows.Forms.Button();
             this.cmbothang = new System.Windows.Forms.ComboBox();
+            this.btnxuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bangdondathang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,9 +77,9 @@
             // 
             // btntim
             // 
-            this.btntim.Location = new System.Drawing.Point(662, 38);
+            this.btntim.Location = new System.Drawing.Point(621, 38);
             this.btntim.Name = "btntim";
-            this.btntim.Size = new System.Drawing.Size(75, 23);
+            this.btntim.Size = new System.Drawing.Size(116, 23);
             this.btntim.TabIndex = 4;
             this.btntim.Text = "Tìm";
             this.btntim.UseVisualStyleBackColor = true;
@@ -92,11 +93,22 @@
             this.cmbothang.Size = new System.Drawing.Size(258, 24);
             this.cmbothang.TabIndex = 5;
             // 
+            // btnxuat
+            // 
+            this.btnxuat.Location = new System.Drawing.Point(621, 93);
+            this.btnxuat.Name = "btnxuat";
+            this.btnxuat.Size = new System.Drawing.Size(116, 23);
+            this.btnxuat.TabIndex = 6;
+            this.btnxuat.Text = "Xuất Excel";
+            this.btnxuat.UseVisualStyleBackColor = true;
+            this.btnxuat.Click += new System.EventHandler(this.btnxuat_Click);
+            // 
             // Formbcdsspchokhachhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.cmbothang);
             this.Controls.Add(this.btntim);
             this.Controls.Add(this.bangdondathang);
@@ -120,5 +132,6 @@
         private System.Windows.Forms.DataGridView bangdondathang;
         private System.Windows.Forms.Button btntim;
         private System.Windows.Forms.ComboBox cmbothang;
+        private System.Windows.Forms.Button btnxuat;
     }
 }

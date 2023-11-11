@@ -42,6 +42,7 @@ namespace BTLLTTQ.Menu_Items
                 INNER JOIN DMNoiThat NT ON CTHDN.MaNoithat = NT.MaNoiThat
                 WHERE NT.MaNoiThat = '{selectedItem}' AND FORMAT(HDN.NgayNhap, 'MM/yyyy') = '{selectedMonth}'";
             dataGridView1.DataSource = null;
+
             DataTable dt = db.DocBang(query);
 
             if (dt.Rows.Count == 0)
@@ -51,6 +52,7 @@ namespace BTLLTTQ.Menu_Items
             }
 
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns[0].Width = 700;
             dt.Dispose();
         }
     }
