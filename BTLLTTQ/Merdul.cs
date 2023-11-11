@@ -64,6 +64,10 @@ namespace BTLLTTQ
                 
             
         }
+        public SqlConnection GetConnection()
+        {
+            return new SqlConnection(strcon);
+        }
         public string GetFieldValues(string sql)
         {
             Connect();

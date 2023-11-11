@@ -92,7 +92,39 @@ namespace BTLLTTQ.NhapVaBan
         private void LoadDataGridViewSearchType()
         {
             string sql;
-            sql = "SELECT a.MaNoiThat, b.TenNoiThat, a.SoLuong, b.DonGiaBan, a.GiamGia,a.ThanhTien FROM ChiTietHDDH AS a, DMNoiThat AS b WHERE a.SoDDH = N'" + txt_madonhang.Text + "' AND a.MaNoiThat=b.MaNoiThat";
+            string stype = "";
+            if(rd_ddh.Checked==true)
+            {
+                LoadDataGridView();
+                return;
+            }else if(rd_nv.Checked==true)
+            {
+                cmb_mnv.Text=cmb_dondh.Text;
+                stype += "c.MaNV";
+            }
+            else if (rd_kh.Checked==true)
+            {
+                cmb_mkh.Text = cmb_dondh.Text;
+                stype += "c.MaKhach";
+            }else if(rd_h.Checked==true)
+            {
+                stype += "a.MaNoiThat";
+            }
+
+            sql = "SELECT a.MaNoiThat, b.TenNoiThat, a.SoLuong, b.DonGiaBan, a.GiamGia,a.ThanhTien ";
+            if(rd_kh.Checked==true)
+            {
+                sql += ",c.MaNV,a.SoDDH";
+            }else if (rd_nv.Checked == true)
+            {
+                sql += ",c.MaKhach,a.SoDDH";
+            }else if (rd_h.Checked == true)
+            {
+                sql += ",c.MaNV,a.SoDDH,c.MaKhach";
+            }
+              
+            sql+=" FROM ChiTietHDDH  a, DMNoiThat  b,DonDatHang  c " +
+                "WHERE (a.SoDDH = N'" + txt_madonhang.Text + "' Or "+stype+"='"+cmb_dondh.Text+"' )AND a.MaNoiThat=b.MaNoiThat AND c.SoDDH=a.SoDDH";
             tblCTHDB = functions.GetDataToTable(sql);
             dgvHDBanHang.DataSource = tblCTHDB;
             dgvHDBanHang.Columns[0].HeaderText = "Mã nội thất";
@@ -101,6 +133,29 @@ namespace BTLLTTQ.NhapVaBan
             dgvHDBanHang.Columns[3].HeaderText = "Đơn giá";
             dgvHDBanHang.Columns[4].HeaderText = "Giảm giá %";
             dgvHDBanHang.Columns[5].HeaderText = "Thành tiền";
+            if(rd_kh.Checked==true)
+            {
+                dgvHDBanHang.Columns[6].HeaderText = "Mã Nhân Viên";
+                dgvHDBanHang.Columns[6].Width = 230;
+                dgvHDBanHang.Columns[7].HeaderText = "Số Đơn Đặt Hàng";
+                dgvHDBanHang.Columns[7].Width = 230;
+
+            }
+            else if(rd_nv.Checked==true)
+            {
+                dgvHDBanHang.Columns[6].HeaderText = "Mã Khách Hàng";
+                dgvHDBanHang.Columns[6].Width = 230;
+                dgvHDBanHang.Columns[7].HeaderText = "Số Đơn Đặt Hàng";
+                dgvHDBanHang.Columns[7].Width = 230;
+            }else if(rd_h.Checked==true)
+            {
+                dgvHDBanHang.Columns[6].HeaderText = "Mã Khách Hàng";
+                dgvHDBanHang.Columns[6].Width = 230;
+                dgvHDBanHang.Columns[7].HeaderText = "Mã Nhân Viên";
+                dgvHDBanHang.Columns[7].Width = 230;
+                dgvHDBanHang.Columns[8].HeaderText = "Số Đơn Đặt Hàng";
+                dgvHDBanHang.Columns[8].Width = 230;
+            }    
             dgvHDBanHang.Columns[0].Width = 230;
             dgvHDBanHang.Columns[1].Width = 230;
             dgvHDBanHang.Columns[2].Width = 230;
@@ -461,44 +516,36 @@ namespace BTLLTTQ.NhapVaBan
                 cmb_dondh.Focus();
                 return;
             }
-            txt_madonhang.Text = cmb_dondh.Text;
+           
 
           
             
-            LoadInfoHoaDon(); 
-            LoadDataGridView();
+            //LoadInfoHoaDon(); 
+            //LoadDataGridView();
 
-             string ssql = "";
+            // string ssql = "";
 
            
-            //if (rd_ddh.Checked == true)
-            //{
-            //    txt_madonhang.Text = cmb_dondh.Text;
-            //    LoadInfoHoaDon();
-            //    LoadDataGridView();
+            if (rd_ddh.Checked == true)
+            {
+                txt_madonhang.Text = cmb_dondh.Text;
+                LoadInfoHoaDon();
+                LoadDataGridView();
 
-            //}
-            //else if (rd_h.Checked == true)
-            //{
-            //    //SELECT a.MaNoiThat, b.TenNoiThat, a.SoLuong, b.DonGiaBan, a.GiamGia,a.ThanhTien,a.SoDDH,c.MaNV
-            //    //FROM ChiTietHDDH AS a, DMNoiThat AS b ,DonDatHang as c
-            //    //WHERE a.MaNoithat = 'NT004' AND a.MaNoiThat = b.MaNoiThat and a.SoDDH = c.SoDDH
-            //}
-            //else if (rd_kh.Checked == true)
-            //{
-            //    //SELECT a.MaNoiThat, b.TenNoiThat, a.SoLuong, 
-            //    //b.DonGiaBan, a.GiamGia,a.ThanhTien,a.SoDDH ,c.MaNV FROM ChiTietHDDH AS a, 
-            //    //DMNoiThat AS b,DonDatHang as c WHERE MaKhach = 'KH001'
-            //    //AND a.MaNoiThat = b.MaNoiThat and c.SoDDH = a.SoDDH
-            //}
-            //else if (rd_nv.Checked == true)
-            //{
-            //    //SELECT a.MaNoiThat, b.TenNoiThat, a.SoLuong, 
-            //    // b.DonGiaBan, a.GiamGia,a.ThanhTien,a.SoDDH,c.MaKhach FROM ChiTietHDDH AS a, 
-            //    //DMNoiThat AS b,DonDatHang as c WHERE MaNV = 'NV001'
-            //    //AND a.MaNoiThat = b.MaNoiThat and c.SoDDH = a.SoDDH
-
-            //}
+            }
+            else if (rd_h.Checked == true)
+            {
+                LoadDataGridViewSearchType();
+                
+            }
+            else if (rd_kh.Checked == true)
+            {
+                LoadDataGridViewSearchType();
+            }
+            else if (rd_nv.Checked == true)
+            {
+                LoadDataGridViewSearchType();
+            }
 
 
 
@@ -748,32 +795,40 @@ namespace BTLLTTQ.NhapVaBan
         private void btn_xoa_Click(object sender, EventArgs e)
         {
             double sl, slcon, slxoa;
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if(rd_ddh.Checked!=true)
             {
-                string sql = "SELECT SoDDH,SoLuong FROM ChiTietHDDH WHERE SoDDH = N'" + txt_madonhang.Text + "'";
-                System.Data.DataTable NoiThat = functions.GetDataToTable(sql);
-                for (int hang = 0; hang <= NoiThat.Rows.Count - 1; hang++)
+                if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                   
-                    sl = Convert.ToDouble(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + NoiThat.Rows[hang][0].ToString() + "'"));
-                    slxoa = Convert.ToDouble(NoiThat.Rows[hang][1].ToString());
-                    slcon = sl + slxoa;
-                    sql = "UPDATE DMNoiThat SET SoLuong =" + slcon + " WHERE MaNoiThat= N'" + NoiThat.Rows[hang][0].ToString() + "'";
-                    functions.UpdateData(sql);
+                    string sql = "SELECT SoDDH,SoLuong FROM ChiTietHDDH WHERE SoDDH = N'" + txt_madonhang.Text + "'";
+                    System.Data.DataTable NoiThat = functions.GetDataToTable(sql);
+                    for (int hang = 0; hang <= NoiThat.Rows.Count - 1; hang++)
+                    {
+
+                        sl = Convert.ToDouble(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + NoiThat.Rows[hang][0].ToString() + "'"));
+                        slxoa = Convert.ToDouble(NoiThat.Rows[hang][1].ToString());
+                        slcon = sl + slxoa;
+                        sql = "UPDATE DMNoiThat SET SoLuong =" + slcon + " WHERE MaNoiThat= N'" + NoiThat.Rows[hang][0].ToString() + "'";
+                        functions.UpdateData(sql);
+                    }
+
+                    //Xóa chi tiết hóa đơn
+                    sql = "DELETE ChiTietHDDH WHERE SoDDH=N'" + txt_madonhang.Text + "'";
+                    functions.RunSqlDel(sql);
+
+                    //Xóa hóa đơn
+                    sql = "DELETE DonDatHang WHERE SoDDH=N'" + txt_madonhang.Text + "'";
+                    functions.RunSqlDel(sql);
+                    ResetValues();
+                    LoadDataGridView();
+                    btn_xoa.Enabled = false;
+                    btn_xuat.Enabled = false;
                 }
-
-                //Xóa chi tiết hóa đơn
-                sql = "DELETE ChiTietHDDH WHERE SoDDH=N'" + txt_madonhang.Text + "'";
-                functions.RunSqlDel(sql);
-
-                //Xóa hóa đơn
-                sql = "DELETE DonDatHang WHERE SoDDH=N'" + txt_madonhang.Text + "'";
-                functions.RunSqlDel(sql);
-                ResetValues();
-                LoadDataGridView();
-                btn_xoa.Enabled = false;
-                btn_xuat.Enabled = false;
+            }else
+            {
+                MessageBox.Show("Bạn chỉ có thể xóa khi chọn mã đơn đặt hàng");
+                return;
             }
+            
         }
 
         private void rd_kh_CheckedChanged(object sender, EventArgs e)
@@ -787,6 +842,7 @@ namespace BTLLTTQ.NhapVaBan
                 btn_luu.Enabled = false;
                 btn_Sua.Enabled = false;
                 btn_xuat.Enabled = false;
+                dgvHDBanHang.Columns.Clear();
                 MessageBox.Show("Ok b");
             }
                
@@ -803,6 +859,7 @@ namespace BTLLTTQ.NhapVaBan
                 btn_luu.Enabled = false;
                 btn_Sua.Enabled = false;
                 btn_xuat.Enabled = false;
+                dgvHDBanHang.Columns.Clear();
                 MessageBox.Show("Ok b");
             }
         }
@@ -818,6 +875,7 @@ namespace BTLLTTQ.NhapVaBan
                 btn_luu.Enabled = false;
                 btn_Sua.Enabled = false;
                 btn_xuat.Enabled = false;
+                dgvHDBanHang.Columns.Clear();
                 MessageBox.Show("Ok b");
             }
         }
@@ -829,6 +887,7 @@ namespace BTLLTTQ.NhapVaBan
                 cmb_dondh.Items.Clear();
                 cmb_dondh.Text = "";
                 functions.FillComboBox("Select SoDDH from DonDatHang", cmb_dondh);
+                dgvHDBanHang.Columns.Clear();
                 //MessageBox.Show("Ok b");
             }
         }
