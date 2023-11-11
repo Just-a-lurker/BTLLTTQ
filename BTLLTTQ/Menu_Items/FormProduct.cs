@@ -177,7 +177,7 @@ namespace BTLLTTQ.Menu
 
 		private void btntim_Click(object sender, EventArgs e)
 		{
-			if (checkMaCT(txtMaSP.Text,comboBox1.Text, comboBox4.Text, comboBox5.Text, float.Parse(textBox2.Text)) )
+			if (!(txtMaSP.Text == "" || txtTenSP.Text == "" || textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "") && checkMaCT(txtMaSP.Text,comboBox1.Text, comboBox4.Text, comboBox5.Text, float.Parse(textBox2.Text)) )
 			{
 				DataTable dt = db.DocBang("Select * from dmnoithat where manoithat =N'" + txtMaSP.Text + "' and maloai  =N'" + comboBox1.Text + "' and machatlieu  =N'" + comboBox4.Text + "' and manuocsx =N'" + comboBox5.Text + "' and DonGiaNhap =" + float.Parse(textBox2.Text));
 				dataGridView1.DataSource = dt;
