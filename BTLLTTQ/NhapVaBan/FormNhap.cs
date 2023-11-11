@@ -61,12 +61,17 @@ namespace BTLLTTQ.NhapVaBan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-                db.CapNhatDuLieu("delete from hoadonnhap where sohdn =N'" + txtHDN.Text + "'");
-                txtHDN.Text = txtTongTien.Text = "";
+            if (checkMa(txtHDN.Text))
+            {
+				db.CapNhatDuLieu("delete from chitiethdn where sohdn =N'" + txtHDN.Text + "'");
+				db.CapNhatDuLieu("delete from hoadonnhap where sohdn =N'" + txtHDN.Text + "'");
+				txtHDN.Text = txtTongTien.Text = "";
                 cbbMaNV.SelectedIndex = -1;
                 cBBmaNCC.SelectedIndex = -1;
                 DataTable dt = db.DocBang("Select * from hoadonnhap");
                 dataGridView1.DataSource = dt;
+            }
+            else MessageBox.Show("Khong tim thay HD");
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -151,5 +156,10 @@ namespace BTLLTTQ.NhapVaBan
             DataTable dt = db.DocBang("Select * from hoadonnhap");
             dataGridView1.DataSource = dt;
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+            this.Close();
+		}
+	}
 }
