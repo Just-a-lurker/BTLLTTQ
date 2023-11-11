@@ -13,12 +13,13 @@ namespace BTLLTTQ.Menu
 {
     public partial class FormProduct : Form
     {
-		private BindingList<Product> productList = new BindingList<Product>();
+		Sql db = new Sql();
 
 		public FormProduct()
         {
             InitializeComponent();
-			dataGridView.DataSource = productList;
+			DataTable dt = db.DocBang("Select * from dmnoithat");
+			dataGridView1.DataSource = dt;
 		}
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,48 +32,48 @@ namespace BTLLTTQ.Menu
 
 		}
 
+		bool checkMa(string k)
+		{
+			DataTable dt = db.DocBang("Select * from dmnoithat where manoithat =N'" + k + "'");
+			if (dt.Rows.Count > 0)
+			{
+				return true;
+			}
+			return false;
+		}
+
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			// Tạo một sản phẩm mới từ thông tin nhập vào
-			Product newProduct = new Product() { MaSP = txtMaSP.Text, TenSP = txtTenSP.Text };
-
-			// Kiểm tra xem mã sản phẩm đã tồn tại chưa
-			if (!productList.Any(p => p.MaSP == newProduct.MaSP))
+			if (txtMaSP.Text == "" || txtTenSP.Text == "" || textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "")
 			{
-				productList.Add(newProduct);
+				MessageBox.Show("Check lai DL");
 			}
 			else
 			{
-				MessageBox.Show("Mã sản phẩm đã tồn tại.");
+				if (!checkMa(txtMaSP.Text))
+				{
+					db.CapNhatDuLieu("insert into dmnoithat values (" + txtMaSP.Text + ",N'" + txtTenSP.Text + "',N'" + comboBox1.Text + "','" + dateNgayNhap.Value.Date.ToString("yyyyMMdd") + "'," + int.Parse(txtTongTien.Text) + ")");
+					txtHDN.Text = txtTongTien.Text = "";
+					cbbMaNV.SelectedIndex = -1;
+					cBBmaNCC.SelectedIndex = -1;
+					DataTable dt = db.DocBang("Select * from dmnoithat");
+					dataGridView1.DataSource = dt;
+				}
+				else
+				{
+					MessageBox.Show("Da co HDN voi soHDN nay, hay SD sua thay vi them");
+				}
 			}
 		}
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			if (dataGridView.CurrentRow != null)
-			{
-				// Lấy sản phẩm hiện tại được chọn trong DataGridView
-				Product currentProduct = dataGridView.CurrentRow.DataBoundItem as Product;
-				if (currentProduct != null)
-				{
-					// Cập nhật thông tin từ các textbox
-					currentProduct.MaSP = txtMaSP.Text;
-					currentProduct.TenSP = txtTenSP.Text;
 
-					// Cập nhật DataGridView
-					dataGridView.Refresh();
-				}
-			}
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
-			if (dataGridView.CurrentRow != null)
-			{
-				// Xóa sản phẩm được chọn khỏi danh sách
-				Product currentProduct = dataGridView.CurrentRow.DataBoundItem as Product;
-				productList.Remove(currentProduct);
-			}
+
 		}
 
 		private void btnThoat_Click(object sender, EventArgs e)
@@ -86,11 +87,15 @@ namespace BTLLTTQ.Menu
 			FormCaLamCongViec formCaLamCongViec = new FormCaLamCongViec(true);
 			formCaLamCongViec.ShowDialog();
 		}
-	}
 
-	public class Product
-	{
-		public string MaSP { get; set; }
-		public string TenSP { get; set; }
+		private void FormProduct_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
 	}
 }
