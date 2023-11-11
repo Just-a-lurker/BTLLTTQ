@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTLLTTQ.Menu_Items;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -78,6 +79,12 @@ namespace BTLLTTQ.Menu
 		{
 			// Đóng form
 			this.Close();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			FormCaLamCongViec formCaLamCongViec = new FormCaLamCongViec(true);
+			formCaLamCongViec.ShowDialog();
 		}
 	}
 

@@ -14,10 +14,25 @@ namespace BTLLTTQ.Menu_Items
 	public partial class FormCaLamCongViec : Form
 	{
 		Sql db = new Sql();
-		bool cv;
-		public FormCaLamCongViec()
+		bool cv,sp;
+		int a = -1;
+		public FormCaLamCongViec(bool a)
 		{
 			InitializeComponent();
+			sp = a;
+			if(a)
+			{
+				btnCaLam.Visible = false;
+				btnCongViec.Visible = false;
+			}
+			else
+			{
+				btnTheLoai.Visible = false;
+				btnChatLieu.Visible = false;
+				btnKieuDang.Visible = false;
+				btnNuocsx.Visible = false;
+				btnMauSac.Visible = false;
+			}
 		}
 
 		private void btnCongViec_Click(object sender, EventArgs e)
@@ -38,23 +53,61 @@ namespace BTLLTTQ.Menu_Items
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			if (cv && !checkMa(txtMa.Text))
+			if (checkMa(txtMa.Text)) { MessageBox.Show("Ma da ton tai"); return; }
+			if (!sp)
+			{
+			if (cv)
 			{
 				db.CapNhatDuLieu("insert into congviec values ("+"N'" + txtMa.Text + "',N'" + txtTen.Text+ "')");
 				DataTable dt = db.DocBang("Select * from congviec");
 				dgvCLCV.DataSource = dt;
 			}
-			else if (!cv && !checkMa(txtMa.Text))
+			else if (!cv)
 			{
 				db.CapNhatDuLieu("insert into calam values (" + "N'" + txtMa.Text + "',N'" + txtTen.Text + "')");
 				DataTable dt = db.DocBang("Select * from calam");
 				dgvCLCV.DataSource = dt;
 			}
-			else MessageBox.Show("Ma da ton tai");
+			}
+			else if (sp)
+			{
+				if (a == 1)
+				{
+					db.CapNhatDuLieu("insert into theloai values (" + "N'" + txtMa.Text + "',N'" + txtTen.Text + "')");
+					DataTable dt = db.DocBang("Select * from theloai");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 2)
+				{
+					db.CapNhatDuLieu("insert into kieudang values (" + "N'" + txtMa.Text + "',N'" + txtTen.Text + "')");
+					DataTable dt = db.DocBang("Select * from kieudang");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 3)
+				{
+					db.CapNhatDuLieu("insert into mausac values (" + "N'" + txtMa.Text + "',N'" + txtTen.Text + "')");
+					DataTable dt = db.DocBang("Select * from mausac");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 4)
+				{
+					db.CapNhatDuLieu("insert into chatlieu values (" + "N'" + txtMa.Text + "',N'" + txtTen.Text + "')");
+					DataTable dt = db.DocBang("Select * from chatlieu");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 5)
+				{
+					db.CapNhatDuLieu("insert into nuocsx values (" + "N'" + txtMa.Text + "',N'" + txtTen.Text + "')");
+					DataTable dt = db.DocBang("Select * from nuocsx");
+					dgvCLCV.DataSource = dt;
+				}
+			}
 		}
 
 		bool checkMa(string k)
 		{
+			if (!sp)
+			{
 			if (cv)
 			{
 				DataTable dt = db.DocBang("Select * from congviec where macv =N'" + k + "'");
@@ -73,6 +126,56 @@ namespace BTLLTTQ.Menu_Items
 				}
 				return false;
 			}
+			}
+			else
+			{
+				if (a==1)
+				{
+					DataTable dt = db.DocBang("Select * from theloai where maloai =N'" + k + "'");
+					if (dt.Rows.Count > 0)
+					{
+						return true;
+					}
+					return false;
+				}
+				else if (a == 2)
+				{
+					DataTable dt = db.DocBang("Select * from kieudang where makieu =N'" + k + "'");
+					if (dt.Rows.Count > 0)
+					{
+						return true;
+					}
+					return false;
+				}
+				else if (a == 3)
+				{
+					DataTable dt = db.DocBang("Select * from mausac where mamau =N'" + k + "'");
+					if (dt.Rows.Count > 0)
+					{
+						return true;
+					}
+					return false;
+				}
+				else if (a == 4)
+				{
+					DataTable dt = db.DocBang("Select * from chatlieu where machatlieu =N'" + k + "'");
+					if (dt.Rows.Count > 0)
+					{
+						return true;
+					}
+					return false;
+				}
+				else if (a == 5)
+				{
+					DataTable dt = db.DocBang("Select * from nuocsx where manuocsx =N'" + k + "'");
+					if (dt.Rows.Count > 0)
+					{
+						return true;
+					}
+					return false;
+				}
+			}
+			return false;
 			
 		}
 
@@ -86,54 +189,195 @@ namespace BTLLTTQ.Menu_Items
 		private void button1_Click(object sender, EventArgs e)
 		{
 			//Sua
-			if (cv && checkMa(txtMa.Text))
+			if (!checkMa(txtMa.Text)) { MessageBox.Show("Ma chua ton tai"); return; }
+			if (!sp)
 			{
+				if (cv)
+				{
 				db.CapNhatDuLieu("update congviec set tencv=N'" + txtTen.Text +"' where macv =N'" + txtMa.Text + "'");
 				DataTable dt = db.DocBang("Select * from congviec");
 				dgvCLCV.DataSource = dt;
-			}
-			else if (!cv && checkMa(txtMa.Text))
-			{
+				}
+				else if (!cv)
+				{
 				db.CapNhatDuLieu("update calam set tenca=N'" + txtTen.Text + "' where maca =N'" + txtMa.Text + "'");
 				DataTable dt = db.DocBang("Select * from calam");
 				dgvCLCV.DataSource = dt;
+				}
 			}
-			else MessageBox.Show("Ma chua ton tai");
+			else if (sp)
+			{
+				if (a == 1)
+				{
+					db.CapNhatDuLieu("update theloai set tenloai=N'" + txtTen.Text + "' where maloai =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from theloai");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 2)
+				{
+					db.CapNhatDuLieu("update kieudang set tenkieu=N'" + txtTen.Text + "' where makieu =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from kieudang");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 3)
+				{
+					db.CapNhatDuLieu("update mausac set tenmau=N'" + txtTen.Text + "' where mamau =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from mausac");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 4)
+				{
+					db.CapNhatDuLieu("update chatlieu set tenchatlieu=N'" + txtTen.Text + "' where machatlieu =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from chatlieu");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 5)
+				{
+					db.CapNhatDuLieu("update nuocsx set tennuocsx=N'" + txtTen.Text + "' where manuocsx =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from nuocsx");
+					dgvCLCV.DataSource = dt;
+				}
+			}
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
 			if(!checkMa(txtMa.Text)) {MessageBox.Show("Ma chua ton tai"); return; }
-			if (cv)
+			if (!sp)
 			{
-				db.CapNhatDuLieu("delete from congviec where macv =N'" + txtMa.Text + "'");
-				DataTable dt = db.DocBang("Select * from congviec");
-				dgvCLCV.DataSource = dt;
+				if (cv)
+				{
+					db.CapNhatDuLieu("delete from congviec where macv =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from congviec");
+					dgvCLCV.DataSource = dt;
+				}
+				else if (!cv)
+				{
+					db.CapNhatDuLieu("delete from calam where maca =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from calam");
+					dgvCLCV.DataSource = dt;
+				}
 			}
-			else if (!cv)
+			else
 			{
-				db.CapNhatDuLieu("delete from calam where maca =N'" + txtMa.Text + "'");
-				DataTable dt = db.DocBang("Select * from calam");
-				dgvCLCV.DataSource = dt;
+				if (a == 1)
+				{
+					db.CapNhatDuLieu("delete from theloai where maloai =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from theloai");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 2)
+				{
+					db.CapNhatDuLieu("delete from kieudang where makieu =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from kieudang");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 3)
+				{
+					db.CapNhatDuLieu("delete from mausac where mamau =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from mausac");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 4)
+				{
+					db.CapNhatDuLieu("delete from chatlieu where machatlieu =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from chatlieu");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 5)
+				{
+					db.CapNhatDuLieu("delete from nuocsx where manuocsx =N'" + txtMa.Text + "'");
+					DataTable dt = db.DocBang("Select * from nuocsx");
+					dgvCLCV.DataSource = dt;
+				}
 			}
+
 		}
 
 		private void btnTim_Click(object sender, EventArgs e)
 		{
-			if (cv && checkMa(txtMa.Text))
+			if (!checkMa(txtMa.Text)) { MessageBox.Show("Ma chua ton tai"); return; }
+			if (!sp)
 			{
-				DataTable dt = db.DocBang("Select * from congviec where macv =N'" + txtMa.Text + "'");
-				dgvCLCV.DataSource = dt;
+				if (cv)
+				{
+					DataTable dt = db.DocBang("Select * from congviec where macv =N'" + txtMa.Text + "'");
+					dgvCLCV.DataSource = dt;
+				}
+				else if (!cv)
+				{
+					DataTable dt = db.DocBang("Select * from calam where maca =N'" + txtMa.Text + "'");
+					dgvCLCV.DataSource = dt;
+				}
 			}
-			else if (!cv && checkMa(txtMa.Text))
+			else if (sp)
 			{
-				DataTable dt = db.DocBang("Select * from calam where maca =N'" + txtMa.Text + "'");
-				dgvCLCV.DataSource = dt;
+				if (a == 1)
+				{
+					DataTable dt = db.DocBang("Select * from theloai where maloai =N'" + txtMa.Text + "'");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 2)
+				{
+					DataTable dt = db.DocBang("Select * from kieudang where makieu =N'" + txtMa.Text + "'");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 3)
+				{
+					DataTable dt = db.DocBang("Select * from mausac where mamau =N'" + txtMa.Text + "'");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 4)
+				{
+					DataTable dt = db.DocBang("Select * from chatlieu where machatlieu =N'" + txtMa.Text + "'");
+					dgvCLCV.DataSource = dt;
+				}
+				if (a == 5)
+				{
+					DataTable dt = db.DocBang("Select * from nuocsx where manuocsx =N'" + txtMa.Text + "'");
+					dgvCLCV.DataSource = dt;
+				}
 			}
-			else
-			{
-				MessageBox.Show("Khong tim thay HDN nay");
-			}
+		}
+
+		private void btnTheLoai_Click(object sender, EventArgs e)
+		{
+			DataTable dt = db.DocBang("Select * from theloai");
+			dgvCLCV.DataSource = dt;
+			dt.Dispose();
+			a = 1;
+		}
+
+		private void btnKieuDang_Click(object sender, EventArgs e)
+		{
+			DataTable dt = db.DocBang("Select * from kieudang");
+			dgvCLCV.DataSource = dt;
+			dt.Dispose();
+			a = 2;
+		}
+
+		private void btnMauSac_Click(object sender, EventArgs e)
+		{
+			DataTable dt = db.DocBang("Select * from mausac");
+			dgvCLCV.DataSource = dt;
+			dt.Dispose();
+			a = 3;
+		}
+
+		private void btnChatLieu_Click(object sender, EventArgs e)
+		{
+			DataTable dt = db.DocBang("Select * from chatlieu");
+			dgvCLCV.DataSource = dt;
+			dt.Dispose();
+			a = 4;
+		}
+
+		private void btnNuocsx_Click(object sender, EventArgs e)
+		{
+			DataTable dt = db.DocBang("Select * from nuocsx");
+			dgvCLCV.DataSource = dt;
+			dt.Dispose();
+			a = 5;
 		}
 
 		private void FormCaLamCongViec_Click(object sender, EventArgs e)
