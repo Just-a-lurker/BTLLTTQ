@@ -113,6 +113,16 @@ namespace BTLLTTQ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Horizontal_Line {
+            get {
+                object obj = ResourceManager.GetObject("Horizontal Line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Open_Pane {
             get {
                 object obj = ResourceManager.GetObject("Open Pane", resourceCulture);
@@ -176,6 +186,26 @@ namespace BTLLTTQ.Properties {
         internal static System.Drawing.Bitmap Smaller_Network_Connection_Background {
             get {
                 object obj = ResourceManager.GetObject("Smaller Network Connection Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Staff {
+            get {
+                object obj = ResourceManager.GetObject("Staff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Teams_Breakout {
+            get {
+                object obj = ResourceManager.GetObject("Teams Breakout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

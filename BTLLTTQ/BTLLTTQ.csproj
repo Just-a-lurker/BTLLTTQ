@@ -333,5 +333,14 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Horizontal Line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Teams Breakout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Staff.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
