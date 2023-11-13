@@ -33,13 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +55,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dashboard.cs" />
@@ -57,6 +64,12 @@
     </Compile>
     <Compile Include="FormMN.Designer.cs">
       <DependentUpon>FormMN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMNN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMNN.Designer.cs">
+      <DependentUpon>FormMNN.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="Login\Account.cs" />
@@ -183,6 +196,9 @@
     </Compile>
     <EmbeddedResource Include="FormMN.resx">
       <DependentUpon>FormMN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMNN.resx">
+      <DependentUpon>FormMNN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\ChonDB.resx">
       <DependentUpon>ChonDB.cs</DependentUpon>
@@ -341,6 +357,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\IconImages\Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Rounded Square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\395121130_657484653168360_1957556047445657044_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\IconImages\Khabanh1140x761.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

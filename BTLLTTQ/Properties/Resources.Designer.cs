@@ -63,6 +63,16 @@ namespace BTLLTTQ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _395121130_657484653168360_1957556047445657044_n {
+            get {
+                object obj = ResourceManager.GetObject("395121130_657484653168360_1957556047445657044_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Back {
             get {
                 object obj = ResourceManager.GetObject("Back", resourceCulture);
@@ -113,9 +123,39 @@ namespace BTLLTTQ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Home1 {
+            get {
+                object obj = ResourceManager.GetObject("Home1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Horizontal_Line {
             get {
                 object obj = ResourceManager.GetObject("Horizontal Line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Khabanh1140x761 {
+            get {
+                object obj = ResourceManager.GetObject("Khabanh1140x761", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Menu {
+            get {
+                object obj = ResourceManager.GetObject("Menu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +186,16 @@ namespace BTLLTTQ.Properties {
         internal static System.Drawing.Bitmap Purchase_Order {
             get {
                 object obj = ResourceManager.GetObject("Purchase Order", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rounded_Square {
+            get {
+                object obj = ResourceManager.GetObject("Rounded Square", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

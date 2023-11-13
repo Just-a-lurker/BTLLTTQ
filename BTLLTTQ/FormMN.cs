@@ -89,7 +89,7 @@ namespace BTLLTTQ
            start_date.Value = DateTime.Today;
             end_date.Value = DateTime.Now;
             LoadData();
-            DisableCustomDates();
+            //DisableCustomDates();
         }
 
         private void btn_l7d_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace BTLLTTQ
             start_date.Value = DateTime.Today.AddDays(-7);
             end_date.Value = DateTime.Now;
             LoadData();
-            DisableCustomDates();
+            //DisableCustomDates();
         }
 
         private void btn_l3d_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace BTLLTTQ
             start_date.Value = DateTime.Today.AddDays(-30);
             end_date.Value = DateTime.Now;
             LoadData();
-            DisableCustomDates();
+            //DisableCustomDates();
         }
 
         private void btn_thismonth_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace BTLLTTQ
             start_date.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
             end_date.Value = DateTime.Now;
             LoadData();
-            DisableCustomDates();
+            //DisableCustomDates();
         }
 
         private void btn_ct_Click(object sender, EventArgs e)
@@ -204,60 +204,10 @@ namespace BTLLTTQ
         {
 
         }
-        private void DisableButton()
-        {
-            foreach (Control previousBtn in panel6.Controls)
-            {
-                if (previousBtn.GetType() == typeof(System.Windows.Forms.Button))
-                {
-                    previousBtn.BackColor = Color.FromArgb(10, 18, 80);
-                    previousBtn.ForeColor = Color.WhiteSmoke;
-                    previousBtn.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                }
-            }
-        }
-        private void ActivateButton(object btnsender)
-        {
-            if (btnsender != null)
-            {
-                DisableButton();
-                if (currentButton != (System.Windows.Forms.Button)btnsender)
-                {
-                    Color color = SelectThemeColor();
-                    currentButton = (System.Windows.Forms.Button)btnsender;
-                    currentButton.BackColor = color;
-                    currentButton.ForeColor = Color.White;
-                    panel8.BackColor = color;
-                    panel2.BackColor = BackGR.ChangeColorBrightness(color, -0.3);
-                }
-            }
-        }
-        private Color SelectThemeColor()
-        {
-            int index = random.Next(BackGR.ColorList.Count);
 
-            while (tempIndex == index)
-            {
-                random.Next(BackGR.ColorList.Count);
-            }
-            tempIndex = index;
-            string color = BackGR.ColorList[index];
-            return ColorTranslator.FromHtml(color);
-        }
-        public void OpenChildForm(Form childForm, object btnSender)
+        private void FormMN_Load(object sender, EventArgs e)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            ActivateButton(btnSender);
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            this.panel1.Controls.Add(childForm);
-            this.panel1.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            label1.Text = childForm.Text;
+
         }
     }
 }

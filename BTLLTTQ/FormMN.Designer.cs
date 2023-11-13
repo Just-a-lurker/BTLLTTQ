@@ -36,19 +36,6 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btn_d = new System.Windows.Forms.Button();
-            this.btn_resize = new System.Windows.Forms.Button();
-            this.btn_close = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.btn_pn = new System.Windows.Forms.Button();
-            this.btn_rp = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.tbn_p = new System.Windows.Forms.Button();
-            this.btn_h = new System.Windows.Forms.Button();
             this.start_date = new System.Windows.Forms.DateTimePicker();
             this.end_date = new System.Windows.Forms.DateTimePicker();
             this.btn_thismonth = new System.Windows.Forms.Button();
@@ -79,8 +66,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.btn_lo.SuspendLayout();
@@ -91,203 +76,11 @@
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(100)))));
-            this.panel6.Controls.Add(this.button7);
-            this.panel6.Controls.Add(this.button6);
-            this.panel6.Controls.Add(this.btn_pn);
-            this.panel6.Controls.Add(this.btn_rp);
-            this.panel6.Controls.Add(this.button3);
-            this.panel6.Controls.Add(this.tbn_p);
-            this.panel6.Controls.Add(this.btn_h);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(293, 771);
-            this.panel6.TabIndex = 9;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(175)))), ((int)(((byte)(55)))));
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(293, 173);
-            this.panel7.TabIndex = 0;
-            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseDown);
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.btn_d);
-            this.panel8.Controls.Add(this.btn_resize);
-            this.panel8.Controls.Add(this.btn_close);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(293, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1296, 55);
-            this.panel8.TabIndex = 10;
-            this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseDown);
-            // 
-            // btn_d
-            // 
-            this.btn_d.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_d.FlatAppearance.BorderSize = 0;
-            this.btn_d.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_d.Image = global::BTLLTTQ.Properties.Resources.Horizontal_Line;
-            this.btn_d.Location = new System.Drawing.Point(1143, 0);
-            this.btn_d.Name = "btn_d";
-            this.btn_d.Size = new System.Drawing.Size(52, 55);
-            this.btn_d.TabIndex = 2;
-            this.btn_d.UseVisualStyleBackColor = true;
-            this.btn_d.Click += new System.EventHandler(this.btn_d_Click);
-            // 
-            // btn_resize
-            // 
-            this.btn_resize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_resize.FlatAppearance.BorderSize = 0;
-            this.btn_resize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_resize.Image = global::BTLLTTQ.Properties.Resources.Teams_Breakout;
-            this.btn_resize.Location = new System.Drawing.Point(1195, 0);
-            this.btn_resize.Name = "btn_resize";
-            this.btn_resize.Size = new System.Drawing.Size(53, 55);
-            this.btn_resize.TabIndex = 1;
-            this.btn_resize.UseVisualStyleBackColor = true;
-            this.btn_resize.Click += new System.EventHandler(this.btn_resize_Click);
-            // 
-            // btn_close
-            // 
-            this.btn_close.BackColor = System.Drawing.Color.Transparent;
-            this.btn_close.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Image = global::BTLLTTQ.Properties.Resources.Close;
-            this.btn_close.Location = new System.Drawing.Point(1248, 0);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(48, 55);
-            this.btn_close.TabIndex = 0;
-            this.btn_close.UseVisualStyleBackColor = false;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Image = global::BTLLTTQ.Properties.Resources.Open_Pane;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(0, 647);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(293, 79);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Logout";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = global::BTLLTTQ.Properties.Resources.Customer;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 568);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(293, 79);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Staff";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // btn_pn
-            // 
-            this.btn_pn.BackColor = System.Drawing.Color.Transparent;
-            this.btn_pn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_pn.FlatAppearance.BorderSize = 0;
-            this.btn_pn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pn.ForeColor = System.Drawing.Color.White;
-            this.btn_pn.Image = global::BTLLTTQ.Properties.Resources.Staff;
-            this.btn_pn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_pn.Location = new System.Drawing.Point(0, 489);
-            this.btn_pn.Name = "btn_pn";
-            this.btn_pn.Size = new System.Drawing.Size(293, 79);
-            this.btn_pn.TabIndex = 5;
-            this.btn_pn.Text = "Partner";
-            this.btn_pn.UseVisualStyleBackColor = false;
-            // 
-            // btn_rp
-            // 
-            this.btn_rp.BackColor = System.Drawing.Color.Transparent;
-            this.btn_rp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_rp.FlatAppearance.BorderSize = 0;
-            this.btn_rp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rp.ForeColor = System.Drawing.Color.White;
-            this.btn_rp.Image = global::BTLLTTQ.Properties.Resources.Graph_Report;
-            this.btn_rp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_rp.Location = new System.Drawing.Point(0, 410);
-            this.btn_rp.Name = "btn_rp";
-            this.btn_rp.Size = new System.Drawing.Size(293, 79);
-            this.btn_rp.TabIndex = 4;
-            this.btn_rp.Text = "Reporting";
-            this.btn_rp.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::BTLLTTQ.Properties.Resources.Purchase_Order;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 331);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(293, 79);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Orders";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // tbn_p
-            // 
-            this.tbn_p.BackColor = System.Drawing.Color.Transparent;
-            this.tbn_p.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbn_p.FlatAppearance.BorderSize = 0;
-            this.tbn_p.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbn_p.ForeColor = System.Drawing.Color.White;
-            this.tbn_p.Image = global::BTLLTTQ.Properties.Resources.Shopping_Cart;
-            this.tbn_p.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbn_p.Location = new System.Drawing.Point(0, 252);
-            this.tbn_p.Name = "tbn_p";
-            this.tbn_p.Size = new System.Drawing.Size(293, 79);
-            this.tbn_p.TabIndex = 2;
-            this.tbn_p.Text = "Products";
-            this.tbn_p.UseVisualStyleBackColor = false;
-            // 
-            // btn_h
-            // 
-            this.btn_h.BackColor = System.Drawing.Color.Transparent;
-            this.btn_h.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_h.FlatAppearance.BorderSize = 0;
-            this.btn_h.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_h.ForeColor = System.Drawing.Color.White;
-            this.btn_h.Image = global::BTLLTTQ.Properties.Resources.Home;
-            this.btn_h.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_h.Location = new System.Drawing.Point(0, 173);
-            this.btn_h.Name = "btn_h";
-            this.btn_h.Size = new System.Drawing.Size(293, 79);
-            this.btn_h.TabIndex = 1;
-            this.btn_h.Text = "Home";
-            this.btn_h.UseVisualStyleBackColor = false;
-            // 
             // start_date
             // 
             this.start_date.CustomFormat = "MMM dd,yyyy";
             this.start_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.start_date.Location = new System.Drawing.Point(398, 63);
+            this.start_date.Location = new System.Drawing.Point(111, 21);
             this.start_date.Margin = new System.Windows.Forms.Padding(4);
             this.start_date.Name = "start_date";
             this.start_date.Size = new System.Drawing.Size(170, 28);
@@ -297,7 +90,7 @@
             // 
             this.end_date.CustomFormat = "MMM dd,yyyy";
             this.end_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.end_date.Location = new System.Drawing.Point(576, 62);
+            this.end_date.Location = new System.Drawing.Point(289, 20);
             this.end_date.Margin = new System.Windows.Forms.Padding(4);
             this.end_date.Name = "end_date";
             this.end_date.Size = new System.Drawing.Size(170, 28);
@@ -305,7 +98,7 @@
             // 
             // btn_thismonth
             // 
-            this.btn_thismonth.Location = new System.Drawing.Point(1370, 63);
+            this.btn_thismonth.Location = new System.Drawing.Point(1083, 21);
             this.btn_thismonth.Margin = new System.Windows.Forms.Padding(4);
             this.btn_thismonth.Name = "btn_thismonth";
             this.btn_thismonth.Size = new System.Drawing.Size(147, 32);
@@ -316,7 +109,7 @@
             // 
             // btn_l3d
             // 
-            this.btn_l3d.Location = new System.Drawing.Point(1222, 63);
+            this.btn_l3d.Location = new System.Drawing.Point(935, 21);
             this.btn_l3d.Margin = new System.Windows.Forms.Padding(4);
             this.btn_l3d.Name = "btn_l3d";
             this.btn_l3d.Size = new System.Drawing.Size(140, 32);
@@ -327,7 +120,7 @@
             // 
             // btn_l7d
             // 
-            this.btn_l7d.Location = new System.Drawing.Point(1080, 63);
+            this.btn_l7d.Location = new System.Drawing.Point(793, 21);
             this.btn_l7d.Margin = new System.Windows.Forms.Padding(4);
             this.btn_l7d.Name = "btn_l7d";
             this.btn_l7d.Size = new System.Drawing.Size(134, 32);
@@ -338,7 +131,7 @@
             // 
             // btn_ct
             // 
-            this.btn_ct.Location = new System.Drawing.Point(858, 62);
+            this.btn_ct.Location = new System.Drawing.Point(571, 20);
             this.btn_ct.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ct.Name = "btn_ct";
             this.btn_ct.Size = new System.Drawing.Size(103, 32);
@@ -349,7 +142,7 @@
             // 
             // btn_td
             // 
-            this.btn_td.Location = new System.Drawing.Point(969, 62);
+            this.btn_td.Location = new System.Drawing.Point(682, 20);
             this.btn_td.Margin = new System.Windows.Forms.Padding(4);
             this.btn_td.Name = "btn_td";
             this.btn_td.Size = new System.Drawing.Size(103, 32);
@@ -360,7 +153,7 @@
             // 
             // btn_ok
             // 
-            this.btn_ok.Location = new System.Drawing.Point(782, 61);
+            this.btn_ok.Location = new System.Drawing.Point(495, 19);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(69, 34);
             this.btn_ok.TabIndex = 2;
@@ -391,7 +184,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.orders);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(297, 123);
+            this.panel1.Location = new System.Drawing.Point(10, 81);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(272, 111);
             this.panel1.TabIndex = 3;
@@ -419,7 +212,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.ttrevenue);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(576, 123);
+            this.panel2.Location = new System.Drawing.Point(289, 81);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(400, 111);
             this.panel2.TabIndex = 4;
@@ -447,7 +240,7 @@
             this.btn_lo.BackColor = System.Drawing.Color.White;
             this.btn_lo.Controls.Add(this.ttprofit);
             this.btn_lo.Controls.Add(this.label12);
-            this.btn_lo.Location = new System.Drawing.Point(982, 123);
+            this.btn_lo.Location = new System.Drawing.Point(695, 81);
             this.btn_lo.Name = "btn_lo";
             this.btn_lo.Size = new System.Drawing.Size(604, 111);
             this.btn_lo.TabIndex = 5;
@@ -459,7 +252,7 @@
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(297, 240);
+            this.chart1.Location = new System.Drawing.Point(10, 198);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -481,7 +274,7 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(1105, 240);
+            this.chart2.Location = new System.Drawing.Point(818, 198);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series2.ChartArea = "ChartArea1";
@@ -573,7 +366,7 @@
             this.panel4.Controls.Add(this.nb_customers);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(296, 560);
+            this.panel4.Location = new System.Drawing.Point(9, 518);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(220, 207);
             this.panel4.TabIndex = 4;
@@ -603,7 +396,7 @@
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.dataGridView1);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(516, 560);
+            this.panel5.Location = new System.Drawing.Point(229, 518);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(583, 207);
             this.panel5.TabIndex = 8;
@@ -611,10 +404,8 @@
             // FormMN
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(1589, 771);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel6);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(1301, 729);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.chart2);
@@ -635,10 +426,9 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FormMN_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMN_MouseDown);
             this.Resize += new System.EventHandler(this.FormMN_Resize);
-            this.panel6.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -657,19 +447,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button btn_d;
-        private System.Windows.Forms.Button btn_resize;
-        private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button btn_pn;
-        private System.Windows.Forms.Button btn_rp;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button tbn_p;
-        private System.Windows.Forms.Button btn_h;
         private System.Windows.Forms.DateTimePicker start_date;
         private System.Windows.Forms.DateTimePicker end_date;
         private System.Windows.Forms.Button btn_thismonth;
