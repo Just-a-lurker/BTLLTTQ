@@ -248,7 +248,7 @@ namespace BTLLTTQ.Menu_Items
 
 		private void btnCLCV_Click(object sender, EventArgs e)
 		{
-            FormCaLamCongViec formCaLamCongViec = new FormCaLamCongViec();
+            FormCaLamCongViec formCaLamCongViec = new FormCaLamCongViec(false);
             formCaLamCongViec.ShowDialog();
 		}
 	}

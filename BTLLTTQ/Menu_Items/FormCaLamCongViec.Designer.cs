@@ -39,6 +39,11 @@
 			this.labelMa = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtTen = new System.Windows.Forms.TextBox();
+			this.btnNuocsx = new System.Windows.Forms.Button();
+			this.btnChatLieu = new System.Windows.Forms.Button();
+			this.btnMauSac = new System.Windows.Forms.Button();
+			this.btnKieuDang = new System.Windows.Forms.Button();
+			this.btnTheLoai = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCLCV)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -56,7 +61,7 @@
 			// 
 			// btnCaLam
 			// 
-			this.btnCaLam.Location = new System.Drawing.Point(353, 210);
+			this.btnCaLam.Location = new System.Drawing.Point(109, 212);
 			this.btnCaLam.Name = "btnCaLam";
 			this.btnCaLam.Size = new System.Drawing.Size(91, 40);
 			this.btnCaLam.TabIndex = 5;
@@ -66,7 +71,7 @@
 			// 
 			// btnCongViec
 			// 
-			this.btnCongViec.Location = new System.Drawing.Point(92, 210);
+			this.btnCongViec.Location = new System.Drawing.Point(12, 211);
 			this.btnCongViec.Name = "btnCongViec";
 			this.btnCongViec.Size = new System.Drawing.Size(91, 40);
 			this.btnCongViec.TabIndex = 6;
@@ -148,11 +153,66 @@
 			this.txtTen.Size = new System.Drawing.Size(121, 20);
 			this.txtTen.TabIndex = 13;
 			// 
+			// btnNuocsx
+			// 
+			this.btnNuocsx.Location = new System.Drawing.Point(497, 165);
+			this.btnNuocsx.Name = "btnNuocsx";
+			this.btnNuocsx.Size = new System.Drawing.Size(91, 40);
+			this.btnNuocsx.TabIndex = 15;
+			this.btnNuocsx.Text = "Load nước sx";
+			this.btnNuocsx.UseVisualStyleBackColor = true;
+			this.btnNuocsx.Click += new System.EventHandler(this.btnNuocsx_Click);
+			// 
+			// btnChatLieu
+			// 
+			this.btnChatLieu.Location = new System.Drawing.Point(497, 211);
+			this.btnChatLieu.Name = "btnChatLieu";
+			this.btnChatLieu.Size = new System.Drawing.Size(91, 40);
+			this.btnChatLieu.TabIndex = 16;
+			this.btnChatLieu.Text = "Load chất liệu";
+			this.btnChatLieu.UseVisualStyleBackColor = true;
+			this.btnChatLieu.Click += new System.EventHandler(this.btnChatLieu_Click);
+			// 
+			// btnMauSac
+			// 
+			this.btnMauSac.Location = new System.Drawing.Point(400, 211);
+			this.btnMauSac.Name = "btnMauSac";
+			this.btnMauSac.Size = new System.Drawing.Size(91, 40);
+			this.btnMauSac.TabIndex = 17;
+			this.btnMauSac.Text = "Load màu sắc";
+			this.btnMauSac.UseVisualStyleBackColor = true;
+			this.btnMauSac.Click += new System.EventHandler(this.btnMauSac_Click);
+			// 
+			// btnKieuDang
+			// 
+			this.btnKieuDang.Location = new System.Drawing.Point(303, 212);
+			this.btnKieuDang.Name = "btnKieuDang";
+			this.btnKieuDang.Size = new System.Drawing.Size(91, 40);
+			this.btnKieuDang.TabIndex = 18;
+			this.btnKieuDang.Text = "Load kiểu dáng";
+			this.btnKieuDang.UseVisualStyleBackColor = true;
+			this.btnKieuDang.Click += new System.EventHandler(this.btnKieuDang_Click);
+			// 
+			// btnTheLoai
+			// 
+			this.btnTheLoai.Location = new System.Drawing.Point(206, 211);
+			this.btnTheLoai.Name = "btnTheLoai";
+			this.btnTheLoai.Size = new System.Drawing.Size(91, 40);
+			this.btnTheLoai.TabIndex = 19;
+			this.btnTheLoai.Text = "Load thể loại";
+			this.btnTheLoai.UseVisualStyleBackColor = true;
+			this.btnTheLoai.Click += new System.EventHandler(this.btnTheLoai_Click);
+			// 
 			// FormCaLamCongViec
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(639, 269);
+			this.Controls.Add(this.btnTheLoai);
+			this.Controls.Add(this.btnKieuDang);
+			this.Controls.Add(this.btnMauSac);
+			this.Controls.Add(this.btnChatLieu);
+			this.Controls.Add(this.btnNuocsx);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.txtTen);
 			this.Controls.Add(this.labelMa);
@@ -186,5 +246,10 @@
 		private System.Windows.Forms.Label labelMa;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox txtTen;
+		private System.Windows.Forms.Button btnNuocsx;
+		private System.Windows.Forms.Button btnChatLieu;
+		private System.Windows.Forms.Button btnMauSac;
+		private System.Windows.Forms.Button btnKieuDang;
+		private System.Windows.Forms.Button btnTheLoai;
 	}
 }
