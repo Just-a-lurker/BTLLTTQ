@@ -20,23 +20,43 @@ namespace BTLLTTQ.Menu
 
         private void label1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
             Formbcdsspchokhachhang f = new Formbcdsspchokhachhang();
             f.ShowDialog();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btn2_Click(object sender, EventArgs e)
         {
             FormTongtiennhaphangcuanv f = new FormTongtiennhaphangcuanv();
             f.ShowDialog();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btn3_Click(object sender, EventArgs e)
         {
             FormTongTienbanhang f = new FormTongTienbanhang();
             f.ShowDialog();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void btn4_Click(object sender, EventArgs e)
         {
             Formbaocaonhacungcap f = new Formbaocaonhacungcap();
             f.ShowDialog();
