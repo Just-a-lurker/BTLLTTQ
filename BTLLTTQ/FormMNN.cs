@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BTLLTTQ.Menu;
 using BTLLTTQ.NhapVaBan;
 using FontAwesome.Sharp;
 namespace BTLLTTQ
@@ -113,7 +114,7 @@ namespace BTLLTTQ
             ActivateButton(sender, RGBColors.color2);
             pictureBox2.Visible = false;
             pictureBox2.Enabled = false;
-            //OpenChildForm(new FormNhap());
+            OpenChildForm(new FormProduct());
         }
 
         private void btn_ord_Click(object sender, EventArgs e)
@@ -121,7 +122,7 @@ namespace BTLLTTQ
             ActivateButton(sender, RGBColors.color3);
             pictureBox2.Visible = false;
             pictureBox2.Enabled = false;
-            //OpenChildForm(new FormDonDatHang());
+            OpenChildForm(new FormDonDatHang());
         }
 
         private void btn_rp_Click(object sender, EventArgs e)
