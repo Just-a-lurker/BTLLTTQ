@@ -34,6 +34,7 @@
             this.mh = new System.Windows.Forms.Label();
             this.cmbomh = new System.Windows.Forms.ComboBox();
             this.cmbothang = new System.Windows.Forms.ComboBox();
+            this.btnxuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,9 +51,9 @@
             // btntim
             // 
             this.btntim.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btntim.Location = new System.Drawing.Point(806, 90);
+            this.btntim.Location = new System.Drawing.Point(707, 46);
             this.btntim.Name = "btntim";
-            this.btntim.Size = new System.Drawing.Size(89, 37);
+            this.btntim.Size = new System.Drawing.Size(188, 37);
             this.btntim.TabIndex = 3;
             this.btntim.Text = "Tìm";
             this.btntim.UseVisualStyleBackColor = true;
@@ -84,7 +85,7 @@
             this.cmbomh.FormattingEnabled = true;
             this.cmbomh.Location = new System.Drawing.Point(236, 46);
             this.cmbomh.Name = "cmbomh";
-            this.cmbomh.Size = new System.Drawing.Size(269, 37);
+            this.cmbomh.Size = new System.Drawing.Size(367, 37);
             this.cmbomh.TabIndex = 5;
             // 
             // cmbothang
@@ -93,14 +94,26 @@
             this.cmbothang.FormattingEnabled = true;
             this.cmbothang.Location = new System.Drawing.Point(236, 118);
             this.cmbothang.Name = "cmbothang";
-            this.cmbothang.Size = new System.Drawing.Size(269, 37);
+            this.cmbothang.Size = new System.Drawing.Size(367, 37);
             this.cmbothang.TabIndex = 6;
+            // 
+            // btnxuat
+            // 
+            this.btnxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxuat.Location = new System.Drawing.Point(707, 118);
+            this.btnxuat.Name = "btnxuat";
+            this.btnxuat.Size = new System.Drawing.Size(188, 37);
+            this.btnxuat.TabIndex = 7;
+            this.btnxuat.Text = "Xuất Excel";
+            this.btnxuat.UseVisualStyleBackColor = true;
+            this.btnxuat.Click += new System.EventHandler(this.btnxuat_Click);
             // 
             // Formbaocaonhacungcap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 581);
+            this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.cmbothang);
             this.Controls.Add(this.cmbomh);
             this.Controls.Add(this.dataGridView1);
@@ -123,5 +136,6 @@
         private System.Windows.Forms.Label mh;
         private System.Windows.Forms.ComboBox cmbomh;
         private System.Windows.Forms.ComboBox cmbothang;
+        private System.Windows.Forms.Button btnxuat;
     }
 }
