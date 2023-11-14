@@ -32,7 +32,6 @@
             this.btntim = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cmbbmathang = new System.Windows.Forms.ComboBox();
-            this.btnxuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +46,7 @@
             // 
             // btntim
             // 
-            this.btntim.Location = new System.Drawing.Point(491, 40);
+            this.btntim.Location = new System.Drawing.Point(645, 38);
             this.btntim.Name = "btntim";
             this.btntim.Size = new System.Drawing.Size(91, 39);
             this.btntim.TabIndex = 2;
@@ -71,25 +70,14 @@
             this.cmbbmathang.FormattingEnabled = true;
             this.cmbbmathang.Location = new System.Drawing.Point(148, 40);
             this.cmbbmathang.Name = "cmbbmathang";
-            this.cmbbmathang.Size = new System.Drawing.Size(290, 37);
+            this.cmbbmathang.Size = new System.Drawing.Size(426, 37);
             this.cmbbmathang.TabIndex = 4;
-            // 
-            // btnxuat
-            // 
-            this.btnxuat.Location = new System.Drawing.Point(633, 40);
-            this.btnxuat.Name = "btnxuat";
-            this.btnxuat.Size = new System.Drawing.Size(103, 39);
-            this.btnxuat.TabIndex = 5;
-            this.btnxuat.Text = "Xuất Excel";
-            this.btnxuat.UseVisualStyleBackColor = true;
-            this.btnxuat.Click += new System.EventHandler(this.btnxuat_Click);
             // 
             // FormTongTienbanhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.cmbbmathang);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btntim);
@@ -109,6 +97,5 @@
         private System.Windows.Forms.Button btntim;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cmbbmathang;
-        private System.Windows.Forms.Button btnxuat;
     }
 }
