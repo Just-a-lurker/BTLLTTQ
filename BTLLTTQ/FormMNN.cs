@@ -113,7 +113,7 @@ namespace BTLLTTQ
             ActivateButton(sender, RGBColors.color2);
             pictureBox2.Visible = false;
             pictureBox2.Enabled = false;
-            //OpenChildForm(new FormDashboard());
+            //OpenChildForm(new FormNhap());
         }
 
         private void btn_ord_Click(object sender, EventArgs e)

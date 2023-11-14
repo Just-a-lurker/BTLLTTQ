@@ -71,7 +71,6 @@
     <Compile Include="FormMNN.Designer.cs">
       <DependentUpon>FormMNN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Functions.cs" />
     <Compile Include="Login\Account.cs" />
     <Compile Include="BackGR.cs" />
     <Compile Include="Login\CDataBase.cs" />
