@@ -38,11 +38,19 @@
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.btn_home = new FontAwesome.Sharp.IconButton();
 			this.btn_pro = new FontAwesome.Sharp.IconButton();
+<<<<<<< Updated upstream
 			this.btn_stf = new FontAwesome.Sharp.IconButton();
+=======
+			this.btn_ord = new FontAwesome.Sharp.IconButton();
+			this.btn_rp = new FontAwesome.Sharp.IconButton();
+			this.btn_stf = new FontAwesome.Sharp.IconButton();
+			this.btn_cst = new FontAwesome.Sharp.IconButton();
+>>>>>>> Stashed changes
 			this.btn_log = new FontAwesome.Sharp.IconButton();
 			this.panelbar = new System.Windows.Forms.Panel();
 			this.lblTitleChildForm = new System.Windows.Forms.Label();
 			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+<<<<<<< Updated upstream
 			this.panel_desktop = new System.Windows.Forms.Panel();
 			this.flp_order = new System.Windows.Forms.FlowLayoutPanel();
 			this.ibtn_order = new FontAwesome.Sharp.IconButton();
@@ -58,6 +66,24 @@
 			this.btn_consumer = new FontAwesome.Sharp.IconButton();
 			this.btn_rp3 = new FontAwesome.Sharp.IconButton();
 			this.btn_rp4 = new FontAwesome.Sharp.IconButton();
+=======
+			this.panel_Desktop = new System.Windows.Forms.Panel();
+			this.panel_cst = new System.Windows.Forms.Panel();
+			this.btn_csm = new FontAwesome.Sharp.IconButton();
+			this.btn_sup = new FontAwesome.Sharp.IconButton();
+			this.ibtn_ctm = new FontAwesome.Sharp.IconButton();
+			this.panel_ord = new System.Windows.Forms.Panel();
+			this.btn_ddh = new FontAwesome.Sharp.IconButton();
+			this.btn_dnh = new FontAwesome.Sharp.IconButton();
+			this.ibtn_odr = new FontAwesome.Sharp.IconButton();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.panel_rp = new System.Windows.Forms.Panel();
+			this.btn_rpt2 = new FontAwesome.Sharp.IconButton();
+			this.btn_rpt1 = new FontAwesome.Sharp.IconButton();
+			this.ibtn_report = new FontAwesome.Sharp.IconButton();
+			this.btn_rpt3 = new FontAwesome.Sharp.IconButton();
+			this.btn_rpt4 = new FontAwesome.Sharp.IconButton();
+>>>>>>> Stashed changes
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.timer2 = new System.Windows.Forms.Timer(this.components);
 			this.timer3 = new System.Windows.Forms.Timer(this.components);
@@ -67,9 +93,17 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panelbar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+<<<<<<< Updated upstream
 			this.flp_order.SuspendLayout();
 			this.panel_report.SuspendLayout();
 			this.flp_cst.SuspendLayout();
+=======
+			this.panel_Desktop.SuspendLayout();
+			this.panel_cst.SuspendLayout();
+			this.panel_ord.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			this.panel_rp.SuspendLayout();
+>>>>>>> Stashed changes
 			this.SuspendLayout();
 			// 
 			// panelbar2
@@ -137,16 +171,23 @@
 			this.panelMenu.Controls.Add(this.panel2);
 			this.panelMenu.Controls.Add(this.btn_home);
 			this.panelMenu.Controls.Add(this.btn_pro);
+<<<<<<< Updated upstream
 			this.panelMenu.Controls.Add(this.flp_order);
 			this.panelMenu.Controls.Add(this.btn_stf);
 			this.panelMenu.Controls.Add(this.flp_cst);
 			this.panelMenu.Controls.Add(this.panel_report);
 			this.panelMenu.Controls.Add(this.btn_log);
+=======
+>>>>>>> Stashed changes
 			this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelMenu.Location = new System.Drawing.Point(0, 0);
 			this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panelMenu.Name = "panelMenu";
+<<<<<<< Updated upstream
 			this.panelMenu.Size = new System.Drawing.Size(232, 924);
+=======
+			this.panelMenu.Size = new System.Drawing.Size(232, 1089);
+>>>>>>> Stashed changes
 			this.panelMenu.TabIndex = 1;
 			// 
 			// panel2
@@ -211,10 +252,56 @@
 			this.btn_pro.UseVisualStyleBackColor = true;
 			this.btn_pro.Click += new System.EventHandler(this.btn_pro_Click);
 			// 
+<<<<<<< Updated upstream
 			// btn_stf
 			// 
 			this.btn_stf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
 			this.btn_stf.Dock = System.Windows.Forms.DockStyle.Top;
+=======
+			// btn_ord
+			// 
+			this.btn_ord.BackColor = System.Drawing.Color.DimGray;
+			this.btn_ord.FlatAppearance.BorderSize = 0;
+			this.btn_ord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_ord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_ord.ForeColor = System.Drawing.Color.White;
+			this.btn_ord.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+			this.btn_ord.IconColor = System.Drawing.Color.White;
+			this.btn_ord.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_ord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btn_ord.Location = new System.Drawing.Point(875, 17);
+			this.btn_ord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btn_ord.Name = "btn_ord";
+			this.btn_ord.Size = new System.Drawing.Size(229, 78);
+			this.btn_ord.TabIndex = 4;
+			this.btn_ord.Text = "Orders";
+			this.btn_ord.UseVisualStyleBackColor = false;
+			this.btn_ord.Click += new System.EventHandler(this.btn_ord_Click);
+			// 
+			// btn_rp
+			// 
+			this.btn_rp.BackColor = System.Drawing.Color.DimGray;
+			this.btn_rp.FlatAppearance.BorderSize = 0;
+			this.btn_rp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_rp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_rp.ForeColor = System.Drawing.Color.White;
+			this.btn_rp.IconChar = FontAwesome.Sharp.IconChar.Scroll;
+			this.btn_rp.IconColor = System.Drawing.Color.White;
+			this.btn_rp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_rp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btn_rp.Location = new System.Drawing.Point(875, 99);
+			this.btn_rp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btn_rp.Name = "btn_rp";
+			this.btn_rp.Size = new System.Drawing.Size(229, 78);
+			this.btn_rp.TabIndex = 5;
+			this.btn_rp.Text = "Report";
+			this.btn_rp.UseVisualStyleBackColor = false;
+			this.btn_rp.Click += new System.EventHandler(this.btn_rp_Click);
+			// 
+			// btn_stf
+			// 
+			this.btn_stf.BackColor = System.Drawing.Color.DimGray;
+>>>>>>> Stashed changes
 			this.btn_stf.FlatAppearance.BorderSize = 0;
 			this.btn_stf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btn_stf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,7 +310,11 @@
 			this.btn_stf.IconColor = System.Drawing.Color.White;
 			this.btn_stf.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btn_stf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+<<<<<<< Updated upstream
 			this.btn_stf.Location = new System.Drawing.Point(3, 366);
+=======
+			this.btn_stf.Location = new System.Drawing.Point(875, 181);
+>>>>>>> Stashed changes
 			this.btn_stf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btn_stf.Name = "btn_stf";
 			this.btn_stf.Size = new System.Drawing.Size(229, 78);
@@ -232,10 +323,36 @@
 			this.btn_stf.UseVisualStyleBackColor = false;
 			this.btn_stf.Click += new System.EventHandler(this.btn_stf_Click);
 			// 
+<<<<<<< Updated upstream
 			// btn_log
 			// 
 			this.btn_log.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
 			this.btn_log.Dock = System.Windows.Forms.DockStyle.Top;
+=======
+			// btn_cst
+			// 
+			this.btn_cst.BackColor = System.Drawing.Color.DimGray;
+			this.btn_cst.FlatAppearance.BorderSize = 0;
+			this.btn_cst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_cst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_cst.ForeColor = System.Drawing.Color.White;
+			this.btn_cst.IconChar = FontAwesome.Sharp.IconChar.Users;
+			this.btn_cst.IconColor = System.Drawing.Color.White;
+			this.btn_cst.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_cst.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btn_cst.Location = new System.Drawing.Point(875, 263);
+			this.btn_cst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btn_cst.Name = "btn_cst";
+			this.btn_cst.Size = new System.Drawing.Size(229, 78);
+			this.btn_cst.TabIndex = 7;
+			this.btn_cst.Text = "Customer";
+			this.btn_cst.UseVisualStyleBackColor = false;
+			this.btn_cst.Click += new System.EventHandler(this.btn_cst_Click);
+			// 
+			// btn_log
+			// 
+			this.btn_log.BackColor = System.Drawing.Color.DimGray;
+>>>>>>> Stashed changes
 			this.btn_log.FlatAppearance.BorderSize = 0;
 			this.btn_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btn_log.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,7 +361,11 @@
 			this.btn_log.IconColor = System.Drawing.Color.White;
 			this.btn_log.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+<<<<<<< Updated upstream
 			this.btn_log.Location = new System.Drawing.Point(3, 616);
+=======
+			this.btn_log.Location = new System.Drawing.Point(875, 345);
+>>>>>>> Stashed changes
 			this.btn_log.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btn_log.Name = "btn_log";
 			this.btn_log.Size = new System.Drawing.Size(229, 78);
@@ -294,6 +415,7 @@
 			this.iconCurrentChildForm.TabStop = false;
 			this.iconCurrentChildForm.Click += new System.EventHandler(this.iconCurrentChildForm_Click);
 			// 
+<<<<<<< Updated upstream
 			// panel_desktop
 			// 
 			this.panel_desktop.BackColor = System.Drawing.Color.White;
@@ -556,6 +678,243 @@
 			this.btn_rp4.Text = "Report 4";
 			this.btn_rp4.UseVisualStyleBackColor = false;
 			this.btn_rp4.Click += new System.EventHandler(this.btn_rp4_Click);
+=======
+			// panel_Desktop
+			// 
+			this.panel_Desktop.BackColor = System.Drawing.Color.White;
+			this.panel_Desktop.Controls.Add(this.panel_rp);
+			this.panel_Desktop.Controls.Add(this.panel_cst);
+			this.panel_Desktop.Controls.Add(this.panel_ord);
+			this.panel_Desktop.Controls.Add(this.btn_ord);
+			this.panel_Desktop.Controls.Add(this.btn_rp);
+			this.panel_Desktop.Controls.Add(this.pictureBox2);
+			this.panel_Desktop.Controls.Add(this.btn_stf);
+			this.panel_Desktop.Controls.Add(this.btn_log);
+			this.panel_Desktop.Controls.Add(this.btn_cst);
+			this.panel_Desktop.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel_Desktop.Location = new System.Drawing.Point(232, 86);
+			this.panel_Desktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.panel_Desktop.Name = "panel_Desktop";
+			this.panel_Desktop.Size = new System.Drawing.Size(1579, 1003);
+			this.panel_Desktop.TabIndex = 3;
+			// 
+			// panel_cst
+			// 
+			this.panel_cst.Controls.Add(this.btn_csm);
+			this.panel_cst.Controls.Add(this.btn_sup);
+			this.panel_cst.Controls.Add(this.ibtn_ctm);
+			this.panel_cst.Location = new System.Drawing.Point(647, 196);
+			this.panel_cst.MaximumSize = new System.Drawing.Size(229, 199);
+			this.panel_cst.MinimumSize = new System.Drawing.Size(229, 78);
+			this.panel_cst.Name = "panel_cst";
+			this.panel_cst.Size = new System.Drawing.Size(229, 199);
+			this.panel_cst.TabIndex = 3;
+			// 
+			// btn_csm
+			// 
+			this.btn_csm.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btn_csm.FlatAppearance.BorderSize = 0;
+			this.btn_csm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_csm.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btn_csm.IconColor = System.Drawing.Color.Black;
+			this.btn_csm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_csm.Location = new System.Drawing.Point(0, 138);
+			this.btn_csm.Name = "btn_csm";
+			this.btn_csm.Size = new System.Drawing.Size(229, 60);
+			this.btn_csm.TabIndex = 2;
+			this.btn_csm.Text = "Consumers";
+			this.btn_csm.UseVisualStyleBackColor = true;
+			// 
+			// btn_sup
+			// 
+			this.btn_sup.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btn_sup.FlatAppearance.BorderSize = 0;
+			this.btn_sup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_sup.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btn_sup.IconColor = System.Drawing.Color.Black;
+			this.btn_sup.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_sup.Location = new System.Drawing.Point(0, 78);
+			this.btn_sup.Name = "btn_sup";
+			this.btn_sup.Size = new System.Drawing.Size(229, 60);
+			this.btn_sup.TabIndex = 1;
+			this.btn_sup.Text = "Suppliers";
+			this.btn_sup.UseVisualStyleBackColor = true;
+			// 
+			// ibtn_ctm
+			// 
+			this.ibtn_ctm.Dock = System.Windows.Forms.DockStyle.Top;
+			this.ibtn_ctm.FlatAppearance.BorderSize = 0;
+			this.ibtn_ctm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ibtn_ctm.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.ibtn_ctm.IconColor = System.Drawing.Color.Black;
+			this.ibtn_ctm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ibtn_ctm.Location = new System.Drawing.Point(0, 0);
+			this.ibtn_ctm.Name = "ibtn_ctm";
+			this.ibtn_ctm.Size = new System.Drawing.Size(229, 78);
+			this.ibtn_ctm.TabIndex = 0;
+			this.ibtn_ctm.Text = "Customers";
+			this.ibtn_ctm.UseVisualStyleBackColor = true;
+			this.ibtn_ctm.Click += new System.EventHandler(this.ibtn_ctm_Click);
+			// 
+			// panel_ord
+			// 
+			this.panel_ord.Controls.Add(this.btn_ddh);
+			this.panel_ord.Controls.Add(this.btn_dnh);
+			this.panel_ord.Controls.Add(this.ibtn_odr);
+			this.panel_ord.Location = new System.Drawing.Point(412, 32);
+			this.panel_ord.MaximumSize = new System.Drawing.Size(229, 199);
+			this.panel_ord.MinimumSize = new System.Drawing.Size(229, 78);
+			this.panel_ord.Name = "panel_ord";
+			this.panel_ord.Size = new System.Drawing.Size(229, 199);
+			this.panel_ord.TabIndex = 1;
+			// 
+			// btn_ddh
+			// 
+			this.btn_ddh.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btn_ddh.FlatAppearance.BorderSize = 0;
+			this.btn_ddh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_ddh.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btn_ddh.IconColor = System.Drawing.Color.Black;
+			this.btn_ddh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_ddh.Location = new System.Drawing.Point(0, 138);
+			this.btn_ddh.Name = "btn_ddh";
+			this.btn_ddh.Size = new System.Drawing.Size(229, 60);
+			this.btn_ddh.TabIndex = 2;
+			this.btn_ddh.Text = "Purchase Receipt";
+			this.btn_ddh.UseVisualStyleBackColor = true;
+			// 
+			// btn_dnh
+			// 
+			this.btn_dnh.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btn_dnh.FlatAppearance.BorderSize = 0;
+			this.btn_dnh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_dnh.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btn_dnh.IconColor = System.Drawing.Color.Black;
+			this.btn_dnh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_dnh.Location = new System.Drawing.Point(0, 78);
+			this.btn_dnh.Name = "btn_dnh";
+			this.btn_dnh.Size = new System.Drawing.Size(229, 60);
+			this.btn_dnh.TabIndex = 1;
+			this.btn_dnh.Text = "Goods Receipt";
+			this.btn_dnh.UseVisualStyleBackColor = true;
+			// 
+			// ibtn_odr
+			// 
+			this.ibtn_odr.Dock = System.Windows.Forms.DockStyle.Top;
+			this.ibtn_odr.FlatAppearance.BorderSize = 0;
+			this.ibtn_odr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ibtn_odr.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.ibtn_odr.IconColor = System.Drawing.Color.Black;
+			this.ibtn_odr.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ibtn_odr.Location = new System.Drawing.Point(0, 0);
+			this.ibtn_odr.Name = "ibtn_odr";
+			this.ibtn_odr.Size = new System.Drawing.Size(229, 78);
+			this.ibtn_odr.TabIndex = 0;
+			this.ibtn_odr.Text = "Orders";
+			this.ibtn_odr.UseVisualStyleBackColor = true;
+			this.ibtn_odr.Click += new System.EventHandler(this.ibtn_odr_Click);
+			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.Image = global::BTLLTTQ.Properties.Resources.Khabanh1140x761;
+			this.pictureBox2.Location = new System.Drawing.Point(732, 460);
+			this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(847, 543);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox2.TabIndex = 0;
+			this.pictureBox2.TabStop = false;
+			// 
+			// panel_rp
+			// 
+			this.panel_rp.Controls.Add(this.btn_rpt4);
+			this.panel_rp.Controls.Add(this.btn_rpt3);
+			this.panel_rp.Controls.Add(this.btn_rpt2);
+			this.panel_rp.Controls.Add(this.btn_rpt1);
+			this.panel_rp.Controls.Add(this.ibtn_report);
+			this.panel_rp.Location = new System.Drawing.Point(82, 75);
+			this.panel_rp.MaximumSize = new System.Drawing.Size(229, 320);
+			this.panel_rp.MinimumSize = new System.Drawing.Size(229, 78);
+			this.panel_rp.Name = "panel_rp";
+			this.panel_rp.Size = new System.Drawing.Size(229, 320);
+			this.panel_rp.TabIndex = 4;
+			// 
+			// btn_rpt2
+			// 
+			this.btn_rpt2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btn_rpt2.FlatAppearance.BorderSize = 0;
+			this.btn_rpt2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_rpt2.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btn_rpt2.IconColor = System.Drawing.Color.Black;
+			this.btn_rpt2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_rpt2.Location = new System.Drawing.Point(0, 138);
+			this.btn_rpt2.Name = "btn_rpt2";
+			this.btn_rpt2.Size = new System.Drawing.Size(229, 60);
+			this.btn_rpt2.TabIndex = 2;
+			this.btn_rpt2.Text = "Report 2";
+			this.btn_rpt2.UseVisualStyleBackColor = true;
+			// 
+			// btn_rpt1
+			// 
+			this.btn_rpt1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btn_rpt1.FlatAppearance.BorderSize = 0;
+			this.btn_rpt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_rpt1.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btn_rpt1.IconColor = System.Drawing.Color.Black;
+			this.btn_rpt1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_rpt1.Location = new System.Drawing.Point(0, 78);
+			this.btn_rpt1.Name = "btn_rpt1";
+			this.btn_rpt1.Size = new System.Drawing.Size(229, 60);
+			this.btn_rpt1.TabIndex = 1;
+			this.btn_rpt1.Text = "Report 1";
+			this.btn_rpt1.UseVisualStyleBackColor = true;
+			// 
+			// ibtn_report
+			// 
+			this.ibtn_report.Dock = System.Windows.Forms.DockStyle.Top;
+			this.ibtn_report.FlatAppearance.BorderSize = 0;
+			this.ibtn_report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ibtn_report.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.ibtn_report.IconColor = System.Drawing.Color.Black;
+			this.ibtn_report.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ibtn_report.Location = new System.Drawing.Point(0, 0);
+			this.ibtn_report.Name = "ibtn_report";
+			this.ibtn_report.Size = new System.Drawing.Size(229, 78);
+			this.ibtn_report.TabIndex = 0;
+			this.ibtn_report.Text = "Report";
+			this.ibtn_report.UseVisualStyleBackColor = true;
+			this.ibtn_report.Click += new System.EventHandler(this.ibtn_report_Click);
+			// 
+			// btn_rpt3
+			// 
+			this.btn_rpt3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btn_rpt3.FlatAppearance.BorderSize = 0;
+			this.btn_rpt3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_rpt3.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btn_rpt3.IconColor = System.Drawing.Color.Black;
+			this.btn_rpt3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_rpt3.Location = new System.Drawing.Point(0, 198);
+			this.btn_rpt3.Name = "btn_rpt3";
+			this.btn_rpt3.Size = new System.Drawing.Size(229, 60);
+			this.btn_rpt3.TabIndex = 3;
+			this.btn_rpt3.Text = "Report 3";
+			this.btn_rpt3.UseVisualStyleBackColor = true;
+			// 
+			// btn_rpt4
+			// 
+			this.btn_rpt4.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btn_rpt4.FlatAppearance.BorderSize = 0;
+			this.btn_rpt4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_rpt4.IconChar = FontAwesome.Sharp.IconChar.None;
+			this.btn_rpt4.IconColor = System.Drawing.Color.Black;
+			this.btn_rpt4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btn_rpt4.Location = new System.Drawing.Point(0, 258);
+			this.btn_rpt4.Name = "btn_rpt4";
+			this.btn_rpt4.Size = new System.Drawing.Size(229, 60);
+			this.btn_rpt4.TabIndex = 4;
+			this.btn_rpt4.Text = "Report 4";
+			this.btn_rpt4.UseVisualStyleBackColor = true;
+>>>>>>> Stashed changes
 			// 
 			// timer1
 			// 
@@ -576,8 +935,13 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< Updated upstream
 			this.ClientSize = new System.Drawing.Size(1811, 924);
 			this.Controls.Add(this.panel_desktop);
+=======
+			this.ClientSize = new System.Drawing.Size(1811, 1089);
+			this.Controls.Add(this.panel_Desktop);
+>>>>>>> Stashed changes
 			this.Controls.Add(this.panelbar);
 			this.Controls.Add(this.panelMenu);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -593,9 +957,17 @@
 			this.panelbar.ResumeLayout(false);
 			this.panelbar.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+<<<<<<< Updated upstream
 			this.flp_order.ResumeLayout(false);
 			this.panel_report.ResumeLayout(false);
 			this.flp_cst.ResumeLayout(false);
+=======
+			this.panel_Desktop.ResumeLayout(false);
+			this.panel_cst.ResumeLayout(false);
+			this.panel_ord.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			this.panel_rp.ResumeLayout(false);
+>>>>>>> Stashed changes
 			this.ResumeLayout(false);
 
         }
@@ -616,6 +988,7 @@
         private System.Windows.Forms.Panel panelbar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Label lblTitleChildForm;
+<<<<<<< Updated upstream
         private System.Windows.Forms.Panel panel_desktop;
 		private System.Windows.Forms.FlowLayoutPanel flp_order;
 		private FontAwesome.Sharp.IconButton ibtn_order;
@@ -631,6 +1004,24 @@
 		private FontAwesome.Sharp.IconButton btn_rp2;
 		private FontAwesome.Sharp.IconButton btn_rp3;
 		private FontAwesome.Sharp.IconButton btn_rp4;
+=======
+        private System.Windows.Forms.Panel panel_Desktop;
+        private System.Windows.Forms.PictureBox pictureBox2;
+		private System.Windows.Forms.Panel panel_cst;
+		private FontAwesome.Sharp.IconButton btn_csm;
+		private FontAwesome.Sharp.IconButton btn_sup;
+		private FontAwesome.Sharp.IconButton ibtn_ctm;
+		private System.Windows.Forms.Panel panel_ord;
+		private FontAwesome.Sharp.IconButton btn_ddh;
+		private FontAwesome.Sharp.IconButton btn_dnh;
+		private FontAwesome.Sharp.IconButton ibtn_odr;
+		private System.Windows.Forms.Panel panel_rp;
+		private FontAwesome.Sharp.IconButton btn_rpt2;
+		private FontAwesome.Sharp.IconButton btn_rpt1;
+		private FontAwesome.Sharp.IconButton ibtn_report;
+		private FontAwesome.Sharp.IconButton btn_rpt4;
+		private FontAwesome.Sharp.IconButton btn_rpt3;
+>>>>>>> Stashed changes
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Timer timer2;
 		private System.Windows.Forms.Timer timer3;
