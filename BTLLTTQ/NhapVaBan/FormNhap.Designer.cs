@@ -52,8 +52,8 @@
 			// dataGridView1
 			// 
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(33, 261);
-			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dataGridView1.Location = new System.Drawing.Point(32, 222);
+			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
 			this.dataGridView1.MultiSelect = false;
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersWidth = 51;
@@ -66,8 +66,8 @@
 			// 
 			// btnThem
 			// 
-			this.btnThem.Location = new System.Drawing.Point(848, 263);
-			this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnThem.Location = new System.Drawing.Point(1010, 222);
+			this.btnThem.Margin = new System.Windows.Forms.Padding(4);
 			this.btnThem.Name = "btnThem";
 			this.btnThem.Size = new System.Drawing.Size(199, 54);
 			this.btnThem.TabIndex = 1;
@@ -77,8 +77,8 @@
 			// 
 			// btnXoa
 			// 
-			this.btnXoa.Location = new System.Drawing.Point(848, 327);
-			this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnXoa.Location = new System.Drawing.Point(1010, 286);
+			this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.Size = new System.Drawing.Size(199, 54);
 			this.btnXoa.TabIndex = 2;
@@ -88,8 +88,8 @@
 			// 
 			// btnSua
 			// 
-			this.btnSua.Location = new System.Drawing.Point(848, 394);
-			this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnSua.Location = new System.Drawing.Point(1010, 353);
+			this.btnSua.Margin = new System.Windows.Forms.Padding(4);
 			this.btnSua.Name = "btnSua";
 			this.btnSua.Size = new System.Drawing.Size(199, 54);
 			this.btnSua.TabIndex = 3;
@@ -100,7 +100,7 @@
 			// txtHDN
 			// 
 			this.txtHDN.Location = new System.Drawing.Point(171, 34);
-			this.txtHDN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.txtHDN.Margin = new System.Windows.Forms.Padding(4);
 			this.txtHDN.Name = "txtHDN";
 			this.txtHDN.Size = new System.Drawing.Size(160, 22);
 			this.txtHDN.TabIndex = 4;
@@ -108,7 +108,7 @@
 			// txtTongTien
 			// 
 			this.txtTongTien.Location = new System.Drawing.Point(572, 34);
-			this.txtTongTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.txtTongTien.Margin = new System.Windows.Forms.Padding(4);
 			this.txtTongTien.Name = "txtTongTien";
 			this.txtTongTien.Size = new System.Drawing.Size(224, 22);
 			this.txtTongTien.TabIndex = 8;
@@ -118,7 +118,7 @@
 			this.cbbMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbbMaNV.FormattingEnabled = true;
 			this.cbbMaNV.Location = new System.Drawing.Point(171, 91);
-			this.cbbMaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.cbbMaNV.Margin = new System.Windows.Forms.Padding(4);
 			this.cbbMaNV.Name = "cbbMaNV";
 			this.cbbMaNV.Size = new System.Drawing.Size(160, 24);
 			this.cbbMaNV.TabIndex = 9;
@@ -127,7 +127,7 @@
 			// 
 			this.dateNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dateNgayNhap.Location = new System.Drawing.Point(171, 143);
-			this.dateNgayNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dateNgayNhap.Margin = new System.Windows.Forms.Padding(4);
 			this.dateNgayNhap.Name = "dateNgayNhap";
 			this.dateNgayNhap.Size = new System.Drawing.Size(160, 22);
 			this.dateNgayNhap.TabIndex = 10;
@@ -137,7 +137,7 @@
 			this.cBBmaNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cBBmaNCC.FormattingEnabled = true;
 			this.cBBmaNCC.Location = new System.Drawing.Point(171, 190);
-			this.cBBmaNCC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.cBBmaNCC.Margin = new System.Windows.Forms.Padding(4);
 			this.cBBmaNCC.Name = "cBBmaNCC";
 			this.cBBmaNCC.Size = new System.Drawing.Size(160, 24);
 			this.cBBmaNCC.TabIndex = 11;
@@ -199,8 +199,8 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(848, 725);
-			this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.button1.Location = new System.Drawing.Point(1010, 684);
+			this.button1.Margin = new System.Windows.Forms.Padding(4);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(199, 60);
 			this.button1.TabIndex = 17;
@@ -210,8 +210,8 @@
 			// 
 			// btnTim
 			// 
-			this.btnTim.Location = new System.Drawing.Point(848, 455);
-			this.btnTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnTim.Location = new System.Drawing.Point(1010, 414);
+			this.btnTim.Margin = new System.Windows.Forms.Padding(4);
 			this.btnTim.Name = "btnTim";
 			this.btnTim.Size = new System.Drawing.Size(199, 54);
 			this.btnTim.TabIndex = 18;
@@ -221,8 +221,8 @@
 			// 
 			// btnXemAll
 			// 
-			this.btnXemAll.Location = new System.Drawing.Point(848, 663);
-			this.btnXemAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnXemAll.Location = new System.Drawing.Point(1010, 622);
+			this.btnXemAll.Margin = new System.Windows.Forms.Padding(4);
 			this.btnXemAll.Name = "btnXemAll";
 			this.btnXemAll.Size = new System.Drawing.Size(199, 54);
 			this.btnXemAll.TabIndex = 19;
@@ -232,7 +232,7 @@
 			// 
 			// button2
 			// 
-			this.button2.Location = new System.Drawing.Point(848, 517);
+			this.button2.Location = new System.Drawing.Point(1010, 476);
 			this.button2.Margin = new System.Windows.Forms.Padding(4);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(199, 54);
@@ -245,7 +245,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1091, 800);
+			this.ClientSize = new System.Drawing.Size(1297, 804);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.btnXemAll);
 			this.Controls.Add(this.btnTim);
@@ -264,7 +264,7 @@
 			this.Controls.Add(this.btnXoa);
 			this.Controls.Add(this.btnThem);
 			this.Controls.Add(this.dataGridView1);
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "FormNhap";
 			this.Text = "FormNhap";
 			this.Load += new System.EventHandler(this.FormNhap_Load);

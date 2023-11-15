@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTLLTTQ.Menu;
+using BTLLTTQ.Menu_Items;
 using BTLLTTQ.NhapVaBan;
 using FontAwesome.Sharp;
 namespace BTLLTTQ
@@ -18,6 +19,28 @@ namespace BTLLTTQ
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        private bool isCollapsed;
+        void checkcoll(Panel tenpanel,Timer timer)
+        {
+			if (isCollapsed)
+			{
+				tenpanel.Height += 10;
+				if (tenpanel.Height == tenpanel.MaximumSize.Height)
+				{
+
+					isCollapsed = false; timer.Stop();
+				}
+			}
+			else
+			{
+				tenpanel.Height -= 10;
+				if (tenpanel.Height == tenpanel.MinimumSize.Height)
+				{
+
+					isCollapsed = true; timer.Stop();
+				}
+			}
+		}
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -61,12 +84,12 @@ namespace BTLLTTQ
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
                 //Left border button
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
+                //leftBorderBtn.BackColor = color;
+                //leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                //leftBorderBtn.Visible = true;
+                //leftBorderBtn.BringToFront();
                 //Current Child Form Icon
-                iconCurrentChildForm.IconChar = currentBtn.IconChar;
+                //iconCurrentChildForm.IconChar = currentBtn.IconChar;
                 iconCurrentChildForm.IconColor = color;
             }
         }
@@ -82,11 +105,11 @@ namespace BTLLTTQ
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
+            panel_desktop.Controls.Add(childForm);
+            panel_desktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitleChildForm.Text = childForm.Text;
+            //lblTitleChildForm.Text = childForm.Text;
         }
         private void DisableButton()
         {
@@ -101,57 +124,7 @@ namespace BTLLTTQ
             }
         }
 
-        private void btn_home_Click(object sender, EventArgs e)
-        {
 
-            ActivateButton(sender, RGBColors.color1);
-            pictureBox2.Visible = true;
-            //OpenChildForm(new FormDashboard());
-        }
-
-        private void btn_pro_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-            pictureBox2.Visible = false;
-            pictureBox2.Enabled = false;
-            OpenChildForm(new FormProduct());
-        }
-
-        private void btn_ord_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color3);
-            pictureBox2.Visible = false;
-            pictureBox2.Enabled = false;
-            OpenChildForm(new FormDonDatHang());
-        }
-
-        private void btn_rp_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color4);
-            pictureBox2.Visible = false;
-            pictureBox2.Enabled = false;
-            //OpenChildForm(new FormDashboard());
-        }
-
-        private void btn_stf_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color5);
-            pictureBox2.Visible = false;
-            pictureBox2.Enabled = false;
-            //OpenChildForm(new FormDashboard());
-        }
-
-        private void btn_cst_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color6);
-            pictureBox2.Visible = false;
-            pictureBox2.Enabled = false;   
-        }
-
-        private void btn_log_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color7);
-        }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -211,6 +184,115 @@ namespace BTLLTTQ
             }
             Reset();
         }
-    }
+        //form cho nha cung cap
+		private void btn_supplier_Click(object sender, EventArgs e)
+		{
+			DisableButton();
+			//OpenChildForm(new FormDashboard());
+		}
+		//form cho khach hang
+		private void btn_consumer_Click(object sender, EventArgs e)
+		{
+			DisableButton();
+			//OpenChildForm(new FormDashboard());
+		}
+		//form cho dondat hang
+		private void btn_ddh_Click(object sender, EventArgs e)
+		{
+			DisableButton();
+			OpenChildForm(new FormDonDatHang());
+		}
+		//form cho don nhap hang
+		private void btn_dnh_Click(object sender, EventArgs e)
+		{
+			DisableButton();
+			OpenChildForm(new FormNhap());
+		}
+		//form cho bao cao
+		private void btn_rp1_Click(object sender, EventArgs e)
+		{
+			DisableButton();
+			//OpenChildForm(new FormDashboard());
+		}
+		//form cho bao cao
+		private void btn_rp2_Click(object sender, EventArgs e)
+		{
+			DisableButton();
+			//OpenChildForm(new FormDashboard());
+		}
+		//form cho bao cao
+		private void btn_rp3_Click(object sender, EventArgs e)
+		{
+			DisableButton();
+			//OpenChildForm(new FormDashboard());
+		}
+		//form cho bao cao
+		private void btn_rp4_Click(object sender, EventArgs e)
+		{
+			DisableButton();
+			//OpenChildForm(new FormDashboard());
+		}
+
+		private void btn_home_Click(object sender, EventArgs e)
+		{
+
+			ActivateButton(sender, RGBColors.color1);
+
+			OpenChildForm(new FormMN());
+		}
+
+		private void btn_pro_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender, RGBColors.color2);
+
+			//OpenChildForm(new FormProduct());
+		}
+
+
+		private void btn_stf_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender, RGBColors.color5);
+			//OpenChildForm(new FormStaff());
+		}
+
+		private void btn_log_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender, RGBColors.color7);
+		}
+		private void ibtn_report_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender, RGBColors.color4);
+            timer3.Start();
+			
+		}
+
+		private void ibtn_order_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender, RGBColors.color4);
+            timer1.Start();
+		}
+
+		private void ibtn_customer_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender, RGBColors.color4);
+            timer2.Start();	
+		}
+
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+            checkcoll(flp_order, timer1);
+		}
+
+		private void timer2_Tick(object sender, EventArgs e)
+		{
+			checkcoll(flp_cst, timer2);
+		}
+
+		private void timer3_Tick(object sender, EventArgs e)
+		{
+			checkcoll(panel_report, timer3);
+		}
+		//
+	}
 }
 

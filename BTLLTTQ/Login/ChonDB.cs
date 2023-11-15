@@ -52,8 +52,7 @@ namespace BTLLTTQ
 			if (CheckConnection())
 			{
 				this.Hide();
-				FormMNN formMenu = new FormMNN();
-				formMenu.ShowDialog();
+				(new FormMNN()).ShowDialog();	
 				this.Close();
 			}
 
