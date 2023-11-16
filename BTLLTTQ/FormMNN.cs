@@ -292,7 +292,6 @@ namespace BTLLTTQ
 		{
 			checkcoll(panel_report, timer3);
 		}
-		//
 	}
 }
 
