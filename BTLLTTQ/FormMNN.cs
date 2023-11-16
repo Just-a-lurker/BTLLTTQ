@@ -20,7 +20,6 @@ namespace BTLLTTQ
         private Panel leftBorderBtn;
         private Form currentChildForm;
         private bool isCollapsed;
-<<<<<<< Updated upstream
         void checkcoll(Panel tenpanel,Timer timer)
         {
 			if (isCollapsed)
@@ -42,8 +41,6 @@ namespace BTLLTTQ
 				}
 			}
 		}
-=======
->>>>>>> Stashed changes
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -108,13 +105,8 @@ namespace BTLLTTQ
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-<<<<<<< Updated upstream
             panel_desktop.Controls.Add(childForm);
             panel_desktop.Tag = childForm;
-=======
-            panel_Desktop.Controls.Add(childForm);
-            panel_Desktop.Tag = childForm;
->>>>>>> Stashed changes
             childForm.BringToFront();
             childForm.Show();
             //lblTitleChildForm.Text = childForm.Text;
@@ -192,7 +184,6 @@ namespace BTLLTTQ
             }
             Reset();
         }
-<<<<<<< Updated upstream
         //form cho nha cung cap
 		private void btn_supplier_Click(object sender, EventArgs e)
 		{
@@ -285,52 +276,22 @@ namespace BTLLTTQ
 		{
 			ActivateButton(sender, RGBColors.color4);
             timer2.Start();	
-=======
-
-		private void ibtn_report_Click(object sender, EventArgs e)
-		{
-            timer1.Start();
-		}
-
-		private void ibtn_odr_Click(object sender, EventArgs e)
-		{
-			timer2.Start();
-		}
-
-		private void ibtn_ctm_Click(object sender, EventArgs e)
-		{
-			timer3.Start();
->>>>>>> Stashed changes
 		}
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
-<<<<<<< Updated upstream
             checkcoll(flp_order, timer1);
-=======
-
->>>>>>> Stashed changes
 		}
 
 		private void timer2_Tick(object sender, EventArgs e)
 		{
-<<<<<<< Updated upstream
 			checkcoll(flp_cst, timer2);
-=======
-
->>>>>>> Stashed changes
 		}
 
 		private void timer3_Tick(object sender, EventArgs e)
 		{
-<<<<<<< Updated upstream
 			checkcoll(panel_report, timer3);
 		}
-		//
-=======
-
-		}
->>>>>>> Stashed changes
 	}
 }
 
