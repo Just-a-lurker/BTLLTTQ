@@ -212,25 +212,25 @@ namespace BTLLTTQ
 		private void btn_rp1_Click(object sender, EventArgs e)
 		{
 			DisableButton();
-			//OpenChildForm(new FormDashboard());
+			OpenChildForm(new Formbcdsspchokhachhang());
 		}
 		//form cho bao cao
 		private void btn_rp2_Click(object sender, EventArgs e)
 		{
 			DisableButton();
-			//OpenChildForm(new FormDashboard());
+			OpenChildForm(new FormTongtiennhaphangcuanv());
 		}
 		//form cho bao cao
 		private void btn_rp3_Click(object sender, EventArgs e)
 		{
 			DisableButton();
-			//OpenChildForm(new FormDashboard());
+			OpenChildForm(new FormTongTienbanhang());
 		}
 		//form cho bao cao
 		private void btn_rp4_Click(object sender, EventArgs e)
 		{
 			DisableButton();
-			//OpenChildForm(new FormDashboard());
+			OpenChildForm(new Formbaocaonhacungcap());
 		}
 
 		private void btn_home_Click(object sender, EventArgs e)
@@ -292,6 +292,11 @@ namespace BTLLTTQ
 		{
 			checkcoll(panel_report, timer3);
 		}
-	}
+
+        private void panel_desktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }
 

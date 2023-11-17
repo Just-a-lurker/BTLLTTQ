@@ -41,45 +41,50 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 37);
+            this.label1.Location = new System.Drawing.Point(87, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 16);
+            this.label1.Size = new System.Drawing.Size(118, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Khách hàng";
             // 
             // cmbokh
             // 
             this.cmbokh.FormattingEnabled = true;
-            this.cmbokh.Location = new System.Drawing.Point(153, 37);
+            this.cmbokh.Location = new System.Drawing.Point(230, 58);
+            this.cmbokh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbokh.Name = "cmbokh";
-            this.cmbokh.Size = new System.Drawing.Size(258, 24);
+            this.cmbokh.Size = new System.Drawing.Size(385, 33);
             this.cmbokh.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 95);
+            this.label2.Location = new System.Drawing.Point(87, 148);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 16);
+            this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tháng";
             // 
             // bangdondathang
             // 
             this.bangdondathang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bangdondathang.Location = new System.Drawing.Point(55, 157);
+            this.bangdondathang.Location = new System.Drawing.Point(82, 245);
+            this.bangdondathang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bangdondathang.Name = "bangdondathang";
             this.bangdondathang.RowHeadersWidth = 51;
             this.bangdondathang.RowTemplate.Height = 24;
-            this.bangdondathang.Size = new System.Drawing.Size(682, 281);
+            this.bangdondathang.Size = new System.Drawing.Size(1023, 439);
             this.bangdondathang.TabIndex = 3;
             this.bangdondathang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bangdondathang_CellContentClick);
             // 
             // btntim
             // 
-            this.btntim.Location = new System.Drawing.Point(617, 38);
+            this.btntim.Location = new System.Drawing.Point(926, 59);
+            this.btntim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btntim.Name = "btntim";
-            this.btntim.Size = new System.Drawing.Size(120, 23);
+            this.btntim.Size = new System.Drawing.Size(180, 36);
             this.btntim.TabIndex = 4;
             this.btntim.Text = "Tìm";
             this.btntim.UseVisualStyleBackColor = true;
@@ -88,16 +93,18 @@
             // cmbothang
             // 
             this.cmbothang.FormattingEnabled = true;
-            this.cmbothang.Location = new System.Drawing.Point(153, 92);
+            this.cmbothang.Location = new System.Drawing.Point(230, 144);
+            this.cmbothang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbothang.Name = "cmbothang";
-            this.cmbothang.Size = new System.Drawing.Size(258, 24);
+            this.cmbothang.Size = new System.Drawing.Size(385, 33);
             this.cmbothang.TabIndex = 5;
             // 
             // btnxuat
             // 
-            this.btnxuat.Location = new System.Drawing.Point(617, 95);
+            this.btnxuat.Location = new System.Drawing.Point(926, 148);
+            this.btnxuat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnxuat.Name = "btnxuat";
-            this.btnxuat.Size = new System.Drawing.Size(120, 23);
+            this.btnxuat.Size = new System.Drawing.Size(180, 36);
             this.btnxuat.TabIndex = 6;
             this.btnxuat.Text = "Xuất excel";
             this.btnxuat.UseVisualStyleBackColor = true;
@@ -105,9 +112,9 @@
             // 
             // Formbcdsspchokhachhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.cmbothang);
             this.Controls.Add(this.btntim);
@@ -115,6 +122,8 @@
             this.Controls.Add(this.cmbokh);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Formbcdsspchokhachhang";
             this.Text = "Formbcdsspchokhachhang";
             this.Load += new System.EventHandler(this.Formbcdsspchokhachhang_Load);
