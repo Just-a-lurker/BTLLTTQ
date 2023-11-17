@@ -39,17 +39,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 53);
+            this.label1.Location = new System.Drawing.Point(88, 83);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 16);
+            this.label1.Size = new System.Drawing.Size(94, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mặt hàng";
             // 
             // btntim
             // 
-            this.btntim.Location = new System.Drawing.Point(491, 40);
+            this.btntim.Location = new System.Drawing.Point(736, 62);
+            this.btntim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btntim.Name = "btntim";
-            this.btntim.Size = new System.Drawing.Size(91, 39);
+            this.btntim.Size = new System.Drawing.Size(136, 61);
             this.btntim.TabIndex = 2;
             this.btntim.Text = "Tìm";
             this.btntim.UseVisualStyleBackColor = true;
@@ -58,27 +60,30 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(62, 107);
+            this.dataGridView1.Location = new System.Drawing.Point(93, 167);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(674, 303);
+            this.dataGridView1.Size = new System.Drawing.Size(1011, 473);
             this.dataGridView1.TabIndex = 3;
             // 
             // cmbbmathang
             // 
             this.cmbbmathang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbbmathang.FormattingEnabled = true;
-            this.cmbbmathang.Location = new System.Drawing.Point(148, 40);
+            this.cmbbmathang.Location = new System.Drawing.Point(222, 62);
+            this.cmbbmathang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbbmathang.Name = "cmbbmathang";
-            this.cmbbmathang.Size = new System.Drawing.Size(290, 37);
+            this.cmbbmathang.Size = new System.Drawing.Size(433, 37);
             this.cmbbmathang.TabIndex = 4;
             // 
             // btnxuat
             // 
-            this.btnxuat.Location = new System.Drawing.Point(633, 40);
+            this.btnxuat.Location = new System.Drawing.Point(950, 62);
+            this.btnxuat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnxuat.Name = "btnxuat";
-            this.btnxuat.Size = new System.Drawing.Size(103, 39);
+            this.btnxuat.Size = new System.Drawing.Size(154, 61);
             this.btnxuat.TabIndex = 5;
             this.btnxuat.Text = "Xuất Excel";
             this.btnxuat.UseVisualStyleBackColor = true;
@@ -86,14 +91,16 @@
             // 
             // FormTongTienbanhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.cmbbmathang);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btntim);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormTongTienbanhang";
             this.Text = "FormTongTienbanhang";
             this.Load += new System.EventHandler(this.FormTongTienbanhang_Load);
