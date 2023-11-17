@@ -292,11 +292,6 @@ namespace BTLLTTQ
 		{
 			checkcoll(panel_report, timer3);
 		}
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-    }
+	}
 }
 
