@@ -83,7 +83,7 @@
             this.panelbar2.Location = new System.Drawing.Point(0, 0);
             this.panelbar2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelbar2.Name = "panelbar2";
-            this.panelbar2.Size = new System.Drawing.Size(1158, 34);
+            this.panelbar2.Size = new System.Drawing.Size(1170, 34);
             this.panelbar2.TabIndex = 0;
             this.panelbar2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelbar2_MouseDown);
             // 
@@ -94,7 +94,7 @@
             this.btn_miz.FlatAppearance.BorderSize = 0;
             this.btn_miz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_miz.Image = ((System.Drawing.Image)(resources.GetObject("btn_miz.Image")));
-            this.btn_miz.Location = new System.Drawing.Point(1052, 0);
+            this.btn_miz.Location = new System.Drawing.Point(1064, 0);
             this.btn_miz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_miz.Name = "btn_miz";
             this.btn_miz.Size = new System.Drawing.Size(32, 34);
@@ -109,7 +109,7 @@
             this.btn_maz.FlatAppearance.BorderSize = 0;
             this.btn_maz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_maz.Image = ((System.Drawing.Image)(resources.GetObject("btn_maz.Image")));
-            this.btn_maz.Location = new System.Drawing.Point(1084, 0);
+            this.btn_maz.Location = new System.Drawing.Point(1096, 0);
             this.btn_maz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_maz.Name = "btn_maz";
             this.btn_maz.Size = new System.Drawing.Size(37, 34);
@@ -124,7 +124,7 @@
             this.btn_close.FlatAppearance.BorderSize = 0;
             this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
-            this.btn_close.Location = new System.Drawing.Point(1121, 0);
+            this.btn_close.Location = new System.Drawing.Point(1133, 0);
             this.btn_close.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(37, 34);
@@ -148,18 +148,19 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 751);
+            this.panelMenu.Size = new System.Drawing.Size(188, 751);
             this.panelMenu.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(175)))), ((int)(((byte)(55)))));
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(2, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(198, 91);
+            this.panel2.Size = new System.Drawing.Size(188, 91);
             this.panel2.TabIndex = 0;
             // 
             // pictureBox1
@@ -526,10 +527,10 @@
             this.panelbar.Controls.Add(this.iconCurrentChildForm);
             this.panelbar.Controls.Add(this.panelbar2);
             this.panelbar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelbar.Location = new System.Drawing.Point(200, 0);
+            this.panelbar.Location = new System.Drawing.Point(188, 0);
             this.panelbar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelbar.Name = "panelbar";
-            this.panelbar.Size = new System.Drawing.Size(1158, 70);
+            this.panelbar.Size = new System.Drawing.Size(1170, 70);
             this.panelbar.TabIndex = 2;
             this.panelbar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelbar_MouseDown);
             // 
@@ -565,10 +566,10 @@
             // 
             this.panel_desktop.BackColor = System.Drawing.Color.White;
             this.panel_desktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_desktop.Location = new System.Drawing.Point(200, 70);
+            this.panel_desktop.Location = new System.Drawing.Point(188, 70);
             this.panel_desktop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_desktop.Name = "panel_desktop";
-            this.panel_desktop.Size = new System.Drawing.Size(1158, 681);
+            this.panel_desktop.Size = new System.Drawing.Size(1170, 681);
             this.panel_desktop.TabIndex = 3;
             // 
             // timer1
