@@ -188,13 +188,13 @@ namespace BTLLTTQ
 		private void btn_supplier_Click(object sender, EventArgs e)
 		{
 			DisableButton();
-			//OpenChildForm(new FormDashboard());
+		    OpenChildForm(new FormNhaCungCap());
 		}
 		//form cho khach hang
 		private void btn_consumer_Click(object sender, EventArgs e)
 		{
 			DisableButton();
-			//OpenChildForm(new FormDashboard());
+			OpenChildForm(new FormKhachHang());
 		}
 		//form cho dondat hang
 		private void btn_ddh_Click(object sender, EventArgs e)
@@ -245,14 +245,14 @@ namespace BTLLTTQ
 		{
 			ActivateButton(sender, RGBColors.color2);
 
-			//OpenChildForm(new FormProduct());
+			OpenChildForm(new FormProduct());
 		}
 
 
 		private void btn_stf_Click(object sender, EventArgs e)
 		{
 			ActivateButton(sender, RGBColors.color5);
-			//OpenChildForm(new FormStaff());
+			OpenChildForm(new FormStaff());
 		}
 
 		private void btn_log_Click(object sender, EventArgs e)
