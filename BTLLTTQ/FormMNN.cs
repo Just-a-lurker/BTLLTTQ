@@ -251,7 +251,7 @@ namespace BTLLTTQ
 
 		private void btn_stf_Click(object sender, EventArgs e)
 		{
-			ActivateButton(sender, RGBColors.color5);
+			ActivateButton(sender, RGBColors.color3);
 			OpenChildForm(new FormStaff());
 		}
 
@@ -268,13 +268,13 @@ namespace BTLLTTQ
 
 		private void ibtn_order_Click(object sender, EventArgs e)
 		{
-			ActivateButton(sender, RGBColors.color4);
+			ActivateButton(sender, RGBColors.color5);
             timer1.Start();
 		}
 
 		private void ibtn_customer_Click(object sender, EventArgs e)
 		{
-			ActivateButton(sender, RGBColors.color4);
+			ActivateButton(sender, RGBColors.color6);
             timer2.Start();	
 		}
 

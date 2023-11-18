@@ -148,7 +148,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(251, 924);
+            this.panelMenu.Size = new System.Drawing.Size(251, 1000);
             this.panelMenu.TabIndex = 1;
             // 
             // panel2
@@ -160,16 +160,16 @@
             this.panel2.Location = new System.Drawing.Point(3, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 112);
+            this.panel2.Size = new System.Drawing.Size(251, 84);
             this.panel2.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(44, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(163, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 106);
+            this.pictureBox1.Size = new System.Drawing.Size(85, 82);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -185,7 +185,7 @@
             this.btn_home.IconColor = System.Drawing.Color.White;
             this.btn_home.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.Location = new System.Drawing.Point(3, 118);
+            this.btn_home.Location = new System.Drawing.Point(3, 90);
             this.btn_home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(229, 78);
@@ -205,7 +205,7 @@
             this.btn_pro.IconColor = System.Drawing.Color.White;
             this.btn_pro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_pro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_pro.Location = new System.Drawing.Point(3, 200);
+            this.btn_pro.Location = new System.Drawing.Point(3, 172);
             this.btn_pro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_pro.Name = "btn_pro";
             this.btn_pro.Size = new System.Drawing.Size(229, 78);
@@ -219,7 +219,7 @@
             this.flp_order.Controls.Add(this.ibtn_order);
             this.flp_order.Controls.Add(this.btn_ddh);
             this.flp_order.Controls.Add(this.btn_dnh);
-            this.flp_order.Location = new System.Drawing.Point(3, 282);
+            this.flp_order.Location = new System.Drawing.Point(3, 254);
             this.flp_order.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flp_order.MaximumSize = new System.Drawing.Size(235, 214);
             this.flp_order.MinimumSize = new System.Drawing.Size(229, 78);
@@ -300,7 +300,7 @@
             this.btn_stf.IconColor = System.Drawing.Color.White;
             this.btn_stf.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_stf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_stf.Location = new System.Drawing.Point(3, 364);
+            this.btn_stf.Location = new System.Drawing.Point(3, 336);
             this.btn_stf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_stf.Name = "btn_stf";
             this.btn_stf.Size = new System.Drawing.Size(229, 78);
@@ -314,7 +314,7 @@
             this.flp_cst.Controls.Add(this.ibtn_customer);
             this.flp_cst.Controls.Add(this.btn_supplier);
             this.flp_cst.Controls.Add(this.btn_consumer);
-            this.flp_cst.Location = new System.Drawing.Point(3, 446);
+            this.flp_cst.Location = new System.Drawing.Point(3, 418);
             this.flp_cst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flp_cst.MaximumSize = new System.Drawing.Size(235, 214);
             this.flp_cst.MinimumSize = new System.Drawing.Size(229, 78);
@@ -390,7 +390,7 @@
             this.panel_report.Controls.Add(this.btn_rp2);
             this.panel_report.Controls.Add(this.btn_rp3);
             this.panel_report.Controls.Add(this.btn_rp4);
-            this.panel_report.Location = new System.Drawing.Point(3, 528);
+            this.panel_report.Location = new System.Drawing.Point(3, 500);
             this.panel_report.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_report.MaximumSize = new System.Drawing.Size(235, 350);
             this.panel_report.MinimumSize = new System.Drawing.Size(229, 78);
@@ -511,7 +511,7 @@
             this.btn_log.IconColor = System.Drawing.Color.White;
             this.btn_log.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_log.Location = new System.Drawing.Point(3, 610);
+            this.btn_log.Location = new System.Drawing.Point(3, 582);
             this.btn_log.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_log.Name = "btn_log";
             this.btn_log.Size = new System.Drawing.Size(229, 78);
@@ -568,7 +568,7 @@
             this.panel_desktop.Location = new System.Drawing.Point(251, 86);
             this.panel_desktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_desktop.Name = "panel_desktop";
-            this.panel_desktop.Size = new System.Drawing.Size(1560, 838);
+            this.panel_desktop.Size = new System.Drawing.Size(1560, 914);
             this.panel_desktop.TabIndex = 3;
             this.panel_desktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_desktop_Paint);
             // 
@@ -591,7 +591,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1811, 924);
+            this.ClientSize = new System.Drawing.Size(1811, 1000);
             this.Controls.Add(this.panel_desktop);
             this.Controls.Add(this.panelbar);
             this.Controls.Add(this.panelMenu);

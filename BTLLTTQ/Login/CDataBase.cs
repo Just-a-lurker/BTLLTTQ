@@ -10,7 +10,7 @@ namespace BTLLTTQ
 {
     public class CDataBase
     {
-		string strConnect = @"Data Source=" + DBNAME.NAME + @"\SQLEXPRESS;Initial Catalog=lttqnhom6;Integrated Security=True";
+		string strConnect = @"Data Source=" + DBNAME.NAME + @"\SQLEXPRESS;Initial Catalog=Lttqnhom6;Integrated Security=True";
 		public static SqlConnection sqlConnect = null;
 
         private void KetNoiCSDL()

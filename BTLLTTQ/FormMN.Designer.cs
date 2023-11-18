@@ -186,7 +186,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(10, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(272, 111);
+            this.panel1.Size = new System.Drawing.Size(272, 85);
             this.panel1.TabIndex = 3;
             // 
             // label3
@@ -214,7 +214,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(289, 81);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(400, 111);
+            this.panel2.Size = new System.Drawing.Size(400, 85);
             this.panel2.TabIndex = 4;
             // 
             // label12
@@ -242,7 +242,7 @@
             this.btn_lo.Controls.Add(this.label12);
             this.btn_lo.Location = new System.Drawing.Point(695, 81);
             this.btn_lo.Name = "btn_lo";
-            this.btn_lo.Size = new System.Drawing.Size(604, 111);
+            this.btn_lo.Size = new System.Drawing.Size(563, 85);
             this.btn_lo.TabIndex = 5;
             // 
             // chart1
@@ -252,13 +252,13 @@
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(10, 198);
+            this.chart1.Location = new System.Drawing.Point(10, 172);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(802, 314);
+            this.chart1.Size = new System.Drawing.Size(802, 272);
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
             title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
@@ -274,7 +274,7 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(818, 198);
+            this.chart2.Location = new System.Drawing.Point(818, 172);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series2.ChartArea = "ChartArea1";
@@ -285,7 +285,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(481, 527);
+            this.chart2.Size = new System.Drawing.Size(440, 480);
             this.chart2.TabIndex = 7;
             title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
             title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
@@ -366,7 +366,7 @@
             this.panel4.Controls.Add(this.nb_customers);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(9, 518);
+            this.panel4.Location = new System.Drawing.Point(6, 448);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(220, 207);
             this.panel4.TabIndex = 4;
@@ -396,7 +396,7 @@
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.dataGridView1);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(229, 518);
+            this.panel5.Location = new System.Drawing.Point(229, 448);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(583, 207);
             this.panel5.TabIndex = 8;
@@ -405,7 +405,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1301, 729);
+            this.ClientSize = new System.Drawing.Size(1264, 664);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.chart2);

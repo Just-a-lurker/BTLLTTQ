@@ -217,7 +217,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1166, 384);
+            this.groupBox2.Size = new System.Drawing.Size(1166, 348);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin các mặt hàng";
@@ -343,13 +343,13 @@
             // 
             this.dgvHDBanHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHDBanHang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvHDBanHang.Location = new System.Drawing.Point(4, 133);
+            this.dgvHDBanHang.Location = new System.Drawing.Point(4, 126);
             this.dgvHDBanHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvHDBanHang.Name = "dgvHDBanHang";
             this.dgvHDBanHang.RowHeadersWidth = 51;
             this.dgvHDBanHang.RowTemplate.Height = 24;
             this.dgvHDBanHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHDBanHang.Size = new System.Drawing.Size(1158, 247);
+            this.dgvHDBanHang.Size = new System.Drawing.Size(1158, 218);
             this.dgvHDBanHang.TabIndex = 0;
             this.dgvHDBanHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHDBanHang_CellClick);
             this.dgvHDBanHang.DoubleClick += new System.EventHandler(this.dgvHDBanHang_DoubleClick);
@@ -363,7 +363,7 @@
             this.panel1.Controls.Add(this.cmb_dondh);
             this.panel1.Controls.Add(this.btn_timkiem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 702);
+            this.panel1.Location = new System.Drawing.Point(0, 641);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1166, 67);
@@ -440,7 +440,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(61, 591);
+            this.label12.Location = new System.Drawing.Point(67, 551);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 22);
@@ -449,7 +449,7 @@
             // 
             // txt_datcoc
             // 
-            this.txt_datcoc.Location = new System.Drawing.Point(145, 591);
+            this.txt_datcoc.Location = new System.Drawing.Point(151, 551);
             this.txt_datcoc.Margin = new System.Windows.Forms.Padding(4);
             this.txt_datcoc.Name = "txt_datcoc";
             this.txt_datcoc.Size = new System.Drawing.Size(173, 28);
@@ -460,7 +460,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(348, 594);
+            this.label13.Location = new System.Drawing.Point(354, 554);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 22);
@@ -469,7 +469,7 @@
             // 
             // txt_thue
             // 
-            this.txt_thue.Location = new System.Drawing.Point(427, 589);
+            this.txt_thue.Location = new System.Drawing.Point(433, 549);
             this.txt_thue.Margin = new System.Windows.Forms.Padding(4);
             this.txt_thue.Name = "txt_thue";
             this.txt_thue.Size = new System.Drawing.Size(183, 28);
@@ -479,7 +479,7 @@
             // 
             // txt_tongtien
             // 
-            this.txt_tongtien.Location = new System.Drawing.Point(740, 591);
+            this.txt_tongtien.Location = new System.Drawing.Point(746, 551);
             this.txt_tongtien.Margin = new System.Windows.Forms.Padding(4);
             this.txt_tongtien.Name = "txt_tongtien";
             this.txt_tongtien.Size = new System.Drawing.Size(188, 28);
@@ -488,7 +488,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(637, 594);
+            this.label14.Location = new System.Drawing.Point(643, 554);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(95, 22);
@@ -497,7 +497,7 @@
             // 
             // txt_tongtienbc
             // 
-            this.txt_tongtienbc.Location = new System.Drawing.Point(937, 591);
+            this.txt_tongtienbc.Location = new System.Drawing.Point(943, 551);
             this.txt_tongtienbc.Margin = new System.Windows.Forms.Padding(4);
             this.txt_tongtienbc.Name = "txt_tongtienbc";
             this.txt_tongtienbc.Size = new System.Drawing.Size(187, 28);
@@ -506,7 +506,7 @@
             // 
             // btn_them
             // 
-            this.btn_them.Location = new System.Drawing.Point(28, 645);
+            this.btn_them.Location = new System.Drawing.Point(37, 584);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(140, 50);
             this.btn_them.TabIndex = 10;
@@ -516,7 +516,7 @@
             // 
             // btn_luu
             // 
-            this.btn_luu.Location = new System.Drawing.Point(197, 645);
+            this.btn_luu.Location = new System.Drawing.Point(224, 584);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(145, 50);
             this.btn_luu.TabIndex = 11;
@@ -526,7 +526,7 @@
             // 
             // btn_xoa
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(375, 645);
+            this.btn_xoa.Location = new System.Drawing.Point(421, 586);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(142, 50);
             this.btn_xoa.TabIndex = 12;
@@ -536,7 +536,7 @@
             // 
             // btn_xuat
             // 
-            this.btn_xuat.Location = new System.Drawing.Point(552, 645);
+            this.btn_xuat.Location = new System.Drawing.Point(609, 584);
             this.btn_xuat.Name = "btn_xuat";
             this.btn_xuat.Size = new System.Drawing.Size(151, 50);
             this.btn_xuat.TabIndex = 13;
@@ -546,7 +546,7 @@
             // 
             // btn_dong
             // 
-            this.btn_dong.Location = new System.Drawing.Point(901, 645);
+            this.btn_dong.Location = new System.Drawing.Point(983, 586);
             this.btn_dong.Name = "btn_dong";
             this.btn_dong.Size = new System.Drawing.Size(147, 50);
             this.btn_dong.TabIndex = 14;
@@ -556,7 +556,7 @@
             // 
             // btn_Sua
             // 
-            this.btn_Sua.Location = new System.Drawing.Point(729, 645);
+            this.btn_Sua.Location = new System.Drawing.Point(795, 586);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(149, 50);
             this.btn_Sua.TabIndex = 15;
@@ -568,7 +568,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 769);
+            this.ClientSize = new System.Drawing.Size(1166, 708);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.btn_dong);
             this.Controls.Add(this.btn_xuat);
