@@ -63,8 +63,13 @@ namespace BTLLTTQ.NhapVaBan
         {
             if (checkMa(txtHDN.Text))
             {
-				db.CapNhatDuLieu("delete from chitiethdn where sohdn =N'" + txtHDN.Text + "'");
-				db.CapNhatDuLieu("delete from hoadonnhap where sohdn =N'" + txtHDN.Text + "'");
+                DataTable dt1 = db.DocBang("Select * from chitiethdn where sohdn =N'" + txtHDN.Text + "'");
+                if (dt1.Rows.Count > 0)
+                {
+                    MessageBox.Show("Hay xoa het chi tiet cua hoa don nay truoc");
+                }
+                else
+                db.CapNhatDuLieu("delete from hoadonnhap where sohdn =N'" + txtHDN.Text + "'");
 				txtHDN.Text = txtTongTien.Text = "";
                 cbbMaNV.SelectedIndex = -1;
                 cBBmaNCC.SelectedIndex = -1;

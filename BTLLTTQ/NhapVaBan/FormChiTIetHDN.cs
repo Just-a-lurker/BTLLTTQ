@@ -8,13 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BTLLTTQ.NhapVaBan
 {
     public partial class FormChiTIetHDN : Form
     {
+        Merdul md = new Merdul();
         Sql db = new Sql();
         string maHDN;
+        int SLsua = 0;
         public FormChiTIetHDN(string soHDN)
         {
             InitializeComponent();
@@ -33,7 +36,7 @@ namespace BTLLTTQ.NhapVaBan
 
         bool checkMa(string k)
         {
-            DataTable dt = db.DocBang("Select * from chitiethdn where manoithat =N'" + k + "'");
+            DataTable dt = db.DocBang("Select * from chitiethdn where manoithat =N'" + k + "' and sohdn = N'" + txtSoHDN.Text +"'");
             if (dt.Rows.Count > 0)
             {
                 return true;
@@ -48,6 +51,14 @@ namespace BTLLTTQ.NhapVaBan
             txtDonGia.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             txtGiamGia.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             txtThanhTien.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            SLsua = int.Parse(txtSL.Text);
+        }
+        private void updateSL(int a)
+        {
+            int sl = int.Parse(md.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cbbMaNT.Text + "'"));
+            int slm = a + sl;
+            if (slm > 0) { db.CapNhatDuLieu("UPDATE DMNoiThat SET SoLuong =" + slm + " WHERE MaNoiThat= N'" + cbbMaNT.Text + "'"); }
+            else MessageBox.Show("SL khong hop le");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -60,6 +71,7 @@ namespace BTLLTTQ.NhapVaBan
             {
                 if (!checkMa(cbbMaNT.Text))
                 {
+                    updateSL(int.Parse(txtSL.Text));
                      db.CapNhatDuLieu("insert into chitiethdn values (N'" 
                         + cbbMaNT.Text + "',N'"
                         + txtSoHDN.Text + "'," 
@@ -69,7 +81,7 @@ namespace BTLLTTQ.NhapVaBan
                         + int.Parse(txtThanhTien.Text) + ")");
                     txtDonGia.Text = txtGiamGia.Text = txtSL.Text = txtThanhTien.Text = "";
                     cbbMaNT.SelectedIndex = -1;
-                    DataTable dt = db.DocBang("Select * from chitiethdn");
+                    DataTable dt = db.DocBang("Select * from chitiethdn where sohdn = N'" + txtSoHDN.Text +"'");
                     dataGridView1.DataSource = dt;
                 }
                 else
@@ -81,10 +93,13 @@ namespace BTLLTTQ.NhapVaBan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            db.CapNhatDuLieu("delete from chitiethdn where manoithat =N'" + cbbMaNT.Text + "'");
+            if (checkMa(cbbMaNT.Text)) { MessageBox.Show("Chon CTHD de xoa");
+                return; }
+            updateSL(-int.Parse(txtSL.Text));
+            db.CapNhatDuLieu("delete from chitiethdn where manoithat =N'" + cbbMaNT.Text + "' and sohdn = N'" + txtSoHDN.Text + "'");
             txtDonGia.Text = txtGiamGia.Text = txtSL.Text = txtThanhTien.Text = "";
             cbbMaNT.SelectedIndex = -1;
-            DataTable dt = db.DocBang("Select * from chitiethdn");
+            DataTable dt = db.DocBang("Select * from chitiethdn where sohdn = N'" + txtSoHDN.Text +"'");
             dataGridView1.DataSource = dt;
         }
 
@@ -98,6 +113,8 @@ namespace BTLLTTQ.NhapVaBan
             {
                 if (checkMa(cbbMaNT.Text))
                 {
+                    int temp = int.Parse(txtSL.Text)- SLsua;
+                    updateSL(temp);
                      db.CapNhatDuLieu("update chitiethdn set soluong=" + int.Parse(txtSL.Text)
                         + ", dongia = " + int.Parse(txtDonGia.Text) + ",giamgia =" 
                         + int.Parse(txtGiamGia.Text) + ",thanhtien =" 
@@ -105,7 +122,7 @@ namespace BTLLTTQ.NhapVaBan
                         + cbbMaNT.Text + "'");
                     txtDonGia.Text = txtGiamGia.Text = txtSL.Text = txtThanhTien.Text = "";
                     cbbMaNT.SelectedIndex = -1;
-                    DataTable dt = db.DocBang("Select * from chitiethdn");
+                    DataTable dt = db.DocBang("Select * from chitiethdn where sohdn = N'" + txtSoHDN.Text +"'");
                     dataGridView1.DataSource = dt;
                 }
                 else
