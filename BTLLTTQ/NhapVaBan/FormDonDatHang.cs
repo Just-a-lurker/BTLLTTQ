@@ -717,7 +717,7 @@ namespace BTLLTTQ.NhapVaBan
                 {
                     if (DialogResult.Yes == MessageBox.Show("Bạn muốn sửa thật à?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {
-                        int sltk,a;
+                        int sltk,a; 
                         sltk = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
                         if (Convert.ToInt32(txt_soluong.Text) > sltk)
                         {
@@ -727,30 +727,32 @@ namespace BTLLTTQ.NhapVaBan
                             return;
                         } 
                         //Reup SL
+                        int temp = int.Parse(txt_soluong.Text) - SLCT;
+                        int temp2 = temp + sltk;
                         if (CODE != cmb_mnt.Text)
                         {
-                            sql = "UPDATE DMNoiThat SET SoLuong = '" + sltk + SLCT + " WHERE MaNoiThat = N'" + CODE + "'";
+                           
+                            sql = "UPDATE DMNoiThat SET SoLuong = '" + temp2 + " 'WHERE MaNoiThat = N'" + CODE + "'";
                             functions.UpdateData(sql);
                         }else
                         {
-                            sql = "UPDATE DMNoiThat SET SoLuong = '" + sltk + SLCT + " WHERE MaNoiThat = N'" + cmb_mnt.Text + "'";
+                            sql = "UPDATE DMNoiThat SET SoLuong = '" + temp2 + " 'WHERE MaNoiThat = N'" + cmb_mnt.Text + "'";
                             functions.UpdateData(sql);
                         }
 
 
-                        sltk = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
+                        //sltk = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
 
                         sql = "UPDATE ChiTietHDDH SET SoLuong = '" + Convert.ToInt32(txt_soluong.Text)
                    + "', GiamGia = '" + Convert.ToInt32(txt_giamgia.Text)
                    + "', ThanhTien = '" + Convert.ToInt32(txt_thanhtien.Text)
-                    + "', MaNoiThat = '" + cmb_mnt.Text
                    + "' WHERE SoDDH = '" + txt_madonhang.Text + "'";
                         functions.UpdateData(sql);
-                        int c = sltk - Convert.ToInt32(txt_soluong);
-                        sql="Update DMNoiThat Set SoLuong='"
-                            +c.ToString()
-                            + " WHERE MaNoiThat = N'" + cmb_mnt.Text + "'";
-                        functions.UpdateData(sql);
+                        //int c = sltk - Convert.ToInt32(txt_soluong);
+                        //sql="Update DMNoiThat Set SoLuong='"
+                        //    +c.ToString()
+                        //    + " WHERE MaNoiThat = N'" + cmb_mnt.Text + "'";
+                        //functions.UpdateData(sql);
                         //int SLc, sl;
                         //sql = "UPDATE DMNoiThat SET SoLuong =" + SLc + " WHERE MaNoiThat= N'" + cmb_mnt.Text + "'";
                         //   sql = "UPDATE DonDatHang SET MaNV = '" + cmb_mnv.Text
