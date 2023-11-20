@@ -61,7 +61,7 @@
             this.manv.Location = new System.Drawing.Point(112, 69);
             this.manv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.manv.Name = "manv";
-            this.manv.Size = new System.Drawing.Size(130, 25);
+            this.manv.Size = new System.Drawing.Size(103, 20);
             this.manv.TabIndex = 0;
             this.manv.Text = "Mã nhân viên";
             // 
@@ -71,7 +71,7 @@
             this.nv.Location = new System.Drawing.Point(110, 122);
             this.nv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nv.Name = "nv";
-            this.nv.Size = new System.Drawing.Size(100, 25);
+            this.nv.Size = new System.Drawing.Size(79, 20);
             this.nv.TabIndex = 0;
             this.nv.Text = "Nhân viên";
             // 
@@ -80,7 +80,7 @@
             this.txtnv.Location = new System.Drawing.Point(336, 111);
             this.txtnv.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtnv.Name = "txtnv";
-            this.txtnv.Size = new System.Drawing.Size(428, 30);
+            this.txtnv.Size = new System.Drawing.Size(428, 26);
             this.txtnv.TabIndex = 1;
             // 
             // btnThemMoi
@@ -151,13 +151,14 @@
             // 
             // dgvnhanvien
             // 
+            this.dgvnhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvnhanvien.Location = new System.Drawing.Point(114, 486);
+            this.dgvnhanvien.Location = new System.Drawing.Point(114, 448);
             this.dgvnhanvien.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvnhanvien.Name = "dgvnhanvien";
             this.dgvnhanvien.RowHeadersWidth = 51;
             this.dgvnhanvien.RowTemplate.Height = 24;
-            this.dgvnhanvien.Size = new System.Drawing.Size(968, 300);
+            this.dgvnhanvien.Size = new System.Drawing.Size(968, 272);
             this.dgvnhanvien.TabIndex = 3;
             this.dgvnhanvien.Click += new System.EventHandler(this.dgvnhanvien_Click);
             // 
@@ -167,7 +168,7 @@
             this.macl.Location = new System.Drawing.Point(110, 216);
             this.macl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.macl.Name = "macl";
-            this.macl.Size = new System.Drawing.Size(102, 25);
+            this.macl.Size = new System.Drawing.Size(81, 20);
             this.macl.TabIndex = 0;
             this.macl.Text = "Mã ca làm";
             // 
@@ -177,7 +178,7 @@
             this.macv.Location = new System.Drawing.Point(112, 172);
             this.macv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.macv.Name = "macv";
-            this.macv.Size = new System.Drawing.Size(128, 25);
+            this.macv.Size = new System.Drawing.Size(101, 20);
             this.macv.TabIndex = 0;
             this.macv.Text = "Mã công việc";
             // 
@@ -187,7 +188,7 @@
             this.gioitinh.Location = new System.Drawing.Point(110, 257);
             this.gioitinh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gioitinh.Name = "gioitinh";
-            this.gioitinh.Size = new System.Drawing.Size(82, 25);
+            this.gioitinh.Size = new System.Drawing.Size(67, 20);
             this.gioitinh.TabIndex = 0;
             this.gioitinh.Text = "Giới tính";
             // 
@@ -197,7 +198,7 @@
             this.ngaysinh.Location = new System.Drawing.Point(110, 307);
             this.ngaysinh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ngaysinh.Name = "ngaysinh";
-            this.ngaysinh.Size = new System.Drawing.Size(99, 25);
+            this.ngaysinh.Size = new System.Drawing.Size(78, 20);
             this.ngaysinh.TabIndex = 0;
             this.ngaysinh.Text = "Ngày sinh";
             // 
@@ -207,7 +208,7 @@
             this.dienthoai.Location = new System.Drawing.Point(112, 356);
             this.dienthoai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dienthoai.Name = "dienthoai";
-            this.dienthoai.Size = new System.Drawing.Size(99, 25);
+            this.dienthoai.Size = new System.Drawing.Size(81, 20);
             this.dienthoai.TabIndex = 0;
             this.dienthoai.Text = "Điện thoại";
             // 
@@ -217,7 +218,7 @@
             this.diachi.Location = new System.Drawing.Point(112, 406);
             this.diachi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.diachi.Name = "diachi";
-            this.diachi.Size = new System.Drawing.Size(71, 25);
+            this.diachi.Size = new System.Drawing.Size(57, 20);
             this.diachi.TabIndex = 0;
             this.diachi.Text = "Địa chỉ";
             // 
@@ -226,7 +227,7 @@
             this.txtngaysinh.Location = new System.Drawing.Point(336, 300);
             this.txtngaysinh.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtngaysinh.Name = "txtngaysinh";
-            this.txtngaysinh.Size = new System.Drawing.Size(428, 30);
+            this.txtngaysinh.Size = new System.Drawing.Size(428, 26);
             this.txtngaysinh.TabIndex = 1;
             // 
             // txtdienthoai
@@ -234,7 +235,7 @@
             this.txtdienthoai.Location = new System.Drawing.Point(336, 347);
             this.txtdienthoai.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtdienthoai.Name = "txtdienthoai";
-            this.txtdienthoai.Size = new System.Drawing.Size(428, 30);
+            this.txtdienthoai.Size = new System.Drawing.Size(428, 26);
             this.txtdienthoai.TabIndex = 1;
             // 
             // txtdiachi
@@ -242,7 +243,7 @@
             this.txtdiachi.Location = new System.Drawing.Point(336, 393);
             this.txtdiachi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtdiachi.Name = "txtdiachi";
-            this.txtdiachi.Size = new System.Drawing.Size(428, 30);
+            this.txtdiachi.Size = new System.Drawing.Size(428, 26);
             this.txtdiachi.TabIndex = 1;
             // 
             // cmbogioitinh
@@ -254,7 +255,7 @@
             this.cmbogioitinh.Location = new System.Drawing.Point(336, 252);
             this.cmbogioitinh.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbogioitinh.Name = "cmbogioitinh";
-            this.cmbogioitinh.Size = new System.Drawing.Size(428, 33);
+            this.cmbogioitinh.Size = new System.Drawing.Size(428, 28);
             this.cmbogioitinh.TabIndex = 4;
             // 
             // cmbomacv
@@ -263,7 +264,7 @@
             this.cmbomacv.Location = new System.Drawing.Point(336, 156);
             this.cmbomacv.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbomacv.Name = "cmbomacv";
-            this.cmbomacv.Size = new System.Drawing.Size(428, 33);
+            this.cmbomacv.Size = new System.Drawing.Size(428, 28);
             this.cmbomacv.TabIndex = 5;
             // 
             // cmbomacl
@@ -272,7 +273,7 @@
             this.cmbomacl.Location = new System.Drawing.Point(338, 203);
             this.cmbomacl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbomacl.Name = "cmbomacl";
-            this.cmbomacl.Size = new System.Drawing.Size(426, 33);
+            this.cmbomacl.Size = new System.Drawing.Size(426, 28);
             this.cmbomacl.TabIndex = 5;
             // 
             // txtmanv
@@ -280,7 +281,7 @@
             this.txtmanv.Location = new System.Drawing.Point(338, 59);
             this.txtmanv.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtmanv.Name = "txtmanv";
-            this.txtmanv.Size = new System.Drawing.Size(426, 30);
+            this.txtmanv.Size = new System.Drawing.Size(426, 26);
             this.txtmanv.TabIndex = 6;
             // 
             // btnCLCV
@@ -296,7 +297,7 @@
             // 
             // FormStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 732);
             this.Controls.Add(this.btnCLCV);

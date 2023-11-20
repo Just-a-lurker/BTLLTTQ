@@ -108,8 +108,8 @@ namespace BTLLTTQ.Menu
 				if (!checkMa(txtMaSP.Text))
 				{
 					db.CapNhatDuLieu("insert into dmnoithat values (" + txtMaSP.Text + ",N'" + txtTenSP.Text + "',N'" + comboBox1.Text + "',N'" + comboBox2.Text + "',N'" + comboBox3.Text + "',N'"
-						+ comboBox4.Text + "',N" + comboBox5.Text + "'," + int.Parse(textBox1.Text) + "," + float.Parse(textBox2.Text) + "," + float.Parse(textBox3.Text) + ",N'" + textBox4.Text + "','" + dateBH.Value.Date.ToString("yyyyMMdd") + "')");
-					txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = "";
+						+ comboBox4.Text + "',N" + comboBox5.Text + "'," + int.Parse(textBox1.Text) + "," + float.Parse(textBox2.Text) + "," + float.Parse(textBox3.Text) + ",N'" + textBox4.Text + "','" + dateBH.Text + "')");
+					txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = txtMaSP.Text = "";
 					comboBox1.SelectedIndex = -1;
 					comboBox2.SelectedIndex = -1;
 					comboBox3.SelectedIndex = -1;
@@ -132,7 +132,7 @@ namespace BTLLTTQ.Menu
 				db.CapNhatDuLieu("delete from chitiethddh where manoithat =N'" + txtMaSP.Text + "'");
 				db.CapNhatDuLieu("delete from chitiethdn where manoithat =N'" + txtMaSP.Text + "'");
 				db.CapNhatDuLieu("delete from dmnoithat where manoithat =N'" + txtMaSP.Text + "'");
-				txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = "";
+				txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = txtMaSP.Text = "";
 				comboBox1.SelectedIndex = -1;
 				comboBox2.SelectedIndex = -1;
 				comboBox3.SelectedIndex = -1;
@@ -158,8 +158,8 @@ namespace BTLLTTQ.Menu
 						+ "', mamau = N'" + comboBox3.Text + "', machatlieu = N'"
 						+ comboBox4.Text + "', manuocsx = N'" + comboBox5.Text + "', soluong = " + int.Parse(textBox1.Text) 
 						+ ", dongianhap = " + float.Parse(textBox2.Text) + ", dongiaban = " + float.Parse(textBox3.Text) + ",anh = N'" + textBox4.Text 
-						+ "',thoigianbaohanh = '" + dateBH.Value.Date.ToString("yyyyMMdd") + "' where manoithat =N'" + txtMaSP.Text + "'");
-					txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = "";
+						+ "',thoigianbaohanh = '" + dateBH.Text + "' where manoithat =N'" + txtMaSP.Text + "'");
+					txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = txtMaSP.Text = "";
 					comboBox1.SelectedIndex = -1;
 					comboBox2.SelectedIndex = -1;
 					comboBox3.SelectedIndex = -1;

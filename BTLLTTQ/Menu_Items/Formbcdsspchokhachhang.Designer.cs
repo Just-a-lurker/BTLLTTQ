@@ -44,7 +44,7 @@
             this.label1.Location = new System.Drawing.Point(87, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 25);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Khách hàng";
             // 
@@ -54,7 +54,7 @@
             this.cmbokh.Location = new System.Drawing.Point(230, 58);
             this.cmbokh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbokh.Name = "cmbokh";
-            this.cmbokh.Size = new System.Drawing.Size(385, 33);
+            this.cmbokh.Size = new System.Drawing.Size(385, 28);
             this.cmbokh.TabIndex = 1;
             // 
             // label2
@@ -63,12 +63,13 @@
             this.label2.Location = new System.Drawing.Point(87, 148);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 25);
+            this.label2.Size = new System.Drawing.Size(54, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tháng";
             // 
             // bangdondathang
             // 
+            this.bangdondathang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bangdondathang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bangdondathang.Location = new System.Drawing.Point(82, 245);
             this.bangdondathang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -96,7 +97,7 @@
             this.cmbothang.Location = new System.Drawing.Point(230, 144);
             this.cmbothang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbothang.Name = "cmbothang";
-            this.cmbothang.Size = new System.Drawing.Size(385, 33);
+            this.cmbothang.Size = new System.Drawing.Size(385, 28);
             this.cmbothang.TabIndex = 5;
             // 
             // btnxuat
@@ -112,7 +113,7 @@
             // 
             // Formbcdsspchokhachhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.btnxuat);

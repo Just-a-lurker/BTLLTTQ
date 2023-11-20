@@ -42,7 +42,7 @@
             this.label1.Location = new System.Drawing.Point(88, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 25);
+            this.label1.Size = new System.Drawing.Size(76, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mặt hàng";
             // 
@@ -59,6 +59,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(93, 167);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -75,7 +76,7 @@
             this.cmbbmathang.Location = new System.Drawing.Point(222, 62);
             this.cmbbmathang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbbmathang.Name = "cmbbmathang";
-            this.cmbbmathang.Size = new System.Drawing.Size(433, 37);
+            this.cmbbmathang.Size = new System.Drawing.Size(433, 30);
             this.cmbbmathang.TabIndex = 4;
             // 
             // btnxuat
@@ -91,7 +92,7 @@
             // 
             // FormTongTienbanhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.btnxuat);
