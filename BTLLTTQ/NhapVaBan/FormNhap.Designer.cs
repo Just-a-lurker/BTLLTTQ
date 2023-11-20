@@ -210,7 +210,7 @@
             this.btnXemAll.Name = "btnXemAll";
             this.btnXemAll.Size = new System.Drawing.Size(149, 44);
             this.btnXemAll.TabIndex = 19;
-            this.btnXemAll.Text = "Xem tất cả HĐN";
+            this.btnXemAll.Text = "Tải lại bảng HĐN";
             this.btnXemAll.UseVisualStyleBackColor = true;
             this.btnXemAll.Click += new System.EventHandler(this.btnXemAll_Click);
             // 

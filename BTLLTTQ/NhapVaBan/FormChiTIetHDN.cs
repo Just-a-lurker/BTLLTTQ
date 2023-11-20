@@ -17,7 +17,7 @@ namespace BTLLTTQ.NhapVaBan
         Merdul md = new Merdul();
         Sql db = new Sql();
         string maHDN;
-        int SLsua = 0;
+        int SLsua = 0, TTS = 0;
         public FormChiTIetHDN(string soHDN)
         {
             InitializeComponent();
@@ -27,6 +27,7 @@ namespace BTLLTTQ.NhapVaBan
             dataGridView1.DataSource = dt;
             db.ThemVaoComboBox("select manoithat from dmnoithat", cbbMaNT);
             dt.Dispose();//Giải phóng bộ nhớ cho DataTable
+            txtThanhTien.Enabled = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -52,6 +53,7 @@ namespace BTLLTTQ.NhapVaBan
             txtGiamGia.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             txtThanhTien.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             SLsua = int.Parse(txtSL.Text);
+            TTS = int.Parse(txtThanhTien.Text);
         }
         private void updateSL(int a)
         {
@@ -59,6 +61,16 @@ namespace BTLLTTQ.NhapVaBan
             int slm = a + sl;
             if (slm > 0) { db.CapNhatDuLieu("UPDATE DMNoiThat SET SoLuong =" + slm + " WHERE MaNoiThat= N'" + cbbMaNT.Text + "'"); }
             else MessageBox.Show("SL khong hop le");
+        }
+
+        private void updateTT(int a)
+        {
+
+            int tt = int.Parse(md.GetFieldValues("SELECT tongtien FROM hoadonnhap WHERE sohdn = N'" + txtSoHDN.Text + "'"));
+            tt += a;
+            if (tt > 0) { db.CapNhatDuLieu("update hoadonnhap set tongtien = " + tt + " where sohdn =N'" + txtSoHDN.Text + "'"); }
+            else MessageBox.Show("Tong tien khong hop le");
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -71,7 +83,8 @@ namespace BTLLTTQ.NhapVaBan
             {
                 if (!checkMa(cbbMaNT.Text))
                 {
-                    updateSL(int.Parse(txtSL.Text));
+                   if(TTS != int.Parse(txtThanhTien.Text)) updateTT(int.Parse(txtThanhTien.Text));
+                   if(SLsua != int.Parse(txtSL.Text)) updateSL(int.Parse(txtSL.Text));
                      db.CapNhatDuLieu("insert into chitiethdn values (N'" 
                         + cbbMaNT.Text + "',N'"
                         + txtSoHDN.Text + "'," 
@@ -93,9 +106,10 @@ namespace BTLLTTQ.NhapVaBan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (checkMa(cbbMaNT.Text)) { MessageBox.Show("Chon CTHD de xoa");
+            if (!checkMa(cbbMaNT.Text)) { MessageBox.Show("Chon CTHD de xoa");
                 return; }
             updateSL(-int.Parse(txtSL.Text));
+            updateTT(-int.Parse(txtThanhTien.Text));
             db.CapNhatDuLieu("delete from chitiethdn where manoithat =N'" + cbbMaNT.Text + "' and sohdn = N'" + txtSoHDN.Text + "'");
             txtDonGia.Text = txtGiamGia.Text = txtSL.Text = txtThanhTien.Text = "";
             cbbMaNT.SelectedIndex = -1;
@@ -113,9 +127,17 @@ namespace BTLLTTQ.NhapVaBan
             {
                 if (checkMa(cbbMaNT.Text))
                 {
-                    int temp = int.Parse(txtSL.Text)- SLsua;
-                    updateSL(temp);
-                     db.CapNhatDuLieu("update chitiethdn set soluong=" + int.Parse(txtSL.Text)
+                    if (SLsua != int.Parse(txtSL.Text))
+                    {
+                        int temp = int.Parse(txtSL.Text)- SLsua;
+                        updateSL(temp);
+                    }
+                    if (TTS != int.Parse(txtThanhTien.Text))
+                    {
+                        int temp = int.Parse(txtThanhTien.Text) - TTS;
+                        updateTT(temp);
+                    }
+                        db.CapNhatDuLieu("update chitiethdn set soluong=" + int.Parse(txtSL.Text)
                         + ", dongia = " + int.Parse(txtDonGia.Text) + ",giamgia =" 
                         + int.Parse(txtGiamGia.Text) + ",thanhtien =" 
                         + int.Parse(txtThanhTien.Text) + " where manoithat =N'" 
@@ -149,6 +171,40 @@ namespace BTLLTTQ.NhapVaBan
             else
             {
                 MessageBox.Show("Khong tim thay chi tiet HDN nay");
+            }
+        }
+
+        private void txtSL_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDonGia.Text == "" || txtGiamGia.Text == "" || cbbMaNT.Text == "" || txtSL.Text == "")
+            {}
+            else
+            {
+            float giamgia = float.Parse(txtGiamGia.Text)/100 * (int.Parse(txtSL.Text) * float.Parse(txtDonGia.Text));
+            txtThanhTien.Text = Math.Ceiling((int.Parse(txtSL.Text) * float.Parse(txtDonGia.Text) - giamgia)).ToString();
+            }
+
+        }
+
+        private void txtDonGia_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDonGia.Text == "" || txtGiamGia.Text == "" || cbbMaNT.Text == "" || txtSL.Text == "")
+            { }
+            else
+            {
+                float giamgia = float.Parse(txtGiamGia.Text)/100 * (int.Parse(txtSL.Text) * float.Parse(txtDonGia.Text));
+                txtThanhTien.Text = Math.Ceiling((int.Parse(txtSL.Text) * float.Parse(txtDonGia.Text) - giamgia)).ToString();
+            }
+        }
+
+        private void txtGiamGia_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDonGia.Text == "" || txtGiamGia.Text == "" || cbbMaNT.Text == "" || txtSL.Text == "")
+            { }
+            else
+            {
+                float giamgia = float.Parse(txtGiamGia.Text)/100 * (int.Parse(txtSL.Text) * float.Parse(txtDonGia.Text));
+                txtThanhTien.Text =Math.Ceiling((int.Parse(txtSL.Text) * float.Parse(txtDonGia.Text) - giamgia)).ToString();
             }
         }
     }

@@ -45,7 +45,9 @@ namespace BTLLTTQ.NhapVaBan
             {
                 if (!checkMa(txtHDN.Text))
                 {
-                    db.CapNhatDuLieu("insert into hoadonnhap values ("+txtHDN.Text+",N'"+cbbMaNV.Text+"',N'"+cBBmaNCC.Text+"','"+ dateNgayNhap.Value.Date.ToString("yyyyMMdd")+"',"+int.Parse(txtTongTien.Text) + ")");
+                    int tt = 0;
+                    if (txtTongTien.Text != "") tt = int.Parse(txtTongTien.Text); 
+                    db.CapNhatDuLieu("insert into hoadonnhap values (N'"+txtHDN.Text+"',N'"+cbbMaNV.Text+"',N'"+cBBmaNCC.Text+"','"+ dateNgayNhap.Value.Date.ToString("yyyyMMdd")+"',"+ tt + ")");
                     txtHDN.Text = txtTongTien.Text = "";
                     cbbMaNV.SelectedIndex = -1;
                     cBBmaNCC.SelectedIndex = -1;
