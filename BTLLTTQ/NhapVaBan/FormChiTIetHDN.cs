@@ -17,7 +17,7 @@ namespace BTLLTTQ.NhapVaBan
         Merdul md = new Merdul();
         Sql db = new Sql();
         string maHDN;
-        int SLsua = 0, TTS = 0;
+        int SLsua = 0, TTS = 0, DG = 0;
         public FormChiTIetHDN(string soHDN)
         {
             InitializeComponent();
@@ -54,6 +54,7 @@ namespace BTLLTTQ.NhapVaBan
             txtThanhTien.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             SLsua = int.Parse(txtSL.Text);
             TTS = int.Parse(txtThanhTien.Text);
+            DG = int.Parse(txtDonGia.Text);
         }
         private void updateSL(int a)
         {
@@ -83,8 +84,8 @@ namespace BTLLTTQ.NhapVaBan
             {
                 if (!checkMa(cbbMaNT.Text))
                 {
-                   if(TTS != int.Parse(txtThanhTien.Text)) updateTT(int.Parse(txtThanhTien.Text));
-                   if(SLsua != int.Parse(txtSL.Text)) updateSL(int.Parse(txtSL.Text));
+                   updateTT(int.Parse(txtThanhTien.Text));
+                   updateSL(int.Parse(txtSL.Text));
                      db.CapNhatDuLieu("insert into chitiethdn values (N'" 
                         + cbbMaNT.Text + "',N'"
                         + txtSoHDN.Text + "'," 
@@ -92,6 +93,8 @@ namespace BTLLTTQ.NhapVaBan
                         + int.Parse(txtDonGia.Text) + "," 
                         + int.Parse(txtGiamGia.Text) + ","
                         + int.Parse(txtThanhTien.Text) + ")");
+                    double temp = Math.Ceiling(int.Parse(txtDonGia.Text) * 1.1);
+                    db.CapNhatDuLieu("UPDATE DMNoiThat SET dongianhap =" + int.Parse(txtDonGia.Text) + ", dongiaban = "+int.Parse(temp.ToString())+" WHERE MaNoiThat= N'" + cbbMaNT.Text + "'");
                     txtDonGia.Text = txtGiamGia.Text = txtSL.Text = txtThanhTien.Text = "";
                     cbbMaNT.SelectedIndex = -1;
                     DataTable dt = db.DocBang("Select * from chitiethdn where sohdn = N'" + txtSoHDN.Text +"'");
@@ -137,7 +140,9 @@ namespace BTLLTTQ.NhapVaBan
                         int temp = int.Parse(txtThanhTien.Text) - TTS;
                         updateTT(temp);
                     }
-                        db.CapNhatDuLieu("update chitiethdn set soluong=" + int.Parse(txtSL.Text)
+                    double temp2 = Math.Ceiling(int.Parse(txtDonGia.Text) * 1.1);
+                    if (DG != int.Parse(txtDonGia.Text)) db.CapNhatDuLieu("UPDATE DMNoiThat SET dongianhap =" + int.Parse(txtDonGia.Text) + ", dongiaban = " + int.Parse(temp2.ToString()) + " WHERE MaNoiThat= N'" + cbbMaNT.Text + "'");
+                    db.CapNhatDuLieu("update chitiethdn set soluong=" + int.Parse(txtSL.Text)
                         + ", dongia = " + int.Parse(txtDonGia.Text) + ",giamgia =" 
                         + int.Parse(txtGiamGia.Text) + ",thanhtien =" 
                         + int.Parse(txtThanhTien.Text) + " where manoithat =N'" 
