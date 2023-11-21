@@ -46,6 +46,7 @@
             this.cbbMaNT = new System.Windows.Forms.ComboBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.btnXemAll = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +106,7 @@
             this.txtGiamGia.Name = "txtGiamGia";
             this.txtGiamGia.Size = new System.Drawing.Size(169, 20);
             this.txtGiamGia.TabIndex = 23;
+            this.txtGiamGia.TextChanged += new System.EventHandler(this.txtGiamGia_TextChanged);
             // 
             // btnSua
             // 
@@ -164,6 +166,7 @@
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(121, 20);
             this.txtSL.TabIndex = 33;
+            this.txtSL.TextChanged += new System.EventHandler(this.txtSL_TextChanged);
             // 
             // txtDonGia
             // 
@@ -171,6 +174,7 @@
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(121, 20);
             this.txtDonGia.TabIndex = 34;
+            this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
             // 
             // label6
             // 
@@ -218,11 +222,22 @@
             this.btnXemAll.UseVisualStyleBackColor = true;
             this.btnXemAll.Click += new System.EventHandler(this.btnXemAll_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(615, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 20);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "%";
+            // 
             // FormChiTIetHDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1124, 585);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnXemAll);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.cbbMaNT);
@@ -269,5 +284,6 @@
         private System.Windows.Forms.ComboBox cbbMaNT;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Button btnXemAll;
+        private System.Windows.Forms.Label label7;
     }
 }
