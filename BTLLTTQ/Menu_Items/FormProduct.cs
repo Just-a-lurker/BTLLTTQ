@@ -95,7 +95,8 @@ namespace BTLLTTQ.Menu
 			textBox3.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
 			textBox4.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
 			dateBH.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
-		}
+			txtmota.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
+        }
 
 		private void btnThem_Click_1(object sender, EventArgs e)
 		{
@@ -107,9 +108,10 @@ namespace BTLLTTQ.Menu
 			{
 				if (!checkMa(txtMaSP.Text))
 				{
-					db.CapNhatDuLieu("insert into dmnoithat values (" + txtMaSP.Text + ",N'" + txtTenSP.Text + "',N'" + comboBox1.Text + "',N'" + comboBox2.Text + "',N'" + comboBox3.Text + "',N'"
-						+ comboBox4.Text + "',N" + comboBox5.Text + "'," + int.Parse(textBox1.Text) + "," + float.Parse(textBox2.Text) + "," + float.Parse(textBox3.Text) + ",N'" + textBox4.Text + "','" + dateBH.Text + "')");
-					txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = txtMaSP.Text = "";
+					db.CapNhatDuLieu("insert into dmnoithat values (N'" + txtMaSP.Text + "',N'" + txtTenSP.Text + "',N'" + comboBox1.Text + "',N'" + comboBox2.Text + "',N'" + comboBox3.Text + "',N'"
+						+ comboBox4.Text + "',N'" + comboBox5.Text + "'," + int.Parse(textBox1.Text) + "," + float.Parse(textBox2.Text) + "," + float.Parse(textBox3.Text) + ",N'" + textBox4.Text + "','" + dateBH.Text + "',N'"+ txtmota.Text + "')");
+					txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = txtMaSP.Text = txtmota.Text = dateBH.Text = "";
+					
 					comboBox1.SelectedIndex = -1;
 					comboBox2.SelectedIndex = -1;
 					comboBox3.SelectedIndex = -1;
@@ -132,7 +134,7 @@ namespace BTLLTTQ.Menu
 				db.CapNhatDuLieu("delete from chitiethddh where manoithat =N'" + txtMaSP.Text + "'");
 				db.CapNhatDuLieu("delete from chitiethdn where manoithat =N'" + txtMaSP.Text + "'");
 				db.CapNhatDuLieu("delete from dmnoithat where manoithat =N'" + txtMaSP.Text + "'");
-				txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = txtMaSP.Text = "";
+				txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = txtMaSP.Text = txtmota.Text = dateBH.Text = "";
 				comboBox1.SelectedIndex = -1;
 				comboBox2.SelectedIndex = -1;
 				comboBox3.SelectedIndex = -1;
@@ -158,8 +160,8 @@ namespace BTLLTTQ.Menu
 						+ "', mamau = N'" + comboBox3.Text + "', machatlieu = N'"
 						+ comboBox4.Text + "', manuocsx = N'" + comboBox5.Text + "', soluong = " + int.Parse(textBox1.Text) 
 						+ ", dongianhap = " + float.Parse(textBox2.Text) + ", dongiaban = " + float.Parse(textBox3.Text) + ",anh = N'" + textBox4.Text 
-						+ "',thoigianbaohanh = '" + dateBH.Text + "' where manoithat =N'" + txtMaSP.Text + "'");
-					txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = txtMaSP.Text = "";
+						+ "',thoigianbaohanh = '" + dateBH.Text + "',mota = N'" + txtmota.Text + "' where manoithat =N'" + txtMaSP.Text + "'");
+					txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = txtMaSP.Text = txtmota.Text = dateBH.Text = "";
 					comboBox1.SelectedIndex = -1;
 					comboBox2.SelectedIndex = -1;
 					comboBox3.SelectedIndex = -1;
@@ -187,5 +189,16 @@ namespace BTLLTTQ.Menu
 				MessageBox.Show("Khong tim thay SP nay");
 			}
 		}
-	}
+
+        private void FormProduct_Click(object sender, EventArgs e)
+        {
+            txtMaSP.Text = txtTenSP.Text = textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = txtMaSP.Text = txtmota.Text = dateBH.Text = "";
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+            comboBox3.SelectedIndex = -1;
+            comboBox4.SelectedIndex = -1;
+            comboBox5.SelectedIndex = -1;
+			txtMaSP.Enabled = true;
+        }
+    }
 }

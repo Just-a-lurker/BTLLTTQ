@@ -59,6 +59,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btntim = new System.Windows.Forms.Button();
             this.dateBH = new System.Windows.Forms.TextBox();
+            this.txtmota = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -350,9 +352,9 @@
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(568, 7);
+            this.groupBox1.Location = new System.Drawing.Point(758, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(574, 158);
+            this.groupBox1.Size = new System.Drawing.Size(384, 158);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
@@ -375,11 +377,33 @@
             this.dateBH.Size = new System.Drawing.Size(121, 20);
             this.dateBH.TabIndex = 28;
             // 
+            // txtmota
+            // 
+            this.txtmota.Location = new System.Drawing.Point(583, 36);
+            this.txtmota.Margin = new System.Windows.Forms.Padding(2);
+            this.txtmota.Multiline = true;
+            this.txtmota.Name = "txtmota";
+            this.txtmota.Size = new System.Drawing.Size(170, 127);
+            this.txtmota.TabIndex = 30;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(643, 14);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 20);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Mô tả";
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 642);
+            this.Controls.Add(this.txtmota);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.dateBH);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox4);
@@ -410,6 +434,7 @@
             this.Name = "FormProduct";
             this.Text = "FormProduct";
             this.Load += new System.EventHandler(this.FormProduct_Load);
+            this.Click += new System.EventHandler(this.FormProduct_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -449,5 +474,7 @@
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Button btntim;
         private System.Windows.Forms.TextBox dateBH;
+        private System.Windows.Forms.TextBox txtmota;
+        private System.Windows.Forms.Label label13;
     }
 }
