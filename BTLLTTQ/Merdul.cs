@@ -87,7 +87,15 @@ namespace BTLLTTQ
             string dt = string.Format("{0}/{1}/{2}", elements[0], elements[1], elements[2]);
             return dt;
         }
-      
+        public int Check_Account(string querry, string user, string pass, string euser, string epass)
+        {
+            Connect();
+            SqlCommand sqlcommand = new SqlCommand(querry, con);
+            sqlcommand.Parameters.AddWithValue(user, euser);
+            sqlcommand.Parameters.AddWithValue(pass, epass);
+            return (int)sqlcommand.ExecuteScalar();
+            ConnectClose();
+        }
         public void FillComboBox(string sql, System.Windows.Forms.ComboBox cb)
         {
             Connect();

@@ -258,6 +258,8 @@ namespace BTLLTTQ
 		private void btn_log_Click(object sender, EventArgs e)
 		{
 			ActivateButton(sender, RGBColors.color7);
+            this.Close();
+            new Login().Show();
 		}
 		private void ibtn_report_Click(object sender, EventArgs e)
 		{

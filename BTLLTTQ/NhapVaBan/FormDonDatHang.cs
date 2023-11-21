@@ -136,32 +136,32 @@ namespace BTLLTTQ.NhapVaBan
             if(rd_kh.Checked==true)
             {
                 dgvHDBanHang.Columns[6].HeaderText = "Mã Nhân Viên";
-                dgvHDBanHang.Columns[6].Width = 230;
+                dgvHDBanHang.Columns[6].Width = 100;
                 dgvHDBanHang.Columns[7].HeaderText = "Số Đơn Đặt Hàng";
-                dgvHDBanHang.Columns[7].Width = 230;
+                dgvHDBanHang.Columns[7].Width = 100;
 
             }
             else if(rd_nv.Checked==true)
             {
                 dgvHDBanHang.Columns[6].HeaderText = "Mã Khách Hàng";
-                dgvHDBanHang.Columns[6].Width = 230;
+                dgvHDBanHang.Columns[6].Width = 100;
                 dgvHDBanHang.Columns[7].HeaderText = "Số Đơn Đặt Hàng";
-                dgvHDBanHang.Columns[7].Width = 230;
+                dgvHDBanHang.Columns[7].Width = 100;
             }else if(rd_h.Checked==true)
             {
                 dgvHDBanHang.Columns[6].HeaderText = "Mã Khách Hàng";
-                dgvHDBanHang.Columns[6].Width = 230;
+                dgvHDBanHang.Columns[6].Width = 100;
                 dgvHDBanHang.Columns[7].HeaderText = "Mã Nhân Viên";
-                dgvHDBanHang.Columns[7].Width = 230;
+                dgvHDBanHang.Columns[7].Width = 100;
                 dgvHDBanHang.Columns[8].HeaderText = "Số Đơn Đặt Hàng";
-                dgvHDBanHang.Columns[8].Width = 230;
+                dgvHDBanHang.Columns[8].Width = 100;
             }    
-            dgvHDBanHang.Columns[0].Width = 230;
-            dgvHDBanHang.Columns[1].Width = 230;
-            dgvHDBanHang.Columns[2].Width = 230;
-            dgvHDBanHang.Columns[3].Width = 230;
-            dgvHDBanHang.Columns[4].Width = 230;
-            dgvHDBanHang.Columns[5].Width = 230;
+            dgvHDBanHang.Columns[0].Width = 100;
+            dgvHDBanHang.Columns[1].Width = 130;
+            dgvHDBanHang.Columns[2].Width = 130;
+            dgvHDBanHang.Columns[3].Width = 130;
+            dgvHDBanHang.Columns[4].Width = 130;
+            dgvHDBanHang.Columns[5].Width = 130;
 
             dgvHDBanHang.AllowUserToAddRows = false;
             dgvHDBanHang.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -507,6 +507,7 @@ namespace BTLLTTQ.NhapVaBan
                 else if (rd_kh.Checked == true)
                 {
                     text += "mã khách hàng";
+
                 }
                 else if (rd_nv.Checked == true)
                 {
@@ -531,27 +532,45 @@ namespace BTLLTTQ.NhapVaBan
                 txt_madonhang.Text = cmb_dondh.Text;
                 LoadInfoHoaDon();
                 LoadDataGridView();
+                btn_dong.Enabled = true;
+                btn_xoa.Enabled = true;
+                btn_luu.Enabled = true;
+                btn_Sua.Enabled = true;
+                btn_xuat.Enabled = true;
 
             }
             else if (rd_h.Checked == true)
             {
                 LoadDataGridViewSearchType();
-                
+                btn_dong.Enabled = true;
+                btn_xoa.Enabled = false;
+                btn_luu.Enabled = false;
+                btn_Sua.Enabled = false;
+                btn_xuat.Enabled = false;
+
             }
             else if (rd_kh.Checked == true)
             {
                 LoadDataGridViewSearchType();
+                btn_dong.Enabled = true;
+                btn_xoa.Enabled = false;
+                btn_luu.Enabled = false;
+                btn_Sua.Enabled = false;
+                btn_xuat.Enabled = false;
             }
             else if (rd_nv.Checked == true)
             {
                 LoadDataGridViewSearchType();
+                btn_dong.Enabled = true;
+                btn_xoa.Enabled = false;
+                btn_luu.Enabled = false;
+                btn_Sua.Enabled = false;
+                btn_xuat.Enabled = false;
             }
 
 
 
-            btn_xoa.Enabled = true;
-            btn_luu.Enabled = true;
-            btn_xuat.Enabled = true;
+           
             cmb_dondh.SelectedIndex = -1;
         }
 
@@ -843,6 +862,7 @@ namespace BTLLTTQ.NhapVaBan
                 btn_dong.Enabled = true;
                 btn_luu.Enabled = false;
                 btn_Sua.Enabled = false;
+                btn_xoa.Enabled = false;
                 btn_xuat.Enabled = false;
                 dgvHDBanHang.Columns.Clear();
                 MessageBox.Show("Ok b");
@@ -861,6 +881,7 @@ namespace BTLLTTQ.NhapVaBan
                 btn_luu.Enabled = false;
                 btn_Sua.Enabled = false;
                 btn_xuat.Enabled = false;
+                btn_xoa.Enabled = false;
                 dgvHDBanHang.Columns.Clear();
                 MessageBox.Show("Ok b");
             }
@@ -874,6 +895,7 @@ namespace BTLLTTQ.NhapVaBan
                 cmb_dondh.Text = "";
                 functions.FillComboBox("Select MaNV from NhanVien", cmb_dondh);
                 btn_dong.Enabled = true;
+                btn_xoa.Enabled = false;
                 btn_luu.Enabled = false;
                 btn_Sua.Enabled = false;
                 btn_xuat.Enabled = false;
@@ -937,6 +959,11 @@ namespace BTLLTTQ.NhapVaBan
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_dondh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

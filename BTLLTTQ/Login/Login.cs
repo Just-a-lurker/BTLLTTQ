@@ -12,7 +12,7 @@ namespace BTLLTTQ
 {
     public partial class Login : Form
     {
-        CDataBase dbase = new CDataBase();
+        Merdul dbase = new Merdul();
         private const int BTW = 0xA1;
         private const int HTC = 0x2;
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -24,7 +24,9 @@ namespace BTLLTTQ
             
             InitializeComponent();
             RoundCorners();
-            dbase.ThemVaoComboBox("select TenTK from TaiKhoan",cmb_username);
+                //cmb_username.Items.Clear();
+                //dbase.FillComboBox("select TenTK from TaiKhoan", cmb_username);
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -99,27 +101,12 @@ namespace BTLLTTQ
                 {
                     MessageBox.Show("Authentication Succeeded");
                     this.Hide();
-                    new FormMenu().Show();
+                    new FormMNN().Show();
                 }
                 else
                 {
                     MessageBox.Show("Authentication Failed");
                 }
-                //string username = tb_username.Text;
-                //string password=tb_password.Text;
-                //string querry = "Select * from TaiKhoan where TenTK='"+username+"' and MatKhau ='"+password+"'";
-                //if(modify.Accounts(querry).Count!=0)
-                //{
-                //    this.Hide();
-                //    (new FormMenu()).Show();
-
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Authentication Failed");
-
-
-                //}
             }
         }
 

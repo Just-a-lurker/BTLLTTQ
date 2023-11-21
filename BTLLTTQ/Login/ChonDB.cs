@@ -51,9 +51,8 @@ namespace BTLLTTQ
 			DBNAME.NAME = name;
 			if (CheckConnection())
 			{
-				this.Hide();
-				(new FormMNN()).ShowDialog();	
-				this.Close();
+				(new Login()).Show();	
+				
 			}
 
 		}
