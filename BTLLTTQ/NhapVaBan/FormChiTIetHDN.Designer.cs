@@ -47,6 +47,7 @@
             this.btnTim = new System.Windows.Forms.Button();
             this.btnXemAll = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,7 +215,7 @@
             // 
             // btnXemAll
             // 
-            this.btnXemAll.Location = new System.Drawing.Point(822, 61);
+            this.btnXemAll.Location = new System.Drawing.Point(822, 114);
             this.btnXemAll.Name = "btnXemAll";
             this.btnXemAll.Size = new System.Drawing.Size(149, 44);
             this.btnXemAll.TabIndex = 39;
@@ -232,11 +233,22 @@
             this.label7.TabIndex = 40;
             this.label7.Text = "%";
             // 
+            // btnExcel
+            // 
+            this.btnExcel.Location = new System.Drawing.Point(822, 59);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(149, 44);
+            this.btnExcel.TabIndex = 41;
+            this.btnExcel.Text = "Xuất File";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // FormChiTIetHDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1124, 585);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnXemAll);
             this.Controls.Add(this.btnTim);
@@ -285,5 +297,6 @@
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Button btnXemAll;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnExcel;
     }
 }

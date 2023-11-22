@@ -46,6 +46,7 @@
             this.btnTim = new System.Windows.Forms.Button();
             this.btnXemAll = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,11 +225,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnExcel
+            // 
+            this.btnExcel.Location = new System.Drawing.Point(993, 533);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(149, 44);
+            this.btnExcel.TabIndex = 21;
+            this.btnExcel.Text = "Xuất file ";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // FormNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 642);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnXemAll);
             this.Controls.Add(this.btnTim);
@@ -277,5 +289,6 @@
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Button btnXemAll;
 		private System.Windows.Forms.Button button2;
-	}
+        private System.Windows.Forms.Button btnExcel;
+    }
 }
