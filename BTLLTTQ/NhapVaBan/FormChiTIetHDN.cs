@@ -225,7 +225,7 @@ namespace BTLLTTQ.NhapVaBan
             exRange.Range["C2:E2"].Font.ColorIndex = 3; //Màu đỏ
             exRange.Range["C2:E2"].MergeCells = true;
             exRange.Range["C2:E2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["C2:E2"].Value = "Đơn Nhập Hàng";
+            exRange.Range["C2:E2"].Value = "Chi Tiết Đơn Nhập Hàng";
             // Biểu diễn thông tin chung của hóa đơn bán
             sql = "SELECT a.SoHDN, a.Ngaynhap, a.TongTien, b.tenncc, b.DiaChi, b.DienThoai, c.TenNV FROM hoadonnhap AS a, nhacungcap AS b, NhanVien AS c WHERE a.sohdn = N'" + txtSoHDN.Text + "' and a.mancc = b.mancc AND a.MaNV = c.MaNV";
             tblThongtinHD = db.DocBang(sql);
