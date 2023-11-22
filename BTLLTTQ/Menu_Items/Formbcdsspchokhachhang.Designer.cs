@@ -35,6 +35,7 @@
             this.btntim = new System.Windows.Forms.Button();
             this.cmbothang = new System.Windows.Forms.ComboBox();
             this.btnxuat = new System.Windows.Forms.Button();
+            this.btnword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bangdondathang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.label1.Location = new System.Drawing.Point(87, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 20);
+            this.label1.Size = new System.Drawing.Size(118, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Khách hàng";
             // 
@@ -54,16 +55,16 @@
             this.cmbokh.Location = new System.Drawing.Point(230, 58);
             this.cmbokh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbokh.Name = "cmbokh";
-            this.cmbokh.Size = new System.Drawing.Size(385, 28);
+            this.cmbokh.Size = new System.Drawing.Size(385, 33);
             this.cmbokh.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 148);
+            this.label2.Location = new System.Drawing.Point(87, 184);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 20);
+            this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tháng";
             // 
@@ -94,15 +95,15 @@
             // cmbothang
             // 
             this.cmbothang.FormattingEnabled = true;
-            this.cmbothang.Location = new System.Drawing.Point(230, 144);
+            this.cmbothang.Location = new System.Drawing.Point(230, 181);
             this.cmbothang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbothang.Name = "cmbothang";
-            this.cmbothang.Size = new System.Drawing.Size(385, 28);
+            this.cmbothang.Size = new System.Drawing.Size(385, 33);
             this.cmbothang.TabIndex = 5;
             // 
             // btnxuat
             // 
-            this.btnxuat.Location = new System.Drawing.Point(926, 148);
+            this.btnxuat.Location = new System.Drawing.Point(926, 122);
             this.btnxuat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnxuat.Name = "btnxuat";
             this.btnxuat.Size = new System.Drawing.Size(180, 36);
@@ -111,11 +112,22 @@
             this.btnxuat.UseVisualStyleBackColor = true;
             this.btnxuat.Click += new System.EventHandler(this.btnxuat_Click);
             // 
+            // btnword
+            // 
+            this.btnword.Location = new System.Drawing.Point(926, 181);
+            this.btnword.Name = "btnword";
+            this.btnword.Size = new System.Drawing.Size(180, 35);
+            this.btnword.TabIndex = 7;
+            this.btnword.Text = "Xuất word";
+            this.btnword.UseVisualStyleBackColor = true;
+            this.btnword.Click += new System.EventHandler(this.btnword_Click_1);
+            // 
             // Formbcdsspchokhachhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 703);
+            this.Controls.Add(this.btnword);
             this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.cmbothang);
             this.Controls.Add(this.btntim);
@@ -143,5 +155,6 @@
         private System.Windows.Forms.Button btntim;
         private System.Windows.Forms.ComboBox cmbothang;
         private System.Windows.Forms.Button btnxuat;
+        private System.Windows.Forms.Button btnword;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Word = Microsoft.Office.Interop.Word;
 using COMExcel = Microsoft.Office.Interop.Excel;
 namespace BTLLTTQ.Menu_Items
 {
@@ -15,6 +16,11 @@ namespace BTLLTTQ.Menu_Items
     {
         Sql db = new Sql();
         Merdul functions = new Merdul();
+        private Word.Application oApp;
+        private Word.Document oDoc;
+
+        private object oEndOfDoc = "\\endofdoc"; // Đối tượng đánh dấu kết thúc văn bản
+        private object oMissing = System.Reflection.Missing.Value;
         public Formbaocaonhacungcap()
         {
             InitializeComponent();
@@ -140,6 +146,86 @@ namespace BTLLTTQ.Menu_Items
             exRange.Range["A3:C3"].Value = tblThongtinHD.Rows[0][3];
             exSheet.Name = "Báo Cáo";
             exApp.Visible = true;
+        }
+
+        private void btnword_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Word Documents (*.docx)|*.docx";
+                sfd.FileName = "DanhSachNCC.docx";
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    oApp = new Word.Application();
+                    if (oApp == null)
+                    {
+                        MessageBox.Show("Không thể khởi tạo ứng dụng Word.");
+                        return;
+                    }
+                    oDoc = oApp.Documents.Add();
+                    if (oDoc == null)
+                    {
+                        MessageBox.Show("Không thể tạo tài liệu Word.");
+                        return;
+                    }
+                    Export_Data_To_Word(dataGridView1, sfd.FileName);
+                    MessageBox.Show("Xuất file Word thành công!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+        public void Export_Data_To_Word(DataGridView DGV, string filename)
+        {
+            if (DGV.Rows.Count != 0)
+            {
+                int RowCount = DGV.Rows.Count;
+                int ColumnCount = DGV.Columns.Count;
+                Object[,] DataArray = new object[RowCount + 1, ColumnCount];
+                for (int c = 0; c < ColumnCount; c++)
+                {
+                    DataArray[0, c] = DGV.Columns[c].HeaderText;
+                }
+                for (int r = 0; r < RowCount; r++)
+                {
+                    for (int c = 0; c < ColumnCount; c++)
+                    {
+                        DataArray[r + 1, c] = DGV.Rows[r].Cells[c].Value;
+                    }
+                }
+                Word.Table oTable = oDoc.Tables.Add(oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range, RowCount + 1, ColumnCount, ref oMissing, ref oMissing);
+                oTable.Range.ParagraphFormat.SpaceAfter = 6;
+                for (int r = 0; r <= RowCount; r++)
+                {
+                    for (int c = 0; c < ColumnCount; c++)
+                    {
+                        oTable.Cell(r + 1, c + 1).Range.Text = DataArray[r, c]?.ToString() ?? "";
+                    }
+                }
+                DateTime currentDate = DateTime.Now;
+                string ngayXuat = $"Ngày xuất: {currentDate.ToString("dd/MM/yyyy")}";
+                string nhanVien = $"Nhân viên bán hàng: {GetTenNhanVien()}";
+                oDoc.Content.InsertAfter(ngayXuat + "\n" + nhanVien);
+                oDoc.SaveAs2(filename);
+                oApp.Quit();
+            }
+        }
+        private string GetTenNhanVien()
+        {
+            string selectedItem = cmbomh.SelectedItem?.ToString();
+            string selectedMonth = cmbothang.SelectedItem?.ToString();
+            string query = $@"SELECT DISTINCT NCC.tenNCC ,NT.tenNoiThat,HDN.NgayNhap ,NV.tenNV FROM NhaCungCap NCC
+                  INNER JOIN HoaDonNhap HDN ON NCC.MaNCC = HDN.MaNCC
+                  INNER JOIN ChiTietHDN CTHDN ON HDN.SoHDN = CTHDN.SoHDN
+                  INNER JOIN NhanVien AS NV ON HDN.MaNV = NV.MaNV 
+                  INNER JOIN DMNoiThat NT ON CTHDN.MaNoithat = NT.MaNoiThat
+                  WHERE NT.MaNoiThat = '{selectedItem}' AND FORMAT(HDN.NgayNhap, 'MM/yyyy') = '{selectedMonth}'";
+            string tenNhanVien = functions.GetFieldValues(query).ToString();
+
+            return tenNhanVien;
         }
     }
 }

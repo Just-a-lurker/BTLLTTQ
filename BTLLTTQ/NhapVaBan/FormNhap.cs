@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using COMExcel = Microsoft.Office.Interop.Excel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BTLLTTQ.NhapVaBan
@@ -168,5 +169,70 @@ namespace BTLLTTQ.NhapVaBan
 		{
             this.Close();
 		}
-	}
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+                COMExcel.Application exApp = new COMExcel.Application();
+                COMExcel.Workbook exBook; //Trong 1 chương trình Excel có nhiều Workbook
+                COMExcel.Worksheet exSheet; //Trong 1 Workbook có nhiều Worksheet
+                COMExcel.Range exRange;
+                string sql;
+                int hang = 0, cot = 0;
+                System.Data.DataTable tblThongtinHD, tblThongtinHang;
+                exBook = exApp.Workbooks.Add(COMExcel.XlWBATemplate.xlWBATWorksheet);
+                exSheet = exBook.Worksheets[1];
+                // Định dạng chung
+                exRange = exSheet.Cells[1, 1];
+                exRange.Range["A1:Z300"].Font.Name = "Times new roman"; //Font chữ
+                exRange.Range["A1:B3"].Font.Size = 10;
+                exRange.Range["A1:B3"].Font.Bold = true;
+                exRange.Range["A1:B3"].Font.ColorIndex = 5; //Màu xanh da trời
+                exRange.Range["A1:A1"].ColumnWidth = 7;
+                exRange.Range["B1:B1"].ColumnWidth = 15;
+                exRange.Range["A1:B1"].MergeCells = true;
+                exRange.Range["A1:B1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+                exRange.Range["A1:B1"].Value = "Khoa CNTT.";
+                exRange.Range["A2:B2"].MergeCells = true;
+                exRange.Range["A2:B2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+                exRange.Range["A2:B2"].Value = "GTVT - Hà Nội";
+                exRange.Range["A3:B3"].MergeCells = true;
+                exRange.Range["A3:B3"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+                exRange.Range["A3:B3"].Value = "Điện thoại: 0325122044";
+                exRange.Range["C2:E2"].Font.Size = 16;
+                exRange.Range["C2:E2"].Font.Bold = true;
+                exRange.Range["C2:E2"].Font.ColorIndex = 3; //Màu đỏ
+                exRange.Range["C2:E2"].MergeCells = true;
+                exRange.Range["C2:E2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+                exRange.Range["C2:E2"].Value = "Đơn Nhập Hàng";
+                // Biểu diễn thông tin chung của hóa đơn bán
+                sql = "SELECT a.SoHDN, a.Ngaynhap, a.TongTien, b.tenncc, b.DiaChi, b.DienThoai, c.TenNV FROM hoadonnhap AS a, nhacungcap AS b, NhanVien AS c where a.mancc = b.mancc AND a.MaNV = c.MaNV";
+                tblThongtinHD = db.DocBang(sql);
+                exRange.Range["C12:H12"].ColumnWidth = 15;
+                exRange.Range["F12:F12"].ColumnWidth = 25;
+                exRange.Range["G12:G12"].ColumnWidth = 25;
+                exRange.Range["A12:A12"].Value = "STT";
+                exRange.Range["B12:B12"].Value = "Mã HĐN";  
+                exRange.Range["C12:C12"].Value = "Ngày nhập";  
+                exRange.Range["D12:D12"].Value = "Tổng tiền";
+                exRange.Range["E12:E12"].Value = "Tên nhà cung cấp";
+                exRange.Range["F12:F12"].Value = "Địa chỉ NCC";
+                exRange.Range["G12:G12"].Value = "Số điện thoại";
+                exRange.Range["H12:H12"].Value = "Mã nhân viên";
+                exRange.Range["D13:D" + (tblThongtinHD.Rows.Count + 12)].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignLeft;
+                exRange.Range["G13:G" + (tblThongtinHD.Rows.Count + 12)].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignLeft;
+             for (hang = 0; hang < tblThongtinHD.Rows.Count; hang++)
+                {
+                    //Điền số thứ tự vào cột 1 từ dòng 12
+                    exSheet.Cells[1][hang + 13] = hang + 1;
+                    for (cot = 0; cot < tblThongtinHD.Columns.Count; cot++)
+                    //Điền thông tin hàng từ cột thứ 2, dòng 12
+                    {
+                        exSheet.Cells[cot + 2][hang + 13] = tblThongtinHD.Rows[hang][cot].ToString();
+                        
+                }
+
+                }
+                exApp.Visible = true;
+        }
+    }
 }

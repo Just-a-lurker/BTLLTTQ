@@ -104,7 +104,9 @@ namespace BTLLTTQ
                 {
                     MessageBox.Show("Authentication Succeeded");
                     this.Hide();
-                    new FormMNN().Show();
+                    FormMNN f1 = new FormMNN();
+                    f1.ShowDialog();
+                    this.Close();
                 }
                 else
                 {

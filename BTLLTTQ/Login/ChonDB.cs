@@ -52,8 +52,10 @@ namespace BTLLTTQ
 			if (CheckConnection())
 			{
 
-               
-                (new Login()).Show();
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+                this.Close();
 
             }
 

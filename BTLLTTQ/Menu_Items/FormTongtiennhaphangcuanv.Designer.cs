@@ -35,6 +35,7 @@
             this.btntim = new System.Windows.Forms.Button();
             this.dgvds = new System.Windows.Forms.DataGridView();
             this.btnxuat = new System.Windows.Forms.Button();
+            this.btnword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvds)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.label1.Location = new System.Drawing.Point(124, 72);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhân viên";
             // 
@@ -54,16 +55,16 @@
             this.cmbonv.Location = new System.Drawing.Point(280, 72);
             this.cmbonv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbonv.Name = "cmbonv";
-            this.cmbonv.Size = new System.Drawing.Size(265, 28);
+            this.cmbonv.Size = new System.Drawing.Size(265, 33);
             this.cmbonv.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(124, 155);
+            this.label2.Location = new System.Drawing.Point(124, 195);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 20);
+            this.label2.Size = new System.Drawing.Size(49, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Qúy";
             // 
@@ -75,10 +76,10 @@
             "2",
             "3",
             "4"});
-            this.cmboquy.Location = new System.Drawing.Point(280, 155);
+            this.cmboquy.Location = new System.Drawing.Point(280, 190);
             this.cmboquy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmboquy.Name = "cmboquy";
-            this.cmboquy.Size = new System.Drawing.Size(265, 28);
+            this.cmboquy.Size = new System.Drawing.Size(265, 33);
             this.cmboquy.TabIndex = 1;
             // 
             // btntim
@@ -107,7 +108,7 @@
             // 
             // btnxuat
             // 
-            this.btnxuat.Location = new System.Drawing.Point(914, 155);
+            this.btnxuat.Location = new System.Drawing.Point(914, 131);
             this.btnxuat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnxuat.Name = "btnxuat";
             this.btnxuat.Size = new System.Drawing.Size(210, 36);
@@ -116,11 +117,22 @@
             this.btnxuat.UseVisualStyleBackColor = true;
             this.btnxuat.Click += new System.EventHandler(this.btnxuat_Click);
             // 
+            // btnword
+            // 
+            this.btnword.Location = new System.Drawing.Point(914, 190);
+            this.btnword.Name = "btnword";
+            this.btnword.Size = new System.Drawing.Size(209, 34);
+            this.btnword.TabIndex = 5;
+            this.btnword.Text = "Xuất word";
+            this.btnword.UseVisualStyleBackColor = true;
+            this.btnword.Click += new System.EventHandler(this.btnword_Click);
+            // 
             // FormTongtiennhaphangcuanv
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 703);
+            this.Controls.Add(this.btnword);
             this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.dgvds);
             this.Controls.Add(this.btntim);
@@ -148,5 +160,6 @@
         private System.Windows.Forms.Button btntim;
         private System.Windows.Forms.DataGridView dgvds;
         private System.Windows.Forms.Button btnxuat;
+        private System.Windows.Forms.Button btnword;
     }
 }
