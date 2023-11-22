@@ -1,4 +1,6 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿
+using BTLLTTQ.Menu;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +9,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using COMExcel = Microsoft.Office.Interop.Excel;
 namespace BTLLTTQ.NhapVaBan
 {
@@ -665,30 +669,36 @@ namespace BTLLTTQ.NhapVaBan
             exRange.Range["B9:B9"].Value = "Điện thoại:";
             exRange.Range["C9:E9"].MergeCells = true;
             exRange.Range["C9:E9"].Value = tblThongtinHD.Rows[0][6].ToString();
+            exRange.Range["B10:B10"].Value = "Ngày Đặt:";
+            exRange.Range["C10:E10"].MergeCells = true;
+            exRange.Range["C10:E10"].Value = tblThongtinHD.Rows[0][1].ToString();
+            exRange.Range["B11:B11"].Value = "Ngày Giao:";
+            exRange.Range["C11:E11"].MergeCells = true;
+            exRange.Range["C11:E11"].Value = tblThongtinHD.Rows[0][2].ToString();
             //Lấy thông tin các mặt hàng
             sql = "SELECT b.TenNoiThat, a.SoLuong, b.DonGiaBan, a.GiamGia, a.ThanhTien " +
                   "FROM ChiTietHDDH AS a , DMNoiThat AS b WHERE a.SoDDH = N'" +
                   txt_madonhang.Text + "' AND a.MaNoiThat = b.MaNoiThat";
             tblThongtinHang = functions.GetDataToTable(sql);
             //Tạo dòng tiêu đề bảng
-            exRange.Range["A11:F11"].Font.Bold = true;
-            exRange.Range["A11:F11"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["C11:F11"].ColumnWidth = 12;
-            exRange.Range["A11:A11"].Value = "STT";
-            exRange.Range["B11:B11"].Value = "Tên Nội Thất";
-            exRange.Range["C11:C11"].Value = "Số lượng";
-            exRange.Range["D11:D11"].Value = "Đơn giá";
-            exRange.Range["E11:E11"].Value = "Giảm giá";
-            exRange.Range["F11:F11"].Value = "Thành tiền";
+            exRange.Range["A12:F12"].Font.Bold = true;
+            exRange.Range["A12:F12"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["C12:F12"].ColumnWidth = 12;
+            exRange.Range["A12:A12"].Value = "STT";
+            exRange.Range["B12:B12"].Value = "Tên Nội Thất";
+            exRange.Range["C12:C12"].Value = "Số lượng";
+            exRange.Range["D12:D12"].Value = "Đơn giá";
+            exRange.Range["E12:E12"].Value = "Giảm giá";
+            exRange.Range["F12:F12"].Value = "Thành tiền";
             for (hang = 0; hang < tblThongtinHang.Rows.Count; hang++)
             {
                 //Điền số thứ tự vào cột 1 từ dòng 12
-                exSheet.Cells[1][hang + 12] = hang + 1;
+                exSheet.Cells[1][hang + 13] = hang + 1;
                 for (cot = 0; cot < tblThongtinHang.Columns.Count; cot++)
                 //Điền thông tin hàng từ cột thứ 2, dòng 12
                 {
-                    exSheet.Cells[cot + 2][hang + 12] = tblThongtinHang.Rows[hang][cot].ToString();
-                    if (cot == 3) exSheet.Cells[cot + 2][hang + 12] = tblThongtinHang.Rows[hang][cot].ToString() + "%";
+                    exSheet.Cells[cot + 2][hang + 13] = tblThongtinHang.Rows[hang][cot].ToString();
+                    if (cot == 3) exSheet.Cells[cot + 2][hang + 13] = tblThongtinHang.Rows[hang][cot].ToString() + "%";
                 }
             }
             exRange = exSheet.Cells[cot][hang + 14];
@@ -707,7 +717,7 @@ namespace BTLLTTQ.NhapVaBan
             exRange.Range["A1:C1"].MergeCells = true;
             exRange.Range["A1:C1"].Font.Italic = true;
             exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            DateTime d = Convert.ToDateTime(tblThongtinHD.Rows[0][1]);
+            DateTime d = Convert.ToDateTime(System.DateTime.Now);
             exRange.Range["A1:C1"].Value = "Hà Nội, ngày " + d.Day + " tháng " + d.Month + " năm " + d.Year;
             exRange.Range["A2:C2"].MergeCells = true;
             exRange.Range["A2:C2"].Font.Italic = true;
@@ -720,7 +730,7 @@ namespace BTLLTTQ.NhapVaBan
             exSheet.Name = "Đơn đặt hàng";
             exApp.Visible = true;
         }
-
+       
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             
@@ -745,6 +755,7 @@ namespace BTLLTTQ.NhapVaBan
                             txt_soluong.Focus();
                             return;
                         } 
+                       
                         //Reup SL
                         int temp = int.Parse(txt_soluong.Text) - SLCT;
                         int temp2 = temp + sltk;
@@ -967,5 +978,7 @@ namespace BTLLTTQ.NhapVaBan
         {
 
         }
+
+        
     }
 }

@@ -369,5 +369,8 @@
   <ItemGroup>
     <None Include="Images\IconImages\Khabanh1140x761.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Template\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
