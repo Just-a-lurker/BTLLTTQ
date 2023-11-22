@@ -129,51 +129,51 @@ namespace BTLLTTQ.Menu_Items
 
             tblThongtinHD = functions.GetDataToTable(query);
 
-            exRange.Range["A11:I11"].Font.Bold = true;
-            exRange.Range["A11:I11"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["C11:I11"].ColumnWidth = 15;
-            exRange.Range["A11:A11"].Value = "STT";
-            exRange.Range["B11:B11"].Value = "Mã hóa đơn";
-            exRange.Range["C11:C11"].Value = "Tên nội thất";
-            exRange.Range["D11:D11"].Value = "Khách hàng";
-            exRange.Range["E11:E11"].Value = "Ngày giao";
-            exRange.Range["F11:F11"].Value = "Số lượng";
-            exRange.Range["G11:G11"].Value = "Giảm giá";
-            exRange.Range["H11:H11"].Value = "Thành tiền";
-            exRange.Range["I11:I11"].Value = "Thuế";
-            //exRange.Range["G11:G11"].Value = "Tổng tiền tiền";
+            exRange.Range["A5:I5"].Font.Bold = true;
+            exRange.Range["A5:I5"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["C5:I5"].ColumnWidth = 15;
+            exRange.Range["A5:A5"].Value = "STT";
+            exRange.Range["B5:B5"].Value = "Mã hóa đơn";
+            exRange.Range["C5:C5"].Value = "Tên nội thất";
+            exRange.Range["D5:D5"].Value = "Khách hàng";
+            exRange.Range["E5:E5"].Value = "Ngày giao";
+            exRange.Range["F5:F5"].Value = "Số lượng";
+            exRange.Range["G5:G5"].Value = "Giảm giá";
+            exRange.Range["H5:H5"].Value = "Thành tiền";
+            exRange.Range["I5:I5"].Value = "Thuế";
+            //exRange.Range["G5:G5"].Value = "Tổng tiền tiền";
             for (hang = 0; hang < tblThongtinHD.Rows.Count; hang++)
             {
-                exSheet.Cells[1][hang + 12] = hang + 1;
+                exSheet.Cells[1][hang + 6] = hang + 1;
 
                 for (cot = 0; cot < tblThongtinHD.Columns.Count - 2; cot++) 
                 {
                     if (cot == 5 || cot == 7) 
                     {
-                        exSheet.Cells[cot + 2][hang + 12] = tblThongtinHD.Rows[hang][cot].ToString() + "%";
+                        exSheet.Cells[cot + 2][hang + 6] = tblThongtinHD.Rows[hang][cot].ToString() + "%";
                     }
                     else
                     {
-                        exSheet.Cells[cot + 2][hang + 12] = tblThongtinHD.Rows[hang][cot].ToString();
+                        exSheet.Cells[cot + 2][hang + 6] = tblThongtinHD.Rows[hang][cot].ToString();
                     }
                 }
                 tblThongtinHD.Rows[hang]["TongTien"] = Convert.ToDecimal(tblThongtinHD.Rows[hang]["SoLuong"]) * Convert.ToDecimal(tblThongtinHD.Rows[hang]["ThanhTien"]) * (1 - Convert.ToDecimal(tblThongtinHD.Rows[hang]["GiamGia"]) / 100) * (1 + Convert.ToDecimal(tblThongtinHD.Rows[hang]["Thue"]) / 100);
             }
-            exRange = exSheet.Cells[cot][hang + 13]; 
+            exRange = exSheet.Cells[cot][hang + 8]; 
             exRange.Font.Bold = true;
             exRange.Value2 = "Tổng tiền:";
 
-            exRange = exSheet.Cells[cot + 1][hang + 13];
+            exRange = exSheet.Cells[cot + 1][hang + 8];
             exRange.Font.Bold = true;
             exRange.Value2 = tblThongtinHD.Compute("SUM(TongTien)", "").ToString();
 
-            exRange = exSheet.Cells[1][hang + 15]; //Ô A1 
+            exRange = exSheet.Cells[1][hang + 9]; //Ô A1 
             exRange.Range["A1:F1"].MergeCells = true;
             exRange.Range["A1:F1"].Font.Bold = true;
             exRange.Range["A1:F1"].Font.Italic = true;
             exRange.Range["A1:F1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignRight;
             //exRange.Range["A1:F1"].Value = "Bằng chữ: " + Functions.ChuyenSoSangChu(tblThongtinHD.Rows[0][2].ToString());
-            exRange = exSheet.Cells[4][hang + 17]; //Ô A1 
+            exRange = exSheet.Cells[7][hang + 10]; //Ô A1 
             exRange.Range["A1:C1"].MergeCells = true;
             exRange.Range["A1:C1"].Font.Italic = true;
             exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;

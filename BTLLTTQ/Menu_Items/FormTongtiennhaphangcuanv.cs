@@ -144,41 +144,41 @@ namespace BTLLTTQ.Menu_Items
 
             tblThongtinHD = functions.GetDataToTable(query);
 
-            exRange.Range["A11:G11"].Font.Bold = true;
-            exRange.Range["A11:G11"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["C11:G11"].ColumnWidth = 15;
-            exRange.Range["A11:A11"].Value = "STT";
-            exRange.Range["B11:B11"].Value = "Mã hóa đơn";
-            exRange.Range["C11:C11"].Value = "Ngày nhập";
-            exRange.Range["D11:D11"].Value = "Đơn Gía";
-            exRange.Range["E11:E11"].Value = "Giảm giá";
-            exRange.Range["F11:F11"].Value = "Số lượng";
-            exRange.Range["G11:G11"].Value = "Tổng cộng";
-            //exRange.Range["G11:G11"].Value = "Tổng tiền tiền";
+            exRange.Range["A5:G5"].Font.Bold = true;
+            exRange.Range["A5:G5"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["C5:G5"].ColumnWidth = 15;
+            exRange.Range["A5:A5"].Value = "STT";
+            exRange.Range["B5:B5"].Value = "Mã hóa đơn";
+            exRange.Range["C5:C5"].Value = "Ngày nhập";
+            exRange.Range["D5:D5"].Value = "Đơn Gía";
+            exRange.Range["E5:E5"].Value = "Giảm giá";
+            exRange.Range["F5:F5"].Value = "Số lượng";
+            exRange.Range["G5:G5"].Value = "Tổng cộng";
+            //exRange.Range["G5:G5"].Value = "Tổng tiền tiền";
             for (hang = 0; hang < tblThongtinHD.Rows.Count; hang++)
             {
-                //Điền số thứ tự vào cột 1 từ dòng 12
-                exSheet.Cells[1][hang + 12] = hang + 1;
+                //Điền số thứ tự vào cột 1 từ dòng 6
+                exSheet.Cells[1][hang + 6] = hang + 1;
                 for (cot = 0; cot < tblThongtinHD.Columns.Count - 2; cot++)
-                //Điền thông tin hàng từ cột thứ 2, dòng 12
+                //Điền thông tin hàng từ cột thứ 2, dòng 6
                 {
-                    exSheet.Cells[cot + 2][hang + 12] = tblThongtinHD.Rows[hang][cot].ToString();
-                    if (cot == 3) exSheet.Cells[cot + 2][hang + 12] = tblThongtinHD.Rows[hang][cot].ToString() + "%";
+                    exSheet.Cells[cot + 2][hang + 6] = tblThongtinHD.Rows[hang][cot].ToString();
+                    if (cot == 3) exSheet.Cells[cot + 2][hang + 6] = tblThongtinHD.Rows[hang][cot].ToString() + "%";
                 }
             }
-            exRange = exSheet.Cells[cot][hang + 14];
+            exRange = exSheet.Cells[cot][hang + 8];
             exRange.Font.Bold = true;
             exRange.Value2 = "Tổng tiền:";
-            exRange = exSheet.Cells[cot + 1][hang + 14];
+            exRange = exSheet.Cells[cot + 1][hang + 8];
             exRange.Font.Bold = true;
             exRange.Value2 = tblThongtinHD.Rows[0][7].ToString();
-            exRange = exSheet.Cells[1][hang + 15]; //Ô A1 
+            exRange = exSheet.Cells[1][hang + 9]; //Ô A1 
             exRange.Range["A1:F1"].MergeCells = true;
             exRange.Range["A1:F1"].Font.Bold = true;
             exRange.Range["A1:F1"].Font.Italic = true;
             exRange.Range["A1:F1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignRight;
             //exRange.Range["A1:F1"].Value = "Bằng chữ: " + Functions.ChuyenSoSangChu(tblThongtinHD.Rows[0][2].ToString());
-            exRange = exSheet.Cells[4][hang + 17]; //Ô A1 
+            exRange = exSheet.Cells[5][hang + 11]; //Ô A1 
             exRange.Range["A1:C1"].MergeCells = true;
             exRange.Range["A1:C1"].Font.Italic = true;
             exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
