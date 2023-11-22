@@ -66,13 +66,14 @@
             this.txt_thue = new System.Windows.Forms.TextBox();
             this.txt_tongtien = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txt_tongtienbc = new System.Windows.Forms.TextBox();
             this.btn_them = new System.Windows.Forms.Button();
             this.btn_luu = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_xuat = new System.Windows.Forms.Button();
             this.btn_dong = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
+            this.word = new System.Windows.Forms.RadioButton();
+            this.excel = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDBanHang)).BeginInit();
@@ -112,6 +113,8 @@
             // 
             // cmb_mkh
             // 
+            this.cmb_mkh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_mkh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_mkh.FormattingEnabled = true;
             this.cmb_mkh.Location = new System.Drawing.Point(234, 147);
             this.cmb_mkh.Margin = new System.Windows.Forms.Padding(4);
@@ -270,6 +273,8 @@
             // 
             // cmb_mnt
             // 
+            this.cmb_mnt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_mnt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_mnt.FormattingEnabled = true;
             this.cmb_mnt.Location = new System.Drawing.Point(234, 33);
             this.cmb_mnt.Margin = new System.Windows.Forms.Padding(4);
@@ -421,6 +426,8 @@
             // 
             // cmb_dondh
             // 
+            this.cmb_dondh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmb_dondh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_dondh.FormattingEnabled = true;
             this.cmb_dondh.Location = new System.Drawing.Point(740, 16);
             this.cmb_dondh.Name = "cmb_dondh";
@@ -443,7 +450,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(67, 551);
+            this.label12.Location = new System.Drawing.Point(287, 549);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 22);
@@ -452,7 +459,7 @@
             // 
             // txt_datcoc
             // 
-            this.txt_datcoc.Location = new System.Drawing.Point(151, 551);
+            this.txt_datcoc.Location = new System.Drawing.Point(371, 549);
             this.txt_datcoc.Margin = new System.Windows.Forms.Padding(4);
             this.txt_datcoc.Name = "txt_datcoc";
             this.txt_datcoc.Size = new System.Drawing.Size(173, 28);
@@ -463,7 +470,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(354, 554);
+            this.label13.Location = new System.Drawing.Point(574, 552);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 22);
@@ -472,7 +479,7 @@
             // 
             // txt_thue
             // 
-            this.txt_thue.Location = new System.Drawing.Point(433, 549);
+            this.txt_thue.Location = new System.Drawing.Point(653, 547);
             this.txt_thue.Margin = new System.Windows.Forms.Padding(4);
             this.txt_thue.Name = "txt_thue";
             this.txt_thue.Size = new System.Drawing.Size(183, 28);
@@ -482,7 +489,7 @@
             // 
             // txt_tongtien
             // 
-            this.txt_tongtien.Location = new System.Drawing.Point(746, 551);
+            this.txt_tongtien.Location = new System.Drawing.Point(966, 549);
             this.txt_tongtien.Margin = new System.Windows.Forms.Padding(4);
             this.txt_tongtien.Name = "txt_tongtien";
             this.txt_tongtien.Size = new System.Drawing.Size(188, 28);
@@ -491,21 +498,12 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(643, 554);
+            this.label14.Location = new System.Drawing.Point(863, 552);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(95, 22);
             this.label14.TabIndex = 8;
             this.label14.Text = "Tổng tiền";
-            // 
-            // txt_tongtienbc
-            // 
-            this.txt_tongtienbc.Location = new System.Drawing.Point(943, 551);
-            this.txt_tongtienbc.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_tongtienbc.Name = "txt_tongtienbc";
-            this.txt_tongtienbc.Size = new System.Drawing.Size(187, 28);
-            this.txt_tongtienbc.TabIndex = 9;
-            this.txt_tongtienbc.Visible = false;
             // 
             // btn_them
             // 
@@ -545,6 +543,7 @@
             this.btn_xuat.TabIndex = 13;
             this.btn_xuat.Text = "Xuất ra Excel";
             this.btn_xuat.UseVisualStyleBackColor = true;
+            this.btn_xuat.TextChanged += new System.EventHandler(this.btn_xuat_TextChanged);
             this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
             // 
             // btn_dong
@@ -567,18 +566,41 @@
             this.btn_Sua.UseVisualStyleBackColor = true;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
+            // word
+            // 
+            this.word.AutoSize = true;
+            this.word.Location = new System.Drawing.Point(16, 553);
+            this.word.Name = "word";
+            this.word.Size = new System.Drawing.Size(78, 26);
+            this.word.TabIndex = 16;
+            this.word.Text = "Word";
+            this.word.UseVisualStyleBackColor = true;
+            this.word.CheckedChanged += new System.EventHandler(this.word_CheckedChanged);
+            // 
+            // excel
+            // 
+            this.excel.AutoSize = true;
+            this.excel.Location = new System.Drawing.Point(164, 552);
+            this.excel.Name = "excel";
+            this.excel.Size = new System.Drawing.Size(80, 26);
+            this.excel.TabIndex = 17;
+            this.excel.Text = "Excel";
+            this.excel.UseVisualStyleBackColor = true;
+            this.excel.CheckedChanged += new System.EventHandler(this.excel_CheckedChanged);
+            // 
             // FormDonDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 708);
+            this.Controls.Add(this.excel);
+            this.Controls.Add(this.word);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.btn_dong);
             this.Controls.Add(this.btn_xuat);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_luu);
             this.Controls.Add(this.btn_them);
-            this.Controls.Add(this.txt_tongtienbc);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txt_tongtien);
             this.Controls.Add(this.txt_thue);
@@ -643,7 +665,6 @@
         private System.Windows.Forms.TextBox txt_thue;
         private System.Windows.Forms.TextBox txt_tongtien;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txt_tongtienbc;
         private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.Button btn_luu;
         private System.Windows.Forms.Button btn_xoa;
@@ -655,5 +676,7 @@
         private System.Windows.Forms.RadioButton rd_h;
         private System.Windows.Forms.RadioButton rd_kh;
         private System.Windows.Forms.RadioButton rd_ddh;
+        private System.Windows.Forms.RadioButton word;
+        private System.Windows.Forms.RadioButton excel;
     }
 }
