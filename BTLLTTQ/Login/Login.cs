@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTLLTTQ.Menu;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace BTLLTTQ
     public partial class Login : Form
     {
         Merdul dbase = new Merdul();
+        Sql db = new Sql();
         private const int BTW = 0xA1;
         private const int HTC = 0x2;
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -24,6 +26,7 @@ namespace BTLLTTQ
             
             InitializeComponent();
             RoundCorners();
+            db.ThemVaoComboBox("select tentk from taikhoan where loaitk = 1", cmb_username);
                 //cmb_username.Items.Clear();
                 //dbase.FillComboBox("select TenTK from TaiKhoan", cmb_username);
 

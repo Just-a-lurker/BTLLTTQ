@@ -106,13 +106,9 @@
             this.cmb_username.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_username.ForeColor = System.Drawing.Color.DimGray;
             this.cmb_username.FormattingEnabled = true;
-            this.cmb_username.Items.AddRange(new object[] {
-            "employee1",
-            "employee2",
-            "employee3"});
             this.cmb_username.Location = new System.Drawing.Point(102, 102);
             this.cmb_username.Name = "cmb_username";
-            this.cmb_username.Size = new System.Drawing.Size(266, 45);
+            this.cmb_username.Size = new System.Drawing.Size(266, 38);
             this.cmb_username.TabIndex = 9;
             // 
             // check_sp
@@ -122,7 +118,7 @@
             this.check_sp.ForeColor = System.Drawing.Color.White;
             this.check_sp.Location = new System.Drawing.Point(223, 262);
             this.check_sp.Name = "check_sp";
-            this.check_sp.Size = new System.Drawing.Size(179, 32);
+            this.check_sp.Size = new System.Drawing.Size(146, 25);
             this.check_sp.TabIndex = 8;
             this.check_sp.Text = "Show Password";
             this.check_sp.UseVisualStyleBackColor = true;
@@ -159,7 +155,7 @@
             this.linkLabel2.LinkColor = System.Drawing.Color.WhiteSmoke;
             this.linkLabel2.Location = new System.Drawing.Point(174, 432);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(78, 25);
+            this.linkLabel2.Size = new System.Drawing.Size(63, 20);
             this.linkLabel2.TabIndex = 6;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Sign Up";
@@ -173,7 +169,7 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.WhiteSmoke;
             this.linkLabel1.Location = new System.Drawing.Point(138, 303);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(160, 25);
+            this.linkLabel1.Size = new System.Drawing.Size(134, 20);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password?";
@@ -198,7 +194,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(103, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 25);
+            this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Password";
             // 
@@ -208,7 +204,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(97, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 25);
+            this.label2.Size = new System.Drawing.Size(103, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Username/ID";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -242,7 +238,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(135, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 45);
+            this.label1.Size = new System.Drawing.Size(118, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "SIGN IN";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -260,7 +256,7 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::BTLLTTQ.Properties.Resources.Screenshot_2023_10_19_102540;
