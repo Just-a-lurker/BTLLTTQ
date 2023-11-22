@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Word = Microsoft.Office.Interop.Word;
 using COMExcel = Microsoft.Office.Interop.Excel;
 namespace BTLLTTQ.Menu_Items
 {
@@ -15,6 +16,11 @@ namespace BTLLTTQ.Menu_Items
     {
         Sql db = new Sql();
         Merdul functions = new Merdul();
+        private Word.Application oApp;
+        private Word.Document oDoc;
+
+        private object oEndOfDoc = "\\endofdoc"; 
+        private object oMissing = System.Reflection.Missing.Value;
         public FormTongtiennhaphangcuanv()
         {
             InitializeComponent();
@@ -188,6 +194,106 @@ namespace BTLLTTQ.Menu_Items
             exRange.Range["A3:C3"].Value = tblThongtinHD.Rows[0][6];
             exSheet.Name = "Báo Cáo";
             exApp.Visible = true;
+        }
+
+        private void btnword_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Word Documents (*.docx)|*.docx";
+                sfd.FileName = "Tongtiencuanhanvien.docx";
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    oApp = new Word.Application();
+                    if (oApp == null)
+                    {
+                        MessageBox.Show("Không thể khởi tạo ứng dụng Word.");
+                        return;
+                    }
+                    oDoc = oApp.Documents.Add();
+                    if (oDoc == null)
+                    {
+                        MessageBox.Show("Không thể tạo tài liệu Word.");
+                        return;
+                    }
+                    Export_Data_To_Word(dgvds, sfd.FileName);
+                    MessageBox.Show("Xuất file Word thành công!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+        public void Export_Data_To_Word(DataGridView DGV, string filename)
+        {
+            if (DGV.Rows.Count != 0)
+            {
+                int RowCount = DGV.Rows.Count;
+                int ColumnCount = DGV.Columns.Count;
+                Object[,] DataArray = new object[RowCount + 1, ColumnCount];
+                for (int c = 0; c < ColumnCount; c++)
+                {
+                    DataArray[0, c] = DGV.Columns[c].HeaderText;
+                }
+                for (int r = 0; r < RowCount; r++)
+                {
+                    for (int c = 0; c < ColumnCount; c++)
+                    {
+                        DataArray[r + 1, c] = DGV.Rows[r].Cells[c].Value;
+                    }
+                }
+                Word.Table oTable = oDoc.Tables.Add(oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range, RowCount + 1, ColumnCount, ref oMissing, ref oMissing);
+                oTable.Range.ParagraphFormat.SpaceAfter = 6;
+                for (int r = 0; r <= RowCount; r++)
+                {
+                    for (int c = 0; c < ColumnCount; c++)
+                    {
+                        oTable.Cell(r + 1, c + 1).Range.Text = DataArray[r, c]?.ToString() ?? "";
+                    }
+                }
+                decimal tongCong = 0;
+                foreach (DataGridViewRow row in DGV.Rows)
+                {
+                    if (row.Cells["TongCong"].Value != null)
+                    {
+                        tongCong += Convert.ToDecimal(row.Cells["TongCong"].Value);
+                    }
+                }
+
+                oDoc.Content.InsertAfter("\nTổng tiền là:  " + tongCong.ToString("C"));
+
+                DateTime currentDate = DateTime.Now;
+                string ngayXuat = $"Ngày xuất: {currentDate.ToString("dd/MM/yyyy")}";
+                string nhanVien = $"Nhân viên bán hàng: {GetTenNhanVien()}";
+                oDoc.Content.InsertAfter("\n" + ngayXuat + "\n" + nhanVien);
+                oDoc.SaveAs2(filename);
+                oApp.Quit();
+            }
+        }
+        private string GetTenNhanVien()
+        {
+            string selectedEmployee = cmbonv.SelectedItem.ToString();
+            int selectedQuarter = cmboquy.SelectedIndex + 1;
+            int startMonth = (selectedQuarter - 1) * 3 + 1;
+            int endMonth = startMonth + 2;
+            string query = $@"
+                WITH TongTienHoaDon AS (
+                    SELECT HDN.SoHDN, HDN.NgayNhap, CT.DonGia,CT.GiamGia, CT.SoLuong,  NV.tenNV,
+                           (CT.DonGia * CT.SoLuong * (1 - CT.GiamGia / 100)) AS TongCong
+                    FROM HoaDonNhap AS HDN
+                    INNER JOIN ChiTietHDN AS CT ON HDN.SoHDN = CT.SoHDN 
+                    INNER JOIN NhanVien AS NV ON HDN.MaNV = NV.MaNV 
+                    WHERE HDN.MaNV = '{selectedEmployee}' AND MONTH(HDN.NgayNhap) BETWEEN {startMonth} AND {endMonth}
+                )
+                SELECT SoHDN, NgayNhap, DonGia,GiamGia, SoLuong,  TongCong, tenNV,
+                       SUM(TongCong) OVER (ORDER BY SoHDN) AS TongTienNhap
+                FROM TongTienHoaDon
+                ORDER BY SoHDN";
+
+            string tenNhanVien = functions.GetFieldValues(query).ToString();
+            return tenNhanVien;
         }
     }
 }

@@ -35,6 +35,7 @@
             this.cmbomh = new System.Windows.Forms.ComboBox();
             this.cmbothang = new System.Windows.Forms.ComboBox();
             this.btnxuat = new System.Windows.Forms.Button();
+            this.btnword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,9 +43,9 @@
             // 
             this.thang.AutoSize = true;
             this.thang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.thang.Location = new System.Drawing.Point(72, 147);
+            this.thang.Location = new System.Drawing.Point(73, 167);
             this.thang.Name = "thang";
-            this.thang.Size = new System.Drawing.Size(65, 24);
+            this.thang.Size = new System.Drawing.Size(82, 29);
             this.thang.TabIndex = 0;
             this.thang.Text = "Tháng";
             // 
@@ -78,7 +79,7 @@
             this.mh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.mh.Location = new System.Drawing.Point(72, 58);
             this.mh.Name = "mh";
-            this.mh.Size = new System.Drawing.Size(88, 24);
+            this.mh.Size = new System.Drawing.Size(111, 29);
             this.mh.TabIndex = 0;
             this.mh.Text = "Mặt hàng";
             // 
@@ -89,23 +90,23 @@
             this.cmbomh.Location = new System.Drawing.Point(295, 58);
             this.cmbomh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbomh.Name = "cmbomh";
-            this.cmbomh.Size = new System.Drawing.Size(457, 30);
+            this.cmbomh.Size = new System.Drawing.Size(457, 37);
             this.cmbomh.TabIndex = 5;
             // 
             // cmbothang
             // 
             this.cmbothang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbothang.FormattingEnabled = true;
-            this.cmbothang.Location = new System.Drawing.Point(295, 147);
+            this.cmbothang.Location = new System.Drawing.Point(295, 167);
             this.cmbothang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbothang.Name = "cmbothang";
-            this.cmbothang.Size = new System.Drawing.Size(457, 30);
+            this.cmbothang.Size = new System.Drawing.Size(457, 37);
             this.cmbothang.TabIndex = 6;
             // 
             // btnxuat
             // 
             this.btnxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnxuat.Location = new System.Drawing.Point(883, 147);
+            this.btnxuat.Location = new System.Drawing.Point(883, 112);
             this.btnxuat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnxuat.Name = "btnxuat";
             this.btnxuat.Size = new System.Drawing.Size(235, 46);
@@ -114,11 +115,23 @@
             this.btnxuat.UseVisualStyleBackColor = true;
             this.btnxuat.Click += new System.EventHandler(this.btnxuat_Click);
             // 
+            // btnword
+            // 
+            this.btnword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnword.Location = new System.Drawing.Point(883, 165);
+            this.btnword.Name = "btnword";
+            this.btnword.Size = new System.Drawing.Size(235, 44);
+            this.btnword.TabIndex = 8;
+            this.btnword.Text = "Xuất word";
+            this.btnword.UseVisualStyleBackColor = true;
+            this.btnword.Click += new System.EventHandler(this.btnword_Click);
+            // 
             // Formbaocaonhacungcap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1213, 726);
+            this.Controls.Add(this.btnword);
             this.Controls.Add(this.btnxuat);
             this.Controls.Add(this.cmbothang);
             this.Controls.Add(this.cmbomh);
@@ -145,5 +158,6 @@
         private System.Windows.Forms.ComboBox cmbomh;
         private System.Windows.Forms.ComboBox cmbothang;
         private System.Windows.Forms.Button btnxuat;
+        private System.Windows.Forms.Button btnword;
     }
 }
