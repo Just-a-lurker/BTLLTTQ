@@ -143,7 +143,9 @@ namespace BTLLTTQ
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            this.Hide();
+            new FormExit().ShowDialog();
         }
 
         private void btn_maz_Click(object sender, EventArgs e)

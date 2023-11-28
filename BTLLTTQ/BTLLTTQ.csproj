@@ -59,6 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dashboard.cs" />
+    <Compile Include="FormExit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExit.Designer.cs">
+      <DependentUpon>FormExit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     <Compile Include="Login\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormExit.resx">
+      <DependentUpon>FormExit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMN.resx">
       <DependentUpon>FormMN.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +389,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Template\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\395121130_657484653168360_1957556047445657044_n1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
