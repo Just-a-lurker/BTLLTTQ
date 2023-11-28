@@ -416,20 +416,18 @@ namespace BTLLTTQ.NhapVaBan
             {
                 if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    string sql = "SELECT SoDDH,SoLuong FROM ChiTietHDDH WHERE SoDDH = N'" + txt_madonhang.Text + "'";
+                    string sql = "SELECT MaNoiThat,SoLuong FROM ChiTietHDDH WHERE SoDDH = N'" + txt_madonhang.Text + "'";
                     System.Data.DataTable NoiThat = functions.GetDataToTable(sql);
-                    //for (int hang = 0; hang <= NoiThat.Rows.Count - 1; hang++)
-                    //{
-                    if (txt_soluong.Text != "")
+                    for (int hang = 0; hang <= NoiThat.Rows.Count - 1; hang++)
                     {
-                        sl = Convert.ToDouble(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'")); /*NoiThat.Rows[hang][0].ToString()*/
-                        slxoa = Convert.ToDouble(txt_soluong.Text); /*NoiThat.Rows[hang][1].ToString()*/
+
+                        sl = Convert.ToDouble(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + NoiThat.Rows[hang][0].ToString() + "'")); /*cmb_mnt.Text*/
+                        slxoa = Convert.ToDouble(NoiThat.Rows[hang][1].ToString()); /*txt_soluong.Text*/
                         slcon = sl + slxoa;
-                        sql = "UPDATE DMNoiThat SET SoLuong =" + slcon + " WHERE MaNoiThat= N'" + cmb_mnt.Text + "'"; /*NoiThat.Rows[hang][0].ToString()*/
+                        sql = "UPDATE DMNoiThat SET SoLuong =" + slcon + " WHERE MaNoiThat= N'" + NoiThat.Rows[hang][0].ToString() + "'"; /*cmb_mnt.Text*/
                         functions.UpdateData(sql);
+
                     }
-                       
-                    //}
 
                     //Xóa chi tiết hóa đơn
                     sql = "DELETE ChiTietHDDH WHERE SoDDH=N'" + txt_madonhang.Text + "'";
