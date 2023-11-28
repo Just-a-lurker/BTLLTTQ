@@ -438,6 +438,8 @@ namespace BTLLTTQ.NhapVaBan
                     functions.RunSqlDel(sql);
                     ResetValues();
                     LoadDataGridView();
+                    cmb_dondh.Items.Clear();
+                    functions.FillComboBox("Select SoDDH from DonDatHang", cmb_dondh);
                     btn_xoa.Enabled = false;
                     btn_xuat.Enabled = false;
                 }
