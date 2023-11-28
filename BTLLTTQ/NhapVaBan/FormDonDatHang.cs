@@ -960,7 +960,7 @@ namespace BTLLTTQ.NhapVaBan
         private void btn_xoa_Click(object sender, EventArgs e)
         {
             double sl, slcon, slxoa;
-            if(rd_ddh.Checked!=true)
+            if(rd_ddh.Checked ==true)
             {
                 if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

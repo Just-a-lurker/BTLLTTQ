@@ -564,6 +564,8 @@
             // panel_desktop
             // 
             this.panel_desktop.BackColor = System.Drawing.Color.White;
+            this.panel_desktop.BackgroundImage = global::BTLLTTQ.Properties.Resources.sofa_dark__2_;
+            this.panel_desktop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_desktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_desktop.Location = new System.Drawing.Point(251, 86);
             this.panel_desktop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
