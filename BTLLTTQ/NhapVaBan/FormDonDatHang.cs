@@ -21,6 +21,7 @@ namespace BTLLTTQ.NhapVaBan
         System.Data.DataTable tblCTHDB;
         Merdul functions=new Merdul();
         int SLCT;
+        int tongt;
         string CODE;
         string seachtype="";
         private void Reset_M()
@@ -46,6 +47,8 @@ namespace BTLLTTQ.NhapVaBan
             txt_tongtien.ReadOnly = true;
             txt_giamgia.Text = "0";
             txt_tongtien.Text= "0";
+            txt_thue.Text = "0";
+            txt_datcoc.Text = "0";  
             cmb_mnt.Text = "";
             functions.FillComboBox("Select MaNoiThat from DMNoiThat", cmb_mnt);
             cmb_mnt.SelectedIndex = -1;
@@ -268,7 +271,7 @@ namespace BTLLTTQ.NhapVaBan
             if (!functions.CheckKey(sql))
             {
                 // Mã hóa đơn chưa có, tiến hành lưu các thông tin chung
-                // Mã HDBan được sinh tự động do đó không có trường hợp trùng khóa
+                // Mã HDDH được sinh tự động do đó không có trường hợp trùng khóa
                 if (txt_ngaydat.Text.Length == 0)
                 {
                     MessageBox.Show("Bạn phải nhập ngày đặt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -379,20 +382,97 @@ namespace BTLLTTQ.NhapVaBan
             SLcon = sl - Convert.ToInt32(txt_soluong.Text);
             sql = "UPDATE DMNoiThat SET SoLuong =" + SLcon + " WHERE MaNoiThat= N'" + cmb_mnt.Text + "'";
             functions.UpdateData(sql);
-            // Cập nhật lại tổng tiền cho hóa đơn bán
-            tong = Convert.ToInt32(functions.GetFieldValues("SELECT TongTien FROM DonDatHang WHERE SoDDH = N'" + txt_madonhang.Text + "'"));
-            Tongmoi = tong + Convert.ToInt32(txt_thanhtien.Text);
-            Tongmoi = Tongmoi - Tongmoi * Convert.ToInt32(Convert.ToInt32(txt_thue.Text)  / 100);
+            // Cập nhật tổng tiền cho hóa đơn bán
+            Tongmoi = Convert.ToInt32(txt_thanhtien.Text);
+            Tongmoi = Tongmoi +Tongmoi * Convert.ToInt32(txt_thue.Text)/ 100;
             sql = "UPDATE DonDatHang SET TongTien =" + Tongmoi + " WHERE SoDDH = N'" + txt_madonhang.Text + "'";
             functions.UpdateData(sql);
             txt_tongtien.Text = Tongmoi.ToString();
-            //txt_tongtienbc.Text =  Functions.ChuyenSoSangChu(Tongmoi.ToString());
             ResetValuesHang();
             cmb_dondh.Items.Clear();
             functions.FillComboBox("Select SoDDH from DonDatHang", cmb_dondh);
             btn_xoa.Enabled = true;
             btn_them.Enabled = true;
             btn_xuat.Enabled = true;
+        }
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+
+            if (dgvHDBanHang.Rows.Count == 0)
+            {
+                MessageBox.Show("Bạn phải chọn một mã hóa đơn để sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmb_dondh.Focus();
+                return;
+            }
+            else
+            {
+                string sql = "";
+                try
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Bạn muốn sửa thật à?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        int slcon, a;
+                        if (CODE != cmb_mnt.Text)
+                        {//KHAC MA NOI THAT
+                            //cap nhat lai so luong cho san pham cu
+                            //slcon = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + CODE + "'"));
+                            //functions.UpdateData("UPDATE DMNoiThat SET SoLuong = '" + SLCT + slcon + " 'WHERE MaNoiThat = N'" + CODE + "'");
+                            //slcon = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
+                            //if (Convert.ToInt32(txt_soluong.Text) > slcon)
+                            //{
+                            //    MessageBox.Show("Số lượng mặt hàng này chỉ còn " + slcon, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //    txt_soluong.Text = "";
+                            //    txt_soluong.Focus();
+                            //    return;
+                            //}
+                            MessageBox.Show("Bạn chỉ có thể sửa thông tin nếu chung mã nội thất");
+                            return;
+
+                        }
+                        else
+                        {//GIONG MA NOI THAT
+                            slcon = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
+                            if (Convert.ToInt32(txt_soluong.Text) > slcon)
+                            {
+                                MessageBox.Show("Số lượng mặt hàng này chỉ còn " + slcon, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txt_soluong.Text = "";
+                                txt_soluong.Focus();
+                                return;
+                            }
+                            //cập nhật lại sản phẩm số lượng cho sản phẩm trong bảng nội thất
+                            int temp = slcon + Convert.ToInt32(SLCT) - Convert.ToInt32(txt_soluong.Text);
+                            functions.UpdateData("UPDATE DMNoiThat SET SoLuong = '" + temp + " 'WHERE MaNoiThat = N'" + cmb_mnt.Text + "'");
+                            //cập nhật lại chi tiết đơn đặt hàng cho sản phẩm trong chi tiết đơn đặt hàng
+                            functions.UpdateData("UPDATE ChiTietHDDH SET SoLuong = '" + txt_soluong.Text
+                           + "', GiamGia = '" + txt_giamgia.Text
+                           + "', ThanhTien = '" + txt_thanhtien.Text
+                           + "' WHERE MaNoithat = '" + cmb_mnt.Text + "'");
+                            //cập nhật lại hóa đơn đặt hàng
+                            int Tongmoi = Convert.ToInt32(txt_thanhtien.Text);
+                            Tongmoi = Tongmoi + Convert.ToInt32((Tongmoi * Convert.ToInt32(txt_thue.Text)) / 100);
+                            MessageBox.Show("O day");
+                            txt_tongtien.Text = Tongmoi.ToString();
+                            functions.UpdateData("UPDATE DonDatHang SET TongTien = " +txt_tongtien.Text
+                                + ", Thue = '" + txt_thue.Text
+                                + "', DatCoc = '" + txt_datcoc.Text
+                                + "' WHERE SoDDH = '" + txt_madonhang.Text + "'");        
+                            LoadInfoHoaDon();
+                            LoadDataGridView();
+                            MessageBox.Show("OK Luon");
+                            Reset_M();
+                        }
+                    }   
+
+
+                }catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error:" + ex.Message);
+                }
+
+
+            }
+
         }
         private void reset()
         {
@@ -922,86 +1002,7 @@ namespace BTLLTTQ.NhapVaBan
         //        Export_Data_To_Word(dgvHDBanHang, sfd.FileName);
         //    }
         //}
-        private void btn_Sua_Click(object sender, EventArgs e)
-        {
-            
-            if(dgvHDBanHang.Rows.Count==0)
-            {
-                MessageBox.Show("Bạn phải chọn một mã hóa đơn để sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cmb_dondh.Focus();
-                return;
-            }else
-            {
-                string sql = "";
-                try
-                {
-                    if (DialogResult.Yes == MessageBox.Show("Bạn muốn sửa thật à?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                    {
-                        int sltk,a; 
-                        sltk = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
-                        if (Convert.ToInt32(txt_soluong.Text) > sltk)
-                        {
-                            MessageBox.Show("Số lượng mặt hàng này chỉ còn " + sltk, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txt_soluong.Text = "";
-                            txt_soluong.Focus();
-                            return;
-                        } 
-                       
-                        //Reup SL
-                        int temp = int.Parse(txt_soluong.Text) - SLCT;
-                        int temp2 = temp + sltk;
-                        if (CODE != cmb_mnt.Text)
-                        {
-                           
-                            sql = "UPDATE DMNoiThat SET SoLuong = '" + temp2 + " 'WHERE MaNoiThat = N'" + CODE + "'";
-                            functions.UpdateData(sql);
-                        }else
-                        {
-                            sql = "UPDATE DMNoiThat SET SoLuong = '" + temp2 + " 'WHERE MaNoiThat = N'" + cmb_mnt.Text + "'";
-                            functions.UpdateData(sql);
-                        }
-
-
-                        //sltk = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
-
-                        sql = "UPDATE ChiTietHDDH SET SoLuong = '" + Convert.ToInt32(txt_soluong.Text)
-                   + "', GiamGia = '" + Convert.ToInt32(txt_giamgia.Text)
-                   + "', ThanhTien = '" + Convert.ToInt32(txt_thanhtien.Text)
-                   + "' WHERE SoDDH = '" + txt_madonhang.Text + "'";
-                        functions.UpdateData(sql);
-                        //int c = sltk - Convert.ToInt32(txt_soluong);
-                        //sql="Update DMNoiThat Set SoLuong='"
-                        //    +c.ToString()
-                        //    + " WHERE MaNoiThat = N'" + cmb_mnt.Text + "'";
-                        //functions.UpdateData(sql);
-                        //int SLc, sl;
-                        //sql = "UPDATE DMNoiThat SET SoLuong =" + SLc + " WHERE MaNoiThat= N'" + cmb_mnt.Text + "'";
-                        //   sql = "UPDATE DonDatHang SET MaNV = '" + cmb_mnv.Text
-                        //+ "', MaKhach = '" + cmb_mkh.Text
-                        //+ "', NgayDat = '" + txt_ngaydat.Value.ToString("yyyy-MM-dd")
-                        //+ "', NgayGiao = '" + txt_ngaygiao.Value.ToString("yyyy-MM-dd")
-                        //+ "', DatCoc = '" + Convert.ToInt32(txt_datcoc.Text)
-                        //+ "', Thue = '" + Convert.ToInt32(txt_thue.Text)
-                        //+ "', TongTien = '" + Convert.ToInt32(txt_tongtien.Text)
-                        //+ "' WHERE SoDDH = '" + txt_madonhang.Text + "'";
-                        sql = "UPDATE DonDatHang SET TongTien = '" + Convert.ToInt32(txt_tongtien.Text)+ "' WHERE SoDDH = '" + txt_madonhang.Text + "'";
-                        functions.UpdateData(sql);
-                        LoadInfoHoaDon();
-                        LoadDataGridView();
-                        MessageBox.Show("OK Luon");
-                        Reset_M();
-                    }
-                        
-
-                }catch(Exception ex)
-                {
-                    MessageBox.Show("Error:" + ex.Message);
-                }
-               
-               
-            }
-            
-        }
+        
 
         private void dgvHDBanHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1013,6 +1014,7 @@ namespace BTLLTTQ.NhapVaBan
             txt_thanhtien.Text = dgvHDBanHang.SelectedRows[0].Cells[5].Value.ToString();
             SLCT = Convert.ToInt32(txt_soluong.Text);
             CODE = cmb_mnt.SelectedItem.ToString();
+            tongt = Convert.ToInt32(txt_tongtien.Text);
         }
 
        
