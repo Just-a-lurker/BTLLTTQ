@@ -253,6 +253,16 @@ namespace BTLLTTQ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sofa_dark__2_ {
+            get {
+                object obj = ResourceManager.GetObject("sofa_dark (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Staff {
             get {
                 object obj = ResourceManager.GetObject("Staff", resourceCulture);
