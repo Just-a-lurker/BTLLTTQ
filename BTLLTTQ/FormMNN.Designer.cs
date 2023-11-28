@@ -140,8 +140,8 @@
             this.panelMenu.Controls.Add(this.btn_home);
             this.panelMenu.Controls.Add(this.btn_pro);
             this.panelMenu.Controls.Add(this.flp_order);
-            this.panelMenu.Controls.Add(this.btn_stf);
             this.panelMenu.Controls.Add(this.flp_cst);
+            this.panelMenu.Controls.Add(this.btn_stf);
             this.panelMenu.Controls.Add(this.panel_report);
             this.panelMenu.Controls.Add(this.btn_log);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -190,7 +190,7 @@
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(229, 78);
             this.btn_home.TabIndex = 2;
-            this.btn_home.Text = "Dashboard";
+            this.btn_home.Text = "Thống Kê";
             this.btn_home.UseVisualStyleBackColor = true;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
@@ -210,7 +210,7 @@
             this.btn_pro.Name = "btn_pro";
             this.btn_pro.Size = new System.Drawing.Size(229, 78);
             this.btn_pro.TabIndex = 3;
-            this.btn_pro.Text = "Products";
+            this.btn_pro.Text = "Sản Phẩm";
             this.btn_pro.UseVisualStyleBackColor = true;
             this.btn_pro.Click += new System.EventHandler(this.btn_pro_Click);
             // 
@@ -219,6 +219,7 @@
             this.flp_order.Controls.Add(this.ibtn_order);
             this.flp_order.Controls.Add(this.btn_ddh);
             this.flp_order.Controls.Add(this.btn_dnh);
+            this.flp_order.Dock = System.Windows.Forms.DockStyle.Top;
             this.flp_order.Location = new System.Drawing.Point(3, 254);
             this.flp_order.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flp_order.MaximumSize = new System.Drawing.Size(235, 214);
@@ -230,7 +231,6 @@
             // ibtn_order
             // 
             this.ibtn_order.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
-            this.ibtn_order.Dock = System.Windows.Forms.DockStyle.Top;
             this.ibtn_order.FlatAppearance.BorderSize = 0;
             this.ibtn_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtn_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,7 +244,7 @@
             this.ibtn_order.Name = "ibtn_order";
             this.ibtn_order.Size = new System.Drawing.Size(229, 78);
             this.ibtn_order.TabIndex = 10;
-            this.ibtn_order.Text = "Orders";
+            this.ibtn_order.Text = "Hóa Đơn";
             this.ibtn_order.UseVisualStyleBackColor = false;
             this.ibtn_order.Click += new System.EventHandler(this.ibtn_order_Click);
             // 
@@ -264,7 +264,7 @@
             this.btn_ddh.Name = "btn_ddh";
             this.btn_ddh.Size = new System.Drawing.Size(229, 60);
             this.btn_ddh.TabIndex = 11;
-            this.btn_ddh.Text = "Purchase Orders";
+            this.btn_ddh.Text = "Đơn Đặt Hàng";
             this.btn_ddh.UseVisualStyleBackColor = false;
             this.btn_ddh.Click += new System.EventHandler(this.btn_ddh_Click);
             // 
@@ -284,7 +284,7 @@
             this.btn_dnh.Name = "btn_dnh";
             this.btn_dnh.Size = new System.Drawing.Size(229, 62);
             this.btn_dnh.TabIndex = 12;
-            this.btn_dnh.Text = "Goods Orders";
+            this.btn_dnh.Text = "Đơn Nhập Hàng";
             this.btn_dnh.UseVisualStyleBackColor = false;
             this.btn_dnh.Click += new System.EventHandler(this.btn_dnh_Click);
             // 
@@ -300,12 +300,12 @@
             this.btn_stf.IconColor = System.Drawing.Color.White;
             this.btn_stf.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_stf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_stf.Location = new System.Drawing.Point(3, 336);
+            this.btn_stf.Location = new System.Drawing.Point(3, 418);
             this.btn_stf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_stf.Name = "btn_stf";
             this.btn_stf.Size = new System.Drawing.Size(229, 78);
             this.btn_stf.TabIndex = 6;
-            this.btn_stf.Text = "Staff";
+            this.btn_stf.Text = "Nhân Viên";
             this.btn_stf.UseVisualStyleBackColor = false;
             this.btn_stf.Click += new System.EventHandler(this.btn_stf_Click);
             // 
@@ -314,7 +314,8 @@
             this.flp_cst.Controls.Add(this.ibtn_customer);
             this.flp_cst.Controls.Add(this.btn_supplier);
             this.flp_cst.Controls.Add(this.btn_consumer);
-            this.flp_cst.Location = new System.Drawing.Point(3, 418);
+            this.flp_cst.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flp_cst.Location = new System.Drawing.Point(3, 336);
             this.flp_cst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flp_cst.MaximumSize = new System.Drawing.Size(235, 214);
             this.flp_cst.MinimumSize = new System.Drawing.Size(229, 78);
@@ -339,7 +340,7 @@
             this.ibtn_customer.Name = "ibtn_customer";
             this.ibtn_customer.Size = new System.Drawing.Size(229, 78);
             this.ibtn_customer.TabIndex = 10;
-            this.ibtn_customer.Text = "Customers";
+            this.ibtn_customer.Text = "Đối Tác";
             this.ibtn_customer.UseVisualStyleBackColor = false;
             this.ibtn_customer.Click += new System.EventHandler(this.ibtn_customer_Click);
             // 
@@ -359,7 +360,7 @@
             this.btn_supplier.Name = "btn_supplier";
             this.btn_supplier.Size = new System.Drawing.Size(229, 60);
             this.btn_supplier.TabIndex = 11;
-            this.btn_supplier.Text = "Supplier";
+            this.btn_supplier.Text = "Nhà Cung Cấp";
             this.btn_supplier.UseVisualStyleBackColor = false;
             this.btn_supplier.Click += new System.EventHandler(this.btn_supplier_Click);
             // 
@@ -379,7 +380,7 @@
             this.btn_consumer.Name = "btn_consumer";
             this.btn_consumer.Size = new System.Drawing.Size(229, 62);
             this.btn_consumer.TabIndex = 12;
-            this.btn_consumer.Text = "Consumer";
+            this.btn_consumer.Text = "Khách Hàng";
             this.btn_consumer.UseVisualStyleBackColor = false;
             this.btn_consumer.Click += new System.EventHandler(this.btn_consumer_Click);
             // 
@@ -415,7 +416,7 @@
             this.ibtn_report.Name = "ibtn_report";
             this.ibtn_report.Size = new System.Drawing.Size(229, 78);
             this.ibtn_report.TabIndex = 10;
-            this.ibtn_report.Text = "Report";
+            this.ibtn_report.Text = "Báo Cáo";
             this.ibtn_report.UseVisualStyleBackColor = false;
             this.ibtn_report.Click += new System.EventHandler(this.ibtn_report_Click);
             // 
@@ -435,7 +436,7 @@
             this.btn_rp1.Name = "btn_rp1";
             this.btn_rp1.Size = new System.Drawing.Size(229, 60);
             this.btn_rp1.TabIndex = 11;
-            this.btn_rp1.Text = "Report 1";
+            this.btn_rp1.Text = "Báo Cáo 1";
             this.btn_rp1.UseVisualStyleBackColor = false;
             this.btn_rp1.Click += new System.EventHandler(this.btn_rp1_Click);
             // 
@@ -455,7 +456,7 @@
             this.btn_rp2.Name = "btn_rp2";
             this.btn_rp2.Size = new System.Drawing.Size(229, 62);
             this.btn_rp2.TabIndex = 12;
-            this.btn_rp2.Text = "Report 2";
+            this.btn_rp2.Text = "Báo cáo 2";
             this.btn_rp2.UseVisualStyleBackColor = false;
             this.btn_rp2.Click += new System.EventHandler(this.btn_rp2_Click);
             // 
@@ -475,7 +476,7 @@
             this.btn_rp3.Name = "btn_rp3";
             this.btn_rp3.Size = new System.Drawing.Size(229, 62);
             this.btn_rp3.TabIndex = 13;
-            this.btn_rp3.Text = "Report 3";
+            this.btn_rp3.Text = "Báo Cáo 3";
             this.btn_rp3.UseVisualStyleBackColor = false;
             this.btn_rp3.Click += new System.EventHandler(this.btn_rp3_Click);
             // 
@@ -495,7 +496,7 @@
             this.btn_rp4.Name = "btn_rp4";
             this.btn_rp4.Size = new System.Drawing.Size(229, 62);
             this.btn_rp4.TabIndex = 14;
-            this.btn_rp4.Text = "Report 4";
+            this.btn_rp4.Text = "Báo Cáo 4";
             this.btn_rp4.UseVisualStyleBackColor = false;
             this.btn_rp4.Click += new System.EventHandler(this.btn_rp4_Click);
             // 
@@ -516,7 +517,7 @@
             this.btn_log.Name = "btn_log";
             this.btn_log.Size = new System.Drawing.Size(229, 78);
             this.btn_log.TabIndex = 8;
-            this.btn_log.Text = "LogOut";
+            this.btn_log.Text = "Đăng xuất";
             this.btn_log.UseVisualStyleBackColor = false;
             this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
             // 
@@ -541,9 +542,9 @@
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.White;
             this.lblTitleChildForm.Location = new System.Drawing.Point(59, 46);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(93, 32);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(150, 32);
             this.lblTitleChildForm.TabIndex = 6;
-            this.lblTitleChildForm.Text = "Home";
+            this.lblTitleChildForm.Text = "Trang chủ";
             this.lblTitleChildForm.Click += new System.EventHandler(this.lblTitleChildForm_Click);
             // 
             // iconCurrentChildForm

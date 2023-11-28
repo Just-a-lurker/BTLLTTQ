@@ -43,7 +43,7 @@ namespace BTLLTTQ
         {
            start_date.Enabled = false;
             end_date.Enabled = false;
-            btn_ct.Visible = false;
+
         }
         private void LoadData()
         {
@@ -65,8 +65,8 @@ namespace BTLLTTQ
                 chart2.Series[0].YValueMembers = "Value";
                 chart2.DataBind();
                 dataGridView1.DataSource = dashboard.UnderstockList;
-                dataGridView1.Columns[0].HeaderText = "Item";
-                dataGridView1.Columns[1].HeaderText = "Units";
+                dataGridView1.Columns[0].HeaderText = "Sản Phẩm ";
+                dataGridView1.Columns[1].HeaderText = "Số Lượng";
                 Console.WriteLine("Loaded view :)");
             }
             else Console.WriteLine("View not loaded, same query");
@@ -119,7 +119,7 @@ namespace BTLLTTQ
         private void btn_ct_Click(object sender, EventArgs e)
         {
             start_date.Enabled = true;
-            start_date.Enabled = true;
+            end_date.Enabled = true;
             btn_ct.Visible = true;
         }
 
@@ -207,7 +207,7 @@ namespace BTLLTTQ
 
         private void FormMN_Load(object sender, EventArgs e)
         {
-
+            DisableCustomDates();
         }
     }
 }

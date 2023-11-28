@@ -36,13 +36,11 @@
             this.check_sp = new System.Windows.Forms.CheckBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btn_login = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_password = new System.Windows.Forms.TextBox();
-            this.tb_username = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -85,13 +83,11 @@
             this.panel2.Controls.Add(this.check_sp);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.linkLabel2);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.btn_login);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.tb_password);
-            this.panel2.Controls.Add(this.tb_username);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(61, 141);
             this.panel2.Name = "panel2";
@@ -108,7 +104,7 @@
             this.cmb_username.FormattingEnabled = true;
             this.cmb_username.Location = new System.Drawing.Point(102, 102);
             this.cmb_username.Name = "cmb_username";
-            this.cmb_username.Size = new System.Drawing.Size(266, 38);
+            this.cmb_username.Size = new System.Drawing.Size(266, 45);
             this.cmb_username.TabIndex = 9;
             // 
             // check_sp
@@ -118,9 +114,9 @@
             this.check_sp.ForeColor = System.Drawing.Color.White;
             this.check_sp.Location = new System.Drawing.Point(223, 262);
             this.check_sp.Name = "check_sp";
-            this.check_sp.Size = new System.Drawing.Size(146, 25);
+            this.check_sp.Size = new System.Drawing.Size(182, 32);
             this.check_sp.TabIndex = 8;
-            this.check_sp.Text = "Show Password";
+            this.check_sp.Text = "Hiện Mật Khẩu";
             this.check_sp.UseVisualStyleBackColor = true;
             this.check_sp.CheckedChanged += new System.EventHandler(this.check_sp_CheckedChanged);
             // 
@@ -147,20 +143,6 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // linkLabel2
-            // 
-            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.ForeColor = System.Drawing.Color.White;
-            this.linkLabel2.LinkColor = System.Drawing.Color.WhiteSmoke;
-            this.linkLabel2.Location = new System.Drawing.Point(174, 432);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(63, 20);
-            this.linkLabel2.TabIndex = 6;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Sign Up";
-            this.linkLabel2.Visible = false;
-            // 
             // linkLabel1
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(80)))));
@@ -169,10 +151,10 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.WhiteSmoke;
             this.linkLabel1.Location = new System.Drawing.Point(138, 303);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(134, 20);
+            this.linkLabel1.Size = new System.Drawing.Size(156, 25);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot Password?";
+            this.linkLabel1.Text = "Quên Mật Khẩu?";
             this.linkLabel1.Visible = false;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
@@ -184,7 +166,7 @@
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(234, 60);
             this.btn_login.TabIndex = 4;
-            this.btn_login.Text = "SIGN IN";
+            this.btn_login.Text = "Đăng Nhập";
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
@@ -194,9 +176,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(103, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.Size = new System.Drawing.Size(97, 25);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Password";
+            this.label3.Text = "Mật Khẩu";
             // 
             // label2
             // 
@@ -204,9 +186,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(97, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 20);
+            this.label2.Size = new System.Drawing.Size(97, 25);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Username/ID";
+            this.label2.Text = "Tài Khoản";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tb_password
@@ -220,17 +202,6 @@
             this.tb_password.Size = new System.Drawing.Size(266, 42);
             this.tb_password.TabIndex = 2;
             // 
-            // tb_username
-            // 
-            this.tb_username.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_username.ForeColor = System.Drawing.Color.DimGray;
-            this.tb_username.Location = new System.Drawing.Point(284, 16);
-            this.tb_username.Multiline = true;
-            this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(124, 40);
-            this.tb_username.TabIndex = 1;
-            this.tb_username.Visible = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -238,9 +209,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(135, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 37);
+            this.label1.Size = new System.Drawing.Size(207, 45);
             this.label1.TabIndex = 0;
-            this.label1.Text = "SIGN IN";
+            this.label1.Text = "Đăng Nhập";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox3
@@ -256,7 +227,7 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::BTLLTTQ.Properties.Resources.Screenshot_2023_10_19_102540;
@@ -294,9 +265,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_password;
-        private System.Windows.Forms.TextBox tb_username;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;

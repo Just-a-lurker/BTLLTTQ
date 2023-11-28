@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.start_date = new System.Windows.Forms.DateTimePicker();
             this.end_date = new System.Windows.Forms.DateTimePicker();
             this.btn_thismonth = new System.Windows.Forms.Button();
@@ -103,7 +103,7 @@
             this.btn_thismonth.Name = "btn_thismonth";
             this.btn_thismonth.Size = new System.Drawing.Size(147, 32);
             this.btn_thismonth.TabIndex = 1;
-            this.btn_thismonth.Text = "This Month";
+            this.btn_thismonth.Text = "Tháng này";
             this.btn_thismonth.UseVisualStyleBackColor = true;
             this.btn_thismonth.Click += new System.EventHandler(this.btn_thismonth_Click);
             // 
@@ -114,7 +114,7 @@
             this.btn_l3d.Name = "btn_l3d";
             this.btn_l3d.Size = new System.Drawing.Size(140, 32);
             this.btn_l3d.TabIndex = 1;
-            this.btn_l3d.Text = "Last 30 days";
+            this.btn_l3d.Text = "30 ngày trước";
             this.btn_l3d.UseVisualStyleBackColor = true;
             this.btn_l3d.Click += new System.EventHandler(this.btn_l3d_Click);
             // 
@@ -125,18 +125,18 @@
             this.btn_l7d.Name = "btn_l7d";
             this.btn_l7d.Size = new System.Drawing.Size(134, 32);
             this.btn_l7d.TabIndex = 1;
-            this.btn_l7d.Text = "Last 7 days";
+            this.btn_l7d.Text = "7 ngày trước";
             this.btn_l7d.UseVisualStyleBackColor = true;
             this.btn_l7d.Click += new System.EventHandler(this.btn_l7d_Click);
             // 
             // btn_ct
             // 
-            this.btn_ct.Location = new System.Drawing.Point(571, 20);
+            this.btn_ct.Location = new System.Drawing.Point(542, 20);
             this.btn_ct.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ct.Name = "btn_ct";
-            this.btn_ct.Size = new System.Drawing.Size(103, 32);
+            this.btn_ct.Size = new System.Drawing.Size(132, 32);
             this.btn_ct.TabIndex = 1;
-            this.btn_ct.Text = "Custom";
+            this.btn_ct.Text = "Tùy Chọn";
             this.btn_ct.UseVisualStyleBackColor = true;
             this.btn_ct.Click += new System.EventHandler(this.btn_ct_Click);
             // 
@@ -147,13 +147,13 @@
             this.btn_td.Name = "btn_td";
             this.btn_td.Size = new System.Drawing.Size(103, 32);
             this.btn_td.TabIndex = 1;
-            this.btn_td.Text = "Today";
+            this.btn_td.Text = "Hôm nay";
             this.btn_td.UseVisualStyleBackColor = true;
             this.btn_td.Click += new System.EventHandler(this.btn_td_Click);
             // 
             // btn_ok
             // 
-            this.btn_ok.Location = new System.Drawing.Point(495, 19);
+            this.btn_ok.Location = new System.Drawing.Point(466, 19);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(69, 34);
             this.btn_ok.TabIndex = 2;
@@ -166,9 +166,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(33, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 22);
+            this.label1.Size = new System.Drawing.Size(218, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Number of Oders";
+            this.label1.Text = "Tổng Số Đơn Đặt Hàng";
             // 
             // orders
             // 
@@ -194,9 +194,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(25, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 22);
+            this.label3.Size = new System.Drawing.Size(161, 22);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Total Revenue";
+            this.label3.Text = "Tổng Doanh Thu";
             // 
             // ttrevenue
             // 
@@ -222,9 +222,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(25, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(110, 22);
+            this.label12.Size = new System.Drawing.Size(153, 22);
             this.label12.TabIndex = 0;
-            this.label12.Text = "Total Profit";
+            this.label12.Text = "Tổng Lợi Nhuận";
             // 
             // ttprofit
             // 
@@ -247,69 +247,69 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(10, 172);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(802, 272);
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
-            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            title1.Name = "Title1";
-            title1.Text = "Gross Revenue";
-            this.chart1.Titles.Add(title1);
+            title3.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            title3.Name = "Title1";
+            title3.Text = "Tổng Doanh Thu";
+            this.chart1.Titles.Add(title3);
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
             this.chart2.Location = new System.Drawing.Point(818, 172);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            series2.IsValueShownAsLabel = true;
-            series2.LabelForeColor = System.Drawing.Color.White;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            series4.IsValueShownAsLabel = true;
+            series4.LabelForeColor = System.Drawing.Color.White;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart2.Series.Add(series4);
             this.chart2.Size = new System.Drawing.Size(440, 480);
             this.chart2.TabIndex = 7;
-            title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            title2.Name = "Title1";
-            title2.Text = "Top 5 Products";
-            this.chart2.Titles.Add(title2);
+            title4.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            title4.Name = "Title1";
+            title4.Text = "5 Sản Phẩm Hàng Đầu";
+            this.chart2.Titles.Add(title4);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(33, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 22);
+            this.label5.Size = new System.Drawing.Size(119, 22);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Total Counters";
+            this.label5.Text = "Thành Phần";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(3, 27);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(203, 22);
+            this.label11.Size = new System.Drawing.Size(150, 22);
             this.label11.TabIndex = 1;
-            this.label11.Text = "Number of Customers";
+            this.label11.Text = "Số Khánh Hàng";
             // 
             // nb_customers
             // 
@@ -343,18 +343,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 22);
+            this.label2.Size = new System.Drawing.Size(160, 22);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Number of Suppliers";
+            this.label2.Text = "Số nhà cung cấp";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(1, 141);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 22);
+            this.label6.Size = new System.Drawing.Size(131, 22);
             this.label6.TabIndex = 8;
-            this.label6.Text = "Number of Products";
+            this.label6.Text = "Số Sản Phẩm";
             // 
             // panel4
             // 
@@ -376,9 +376,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(196, 22);
+            this.label7.Size = new System.Drawing.Size(183, 22);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Products Understock";
+            this.label7.Text = "Sản Phẩm Tồn Kho";
             // 
             // dataGridView1
             // 

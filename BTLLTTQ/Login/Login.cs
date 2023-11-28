@@ -102,7 +102,7 @@ namespace BTLLTTQ
                 int cnt = dbase.Check_Account(querry, "@username1", "@password", username1, password);
                 if (cnt != 0)
                 {
-                    MessageBox.Show("Authentication Succeeded");
+                    MessageBox.Show("Đăng nhập thành công");
                     this.Hide();
                     FormMNN f1 = new FormMNN();
                     f1.ShowDialog();
@@ -110,7 +110,7 @@ namespace BTLLTTQ
                 }
                 else
                 {
-                    MessageBox.Show("Authentication Failed");
+                    MessageBox.Show("Đăng nhập thất bại");
                 }
             }
         }
