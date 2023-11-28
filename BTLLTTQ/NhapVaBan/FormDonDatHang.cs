@@ -232,7 +232,7 @@ namespace BTLLTTQ.NhapVaBan
         }
         private void btn_dong_Click(object sender, EventArgs e)
         {
-            if(DialogResult.Yes==MessageBox.Show("Do y want to exit","Question",MessageBoxButtons.YesNo,MessageBoxIcon.Question))
+            if(DialogResult.Yes==MessageBox.Show("Bạn có muốn thoát không ?","Question",MessageBoxButtons.YesNo,MessageBoxIcon.Question))
             {
                 this.Close();
             }
@@ -388,11 +388,69 @@ namespace BTLLTTQ.NhapVaBan
             txt_tongtien.Text = Tongmoi.ToString();
             //txt_tongtienbc.Text =  Functions.ChuyenSoSangChu(Tongmoi.ToString());
             ResetValuesHang();
+            cmb_dondh.Items.Clear();
+            functions.FillComboBox("Select SoDDH from DonDatHang", cmb_dondh);
             btn_xoa.Enabled = true;
             btn_them.Enabled = true;
             btn_xuat.Enabled = true;
         }
+        private void reset()
+        {
+            txt_madonhang.Text = "";
+            cmb_mkh.Text = "";
+            cmb_mnv.Text = "";
+            cmb_mnv.SelectedIndex = -1;
+            cmb_mkh.SelectedIndex=- 1;
+            cmb_mnt.Text = "";
+            cmb_mnt.SelectedIndex = -1;
+            txt_soluong.Text = "";
+            txt_tennt.Text = "";
+            txt_tongtien.Text = "";
 
+
+        }
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+            double sl, slcon, slxoa;
+            if (rd_ddh.Checked == true)
+            {
+                if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string sql = "SELECT SoDDH,SoLuong FROM ChiTietHDDH WHERE SoDDH = N'" + txt_madonhang.Text + "'";
+                    System.Data.DataTable NoiThat = functions.GetDataToTable(sql);
+                    //for (int hang = 0; hang <= NoiThat.Rows.Count - 1; hang++)
+                    //{
+                    if (txt_soluong.Text != "")
+                    {
+                        sl = Convert.ToDouble(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'")); /*NoiThat.Rows[hang][0].ToString()*/
+                        slxoa = Convert.ToDouble(txt_soluong.Text); /*NoiThat.Rows[hang][1].ToString()*/
+                        slcon = sl + slxoa;
+                        sql = "UPDATE DMNoiThat SET SoLuong =" + slcon + " WHERE MaNoiThat= N'" + cmb_mnt.Text + "'"; /*NoiThat.Rows[hang][0].ToString()*/
+                        functions.UpdateData(sql);
+                    }
+                       
+                    //}
+
+                    //Xóa chi tiết hóa đơn
+                    sql = "DELETE ChiTietHDDH WHERE SoDDH=N'" + txt_madonhang.Text + "'";
+                    functions.RunSqlDel(sql);
+
+                    //Xóa hóa đơn
+                    sql = "DELETE DonDatHang WHERE SoDDH=N'" + txt_madonhang.Text + "'";
+                    functions.RunSqlDel(sql);
+                    ResetValues();
+                    LoadDataGridView();
+                    btn_xoa.Enabled = false;
+                    btn_xuat.Enabled = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn chỉ có thể xóa khi chọn mã đơn đặt hàng");
+                return;
+            }
+
+        }
         //xóa mh khi click 2 lần
         private void dgvHDBanHang_DoubleClick(object sender, EventArgs e)
         {
@@ -588,27 +646,27 @@ namespace BTLLTTQ.NhapVaBan
 
         private void cmb_dondh_DropDown(object sender, EventArgs e)
         {
-            if (cmb_dondh.Items.Count == 0)
-            {
-                cmb_dondh.SelectedIndex = -1;
-                if (rd_ddh.Checked == true)
-                {
-                    functions.FillComboBox("SELECT SoDDH FROM DonDatHang", cmb_dondh);
-                } else if (rd_h.Checked == true)
-                {
-                    functions.FillComboBox("Select MaNoiThat from DMNoiThat", cmb_dondh);
-                }
-                else if(rd_kh.Checked == true)
-                {
-                    functions.FillComboBox("Select MaKhach from KhachHang", cmb_dondh);
-                }
-                else if(rd_nv.Checked==true)
-                {
-                    functions.FillComboBox("Select MaNV from NhanVien", cmb_dondh);
-                }
+            //if (cmb_dondh.Items.Count == 0)
+            //{
+            //    cmb_dondh.SelectedIndex = -1;
+            //    if (rd_ddh.Checked == true)
+            //    {
+            //        functions.FillComboBox("SELECT SoDDH FROM DonDatHang", cmb_dondh);
+            //    } else if (rd_h.Checked == true)
+            //    {
+            //        functions.FillComboBox("Select MaNoiThat from DMNoiThat", cmb_dondh);
+            //    }
+            //    else if(rd_kh.Checked == true)
+            //    {
+            //        functions.FillComboBox("Select MaKhach from KhachHang", cmb_dondh);
+            //    }
+            //    else if(rd_nv.Checked==true)
+            //    {
+            //        functions.FillComboBox("Select MaNV from NhanVien", cmb_dondh);
+            //    }
            
            
-            }
+            //}
            
         }
 
@@ -957,49 +1015,13 @@ namespace BTLLTTQ.NhapVaBan
             CODE = cmb_mnt.SelectedItem.ToString();
         }
 
-        private void btn_xoa_Click(object sender, EventArgs e)
-        {
-            double sl, slcon, slxoa;
-            if(rd_ddh.Checked==true)
-            {
-                if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string sql = "SELECT SoDDH,SoLuong FROM ChiTietHDDH WHERE SoDDH = N'" + txt_madonhang.Text + "'";
-                    System.Data.DataTable NoiThat = functions.GetDataToTable(sql);
-                    for (int hang = 0; hang <= NoiThat.Rows.Count - 1; hang++)
-                    {
-
-                        sl = Convert.ToDouble(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + NoiThat.Rows[hang][0].ToString() + "'"));
-                        slxoa = Convert.ToDouble(NoiThat.Rows[hang][1].ToString());
-                        slcon = sl + slxoa;
-                        sql = "UPDATE DMNoiThat SET SoLuong =" + slcon + " WHERE MaNoiThat= N'" + NoiThat.Rows[hang][0].ToString() + "'";
-                        functions.UpdateData(sql);
-                    }
-
-                    //Xóa chi tiết hóa đơn
-                    sql = "DELETE ChiTietHDDH WHERE SoDDH=N'" + txt_madonhang.Text + "'";
-                    functions.RunSqlDel(sql);
-
-                    //Xóa hóa đơn
-                    sql = "DELETE DonDatHang WHERE SoDDH=N'" + txt_madonhang.Text + "'";
-                    functions.RunSqlDel(sql);
-                    ResetValues();
-                    LoadDataGridView();
-                    btn_xoa.Enabled = false;
-                    btn_xuat.Enabled = false;
-                }
-            }else
-            {
-                MessageBox.Show("Bạn chỉ có thể xóa khi chọn mã đơn đặt hàng");
-                return;
-            }
-            
-        }
+       
 
         private void rd_kh_CheckedChanged(object sender, EventArgs e)
         {
             if (rd_kh.Checked == true)
             {
+                reset();
                 cmb_dondh.Items.Clear();
                 cmb_dondh.Text = "";
                 functions.FillComboBox("Select MaKhach from KhachHang", cmb_dondh);
@@ -1018,6 +1040,7 @@ namespace BTLLTTQ.NhapVaBan
         {
             if (rd_h.Checked == true)
             {
+                reset();
                 cmb_dondh.Items.Clear();
                 cmb_dondh.Text = "";
                 functions.FillComboBox("Select MaNoiThat from DMNoiThat", cmb_dondh);
@@ -1035,6 +1058,7 @@ namespace BTLLTTQ.NhapVaBan
         {
             if (rd_nv.Checked == true)
             {
+                reset();
                 cmb_dondh.Items.Clear();
                 cmb_dondh.Text = "";
                 functions.FillComboBox("Select MaNV from NhanVien", cmb_dondh);
@@ -1052,6 +1076,7 @@ namespace BTLLTTQ.NhapVaBan
         {
             if (rd_ddh.Checked == true)
             {
+                reset();
                 cmb_dondh.Items.Clear();
                 cmb_dondh.Text = "";
                 functions.FillComboBox("Select SoDDH from DonDatHang", cmb_dondh);

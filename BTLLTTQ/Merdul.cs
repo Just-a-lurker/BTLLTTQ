@@ -347,7 +347,7 @@ namespace BTLLTTQ
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Dữ liệu đang được dùng, không thể xoá...", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Dữ liệu đang được dùng, không thể xoá...", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 MessageBox.Show(ex.ToString());
             }
             cmd.Dispose();
