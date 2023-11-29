@@ -414,20 +414,35 @@ namespace BTLLTTQ.NhapVaBan
                         int slcon, a;
                         if (CODE != cmb_mnt.Text)
                         {//KHAC MA NOI THAT
-                            //cap nhat lai so luong cho san pham cu
-                            //slcon = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + CODE + "'"));
-                            //functions.UpdateData("UPDATE DMNoiThat SET SoLuong = '" + SLCT + slcon + " 'WHERE MaNoiThat = N'" + CODE + "'");
-                            //slcon = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
-                            //if (Convert.ToInt32(txt_soluong.Text) > slcon)
-                            //{
-                            //    MessageBox.Show("Số lượng mặt hàng này chỉ còn " + slcon, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //    txt_soluong.Text = "";
-                            //    txt_soluong.Focus();
-                            //    return;
-                            //}
-                            MessageBox.Show("Bạn chỉ có thể sửa thông tin nếu chung mã nội thất");
-                            return;
-
+                         //cap nhat lai so luong cho san pham cu
+                            slcon = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + CODE + "'"));
+                            functions.UpdateData("UPDATE DMNoiThat SET SoLuong = '" + SLCT + slcon + " 'WHERE MaNoiThat = N'" + CODE + "'");
+                            slcon = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
+                            if (Convert.ToInt32(txt_soluong.Text) > slcon)
+                            {
+                                MessageBox.Show("Số lượng mặt hàng này chỉ còn " + slcon, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txt_soluong.Text = "";
+                                txt_soluong.Focus();
+                                return;
+                            }
+                            int temp = slcon - Convert.ToInt32(txt_soluong.Text);
+                            functions.UpdateData("UPDATE DMNoiThat SET SoLuong = '" + temp + " 'WHERE MaNoiThat = N'" + cmb_mnt.Text + "'");
+                            functions.UpdateData("UPDATE ChiTietHDDH SET MaNoiThat = '" + cmb_mnt.Text
+                           + "', SoLuong = '" + txt_soluong.Text
+                           + "', GiamGia = '" + txt_giamgia.Text
+                           + "', ThanhTien = '" + txt_thanhtien.Text
+                           + " 'WHERE MaNoiThat = N'" + CODE + "' and SoDDH = '"+txt_madonhang.Text+"'");
+                            int Tongmoi = Convert.ToInt32(txt_thanhtien.Text);
+                            Tongmoi = Tongmoi + Convert.ToInt32((Tongmoi * Convert.ToInt32(txt_thue.Text)) / 100);
+                            txt_tongtien.Text = Tongmoi.ToString();
+                            functions.UpdateData("UPDATE DonDatHang SET TongTien = " + txt_tongtien.Text
+                                + ", Thue = '" + txt_thue.Text
+                                + "', DatCoc = '" + txt_datcoc.Text
+                                + "' WHERE SoDDH = '" + txt_madonhang.Text + "'");
+                            LoadInfoHoaDon();
+                            LoadDataGridView();
+                            MessageBox.Show("Đã Sửa");
+                            Reset_M();
                         }
                         else
                         {//GIONG MA NOI THAT
@@ -446,11 +461,10 @@ namespace BTLLTTQ.NhapVaBan
                             functions.UpdateData("UPDATE ChiTietHDDH SET SoLuong = '" + txt_soluong.Text
                            + "', GiamGia = '" + txt_giamgia.Text
                            + "', ThanhTien = '" + txt_thanhtien.Text
-                           + "' WHERE MaNoithat = '" + cmb_mnt.Text + "'");
+                           + "' WHERE MaNoithat = '" + cmb_mnt.Text + "' and SoDDH = '" + txt_madonhang.Text + "'");
                             //cập nhật lại hóa đơn đặt hàng
                             int Tongmoi = Convert.ToInt32(txt_thanhtien.Text);
                             Tongmoi = Tongmoi + Convert.ToInt32((Tongmoi * Convert.ToInt32(txt_thue.Text)) / 100);
-                            MessageBox.Show("O day");
                             txt_tongtien.Text = Tongmoi.ToString();
                             functions.UpdateData("UPDATE DonDatHang SET TongTien = " +txt_tongtien.Text
                                 + ", Thue = '" + txt_thue.Text
@@ -467,7 +481,7 @@ namespace BTLLTTQ.NhapVaBan
                 }catch (Exception ex)
                 {
 
-                    MessageBox.Show("Error:" + ex.Message);
+                    MessageBox.Show("Error: " + ex.Message);
                 }
 
 
