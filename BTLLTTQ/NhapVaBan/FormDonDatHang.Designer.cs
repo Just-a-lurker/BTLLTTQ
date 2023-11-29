@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.txt_madonhang = new System.Windows.Forms.TextBox();
             this.cmb_mkh = new System.Windows.Forms.ComboBox();
             this.cmb_mnv = new System.Windows.Forms.ComboBox();
@@ -74,7 +75,9 @@
             this.btn_Sua = new System.Windows.Forms.Button();
             this.word = new System.Windows.Forms.RadioButton();
             this.excel = new System.Windows.Forms.RadioButton();
+            this.btn_re = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDBanHang)).BeginInit();
             this.panel1.SuspendLayout();
@@ -82,6 +85,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dgv);
             this.groupBox1.Controls.Add(this.txt_madonhang);
             this.groupBox1.Controls.Add(this.cmb_mkh);
             this.groupBox1.Controls.Add(this.cmb_mnv);
@@ -97,15 +101,28 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1166, 197);
+            this.groupBox1.Size = new System.Drawing.Size(1166, 222);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn đặt hàng";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // dgv
+            // 
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(421, 87);
+            this.dgv.Name = "dgv";
+            this.dgv.RowHeadersWidth = 51;
+            this.dgv.RowTemplate.Height = 24;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(737, 128);
+            this.dgv.TabIndex = 9;
+            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
+            // 
             // txt_madonhang
             // 
-            this.txt_madonhang.Location = new System.Drawing.Point(234, 51);
+            this.txt_madonhang.Location = new System.Drawing.Point(188, 42);
             this.txt_madonhang.Margin = new System.Windows.Forms.Padding(4);
             this.txt_madonhang.Name = "txt_madonhang";
             this.txt_madonhang.Size = new System.Drawing.Size(221, 28);
@@ -116,7 +133,7 @@
             this.cmb_mkh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmb_mkh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmb_mkh.FormattingEnabled = true;
-            this.cmb_mkh.Location = new System.Drawing.Point(234, 147);
+            this.cmb_mkh.Location = new System.Drawing.Point(188, 138);
             this.cmb_mkh.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_mkh.Name = "cmb_mkh";
             this.cmb_mkh.Size = new System.Drawing.Size(221, 30);
@@ -125,7 +142,7 @@
             // cmb_mnv
             // 
             this.cmb_mnv.FormattingEnabled = true;
-            this.cmb_mnv.Location = new System.Drawing.Point(234, 96);
+            this.cmb_mnv.Location = new System.Drawing.Point(188, 87);
             this.cmb_mnv.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_mnv.Name = "cmb_mnv";
             this.cmb_mnv.Size = new System.Drawing.Size(221, 30);
@@ -134,7 +151,7 @@
             // txt_ngaygiao
             // 
             this.txt_ngaygiao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txt_ngaygiao.Location = new System.Drawing.Point(729, 113);
+            this.txt_ngaygiao.Location = new System.Drawing.Point(885, 48);
             this.txt_ngaygiao.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ngaygiao.Name = "txt_ngaygiao";
             this.txt_ngaygiao.Size = new System.Drawing.Size(273, 28);
@@ -143,17 +160,17 @@
             // txt_ngaydat
             // 
             this.txt_ngaydat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txt_ngaydat.Location = new System.Drawing.Point(729, 54);
+            this.txt_ngaydat.Location = new System.Drawing.Point(514, 48);
             this.txt_ngaydat.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ngaydat.Name = "txt_ngaydat";
-            this.txt_ngaydat.Size = new System.Drawing.Size(273, 28);
+            this.txt_ngaydat.Size = new System.Drawing.Size(263, 28);
             this.txt_ngaydat.TabIndex = 5;
             this.txt_ngaydat.ValueChanged += new System.EventHandler(this.txt_ngaydat_ValueChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(570, 113);
+            this.label5.Location = new System.Drawing.Point(785, 48);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 22);
@@ -163,7 +180,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(567, 54);
+            this.label4.Location = new System.Drawing.Point(417, 51);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 22);
@@ -173,7 +190,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 150);
+            this.label3.Location = new System.Drawing.Point(13, 141);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 22);
@@ -183,7 +200,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 100);
+            this.label2.Location = new System.Drawing.Point(13, 91);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 22);
@@ -193,7 +210,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 54);
+            this.label1.Location = new System.Drawing.Point(13, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 22);
@@ -216,11 +233,11 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.dgvHDBanHang);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 197);
+            this.groupBox2.Location = new System.Drawing.Point(0, 222);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1166, 348);
+            this.groupBox2.Size = new System.Drawing.Size(1166, 317);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin các mặt hàng";
@@ -251,6 +268,7 @@
             this.txt_giamgia.Size = new System.Drawing.Size(206, 28);
             this.txt_giamgia.TabIndex = 10;
             this.txt_giamgia.TextChanged += new System.EventHandler(this.txt_giamgia_TextChanged);
+            this.txt_giamgia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_giamgia_KeyPress);
             // 
             // txt_soluong
             // 
@@ -349,14 +367,14 @@
             this.dgvHDBanHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHDBanHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHDBanHang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvHDBanHang.Location = new System.Drawing.Point(4, 126);
+            this.dgvHDBanHang.Location = new System.Drawing.Point(4, 118);
             this.dgvHDBanHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvHDBanHang.Name = "dgvHDBanHang";
             this.dgvHDBanHang.RowHeadersWidth = 51;
             this.dgvHDBanHang.RowTemplate.Height = 24;
             this.dgvHDBanHang.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvHDBanHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHDBanHang.Size = new System.Drawing.Size(1158, 218);
+            this.dgvHDBanHang.Size = new System.Drawing.Size(1158, 195);
             this.dgvHDBanHang.TabIndex = 0;
             this.dgvHDBanHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHDBanHang_CellClick);
             this.dgvHDBanHang.DoubleClick += new System.EventHandler(this.dgvHDBanHang_DoubleClick);
@@ -450,7 +468,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(287, 549);
+            this.label12.Location = new System.Drawing.Point(281, 555);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 22);
@@ -507,7 +525,7 @@
             // 
             // btn_them
             // 
-            this.btn_them.Location = new System.Drawing.Point(37, 584);
+            this.btn_them.Location = new System.Drawing.Point(67, 584);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(140, 50);
             this.btn_them.TabIndex = 10;
@@ -517,7 +535,7 @@
             // 
             // btn_luu
             // 
-            this.btn_luu.Location = new System.Drawing.Point(224, 584);
+            this.btn_luu.Location = new System.Drawing.Point(234, 584);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(145, 50);
             this.btn_luu.TabIndex = 11;
@@ -527,7 +545,7 @@
             // 
             // btn_xoa
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(421, 586);
+            this.btn_xoa.Location = new System.Drawing.Point(547, 584);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(142, 50);
             this.btn_xoa.TabIndex = 12;
@@ -537,7 +555,7 @@
             // 
             // btn_xuat
             // 
-            this.btn_xuat.Location = new System.Drawing.Point(609, 584);
+            this.btn_xuat.Location = new System.Drawing.Point(695, 584);
             this.btn_xuat.Name = "btn_xuat";
             this.btn_xuat.Size = new System.Drawing.Size(151, 50);
             this.btn_xuat.TabIndex = 13;
@@ -548,7 +566,7 @@
             // 
             // btn_dong
             // 
-            this.btn_dong.Location = new System.Drawing.Point(983, 586);
+            this.btn_dong.Location = new System.Drawing.Point(1007, 586);
             this.btn_dong.Name = "btn_dong";
             this.btn_dong.Size = new System.Drawing.Size(147, 50);
             this.btn_dong.TabIndex = 14;
@@ -558,7 +576,7 @@
             // 
             // btn_Sua
             // 
-            this.btn_Sua.Location = new System.Drawing.Point(795, 586);
+            this.btn_Sua.Location = new System.Drawing.Point(852, 586);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(149, 50);
             this.btn_Sua.TabIndex = 15;
@@ -588,11 +606,22 @@
             this.excel.UseVisualStyleBackColor = true;
             this.excel.CheckedChanged += new System.EventHandler(this.excel_CheckedChanged);
             // 
+            // btn_re
+            // 
+            this.btn_re.Location = new System.Drawing.Point(398, 586);
+            this.btn_re.Name = "btn_re";
+            this.btn_re.Size = new System.Drawing.Size(133, 48);
+            this.btn_re.TabIndex = 18;
+            this.btn_re.Text = "Làm mới";
+            this.btn_re.UseVisualStyleBackColor = true;
+            this.btn_re.Click += new System.EventHandler(this.btn_re_Click);
+            // 
             // FormDonDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 708);
+            this.Controls.Add(this.btn_re);
             this.Controls.Add(this.excel);
             this.Controls.Add(this.word);
             this.Controls.Add(this.btn_Sua);
@@ -620,6 +649,7 @@
             this.Load += new System.EventHandler(this.FormDonDatHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDBanHang)).EndInit();
@@ -678,5 +708,7 @@
         private System.Windows.Forms.RadioButton rd_ddh;
         private System.Windows.Forms.RadioButton word;
         private System.Windows.Forms.RadioButton excel;
+        private System.Windows.Forms.Button btn_re;
+        private System.Windows.Forms.DataGridView dgv;
     }
 }
