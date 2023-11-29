@@ -68,7 +68,7 @@ namespace BTLLTTQ
             leftBorderBtn.Visible = false;
             iconCurrentChildForm.IconChar = IconChar.Home;
             iconCurrentChildForm.IconColor = Color.White;
-            lblTitleChildForm.Text = "Home";
+            lblTitleChildForm.Text = "Trang chủ";
         }
         private void ActivateButton(object senderBtn, Color color)
         {
