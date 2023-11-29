@@ -1164,6 +1164,7 @@ namespace BTLLTTQ.NhapVaBan
             SLCT = Convert.ToInt32(txt_soluong.Text);
             CODE = cmb_mnt.SelectedItem.ToString();
             tongt = Convert.ToInt32(txt_tongtien.Text);
+            btn_Sua.Enabled = true;
         }
 
        
