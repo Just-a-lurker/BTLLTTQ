@@ -197,18 +197,25 @@ namespace BTLLTTQ.Menu_Items
             }
             else
             {
-                string updateQuery = "UPDATE NhanVien SET tenNV = @tenNV, MaCV = @MaCV, Maca = @Maca , GioiTinh=@GioiTinh ,NgaySinh=@NgaySinh,DienThoai=@DienThoai,DiaChi=@DiaChi WHERE MaNV = @MaNV";
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật thông tin nhân viên này không?", "Xác nhận",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                db.ExecuteQuery(updateQuery,
-                    ("@tenNV", txtnv.Text),
-                    ("@MaCV", cmbomacv.Text),
-                    ("@Maca", cmbomacl.Text),
-                    ("@MaNV", txtmanv.Text),
-                    ("@GioiTinh", cmbogioitinh.Text),
-                    ("@NgaySinh", txtngaysinh.Text),
-                    ("@DienThoai", txtdienthoai.Text),
-                    ("@DiaChi", txtdiachi.Text));
-                LoadData();
+                if (result == DialogResult.Yes)
+                {
+                    string updateQuery = "UPDATE NhanVien SET tenNV = @tenNV, MaCV = @MaCV, Maca = @Maca , GioiTinh=@GioiTinh ,NgaySinh=@NgaySinh,DienThoai=@DienThoai,DiaChi=@DiaChi WHERE MaNV = @MaNV";
+
+                    db.ExecuteQuery(updateQuery,
+                        ("@tenNV", txtnv.Text),
+                        ("@MaCV", cmbomacv.Text),
+                        ("@Maca", cmbomacl.Text),
+                        ("@MaNV", txtmanv.Text),
+                        ("@GioiTinh", cmbogioitinh.Text),
+                        ("@NgaySinh", txtngaysinh.Text),
+                        ("@DienThoai", txtdienthoai.Text),
+                        ("@DiaChi", txtdiachi.Text));
+
+                    LoadData();
+                }
             }
         }
 

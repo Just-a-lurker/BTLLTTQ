@@ -23,7 +23,7 @@ namespace BTLLTTQ.NhapVaBan
         {
             InitializeComponent();
             maHDN = soHDN;
-            DataTable dt = db.DocBang("Select * from chitiethdn where sohdn = N'" + soHDN +"'");
+            DataTable dt = db.DocBang("Select * from ChiTietHDN where SoHDN = N'" + soHDN +"'");
             txtSoHDN.Text = maHDN;
             dataGridView1.DataSource = dt;
             db.ThemVaoComboBox("select manoithat from dmnoithat", cbbMaNT);
@@ -38,7 +38,7 @@ namespace BTLLTTQ.NhapVaBan
 
         bool checkMa(string k)
         {
-            DataTable dt = db.DocBang("Select * from chitiethdn where manoithat =N'" + k + "' and sohdn = N'" + txtSoHDN.Text +"'");
+            DataTable dt = db.DocBang("Select * from ChiTietHDN where manoithat =N'" + k + "' and sohdn = N'" + txtSoHDN.Text +"'");
             if (dt.Rows.Count > 0)
             {
                 return true;
@@ -87,7 +87,7 @@ namespace BTLLTTQ.NhapVaBan
                 {
                    updateTT(int.Parse(txtThanhTien.Text));
                    updateSL(int.Parse(txtSL.Text));
-                     db.CapNhatDuLieu("insert into chitiethdn values (N'" 
+                     db.CapNhatDuLieu("insert into ChiTietHDN values (N'"
                         + cbbMaNT.Text + "',N'"
                         + txtSoHDN.Text + "'," 
                         + int.Parse(txtSL.Text) + "," 
@@ -98,7 +98,7 @@ namespace BTLLTTQ.NhapVaBan
                     db.CapNhatDuLieu("UPDATE DMNoiThat SET dongianhap =" + int.Parse(txtDonGia.Text) + ", dongiaban = "+int.Parse(temp.ToString())+" WHERE MaNoiThat= N'" + cbbMaNT.Text + "'");
                     txtDonGia.Text = txtGiamGia.Text = txtSL.Text = txtThanhTien.Text = "";
                     cbbMaNT.SelectedIndex = -1;
-                    DataTable dt = db.DocBang("Select * from chitiethdn where sohdn = N'" + txtSoHDN.Text +"'");
+                    DataTable dt = db.DocBang("Select * from ChiTietHDN where sohdn = N'" + txtSoHDN.Text +"'");
                     dataGridView1.DataSource = dt;
                 }
                 else
@@ -114,10 +114,10 @@ namespace BTLLTTQ.NhapVaBan
                 return; }
             updateSL(-int.Parse(txtSL.Text));
             updateTT(-int.Parse(txtThanhTien.Text));
-            db.CapNhatDuLieu("delete from chitiethdn where manoithat =N'" + cbbMaNT.Text + "' and sohdn = N'" + txtSoHDN.Text + "'");
+            db.CapNhatDuLieu("delete from ChiTietHDN where manoithat =N'" + cbbMaNT.Text + "' and sohdn = N'" + txtSoHDN.Text + "'");
             txtDonGia.Text = txtGiamGia.Text = txtSL.Text = txtThanhTien.Text = "";
             cbbMaNT.SelectedIndex = -1;
-            DataTable dt = db.DocBang("Select * from chitiethdn where sohdn = N'" + txtSoHDN.Text +"'");
+            DataTable dt = db.DocBang("Select * from ChiTietHDN where sohdn = N'" + txtSoHDN.Text +"'");
             dataGridView1.DataSource = dt;
         }
 
@@ -143,14 +143,14 @@ namespace BTLLTTQ.NhapVaBan
                     }
                     double temp2 = Math.Ceiling(int.Parse(txtDonGia.Text) * 1.1);
                     if (DG != int.Parse(txtDonGia.Text)) db.CapNhatDuLieu("UPDATE DMNoiThat SET dongianhap =" + int.Parse(txtDonGia.Text) + ", dongiaban = " + int.Parse(temp2.ToString()) + " WHERE MaNoiThat= N'" + cbbMaNT.Text + "'");
-                    db.CapNhatDuLieu("update chitiethdn set soluong=" + int.Parse(txtSL.Text)
+                    db.CapNhatDuLieu("update ChiTietHDN set soluong=" + int.Parse(txtSL.Text)
                         + ", dongia = " + int.Parse(txtDonGia.Text) + ",giamgia =" 
                         + int.Parse(txtGiamGia.Text) + ",thanhtien =" 
                         + int.Parse(txtThanhTien.Text) + " where manoithat =N'" 
                         + cbbMaNT.Text + "'");
                     txtDonGia.Text = txtGiamGia.Text = txtSL.Text = txtThanhTien.Text = "";
                     cbbMaNT.SelectedIndex = -1;
-                    DataTable dt = db.DocBang("Select * from chitiethdn where sohdn = N'" + txtSoHDN.Text +"'");
+                    DataTable dt = db.DocBang("Select * from ChiTietHDN where sohdn = N'" + txtSoHDN.Text +"'");
                     dataGridView1.DataSource = dt;
                 }
                 else
@@ -163,7 +163,7 @@ namespace BTLLTTQ.NhapVaBan
 
         private void btnXemAll_Click(object sender, EventArgs e)
         {
-            DataTable dt = db.DocBang("Select * from chitiethdn where sohdn = N'" + maHDN + "'");
+            DataTable dt = db.DocBang("Select * from ChiTietHDN where sohdn = N'" + maHDN + "'");
             dataGridView1.DataSource = dt;
         }
 
@@ -171,7 +171,7 @@ namespace BTLLTTQ.NhapVaBan
         {
             if (checkMa(cbbMaNT.Text))
             {
-                DataTable dt = db.DocBang("Select * from chitiethdn where manoithat =N'" + cbbMaNT.Text + "', and sohdn = N'" + maHDN + "'");
+                DataTable dt = db.DocBang("Select * from ChiTietHDN where manoithat =N'" + cbbMaNT.Text + "', and sohdn = N'" + maHDN + "'");
                 dataGridView1.DataSource = dt;
             }
             else
@@ -303,6 +303,11 @@ namespace BTLLTTQ.NhapVaBan
             exRange.Range["A6:C6"].Value = tblThongtinHD.Rows[0][6];
             exSheet.Name = "Đơn nhập hàng";
             exApp.Visible = true;
+        }
+
+        private void FormChiTIetHDN_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void txtDonGia_TextChanged(object sender, EventArgs e)
