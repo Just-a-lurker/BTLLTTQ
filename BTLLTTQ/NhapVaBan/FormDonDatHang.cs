@@ -416,7 +416,8 @@ namespace BTLLTTQ.NhapVaBan
                         {//KHAC MA NOI THAT
                          //cap nhat lai so luong cho san pham cu
                             slcon = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + CODE + "'"));
-                            functions.UpdateData("UPDATE DMNoiThat SET SoLuong = '" + SLCT + slcon + " 'WHERE MaNoiThat = N'" + CODE + "'");
+                            functions.UpdateData("UPDATE DMNoiThat SET SoLuong = '" + (slcon + SLCT).ToString() + " 'WHERE MaNoiThat = N'" + CODE + "'");
+                            MessageBox.Show((slcon + SLCT).ToString());
                             slcon = Convert.ToInt32(functions.GetFieldValues("SELECT SoLuong FROM DMNoiThat WHERE MaNoiThat = N'" + cmb_mnt.Text + "'"));
                             if (Convert.ToInt32(txt_soluong.Text) > slcon)
                             {
