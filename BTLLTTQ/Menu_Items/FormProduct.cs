@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace BTLLTTQ.Menu
 {
     public partial class FormProduct : Form
     {
+		string imagePath;
 		Merdul functions=new Merdul();
 		Sql db = new Sql();
 
@@ -97,7 +99,25 @@ namespace BTLLTTQ.Menu
 			textBox4.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
 			dateBH.Text = dataGridView1.CurrentRow.Cells[11].Value.ToString();
 			txtmota.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
-        }
+
+			if (dataGridView1.CurrentRow.Cells[10].Value.ToString().Trim() != "")
+			{
+				try
+				{
+					string imagePath = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+					Image image = Image.FromFile(@"D:\My Documents\Semester 5\Lập trình Web\BaiTapLonWeb\BTLLTW\BTLW\wwwroot\Image_Furniture\" + imagePath);
+					pictureBox.Image = image;
+				}
+				catch(IOException ex)
+				{
+                    pictureBox.Image = null;
+					MessageBox.Show("Không tìm thấy ảnh ở đường dẫn này");
+                }
+
+			}
+			else pictureBox.Image = null;
+			}
+        
 
 		private void btnThem_Click_1(object sender, EventArgs e)
 		{
