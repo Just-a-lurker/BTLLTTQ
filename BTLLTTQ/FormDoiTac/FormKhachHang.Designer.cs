@@ -44,6 +44,7 @@
             this.btnTK = new System.Windows.Forms.Button();
             this.btnHienThi = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
+            this.txtTK = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -78,10 +79,10 @@
             // btnTao
             // 
             this.btnTao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTao.Location = new System.Drawing.Point(990, 310);
+            this.btnTao.Location = new System.Drawing.Point(990, 394);
             this.btnTao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTao.Name = "btnTao";
-            this.btnTao.Size = new System.Drawing.Size(117, 43);
+            this.btnTao.Size = new System.Drawing.Size(170, 43);
             this.btnTao.TabIndex = 1;
             this.btnTao.Text = "Tạo mới";
             this.btnTao.UseVisualStyleBackColor = true;
@@ -90,10 +91,10 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(1172, 310);
+            this.btnSua.Location = new System.Drawing.Point(1195, 394);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(117, 43);
+            this.btnSua.Size = new System.Drawing.Size(115, 43);
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -102,10 +103,10 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(1340, 310);
+            this.btnXoa.Location = new System.Drawing.Point(1353, 394);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(117, 43);
+            this.btnXoa.Size = new System.Drawing.Size(104, 43);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -190,10 +191,10 @@
             // btnTK
             // 
             this.btnTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTK.Location = new System.Drawing.Point(990, 387);
+            this.btnTK.Location = new System.Drawing.Point(990, 471);
             this.btnTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTK.Name = "btnTK";
-            this.btnTK.Size = new System.Drawing.Size(117, 41);
+            this.btnTK.Size = new System.Drawing.Size(170, 41);
             this.btnTK.TabIndex = 20;
             this.btnTK.Text = "Tìm kiếm";
             this.btnTK.UseVisualStyleBackColor = true;
@@ -202,10 +203,10 @@
             // btnHienThi
             // 
             this.btnHienThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHienThi.Location = new System.Drawing.Point(990, 471);
+            this.btnHienThi.Location = new System.Drawing.Point(12, 539);
             this.btnHienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(467, 41);
+            this.btnHienThi.Size = new System.Drawing.Size(343, 41);
             this.btnHienThi.TabIndex = 21;
             this.btnHienThi.Text = "Hiển thị thông tin khách hàng";
             this.btnHienThi.UseVisualStyleBackColor = true;
@@ -215,19 +216,29 @@
             // 
             this.btnLamMoi.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.Location = new System.Drawing.Point(1172, 388);
+            this.btnLamMoi.Location = new System.Drawing.Point(1159, 316);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(117, 40);
+            this.btnLamMoi.Size = new System.Drawing.Size(161, 40);
             this.btnLamMoi.TabIndex = 22;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
+            // txtTK
+            // 
+            this.txtTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTK.Location = new System.Drawing.Point(1195, 476);
+            this.txtTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTK.Name = "txtTK";
+            this.txtTK.Size = new System.Drawing.Size(252, 30);
+            this.txtTK.TabIndex = 23;
+            // 
             // FormKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1469, 563);
+            this.ClientSize = new System.Drawing.Size(1469, 591);
+            this.Controls.Add(this.txtTK);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnHienThi);
             this.Controls.Add(this.btnTK);
@@ -272,5 +283,6 @@
 		private System.Windows.Forms.Button btnTK;
 		private System.Windows.Forms.Button btnHienThi;
 		private System.Windows.Forms.Button btnLamMoi;
-	}
+        private System.Windows.Forms.TextBox txtTK;
+    }
 }
