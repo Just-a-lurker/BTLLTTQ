@@ -63,6 +63,10 @@
             this.txtmota = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.r1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -399,7 +403,7 @@
             this.txtmota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtmota.Multiline = true;
             this.txtmota.Name = "txtmota";
-            this.txtmota.Size = new System.Drawing.Size(170, 127);
+            this.txtmota.Size = new System.Drawing.Size(170, 47);
             this.txtmota.TabIndex = 30;
             // 
             // label13
@@ -422,11 +426,67 @@
             this.pictureBox.TabIndex = 32;
             this.pictureBox.TabStop = false;
             // 
+            // r1
+            // 
+            this.r1.AutoSize = true;
+            this.r1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r1.Location = new System.Drawing.Point(583, 89);
+            this.r1.Name = "r1";
+            this.r1.Size = new System.Drawing.Size(51, 20);
+            this.r1.TabIndex = 31;
+            this.r1.TabStop = true;
+            this.r1.Text = "Loại";
+            this.r1.UseVisualStyleBackColor = true;
+            this.r1.CheckedChanged += new System.EventHandler(this.r1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(583, 106);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(76, 20);
+            this.radioButton2.TabIndex = 32;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Chất liệu";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(583, 125);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(73, 20);
+            this.radioButton3.TabIndex = 33;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Nước sx";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.Location = new System.Drawing.Point(583, 143);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(79, 20);
+            this.radioButton4.TabIndex = 34;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Giá nhập";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 642);
+            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.r1);
             this.Controls.Add(this.txtmota);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dateBH);
@@ -504,5 +564,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btn_xuat;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.RadioButton r1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
     }
 }

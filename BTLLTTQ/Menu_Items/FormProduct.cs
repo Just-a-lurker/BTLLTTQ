@@ -17,8 +17,9 @@ namespace BTLLTTQ.Menu
 		string imagePath;
 		Merdul functions=new Merdul();
 		Sql db = new Sql();
+		string tim; int a = 0;
 
-		public FormProduct()
+        public FormProduct()
         {
             InitializeComponent();
 			DataTable dt = db.DocBang("Select * from dmnoithat");
@@ -202,8 +203,34 @@ namespace BTLLTTQ.Menu
 		{
 			if (!(txtMaSP.Text == "" || txtTenSP.Text == "" || textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "") && checkMaCT(txtMaSP.Text,comboBox1.Text, comboBox4.Text, comboBox5.Text, float.Parse(textBox2.Text)) )
 			{
-				DataTable dt = db.DocBang("Select * from dmnoithat where manoithat =N'" + txtMaSP.Text + "' and maloai  =N'" + comboBox1.Text + "' and machatlieu  =N'" + comboBox4.Text + "' and manuocsx =N'" + comboBox5.Text + "' and DonGiaNhap =" + float.Parse(textBox2.Text));
-				dataGridView1.DataSource = dt;
+				DataTable dt = new DataTable();
+
+                if (a==1)
+				{
+                    dt = db.DocBang("Select * from dmnoithat where "+tim +  "=N'" + comboBox1.Text + "'");
+                    dataGridView1.DataSource = dt;
+                }
+
+				if(a==2)
+				{
+                    dt = db.DocBang("Select * from dmnoithat where "+tim +  "  =N'" + comboBox4.Text + "'");
+                    dataGridView1.DataSource = dt;
+                }
+
+                if (a == 3)
+                {
+                    dt = db.DocBang("Select * from dmnoithat where " + tim + "  =N'" + comboBox5.Text + "'");
+                    dataGridView1.DataSource = dt;
+                }
+
+				if (a == 4)
+				{
+					dt = db.DocBang("Select * from dmnoithat where " + tim + "  =N'" + textBox2.Text + "'");
+                    dataGridView1.DataSource = dt;
+                }
+
+				else if (a==0) MessageBox.Show("Chọn mục để tìm");
+              
 			}
 			else
 			{
@@ -303,5 +330,29 @@ namespace BTLLTTQ.Menu
 			exSheet.Name = "Hàng Hóa";
 			exApp.Visible = true;
 		}
+
+        private void r1_CheckedChanged(object sender, EventArgs e)
+        {
+			tim = "maloai";
+			a = 1;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+			tim = "machatlieu";
+			a = 2;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+			tim = "manuocsx";
+			a=3;
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+			tim = "DonGiaNhap";
+			a = 4;
+        }
     }
 }
