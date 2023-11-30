@@ -546,6 +546,7 @@ namespace BTLLTTQ.NhapVaBan
             ResetValuesHang();
             cmb_dondh.Items.Clear();
             functions.FillComboBox("Select SoDDH from DonDatHang", cmb_dondh);
+            Load_DDH();
             btn_xoa.Enabled = true;
             btn_them.Enabled = true;
             btn_xuat.Enabled = true;
