@@ -47,6 +47,7 @@
             this.btnXemAll = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,11 +236,22 @@
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(770, 41);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 22;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FormNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 642);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnXemAll);
@@ -290,5 +302,6 @@
         private System.Windows.Forms.Button btnXemAll;
 		private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button button3;
     }
 }

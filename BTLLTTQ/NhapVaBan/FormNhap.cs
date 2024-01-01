@@ -10,20 +10,46 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using COMExcel = Microsoft.Office.Interop.Excel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Windows.Controls;
 
 namespace BTLLTTQ.NhapVaBan
 {
     public partial class FormNhap : Form
     {
         Sql db = new Sql();
+        DataRow lastRow;
         public FormNhap()
         {
             InitializeComponent();
             DataTable dt = db.DocBang("Select * from hoadonnhap");
+            lastRow = dt.Rows[dt.Rows.Count - 1];
             dataGridView1.DataSource = dt;
             dt.Dispose();//Giải phóng bộ nhớ cho DataTable
-            db.ThemVaoComboBox("select manv from nhanvien", cbbMaNV);
+            db.ThemVaoComboBox("select * from nhanvien", cbbMaNV);
             db.ThemVaoComboBox("select mancc from nhacungcap", cBBmaNCC);
+            
+        }
+
+        private bool getlastrow()
+        {
+            DataTable dt = db.DocBang("Select * from hoadonnhap");
+            if (dt.Rows.Count > 0)
+            {
+                lastRow = dt.Rows[dt.Rows.Count - 1];
+                return true;
+            }
+            else return false;
+        }
+
+        private string sohdnmoi()
+        {
+            string ma = lastRow["sohdn"].ToString();
+            //char[] separators = { 'N' };
+            //string name = ma.Split(separators)[1];
+            string[] separators = { "HDN" };
+            string name = ma.Split(separators, StringSplitOptions.RemoveEmptyEntries)[0];
+            int ma1 = int.Parse(name) + 1;
+            return "HDN" + ma1.ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -41,6 +67,8 @@ namespace BTLLTTQ.NhapVaBan
             if (txtHDN.Text == "" || cbbMaNV.Text =="" || cBBmaNCC.Text == "")
             {
                 MessageBox.Show("Check lai DL");
+                if (getlastrow()) txtHDN.Text = sohdnmoi();
+                else txtHDN.Text = "HDN001";
             }
             else
             {
@@ -233,6 +261,11 @@ namespace BTLLTTQ.NhapVaBan
 
                 }
                 exApp.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ten nv la " + cbbMaNV.Text.ToString() + " ma nv la "+ cbbMaNV.SelectedValue.ToString() + "HD tiep theo la " + sohdnmoi());
         }
     }
 }
